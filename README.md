@@ -1,6 +1,6 @@
 # tinynets
 
-## *buzzwords* lightweight adaptable networking for distributed embedded computing *buzzwords*
+## lightweight adaptable networking for distributed embedded computing
 
 ### What / What For?
 
