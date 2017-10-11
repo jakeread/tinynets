@@ -24,7 +24,7 @@ Currently:
 
 #### Hardware
 
-[first-board](https://github.com/jakeread/tinynets/blob/master/document/atsam-twoport.jpg)  
+![first-board](https://github.com/jakeread/tinynets/blob/master/document/atsam-twoport.jpg)  
 
 
 #### Thinkin'
