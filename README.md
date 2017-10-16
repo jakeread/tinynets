@@ -9,7 +9,10 @@ Currently:
  - Diagram Packet, Switching, Backpressure
 
 ### Nick
- - Evaluation Metrics
+ - Evaluation Metrics (written into latex)
+  - message delay time between two nodes
+  - message delay time across switches (delay time relative # switches, should be linear)
+  - message delay time with increasing crosstraffic (measure of success: if no increase in message time for additional crosstraffic, we are better than static-routing ethernet)
 
 ### Dougie
  - How does TCP/IP route?
