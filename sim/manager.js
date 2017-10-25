@@ -4,59 +4,58 @@ function Manager(self) {
 	this.ports = [];
 	this.numports = 0;
 
-	this.send = function(to, name, msg) {
-		if (typeof this.peers[to] != 'undefined') {
-			self.send(to, 'message', {name: name, obj: msg})
+	this.setup = function(numports) {
+		this.numports = numports;
+		this.ports = new Array(numports).fill(-1);
+	};
+
+	this.connect = function(port, id) {
+
+		if (!(port < this.numports)) {
+			return;
+		}
+
+		if (self.id != id) {
+			var prevId = this.ports[port];
+			if (prevId >= 0) {
+				self.disconnect(prevId);
+			}
+
+			this.ports[port] = id;
+			self.connect(id);
 		}
 	};
 
-	this.connect = function(id) {
-		if (self.id == id) {
+	this.disconnect = function(port) {
+		if (!(port < this.numports)) {
 			return;
 		}
 
-		if (typeof this.peers[id] == 'undefined') {
-			this.peers[id] = true;
-			this.numpeers += 1;
-			self.send(id, 'connect', {});
-		}
-	}
-
-	this.disconnect = function(id) {
-		if (self.id == id) {
-			return;
+		var prevId = this.ports[port];
+		if (prevId >= 0) {
+			self.disconnect(prevId);
 		}
 
-		if (typeof this.peers[id] != 'undefined') {
-			delete this.peers[id];
-			this.numpeers -= 1;
-			self.send(id, 'disconnect', {});
-		}
+		this.ports[port] = -1;
 	}
+
+	this.send = function(port, name, msg) {
+		if (port < this.numports && this.ports[port] >= 0) {
+			self.send(this.ports[port], 'message', {name: name, obj: msg});
+		}
+	};
 
 	this.onReceive = function(from, o) {
-		self.log(`got message '${o.name}' from ${from}: '${o.obj}'`);
+		var port = this.ports.indexOf(from);
+		if (port == -1) {
+			return;
+		}
+
+		self.log(`got message '${o.name}' on port ${port}: '${o.obj}'`);
 	};
 
-	this.onConnect = function(from, obj) {
-		this.peers[from] = true;
-		this.numpeers += 1;
-
-		self.connect(from);
-		self.log(`is connected to ${from}`);
-	}
-
-	this.onDisconnect = function(from, obj) {
-		delete this.peers[from];
-		this.numpeers -= 1;
-
-		self.disconnect(from);
-		self.log(`is disconnected from ${from}`);
-	}
-
 	self.on('message', this.onReceive, this);
-	self.on('connect', this.onConnect, this);
-	self.on('disconnect', this.onDisconnect, this);
+	
 }
 
 module.exports = Manager;
