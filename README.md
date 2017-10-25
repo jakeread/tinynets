@@ -5,20 +5,18 @@
 Currently:
 
 ### Jake
- - Hardware 0.1
- - Diagram Packet, Switching, Backpressure
+ - Hardware 0.2
+ - Measure Packet Propagation
+ - Implement Switching Structure in Hardware
 
 ### Nick
- - Evaluation Metrics (written into latex)
-  - message delay time between two nodes
-  - message delay time across switches (delay time relative # switches, should be linear)
-  - message delay time with increasing crosstraffic (measure of success: if no increase in message time for additional crosstraffic, we are better than static-routing ethernet)
+ - Work w/ Patrick on implementing Dijkstra's in simulation
 
 ### Dougie
- - How does TCP/IP route?
+ - 
 
 ### Patrick
- - Simulation Research
+ - Work on implementing hardware emulation in simulation
 
 ## Hardware
 
