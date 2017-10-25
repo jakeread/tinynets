@@ -5,16 +5,6 @@
  * Author : Jake
  */ 
 
-
-#define NP1STAT 4 // on port C
-#define NP1STAT_bm (1 << NP1STAT)
-#define NP2STAT 5 // on port C
-#define NP2STAT_bm (1 << NP2STAT)
-#define NP3STAT 4 // on port D
-#define NP3STAT_bm (1 << NP3STAT)
-#define NP4STAT 5 // on port D
-#define NP4STAT_bm (1 << NP4STAT)
-
 #define BUTTON1 0 // on port D
 #define BUTTON1_bm (1 << BUTTON1)
 #define BUTTON2 1 // on port D
@@ -33,6 +23,7 @@
 #include "tinyport.h"
 
 tinyport_t tp2;
+tinyport_t tp3;
 
 int main(void){
 	// Neil: overclocking (rad)
@@ -41,54 +32,80 @@ int main(void){
 	while (!(OSC.STATUS & OSC_PLLRDY_bm)); // wait for PLL to be ready
 	CCP = CCP_IOREG_gc; // enable protected register change
 	CLK.CTRL = CLK_SCLKSEL_PLL_gc; // switch to PLL
-	
-	gpioSetupLED();
-	hello();
-	
+		
 	// uart, port, rx, tx, stat
 	tp2 = tp_new(&USARTC1, &PORTC, PIN6_bm, PIN7_bm, PIN5_bm); 
 	tp_init(tp2);
+	
+	tp3 = tp_new(&USARTD0, &PORTD, PIN2_bm, PIN3_bm, PIN4_bm);
+	tp_init(tp3);
+	
+	PORTC.DIRSET = PIN4_bm;
 		
 	// system interrupt setup (allow low level interrupts)
 	PMIC.CTRL |= PMIC_LOLVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_HILVLEN_bm;
 	
 	// globally enable interrupts 
 	sei();
-	
-	tp_test(tp2);
-	
+			
 	while(1){
-		toggleFour();
-		_delay_ms(250);
+		nointerrupts();
+		// fast pass - TODO: use case: in rx interrupt, not this forever loop
+		if(tp2->rxstate){
+			uint8_t data = tp_read(tp2);
+			tp_write(tp3, data);
+		}
+		PORTC.OUTTGL = PIN4_bm;
+		interrupts();
 	}
+}
+
+/*
+turns off global interrupt control
+my understanding is that interrupts still get scheduled, but not executed
+when interrupts are turned back on, they fire.
+*/
+void nointerrupts(){
+	PMIC.CTRL |= ~PMIC_LOLVLEN_bm | ~PMIC_MEDLVLEN_bm | ~PMIC_HILVLEN_bm;
+}
+
+/*
+turns on global interrupt control
+*/
+void interrupts(){
+	PMIC.CTRL |= PMIC_LOLVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_HILVLEN_bm;
+}
+
+void fakepacket(tinyport_t tp){
+	tp_write(tp, 80);
+	tp_write(tp, 65);
+	tp_write(tp, 67);
+	tp_write(tp, 75);
+	tp_write(tp, 69);
+	tp_write(tp, 84);
+	tp_write(tp, 80);
+	tp_write(tp, 65);
+	tp_write(tp, 67);
+	tp_write(tp, 75);
+	tp_write(tp, 69);
+	tp_write(tp, 84);
+	tp_write(tp, 38);
+	tp_write(tp, 0x0A); // write wakes up txdref
 }
 
 // hookup ISRs to port-abstracted interrupt functions
 ISR(USARTC1_RXC_vect){
-	portRxISR(tp2);
+	tp_rxISR(tp2);
 }
 
 ISR(USARTC1_DRE_vect){
-	portTxISR(tp2);
+	tp_txISR(tp2);
 }
 
-void gpioSetupLED(){
-	PORTC.DIRSET = NP1STAT_bm | NP2STAT_bm;
-	PORTD.DIRSET = NP4STAT_bm | NP3STAT_bm;
+ISR(USARTD0_RXC_vect){
+	tp_rxISR(tp3);
 }
 
-void toggleFour(){
-	PORTD.OUTTGL = NP4STAT_bm;
-}
-
-void toggleThree(){
-	PORTD.OUTTGL = NP3STAT_bm;
-}
-
-void hello(){
-	toggleFour();
-	_delay_ms(250);
-	toggleFour();
-	_delay_ms(250);
-	toggleFour();
+ISR(USARTD0_DRE_vect){
+	tp_txISR(tp3);
 }

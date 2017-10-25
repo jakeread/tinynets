@@ -8,6 +8,14 @@ s/o https://github.com/dhess/c-ringbuf
 
 #include <avr/io.h>
 
+
+struct ringbuffer_t {
+	uint8_t *buf;
+	uint8_t head;
+	uint8_t tail;
+	uint32_t size;
+};
+
 typedef struct ringbuffer_t *ringbuffer_t;  // ALERT: ptr to struct?
 
 // makes new ringbuffer
@@ -22,5 +30,7 @@ void rb_write(ringbuffer_t rb, uint8_t data);
 
 // reads one byte from buffer
 uint8_t rb_read(ringbuffer_t rb);
+
+uint8_t rb_hasdata(ringbuffer_t rb);
 
 #endif
