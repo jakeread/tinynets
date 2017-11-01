@@ -38,14 +38,16 @@ Note that you should initialize nodes with all the ports you want them to have â
 Farther down, around line 50, you can find where you should place actions for the simulator to perform after it has initialized the network topology. You can use the helper functions ```send```, ```sendPacket```, ```connect```, and ```disconnect``` to control the simulation as follows:
 
 ```send(from, port, message, delay, periodic=false)```
+
 Sends a message from the specified client.
 * ```from```: the client from which the message should be sent
 * ```port```: the port on which to send the message
-* ```message```: the message to be send
+* ```message```: the message to be sent
 * ```delay```: the time, in ms, after simulation start to perform this action
 * ```periodic```: if true, will perform the action every ```delay``` ms
 
 ```sendPacket(from, dest, size, data, delay, periodic=false)```
+
 Sends a packet from one client to another using TinyNets' routing
 * ```from```: the client from which the message should be sent
 * ```dest```: the client where the packet should end up
@@ -55,7 +57,9 @@ Sends a packet from one client to another using TinyNets' routing
 * ```periodic```: if true, will perform the action every ```delay``` ms
 
 ```connect(a, aPort, b, bPort, delay)```
+
 ```disconnect(a, aPort, b, bPort, delay)```
+
 Connects or disconnects two clients. Note that the disconnect method does not require ```a``` and ```b``` to actually be connected on the specified ports, so make sure that what you pass it is correct or unspecified behavior could result!
 * ```a```: The first client to disconnect
 * ```aPort```: The port which should be disconnected on the first client
