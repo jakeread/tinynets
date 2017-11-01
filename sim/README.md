@@ -33,6 +33,8 @@ var initTopology = [
 ];
 ```
 
+Note that you should initialize nodes with all the ports you want them to have — you will not be able to add more ports later. If a port is initially unconnected, set its value to -1. 
+
 Farther down, around line 50, you can find where you should place actions for the simulator to perform after it has initialized the network topology. You can use the helper functions ```send```, ```sendPacket```, ```connect```, and ```disconnect``` to control the simulation as follows:
 
 ```send(from, port, message, delay, periodic=false)```
