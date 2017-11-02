@@ -31,11 +31,10 @@ void rb_write(ringbuffer_t rb, uint8_t data){
 	rb->buf[rb->head] = data;
 	
 	rb->head += 1;
-	if(rb->head >= rb->size - 1){
+	if(rb->head >= rb->size){
 		rb->head = 0;
 	}
 	// increment head and check wrap
-
 }
 
 uint8_t rb_read(ringbuffer_t rb){
@@ -43,7 +42,7 @@ uint8_t rb_read(ringbuffer_t rb){
 	uint8_t data = rb->buf[rb->tail];
 	// increment tail and check wrap
 	rb->tail += 1;
-	if(rb->tail >= rb->size -1){
+	if(rb->tail >= rb->size){
 		rb->tail = 0;
 	}
 	return data;

@@ -20,6 +20,7 @@ tinyport_t tp_new(USART_t *uart, PORT_t *port, uint8_t pinRX_bm, uint8_t pinTX_b
 	tp->rbtx = rb_new(TP_TXBUF_SIZE);
 	tp->txstate = TP_TX_STATE_EMPTY;
 	tp->rxstate = TP_RX_STATE_EMPTY;
+	tp->pstate = TP_PSTATE_OUTSIDE;
 	
 	return tp;
 }
@@ -74,63 +75,84 @@ void tp_test(tinyport_t tp){
 }
 
 void tp_rxISR(tinyport_t tp){ // towards a passalong
-	rb_write(tp->rbrx, tp->uart->DATA);
+	tp_statflash(tp);
+	
+	uint8_t data = tp->uart->DATA;
+	
+	switch(tp->pstate){
+		
+		case TP_PSTATE_OUTSIDE:
+			if(data == 126){ // ~
+				tp->pstate = TP_PSTATE_INSIDE;
+			} else {
+				// nothing for now, in future catch port-buffer-lengths list
+			}
+			break;
+			
+		case TP_PSTATE_INSIDE:
+			if(data == 126){ // ~
+				tp->pstate = TP_PSTATE_OUTSIDE;
+				handoff(tp);
+			} else {
+				rb_write(tp->rbrx, tp->uart->DATA);
+			}
+			// check for finish
+			break;
+			
+		default:
+			// heck 
+			break;
+	}
 	tp_setRxStatus(tp, TP_RX_STATE_HASDATA); // get it
+	//handoff(tp);
 }
 
-uint8_t tp_read(tinyport_t tp){
-	uint8_t data = rb_read(tp->rbrx);
-	uint8_t tail = tp->rbrx->tail;
-	uint8_t head = tp->rbrx->head;
-	if(tail == head){
+uint8_t tp_read(tinyport_t tp, uint8_t *data){ // TODO: set at pointer, return true if non empty
+	
+	*data = 81; // rb_read(tp->rbrx);
+	return 0;
+	/*
+	if(rb_hasdata(tp->rbrx)){
+		return 1;
+	} else {
 		tp_setRxStatus(tp, TP_RX_STATE_EMPTY);
-		} else {
-		tp_setRxStatus(tp, TP_RX_STATE_HASDATA);
+		return 0;
 	}
-	return data;
+	*/
 }
 
 void tp_setRxStatus(tinyport_t tp, uint8_t state){
-	tp->rxstate = state;
-	if(state){
+	if(state == tp->rxstate){
+		// nothing
 		// nothing changes? always listening
 	} else {
-		// ibid
+		tp->rxstate = state;
 	}
 }
 
 // https://lost-contact.mit.edu/afs/sur5r.net/service/drivers+doc/Atmel/ATXMEGA/AVR1307/code/doxygen/usart__driver_8c.html#7fdb922f6b858bef8515e23229efd970
 
 void tp_txISR(tinyport_t tp){
+	tp_statflash(tp);
 	tp->uart->DATA = rb_read(tp->rbtx);
-	uint8_t tail = tp->rbtx->tail;
-	uint8_t head = tp->rbtx->head;
-	if(tail == head){
-		tp_setTxStatus(tp, TP_TX_STATE_EMPTY);
-	} else {
-		tp_setTxStatus(tp, TP_TX_STATE_HASDATA);
-	}
-	/*
-	// should b working now, test
-	if(!(rb_hasdata(tp->rbtx))){ // if buffer empty, turn off DREF interrupt
+	if(!(rb_hasdata(tp->rbtx))){  // if no data left to tx,
 		tp_setTxStatus(tp, TP_TX_STATE_EMPTY);
 	}
-	*/
-	// handle buffer-ready status, enable interrupt
 }
 
 void tp_write(tinyport_t tp, uint8_t data){
 	rb_write(tp->rbtx, data);
-	tp_setTxStatus(tp, TP_RX_STATE_HASDATA);
+	tp_setTxStatus(tp, TP_TX_STATE_TRANSMIT); // available
 }
 
 void tp_setTxStatus(tinyport_t tp, uint8_t state){
-	tp->txstate = state;
-	if(state){
+	if(state == tp->txstate){ // if already set,
+		// do nothing
+	} else if(state) { // if set to hi - have things to tx
 		tp->uart->CTRLA |= USART_DREINTLVL_LO_gc; // now ready for out transmit - this would happen elsewhere - when there is tx to tx
-		tp_stathi(tp);
-		} else {
+		tp->txstate = state;
+	} else { // if lo - buffer is empty, donot tx
 		tp->uart->CTRLA = (tp->uart->CTRLA & ~ USART_DREINTLVL_gm) | USART_DREINTLVL_OFF_gc; // turn off interrupt
-		tp_statlo(tp);
+		tp->txstate = state;
 	}
 }

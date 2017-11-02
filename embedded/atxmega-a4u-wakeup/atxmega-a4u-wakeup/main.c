@@ -22,8 +22,10 @@
 #include "ringbuffer.h"
 #include "tinyport.h"
 
+tinyport_t tp1; //power, at the moment
 tinyport_t tp2;
-tinyport_t tp3;
+tinyport_t tp3; //nhat used at the moment
+tinyport_t tp4;
 
 int main(void){
 	// Neil: overclocking (rad)
@@ -34,30 +36,65 @@ int main(void){
 	CLK.CTRL = CLK_SCLKSEL_PLL_gc; // switch to PLL
 		
 	// uart, port, rx, tx, stat
+	
+	tp1 = tp_new(&USARTC0, &PORTC, PIN2_bm, PIN3_bm, PIN4_bm);
+	tp_init(tp1);
+	
 	tp2 = tp_new(&USARTC1, &PORTC, PIN6_bm, PIN7_bm, PIN5_bm); 
 	tp_init(tp2);
 	
 	tp3 = tp_new(&USARTD0, &PORTD, PIN2_bm, PIN3_bm, PIN4_bm);
 	tp_init(tp3);
 	
-	PORTC.DIRSET = PIN4_bm;
-		
+	tp4 = tp_new(&USARTD1, &PORTD, PIN6_bm, PIN7_bm, PIN5_bm);
+	tp_init(tp4);
+	
+			
 	// system interrupt setup (allow low level interrupts)
 	PMIC.CTRL |= PMIC_LOLVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_HILVLEN_bm;
 	
 	// globally enable interrupts 
 	sei();
-			
+	
 	while(1){
+		
+		tp_statflash(tp1);
+		tp_statflash(tp3);
+		_delay_ms(100);
+		/*
+		// the below only works when bounded by nointerrupts() and interrupts();
 		nointerrupts();
-		// fast pass - TODO: use case: in rx interrupt, not this forever loop
 		if(tp2->rxstate){
 			uint8_t data = tp_read(tp2);
-			tp_write(tp3, data);
+			tp_write(tp4, data);
 		}
-		PORTC.OUTTGL = PIN4_bm;
 		interrupts();
+		*/
 	}
+}
+
+uint8_t pcount = 0;
+uint8_t psize = 12;
+
+// passing 2 -> 4
+
+void handoff(tinyport_t tp_from){ // puts data in 'core' of system
+	// dirty pass
+	uint8_t data;
+	//while(tp_read(tp_from, &data)){
+		tp_read(tp_from, &data);
+		tp_write(tp4, data);
+		_delay_ms(100);
+	//}
+	/*
+	//uint8_t data = 0x01;
+	pcount ++;
+	// would do port selection for pass
+	if(pcount > psize){
+		tp_write(tp3, data);
+		pcount = 0;
+	}
+	*/
 }
 
 /*
@@ -94,6 +131,15 @@ void fakepacket(tinyport_t tp){
 }
 
 // hookup ISRs to port-abstracted interrupt functions
+
+ISR(USARTC0_RXC_vect){
+	tp_rxISR(tp1);
+}
+
+ISR(USARTC0_DRE_vect){
+	tp_txISR(tp1);
+}
+
 ISR(USARTC1_RXC_vect){
 	tp_rxISR(tp2);
 }
@@ -108,4 +154,12 @@ ISR(USARTD0_RXC_vect){
 
 ISR(USARTD0_DRE_vect){
 	tp_txISR(tp3);
+}
+
+IRS(USARTD1_RXC_vect){
+	tp_rxISR(tp4);
+}
+
+ISR(USARTD1_DRE_vect){
+	tp_txISR(tp4);
 }

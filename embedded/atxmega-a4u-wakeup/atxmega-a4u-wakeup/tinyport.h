@@ -20,7 +20,10 @@
 #define TP_RX_STATE_HASDATA 1
 
 #define TP_TX_STATE_EMPTY 0
-#define TP_TX_STATE_HASDATA 1
+#define TP_TX_STATE_TRANSMIT 1
+
+#define TP_PSTATE_OUTSIDE 0
+#define TP_PSTATE_INSIDE 1
 
 typedef struct tinyport_t {
 	USART_t *uart;
@@ -30,9 +33,9 @@ typedef struct tinyport_t {
 	uint8_t pinSTAT_bm;
 	ringbuffer_t rbrx; // is pointer-to
 	ringbuffer_t rbtx; // is pointer-to
-	uint8_t state;
 	uint8_t txstate;
 	uint8_t rxstate;
+	uint8_t pstate;
 };
 
 typedef struct tinyport_t *tinyport_t;
@@ -47,7 +50,7 @@ void tp_stathi(tinyport_t tp);
 void tp_test(tinyport_t tp);
 
 void tp_rxISR(tinyport_t tp);
-uint8_t tp_read(tinyport_t tp);
+uint8_t tp_read(tinyport_t tp, uint8_t *data);
 void tp_setRxStatus(tinyport_t, uint8_t state);
 
 void tp_txISR(tinyport_t tp);
