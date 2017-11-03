@@ -5,18 +5,16 @@
 Currently:
 
 ### Jake
- - Hardware 0.2
- - Measure Packet Propagation
- - Implement Switching Structure in Hardware
+ - 
 
 ### Nick
- - Work w/ Patrick on implementing Dijkstra's in simulation
+ - 
 
 ### Dougie
  - 
 
 ### Patrick
- - Work on implementing hardware emulation in simulation
+ - 
 
 ## Hardware
 
