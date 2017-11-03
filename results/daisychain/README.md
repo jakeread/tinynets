@@ -13,7 +13,7 @@ We test a packet that is 70 Bytes long - 560 bits and a packet that is 7 bytes l
 Results are as follows. The expected T_message is simply (bits/packet)/bitrate - any additional message time is due to system design and implementation. Critically, UART uses a start and stop bit, per byte.
 
 Bitrate | T_message (us) | P_size | T_message* (us) | % Difference
---- | --- | --- | --- 
+--- | --- | --- | --- | ---
 115200 | 4861 | 70 | 5858 | 21
 115200 | 486 | 7 | 586 | 21
 230400 | 2431 | 70 | 2930 | 21 
