@@ -38,16 +38,16 @@ int main(void){
 	// uart, port, rx, tx, stat
 	
 	tp1 = tp_new(&USARTC0, &PORTC, PIN2_bm, PIN3_bm, PIN4_bm);
-	tp_init(tp1);
+	tp_init(&tp1);
 	
 	tp2 = tp_new(&USARTC1, &PORTC, PIN6_bm, PIN7_bm, PIN5_bm); 
-	tp_init(tp2);
+	tp_init(&tp2);
 	
 	tp3 = tp_new(&USARTD0, &PORTD, PIN2_bm, PIN3_bm, PIN4_bm);
-	tp_init(tp3);
+	tp_init(&tp3);
 	
 	tp4 = tp_new(&USARTD1, &PORTD, PIN6_bm, PIN7_bm, PIN5_bm);
-	tp_init(tp4);
+	tp_init(&tp4);
 	
 			
 	// system interrupt setup (allow low level interrupts)
@@ -57,19 +57,15 @@ int main(void){
 	sei();
 	
 	while(1){
+		uint8_t data;
+		tp_statflash(&tp1);
 		
-		tp_statflash(tp1);
-		tp_statflash(tp3);
-		_delay_ms(100);
-		/*
-		// the below only works when bounded by nointerrupts() and interrupts();
-		nointerrupts();
-		if(tp2->rxstate){
-			uint8_t data = tp_read(tp2);
-			tp_write(tp4, data);
+		if(tp_read(&tp2, &data)){
+			tp_statflash(&tp3);
+			tp_write(&tp4, data);
 		}
-		interrupts();
-		*/
+		
+		// the below only works when bounded by nointerrupts() and interrupts();
 	}
 }
 
@@ -78,23 +74,8 @@ uint8_t psize = 12;
 
 // passing 2 -> 4
 
-void handoff(tinyport_t tp_from){ // puts data in 'core' of system
-	// dirty pass
-	uint8_t data;
-	//while(tp_read(tp_from, &data)){
-		tp_read(tp_from, &data);
-		tp_write(tp4, data);
-		_delay_ms(100);
-	//}
-	/*
-	//uint8_t data = 0x01;
-	pcount ++;
-	// would do port selection for pass
-	if(pcount > psize){
-		tp_write(tp3, data);
-		pcount = 0;
-	}
-	*/
+void handoff(tinyport_t *tp_from){ // puts data in 'core' of system
+	//
 }
 
 /*
@@ -113,53 +94,40 @@ void interrupts(){
 	PMIC.CTRL |= PMIC_LOLVLEN_bm | PMIC_MEDLVLEN_bm | PMIC_HILVLEN_bm;
 }
 
-void fakepacket(tinyport_t tp){
-	tp_write(tp, 80);
-	tp_write(tp, 65);
-	tp_write(tp, 67);
-	tp_write(tp, 75);
-	tp_write(tp, 69);
-	tp_write(tp, 84);
-	tp_write(tp, 80);
-	tp_write(tp, 65);
-	tp_write(tp, 67);
-	tp_write(tp, 75);
-	tp_write(tp, 69);
-	tp_write(tp, 84);
-	tp_write(tp, 38);
-	tp_write(tp, 0x0A); // write wakes up txdref
-}
-
 // hookup ISRs to port-abstracted interrupt functions
 
 ISR(USARTC0_RXC_vect){
-	tp_rxISR(tp1);
+	tp_rxISR(&tp1);
 }
 
-ISR(USARTC0_DRE_vect){
-	tp_txISR(tp1);
-}
 
 ISR(USARTC1_RXC_vect){
-	tp_rxISR(tp2);
-}
-
-ISR(USARTC1_DRE_vect){
-	tp_txISR(tp2);
+	tp_rxISR(&tp2);
 }
 
 ISR(USARTD0_RXC_vect){
-	tp_rxISR(tp3);
+	tp_rxISR(&tp3);
+}
+
+ISR(USARTD1_RXC_vect){
+	tp_rxISR(&tp4);
+}
+
+
+/*
+ISR(USARTC1_DRE_vect){
+	tp_txISR(&tp2);
+}
+
+ISR(USARTC0_DRE_vect){
+	tp_txISR(&tp1);
 }
 
 ISR(USARTD0_DRE_vect){
-	tp_txISR(tp3);
-}
-
-IRS(USARTD1_RXC_vect){
-	tp_rxISR(tp4);
+	tp_txISR(&tp3);
 }
 
 ISR(USARTD1_DRE_vect){
-	tp_txISR(tp4);
+	tp_txISR(&tp4);
 }
+*/

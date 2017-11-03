@@ -9,24 +9,28 @@
 #include <util/delay.h>
 
 tinyport_t tp_new(USART_t *uart, PORT_t *port, uint8_t pinRX_bm, uint8_t pinTX_bm, uint8_t pinSTAT_bm){
-	tinyport_t tp = malloc(sizeof(struct tinyport_t));
 	
-	tp->uart = uart;
-	tp->port = port;
-	tp->pinRX_bm = pinRX_bm;
-	tp->pinTX_bm = pinTX_bm;
-	tp->pinSTAT_bm = pinSTAT_bm;
-	tp->rbrx = rb_new(TP_RXBUF_SIZE);
-	tp->rbtx = rb_new(TP_TXBUF_SIZE);
-	tp->txstate = TP_TX_STATE_EMPTY;
-	tp->rxstate = TP_RX_STATE_EMPTY;
-	tp->pstate = TP_PSTATE_OUTSIDE;
+	tinyport_t tp;
+	
+	tp.uart = uart;
+	tp.port = port;
+	
+	tp.pinRX_bm = pinRX_bm;
+	tp.pinTX_bm = pinTX_bm;
+	tp.pinSTAT_bm = pinSTAT_bm;
+	
+	tp.txstate = TP_TX_STATE_EMPTY;
+	tp.rxstate = TP_RX_STATE_EMPTY;
+	tp.pstate = TP_PSTATE_OUTSIDE;
+	
+	rb_init(&tp.rbrx, TP_RXBUF_SIZE);
+	rb_init(&tp.rbtx, TP_TXBUF_SIZE);
 	
 	return tp;
 }
 
 // mostly, start the uart port
-void tp_init(tinyport_t tp){
+void tp_init(tinyport_t *tp){
 	// USART is in UART (async) mode automatically
 	// these registers setup the baudrate - the bitrate
 	// this seems a bit tricky. I am taking for granted that the clock is at 48MHz,
@@ -54,19 +58,57 @@ void tp_init(tinyport_t tp){
 	tp->port->DIRSET = tp->pinSTAT_bm;
 }
 
-void tp_statflash(tinyport_t tp){
+void tp_rxISR(tinyport_t *tp){ // towards a passalong
+	tp_statflash(tp);
+	
+	tp->bumpdata = tp->uart->DATA;
+	
+	switch (tp->pstate){
+		case TP_PSTATE_OUTSIDE:
+			if(tp->bumpdata == 126){
+				tp->pstate = TP_PSTATE_INSIDE;
+			}
+			break;
+		case TP_PSTATE_INSIDE:
+			if(tp->bumpdata == 126){
+				tp->pstate = TP_PSTATE_OUTSIDE;
+			} else {
+				rb_put(&tp->rbrx, tp->bumpdata);
+			}
+			break;
+		default:
+			break;	
+	}
+}
+
+uint8_t tp_read(tinyport_t *tp, uint8_t *data){ // TODO: set at pointer, return true if non empty
+	if(rb_get(&tp->rbrx, data)){
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+// https://lost-contact.mit.edu/afs/sur5r.net/service/drivers+doc/Atmel/ATXMEGA/AVR1307/code/doxygen/usart__driver_8c.html#7fdb922f6b858bef8515e23229efd970
+
+void tp_write(tinyport_t *tp, uint8_t data){
+	while(!(tp->uart->STATUS & USART_DREIF_bm)); // while not ready, wait (this is blocking)
+	tp->uart->DATA = data;
+}
+
+void tp_statflash(tinyport_t *tp){
 	tp->port->OUTTGL = tp->pinSTAT_bm;
 }
 
-void tp_stathi(tinyport_t tp){
+void tp_stathi(tinyport_t *tp){
 	tp->port->OUTSET = tp->pinSTAT_bm;
 }
 
-void tp_statlo(tinyport_t tp){
+void tp_statlo(tinyport_t *tp){
 	tp->port->OUTCLR = tp->pinSTAT_bm;
 }
 
-void tp_test(tinyport_t tp){
+void tp_test(tinyport_t *tp){ // barebones write
 	tp_stathi(tp);
 	while(!(tp->uart->STATUS & USART_DREIF_bm));
 	tp->uart->DATA = 0xFF;
@@ -74,78 +116,24 @@ void tp_test(tinyport_t tp){
 	tp_statlo(tp);
 }
 
-void tp_rxISR(tinyport_t tp){ // towards a passalong
+/*
+
+old code, for handling tx'ing with interrupts - we want more determinism on sends, so do straightforward
+
+void tp_txISR(tinyport_t *tp){
 	tp_statflash(tp);
-	
-	uint8_t data = tp->uart->DATA;
-	
-	switch(tp->pstate){
-		
-		case TP_PSTATE_OUTSIDE:
-			if(data == 126){ // ~
-				tp->pstate = TP_PSTATE_INSIDE;
-			} else {
-				// nothing for now, in future catch port-buffer-lengths list
-			}
-			break;
-			
-		case TP_PSTATE_INSIDE:
-			if(data == 126){ // ~
-				tp->pstate = TP_PSTATE_OUTSIDE;
-				handoff(tp);
-			} else {
-				rb_write(tp->rbrx, tp->uart->DATA);
-			}
-			// check for finish
-			break;
-			
-		default:
-			// heck 
-			break;
-	}
-	tp_setRxStatus(tp, TP_RX_STATE_HASDATA); // get it
-	//handoff(tp);
-}
-
-uint8_t tp_read(tinyport_t tp, uint8_t *data){ // TODO: set at pointer, return true if non empty
-	
-	*data = 81; // rb_read(tp->rbrx);
-	return 0;
-	/*
-	if(rb_hasdata(tp->rbrx)){
-		return 1;
-	} else {
-		tp_setRxStatus(tp, TP_RX_STATE_EMPTY);
-		return 0;
-	}
-	*/
-}
-
-void tp_setRxStatus(tinyport_t tp, uint8_t state){
-	if(state == tp->rxstate){
-		// nothing
-		// nothing changes? always listening
-	} else {
-		tp->rxstate = state;
-	}
-}
-
-// https://lost-contact.mit.edu/afs/sur5r.net/service/drivers+doc/Atmel/ATXMEGA/AVR1307/code/doxygen/usart__driver_8c.html#7fdb922f6b858bef8515e23229efd970
-
-void tp_txISR(tinyport_t tp){
-	tp_statflash(tp);
-	tp->uart->DATA = rb_read(tp->rbtx);
-	if(!(rb_hasdata(tp->rbtx))){  // if no data left to tx,
+	rb_put(&tp->rbtx, tp->uart->DATA);
+	if(rb_empty(tp->rbtx)){  // if no data left to tx,
 		tp_setTxStatus(tp, TP_TX_STATE_EMPTY);
 	}
 }
 
-void tp_write(tinyport_t tp, uint8_t data){
-	rb_write(tp->rbtx, data);
+void tp_write(tinyport_t *tp, uint8_t data){
+	rb_put(&tp->rbtx, data);
 	tp_setTxStatus(tp, TP_TX_STATE_TRANSMIT); // available
 }
 
-void tp_setTxStatus(tinyport_t tp, uint8_t state){
+void tp_setTxStatus(tinyport_t *tp, uint8_t state){
 	if(state == tp->txstate){ // if already set,
 		// do nothing
 	} else if(state) { // if set to hi - have things to tx
@@ -156,3 +144,4 @@ void tp_setTxStatus(tinyport_t tp, uint8_t state){
 		tp->txstate = state;
 	}
 }
+*/

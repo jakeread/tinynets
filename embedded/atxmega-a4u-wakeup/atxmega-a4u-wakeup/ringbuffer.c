@@ -2,56 +2,51 @@
 #include <stdlib.h>
 #include <avr/io.h>
 
-ringbuffer_t rb_new (uint32_t capacity){
-	ringbuffer_t rb = malloc(sizeof(struct ringbuffer_t));
+uint8_t rb_init(ringbuffer_t *rb, size_t size){
+	rb->size = size;
+	rb->buffer = malloc(rb->size);
+	rb_reset(rb);
+	return 1;
+}
+
+uint8_t rb_reset(ringbuffer_t *rb){
 	if(rb){
-		rb->size = capacity + 1; // one byte is used for detecting full condition
-		rb->buf = malloc(rb->size);
-		if(rb->buf){
-			rb_reset(rb); // point head to tail to beginning
-			uint8_t tail1 = rb->tail;
-			uint8_t head1 = rb->head;
-		} else {
-			free(rb); // deallocate memory block if fails to allocate b/c full
-			return 0;
-		}
-	}
-	return rb;
-}
-
-void rb_reset(ringbuffer_t rb){
-	rb->head = 0;
-	rb->tail = 0;
-}
-
-
-void rb_write(ringbuffer_t rb, uint8_t data){
-	// write to head
-
-	rb->buf[rb->head] = data;
-	
-	rb->head += 1;
-	if(rb->head >= rb->size){
 		rb->head = 0;
-	}
-	// increment head and check wrap
-}
-
-uint8_t rb_read(ringbuffer_t rb){
-	// pull data from tail
-	uint8_t data = rb->buf[rb->tail];
-	// increment tail and check wrap
-	rb->tail += 1;
-	if(rb->tail >= rb->size){
 		rb->tail = 0;
+		return 1;
+	} else {
+		return 0;
 	}
-	return data;
 }
 
-uint8_t rb_hasdata(ringbuffer_t rb){
-	if (rb->tail == rb->head){
-		return 0;
-	} else {
+
+uint8_t rb_put(ringbuffer_t *rb, uint8_t data){
+	if(rb){
+		rb->buffer[rb->head] = data;
+		rb->head = (rb->head + 1) % rb->size; // for wrap around
+		if(rb->head == rb->tail){
+			rb->tail = (rb->tail + 1) % rb->size;
+		}
 		return 1;
+	} else {
+		return 0;
 	}
+}
+
+uint8_t rb_get(ringbuffer_t *rb, uint8_t *data){
+	if(rb && data && !rb_empty(*rb)){
+		*data = rb->buffer[rb->tail];
+		rb->tail = (rb->tail + 1) % rb->size;
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+uint8_t rb_empty(ringbuffer_t rb){
+	return (rb.head == rb.tail);
+}
+
+uint8_t rb_full(ringbuffer_t rb){
+	return ((rb.head + 1) % rb.size) == rb.tail;
 }
