@@ -1,147 +1,233 @@
 function Manager(self) {
-	self.manager = this;
+    self.manager = this;
 
-	this.ports = [];
-	this.numports = 0;
-	this.addr_table = {};
-	this.buffer = [];
-	this.maxBufferSize = 252;
-	this.delay = 100; //ms
-
-	this.setup = function(numports) {
-		this.numports = numports;
-		this.ports = new Array(numports).fill(-1);
-
-		setInterval(this.checkBuffer, this.delay);
-	};
-
-	this.printPorts = function() {
-		console.log(this.ports);
-	}
-
-	this.connect = function(port, id) {
-
-		if (!(port < this.numports)) {
-			return;
-		}
-
-		if (self.id != id) {
-			var prevId = this.ports[port];
-			if (prevId >= 0) {
-				self.disconnect(prevId);
-			}
-
-			console.log('im '+ self.id + ' connecting to ' + id);
-
-			this.ports[port] = id;
-			self.connect(id);
-	};
-
-	this.disconnect = function(port) {
-		if (!(port < this.numports)) {
-			return;
-		}
-
-		var prevId = this.ports[port];
-		if (prevId >= 0) {
-			self.disconnect(prevId);
-		}
-
-		this.ports[port] = -1;
-	}
-
-	this.send = function(port, msg) {
-		if (port < this.numports && this.ports[port] >= 0) {
-			self.send(this.ports[port], 'message', {name: 'message', obj: msg});
-		}
-	};
-
-	this.onReceive = function(from, o) {
-		var port = this.ports.indexOf(from);
-		if (port == -1) {
-			return;
-		}
-
-		self.log(`got message '${o.name}' on port ${port}: '${o.obj}'`);
-	};
-
-	this.sendPacket = function(dest, size, data, edges=0, port=-1, src=self.id, ack=false) {
-
-		var packet = {
-			ack: ack,
-			dest: dest,
-			edges: edges,
-			src: src,
-			size: size,
-			data: data
-		};
-
-		if (port == -1) {
-			this.handlePacket(packet);
-			return;
-		}
-
-		if (port < this.numports && this.ports[port] >= 0) {
-			self.send(this.ports[port], 'packet', {name: 'packet', obj: packet});
-		}
-	};
-
-	this.onReceivePacket = function(from, o) {
-		var port = this.ports.indexOf(from);
-		if (port == -1) {
-			return;
-		}
-
-		var packet = o.obj;
-		
-		if (this.buffer.length < this.maxBufferSize) {
-			this.buffer.push(packet);
-		}
-
-	};
-
-	this.checkBuffer = function() {
-		if (this.buffer.length > 0) {
-			let packet = this.buffer.shift();
-			packet.edges += 1;
-
-			if (!this.addr_table.hasOwnProperty(packet.src)) {
-				this.addr_table[packet.src] = new Array(numports).fill(Infinity);
-				this.addr_table[packet.src][port] = packet.edges;
-			} else {
-				if (packet.edges < this.addr_table[packet.src][port]) {
-					this.addr_table[packet.src][port] = packet.edges;
-				}
-			}
-
-			this.handlePacket(packet);
-		}
-	};
-
-	this.handlePacket = function(packet) {
-		if (packet.dest == self.id) {
-			// we've reached destination! yay!
-		} else {
-			if (!this.addr_table.hasOwnProperty(packet.dest)) {
-
-				//hasn't seen the destination yet, so flood!
-				for (var i = 0; i < this.numports; i++) {
-					this.sendPacket(packet.dest, packet.size, packet.data, packet.edges, i, packet.src, packet.ack);
-				}
-
-			} else {
-
-				//send on port with minimum distance to destination
-				var distances = this.addr_table[packet.dest];
-				var portToSendOn = indexOfMin(distances);
-				this.sendPacket(packet.dest, packet.size, packet.data, packet.edges, portToSendOn, packet.src, packet.ack);
-			}
-		}
-	}
-
-	self.on('message', this.onReceive, this);
-	self.on('packet', this.onReceivePacket, this);
+    const STD = 252;
+    const ACK = 253;
+    const STF = 254;
+    const ACF = 255;
 	
+    this.ports = [];
+    this.numports = 0;
+    this.addr_table = {};
+    this.buffer = [];
+    this.maxBufferSize = 252;
+    this.delay = 100; //ms
+    this.seenFloods = [];
+
+    this.setup = function(numports) {
+        this.numports = numports;
+        this.ports = new Array(numports).fill(-1);
+        for (var p = 0; p < numports; p++) {
+            this.addr_table[p] = {
+                dests: {},
+                buff: 0
+            };
+        }
+        setInterval(this.checkBuffer, this.delay);
+    };
+
+    this.printPorts = function() {
+        console.log(this.ports);
+    };
+
+    this.connect = function(port, id) {
+
+        if (!(port < this.numports))
+            return;
+
+        if (self.id !== id) {
+            var prevId = this.ports[port];
+            if (prevId >= 0) {
+                self.disconnect(prevId);
+            }
+
+            console.log('im '+ self.id + ' connecting to ' + id);
+
+            this.ports[port] = id;
+            self.connect(id);
+        }
+    };
+
+    this.disconnect = function(port) {
+        if (!(port < this.numports)) {
+            return;
+        }
+
+        var prevId = this.ports[port];
+        if (prevId >= 0) {
+            self.disconnect(prevId);
+        }
+
+        this.ports[port] = -1;
+    };
+
+    this.send = function(port, msg) {
+        if (port < this.numports && this.ports[port] >= 0) {
+            self.send(this.ports[port], 'message', {name: 'message', obj: msg});
+        }
+    };
+
+    this.onReceive = function(from, o) {
+        var port = this.ports.indexOf(from);
+        if (port === -1) {
+            return;
+        }
+
+        self.log(`got message '${o.name}' on port ${port}: '${o.obj}'`);
+    };
+
+    this.sendPacket = function(start, dest=-1, hopcount=0, src=self.id, size=0, data=null, port=-1) {
+        var packet = {
+            start: start,
+            dest: dest,
+            hopcount: hopcount,
+            src: src,
+            size: size,
+            data: data,
+            port: port
+        };
+
+        if (port === -1) {
+            this.handlePacket(packet);
+            return;
+        }
+
+        if (port < this.numports && this.ports[port] >= 0) {
+            self.send(this.ports[port], 'packet', {name: 'packet', obj: packet});
+        }
+    };
+
+    this.onReceivePacket = function(from, o) {
+        var port = this.ports.indexOf(from);
+        if (port === -1)
+            return;
+
+        var packet = o.obj;
+        
+        if (this.buffer.length < this.maxBufferSize) {
+            this.buffer.push(packet);
+	}
+    };
+    
+    this.checkBuffer = function() {
+        if (this.buffer.length > 0) {
+            this.handlePacket(this.buffer.shift());
+        }
+    };
+
+    this.handlePacket = function(packet) {
+        // If LUT does not already have the source address, add the entry
+        if (packet.start === STD || packet.start === ACK || packet.start === STF || packet.start === ACF) {
+            if (!this.addr_table[packet.port].dests.hasOwnProperty(packet.src) || this.addr_table[packet.port].dests[packet.src]>packet.hopcount) {
+                this.addr_table[packet.port].dests[packet.src] = packet.hopcount;
+            }
+        }
+        
+        if (packet.start === STD) {				// Standard Packet
+            if (packet.dest === self.id) {                                      // If I am destination
+                // Process packet
+            } else {
+                packet.hopcount++;                                              // Increment hopcount
+                const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
+                if (nextPort === -1) {                                          // If LUT does not have dest
+                    for (var p = 0; p < this.numports; p++) {                   // Flood packet
+                        if (p !== packet.port)
+                            this.sendPacket(STF, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                    }
+                } else {                                                        // If LUT does have dest, send to that port
+                    this.sendPacket(STD, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                }
+            }
+        } else if (packet.start === ACK) {			// Acknowledgement
+            if (packet.dest === self.id) {                                      // If I am destination
+                // Process ACK
+            } else {
+                packet.hopcount++;                                              // Increment hopcount
+                const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
+                if (nextPort === -1) {                                          // If LUT does not have dest
+                    for (var p = 0; p < this.numports; p++) {                   // Flood ACK
+                        if (p !== packet.port)
+                            this.sendPacket(ACF, packet.dest, packet.hopcount, packet.src, 0, null, p);
+                    }
+                } else {                                                        // If LUT does have dest, send to that port
+                    this.sendPacket(ACK, packet.dest, packet.hopcount, packet.src, 0, null, nextPort);
+                }
+            }
+        } else if (packet.start === STF) {			// Standard Flood
+            if (packet.dest === self.id) {                                      // If I am destination
+                // Process packet
+            } else {
+                packet.hopcount++;                                              // Increment hopcount
+                const thisFlood = {                                             // Static information within packet for comparison
+                    dest: packet.dest,
+                    src: packet.src,
+                    data: packet.data
+                };
+                if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
+                    return;
+                this.seenFloods.push(thisFlood);                                // Remember the packet
+                
+                const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
+                if (nextPort === -1) {                                          // If LUT does not have dest
+                    for (var p = 0; p < this.numports; p++) {                   // Flood packet
+                        if (p !== packet.port)
+                            this.sendPacket(STF, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                    }
+                } else {                                                        // If LUT does have dest, send to that port
+                    this.sendPacket(STD, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                }
+            }
+        } else if (packet.start === ACF) {			// ACK Flood
+            if (packet.dest === self.id) {                                      // If I am destination
+                // Process packet
+            } else {
+                packet.hopcount++;                                              // Increment hopcount
+                const thisFlood = {                                             // Static information within packet for comparison
+                    dest: packet.dest,
+                    src: packet.src,
+                    data: null
+                };
+                if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
+                    return;
+                this.seenFloods.push(thisFlood);                                // Remember the packet
+                
+                const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
+                if (nextPort === -1) {                                          // If LUT does not have dest
+                    for (var p = 0; p < this.numports; p++) {                   // Flood ACK
+                        if (p !== packet.port)
+                            this.sendPacket(ACF, packet.dest, packet.hopcount, packet.src, 0, null, p);
+                    }
+                } else {                                                        // If LUT does have dest, send to that port
+                    this.sendPacket(ACK, packet.dest, packet.hopcount, packet.src, 0, null, nextPort);
+                }
+            }
+        } else {                                                // Buffer Update
+            this.addr_table[packet.port].buff = packet.start;
+        }
+    };
+
+    self.on('message', this.onReceive, this);
+    self.on('packet', this.onReceivePacket, this);
+	
+}
+
+function getMinCostPort(dest) {
+    var minCost = Infinity;
+    var minPort = -1;
+    for (var p = 0; p < this.numports; p++) {
+        if (this.addr_table[p].dests.hasOwnProperty(dest)) {
+            var cost = getCost(this.addr_table[p].dests[dest], this.addr_table[p].buff);
+            if (cost<minCost) {
+                minCost = cost;
+                minPort = p;
+            }
+        }
+    }
+    return minPort;
+};
+
+function getCost(hopcount, buffer) {
+    return hopcount + buffer/2;
 }
 
 //from https://stackoverflow.com/questions/11301438/return-index-of-greatest-value-in-an-array
