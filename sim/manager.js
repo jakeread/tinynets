@@ -4,10 +4,15 @@ function Manager(self) {
 	this.ports = [];
 	this.numports = 0;
 	this.addr_table = {};
+	this.buffer = [];
+	this.maxBufferSize = 252;
+	this.delay = 100; //ms
 
 	this.setup = function(numports) {
 		this.numports = numports;
 		this.ports = new Array(numports).fill(-1);
+
+		setInterval(this.checkBuffer, this.delay);
 	};
 
 	this.printPorts = function() {
@@ -17,7 +22,6 @@ function Manager(self) {
 	this.connect = function(port, id) {
 
 		if (!(port < this.numports)) {
-			console.log('fuck');
 			return;
 		}
 
@@ -31,9 +35,6 @@ function Manager(self) {
 
 			this.ports[port] = id;
 			self.connect(id);
-		} else {
-			console.log('double fuck');	
-		}
 	};
 
 	this.disconnect = function(port) {
@@ -92,19 +93,29 @@ function Manager(self) {
 		}
 
 		var packet = o.obj;
-		packet.edges += 1;
-
-		if (!this.addr_table.hasOwnProperty(packet.src)) {
-			this.addr_table[packet.src] = new Array(numports).fill(Infinity);
-			this.addr_table[packet.src][port] = packet.edges;
-		} else {
-			if (packet.edges < this.addr_table[packet.src][port]) {
-				this.addr_table[packet.src][port] = packet.edges;
-			}
+		
+		if (this.buffer.length < this.maxBufferSize) {
+			this.buffer.push(packet);
 		}
 
-		this.handlePacket(packet);
+	};
 
+	this.checkBuffer = function() {
+		if (this.buffer.length > 0) {
+			let packet = this.buffer.shift();
+			packet.edges += 1;
+
+			if (!this.addr_table.hasOwnProperty(packet.src)) {
+				this.addr_table[packet.src] = new Array(numports).fill(Infinity);
+				this.addr_table[packet.src][port] = packet.edges;
+			} else {
+				if (packet.edges < this.addr_table[packet.src][port]) {
+					this.addr_table[packet.src][port] = packet.edges;
+				}
+			}
+
+			this.handlePacket(packet);
+		}
 	};
 
 	this.handlePacket = function(packet) {
