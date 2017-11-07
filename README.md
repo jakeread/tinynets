@@ -10,10 +10,13 @@
 ## Packet Structure  
 
 | Type | 8 Bits | 10 Bits | 6 Bits | 10 Bits | 6 Bits | N Bytes | CRC |  
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |  
-| Standard: | 255 | Dest. | # Edges | Src. | # Bytes | Payload … | CRC |  
-| ACK: | 254 | Dest. | # Edges | Src. | x | x| CRC |  
-| Buffer Depth: | [0 - 253] | x | x | x | x | x | x |  
+| --- | --- | --- | --- | --- | --- | --- | --- | 
+| Standard: | 255 | Dest. | Hop Count | Src. | # Bytes | Payload … | CRC |  
+| ACK: | 253 | Dest. | Hop Count | Src. | x | x | CRC |  
+| Buffer Length: | [0 - 251] | x | x | x | x | x | x |  
+
+* previously-flooded Standard Packets have start delimiter 254
+* previously-flooded Acks have start delimiter 252
 
 ## Routing Rules
 
@@ -81,9 +84,15 @@ else:
 
 ## Routing Table
 
-The routing table (or lookup table, LUT) consists of rows of:
-Port | Destination | Hopcount | Current port buffer size
-This is different from standard Ethernet routing tables because it includes the current port buffer size as part of the table entry, allowing for a more robust cost function for use in the path planning algorithm.
+The routing table (or lookup table, LUT) consists of rows of:  
+
+| Destination | Seen on Ports | Min. Hopcount Recorded on Port | Port buffer size |
+
+This is different from standard Ethernet routing tables:
+
+| Ports | Destinations seen on Port |
+
+Because it includes the current port buffer size and number of hops as part of the table entry, allowing for a more robust cost function for use in the path planning algorithm. 
 
 ## Buffer Depth Updates
 Send buffer depth on all ports every q seconds, and every time a packet leaves or arrives
