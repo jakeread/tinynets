@@ -7,13 +7,13 @@
     - Addresses are assigned in software (Ethernet: Hardware Addresses)
     - Can be location-based (e.g. first five MSBs correspond to x, last five correspond to y)
 
-## Packet Structure
+## Packet Structure  
 
-Type | 8 Bits | 10 Bits | 6 Bits | 10 Bits | 6 Bits | N Bytes | CRC  
---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-Standard: | 255 | Dest. | # Edges | Src. | # Bytes | Payload … | CRC 
-ACK: | 254 | Dest. | # Edges | Src. | x | x| CRC
-Buffer Depth: | [0 - 253] | x | x | x | x | x | x |
+| Type | 8 Bits | 10 Bits | 6 Bits | 10 Bits | 6 Bits | N Bytes | CRC |  
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |  
+| Standard: | 255 | Dest. | # Edges | Src. | # Bytes | Payload … | CRC |  
+| ACK: | 254 | Dest. | # Edges | Src. | x | x| CRC |  
+| Buffer Depth: | [0 - 253] | x | x | x | x | x | x |  
 
 ## Routing Rules
 
