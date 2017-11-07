@@ -1,4 +1,6 @@
-# tinynets
+# Tiny Nets
+
+Is a protocol for switched-uart networking in embedded systems. A switched-ethernet w/o spanning trees and with minimum hardware overhead. Increased determinism in the face of network congestion, and reduced message delivery times. 
 
 # Protocol Rules
 
