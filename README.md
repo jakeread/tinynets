@@ -1,8 +1,58 @@
 # Tiny Nets
 
-Is a protocol for switched-uart networking in embedded systems. A switched-ethernet w/o spanning trees and with minimum hardware overhead. Increased determinism in the face of network congestion, and reduced message delivery times. 
+Is a protocol for dynamic realtime networking in embedded systems. A fully meshed network with minimum hardware overhead. Increased determinism in the face of network congestion, and reduced message delivery times.
 
-# Protocol Rules
+## To be Addressed
+
+### What is our Objective Cost Function
+
+##### Packet Delivery Times in the face of Increasing Network Traffic
+
+Packet Delivery Time is the critical metric in Networked Control Systems - small amounts of information (sensor, motor data) needs to be delivered quickly.
+
+In Switched Ethernet, because a Minimum Spanning Tree is created, nodes in a particular layer compete for link-time on the layer above. Message delay time increases linearly with the probability that peers are transmitting at the same time, and with the number of peers on that layer. 
+
+~ plot w/ x-axis is # nodes, transmitting at some % of time, y axis is per-packet delivery time ~
+~ graph is single branch / spanning tree
+
+Critically, adding multi-path to the graph above decreases the slope of this plot. Twice the total link-time on the layer above is available, or Nx, where N is the number of nodes added to the next. 
+
+* state of the art for this? there is lit review to do here - look up TRILL and SPB (shortest path bridging). Much of it comes from Data Center Networks. 
+ - https://datacenteroverlords.com/2011/08/19/multi-path-ethernet-the-flying-cars-of-the-data-center/ 
+ - http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6888840
+ - https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing
+ - https://infoscience.epfl.ch/record/231114/files/main_nr.pdf
+
+Also critically, *it seems that, in a cursory overview* many multi-path techniques in use today basically do dynamic spanning-tree rebuilds. These spanning-tree rebuilds have long convergence times (162ms is excitingly fast). 
+
+However, to increase determinism routes need to be chosen dymanically - so that *very short timescale* changes can be made to a packet, mid-network-traverse, to route around busy switches. Of interest is finding evidence that this is not done in any existing system.
+
+### What are our Constraints
+
+##### Minimum or No Hardware Overhead
+
+System should be arbitrarily implemented on microcontrollers, in software, with system-designer defined hardware and network parameters. No big jacks, no small bits, no proprietary IC's or black box IC's. Open Source Network for Realtime Control.
+
+Network Switching should take place in the same processor as computation for the application - I.E. chips that do motor control should also do network switching. This allows network implementation to shrink into micro-robotics, where singular processors are available at each joint / DOF, and these processors perform network tasks as well as application (control) computation.
+
+### Key Contribution
+
+A real-time cost function, using next-hop buffer size (i.e. business metric) as well as historical hop-count for per-packet dynamic re-routing, that increases packet delivery-time determinism. 
+
+A software-defined network architecture for arbitrary implementation in any embedded system, where computing, physical space, and time is limited. 
+
+### Direct Application
+
+##### Open Source Reconfigurable Hardware Systems
+
+In particular, hardware design for embedded systems in the open source (i.e. non-expert) realm. We want to offer a networking solution that allows open source designers to easily integrate their systems. We take the example of a proliferation of 3D Printer Control systems, none of which interop, and the interfaces between are a PITA. Expand on this. 
+
+# TinyNet Protocol & Architecture
+
+We develop a switch, protocol and implementation of a software-defined network that: 
+ - Does Realtime Route Selection
+ - Does Automatic, Convergence-free Route Discovery and Optimization
+ - Can be arbitrarily implemented in software on numerous microcontrollers
 
 ## Addressing 
     - 10-bit address (1024 Unique in System)
