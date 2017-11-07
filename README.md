@@ -9,9 +9,9 @@
 
 ## Packet Structure
 
-Type | 8 Bits | 10 Bits | 6 Bits | 10 Bits | 6 Bits | N Bytes | CRC 
+Type | 8 Bits | 10 Bits | 6 Bits | 10 Bits | 6 Bits | N Bytes | CRC  
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
-Standard: | 255 | Dest. | # Edges | Src. | # Bytes | Payload … | CRC |
+Standard: | 255 | Dest. | # Edges | Src. | # Bytes | Payload … | CRC 
 ACK: | 254 | Dest. | # Edges | Src. | x | x| CRC
 Buffer Depth: | [0 - 253] | x | x | x | x | x | x |
 
@@ -87,6 +87,12 @@ This is different from standard Ethernet routing tables because it includes the 
 
 ## Buffer Depth Updates
 Send buffer depth on all ports every q seconds, and every time a packet leaves or arrives
+
+## Announcements 
+New arrivals to network do not announce, they simply begin transmitting. Their addresses are recoreded in surrounding switches' tables on their first packet-out.
+
+## Withdrawals
+Buffer Depth Updates are Periodic as well as event-based (on buffer-depth change). When no BDU is heard within a 250ms (or other setting) window, the node is considered withdrawn.
 
 # Hardware
 

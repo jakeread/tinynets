@@ -82,12 +82,7 @@ Now I'm going to connect this to a footprint (TQFP 100) in eagle,
 
 ![footprint](/) 
 
-And I have uploaded these with the fab.lbr component available here -> 
-
-- d the b   
-- jtag pins, tag-connect
-- board interconnect
-- plugs for network ! :| :| 
+For JTAG Pinouts, I referenced the Tag-Connect footprint (available for download from Tag-Connect) and the ATSAM note here - http://www.atmel.com/webdoc/atmelice/atmelice.using_ocd_physical_jtag.html see Fig. 18. They match, so I don't have to do any footwork here. Nice.
 
 I'm going to look at the board interconnect - to decide how many pins I want, I need to look at some applicaitons. I designed a Brushless Speed Controller last year, and this had me maxing out pins (for the first time!) I am going to use that as a starting point, and add I2C, which I know is common, and some other whatsits.
 
@@ -100,9 +95,16 @@ I'm going to look at the board interconnect - to decide how many pins I want, I 
 - DAC x 1
 - Seems like 40 is right, ~ 41. 
 
-OK, the digikey search turned up a DF12 series that I think I like. 0.5mm Pitch - the same as my TQFP - and pretty cheap, and has varying heights. Great. Added to the BOM. 
+I have been tempted to buy some fancy 'mezannine' connectors - but I ended up (after a few cycles) deciding to stick with a 2x20 2.54mm pitch connector. This way just about everyone will have access to the hardware, and I like that! It's also the same pitch as most IDC connectors, breadboards, etc - so hopping around between systems should be easy. I am almost tempted to split the pins a bit so that it could get right into a breadboard - or do an edge-style bb, but this seems like too much give in that direction.
 
 I also need to jot down my notes, here, so that I can put this project on pause:
+
+I'm also interested in adding some memory to the chips... I want to be able to store data in longer terms - mostly routing tables, also eventually configurations. I am going down the rabbit hole, I know. But in debugging, etc, it would be cool if I didn't have to go through large startup sequences. I'll spec it out, I won't write software for it until that's necessary... Here's an SD Holder
+-  WM12834CT-ND 
+and 
+https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/download 
+
+I think there's probably a better in-between - and besides, the point is a little bit to take state out of the controller, not put more in. I need to rethink this, I think. Just write good network schematics that converge quickly, right? This is more overhead than I want.
 
 # THE GITDOWN
 
@@ -110,7 +112,7 @@ I also need to jot down my notes, here, so that I can put this project on pause:
  - 2x20 2.54 Pitch Interconnects
  - 2x4 ** Ports, Shrouded Sockets
  - Timer Circuit
- - JTAG Conn
+ - Flash Memory
  - Port Status LEDS: use Fab Part?
 
 ## Revs on Board
