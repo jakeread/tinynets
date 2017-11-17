@@ -4,7 +4,7 @@
 
 This board is for switching UART signals in tinynet. I wanted to keep some track of what I was doing, while I was doing it. So here it is.
 
-Originally, I had developed a switch on the XMEGA platform. I wanted to get into something a bit heavier duty, as I thought a really neat trick would be to out-perform switched ethernet, outright. I think that in ARM chips there was enough speed to do this. As max. UART bitrate is a function, I went straight to the 300MHz ATSAMx70 chips (M7 cores). Now, being more prudent I would do some tests with these chips first, but I'm not going to. This is foolish, I know that.  
+Originally, I had developed a switch on the XMEGA platform. I wanted to get into something a bit heavier duty, as I thought a really neat trick would be to out-perform switched ethernet, outright (for embedded systems, not for datacenters). I think that in ARM chips there was enough speed to do this. As max. UART bitrate is a function, I went straight to the 300MHz ATSAMx70 chips (M7 cores). Now, being more prudent I would do some tests with these chips first, but I'm not going to. This is foolish, I know that. Max UART on the ATSAMS70 is clk/16, so 18.75Mbps. It's not huge, but it's fast enough for realtime small messages on small systems. In any case, I think the question is about system architecture more than it is about outright performance at this point.
 
 I also think that, for pure switching, an FPGA or PSOC would be a better answer. It probably is. I also want my network switches to double-duty as motor controllers, sensor interfaces, etc - do general embedded-stuff. In another world, where infinite time exists, I would put FPGAs on board with a processor. With the FPGA comes a chance to invent a whole new PHY - w/ 'co-clocking' and auto-maxing bitrates, which is something I am still really interested in implementing, but there are also machines to build. I leave that experiment for another bench.
 
@@ -56,6 +56,8 @@ Here are my notes from selecting a chip for the getting-down:
   - p. 964 - 968 brief usart
   - print p. 1178 -> 1186 -> 1282 pwm
   - p. 1283 -> 1288 afec (adc) brief
+  - p. 158 -> 164 Power
+  - p. 1554 -> 1574 Schematics
 
  - UART max clock is the Peripheral Clock or the PMC PCK - divided by 16. PMC PCK is an external clock, so UART clock can remain independent of processor clock.
  - 
@@ -109,37 +111,11 @@ I think there's probably a better in-between - and besides, the point is a littl
 # THE GITDOWN
 
 ## Need to Spec / Footprint
- - 2x20 2.54 Pitch Interconnects
- - 2x4 ** Ports, Shrouded Sockets
- - Timer Circuit
- - Flash Memory
- - Port Status LEDS: use Fab Part?
 
 ## Revs on Board
- - New Chip who dis
- - QSPI Flash on Chip for Address Table Storage?
-  - On Board for now but don't bother w/ implement yet... get parts...
- - LED Status on TX / RX lines -> do RGB LED
- - Power LED
- - Overall Status LED (also RGB ?)
- - TX / RX / GND Probe Pickups pls
- - Reset Button
- - 'UI' Buttons
- - USB input (also just easy power) - 0.5A from USB 2.0 -> 1.5A available on USB 3.0 Charging Port
- - Otherwise, inject power 3v3 from net, big decouplers on each port,
- - More Robuts Power Input? For Power Electronics we want converter...
-  - would put converter on Lower Mez. board? -> 3v3
-  - on top layer ... usb power will be coming in ... or do 5v input on interconnect, bc will have drv8x- that has 5v buck! 5v -> install 3v3 reg (1A from fab inventory)
 
+# Programming
 
-## DigiKey BOM
- ATSAM | ATSAMS70N20A-AN-ND  
- Diff Flipper | ISL3177EIUZ-ND  
- Tag-Connect JTAG | TC2050-IDC-NL-ND & 1175-1629-ND or 1175-1627-ND 
- IDC Shrouded 8 PIN | 609-5123-ND & 609-3568-ND 
- 2x20 Board Intercon | 609-3013-ND or 609-1779-ND & S9200-ND 
+I was at a loss when I realized I was missing the 10-pin Tag-Connect header I needed to program this. Turns out the chip automatically enumerates as a SAM-BA USB device, and I can use [this](http://www.shumatech.com/web/products/bossa) *I think* to program it. I'll give that a go.
 
- 0.05" option
- IDC Shrouded 10 PIN | 1175-1442-ND & 1175-1629-ND or 1175-1627-ND 
- 10 Line Ribbon | CN217GR-100-ND 
- IDC Compat 2x20 | 1175-1750-ND or 1175-1748-ND & 609-3779-ND 
+update - not easy, or, didn't work immediately. going to bed.

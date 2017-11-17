@@ -6,6 +6,10 @@ Is a protocol for dynamic realtime networking in embedded systems. A fully meshe
 
 ### What is our Objective Cost Function
 
+##### Fairness, Convergence and Optimal Routing (load balancing)
+
+for Minimum Message Time
+
 ##### Packet Delivery Times in the face of Increasing Network Traffic
 
 Packet Delivery Time is the critical metric in Networked Control Systems - small amounts of information (sensor, motor data) needs to be delivered quickly.
@@ -34,6 +38,8 @@ However, to increase determinism routes need to be chosen dymanically - so that 
 System should be arbitrarily implemented on microcontrollers, in software, with system-designer defined hardware and network parameters. No big jacks, no small bits, no proprietary IC's or black box IC's. Open Source Network for Realtime Control.
 
 Network Switching should take place in the same processor as computation for the application - I.E. chips that do motor control should also do network switching. This allows network implementation to shrink into micro-robotics, where singular processors are available at each joint / DOF, and these processors perform network tasks as well as application (control) computation.
+
+Network nodes should not have to know the whole network graph - memory and computaton is limited in the routers.
 
 ### Key Contribution
 
