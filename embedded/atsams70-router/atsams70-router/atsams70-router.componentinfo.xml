@@ -15,7 +15,7 @@
 			<Description></Description>
 			<Files xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\arm\cmsis\5.0.1\CMSIS\Documentation\Core\html\index.html</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\ARM\CMSIS\5.0.1\CMSIS\Documentation\Core\html\index.html</AbsolutePath>
 					<Attribute></Attribute>
 					<Category>doc</Category>
 					<Condition></Condition>
@@ -26,7 +26,7 @@
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\arm\cmsis\5.0.1\CMSIS\Include\</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\ARM\CMSIS\5.0.1\CMSIS\Include\</AbsolutePath>
 					<Attribute></Attribute>
 					<Category>include</Category>
 					<Condition></Condition>
@@ -38,7 +38,7 @@
 				</d4p1:anyType>
 			</Files>
 			<PackName>CMSIS</PackName>
-			<PackPath>C:/Program Files (x86)/Atmel/Studio/7.0/Packs/arm/cmsis/5.0.1/ARM.CMSIS.pdsc</PackPath>
+			<PackPath>C:/Program Files (x86)/Atmel/Studio/7.0/Packs/ARM/CMSIS/5.0.1/ARM.CMSIS.pdsc</PackPath>
 			<PackVersion>5.0.1</PackVersion>
 			<PresentInProject>true</PresentInProject>
 			<ReferenceConditionId>ARMv6_7_8-M Device</ReferenceConditionId>
@@ -57,7 +57,7 @@
 			<CSub></CSub>
 			<CVariant></CVariant>
 			<CVendor>Atmel</CVendor>
-			<CVersion>2.2.0</CVersion>
+			<CVersion>2.1.0</CVersion>
 			<DefaultRepoPath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs</DefaultRepoPath>
 			<DependentComponents xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 				<d4p1:anyType z:Ref="i1" />
@@ -65,99 +65,99 @@
 			<Description></Description>
 			<Files xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\include</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\include</AbsolutePath>
 					<Attribute></Attribute>
 					<Category>include</Category>
 					<Condition>C</Condition>
 					<FileContentHash i:nil="true" />
 					<FileVersion></FileVersion>
-					<Name>samv70/include</Name>
+					<Name>include</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\include\sam.h</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\include\sam.h</AbsolutePath>
 					<Attribute></Attribute>
 					<Category>header</Category>
 					<Condition>C</Condition>
-					<FileContentHash>981+0OUfwjfytAKdANbM2w==</FileContentHash>
+					<FileContentHash>+nWGDIdprf/FoPY0MFeyrQ==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/include/sam.h</Name>
+					<Name>include/sam.h</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\templates\main.c</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\templates\main.c</AbsolutePath>
 					<Attribute>template</Attribute>
 					<Category>source</Category>
 					<Condition>C Exe</Condition>
-					<FileContentHash>yDHsklI7Gky6vrgg8H8TZw==</FileContentHash>
+					<FileContentHash>WJnbDwu6bgdFncmSgLeAng==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/templates/main.c</Name>
+					<Name>templates/main.c</Name>
 					<SelectString>Main file (.c)</SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\templates\main.cpp</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\templates\main.cpp</AbsolutePath>
 					<Attribute>template</Attribute>
 					<Category>source</Category>
 					<Condition>C Exe</Condition>
 					<FileContentHash>nU+WlKcYaWh0AWBBS+WVpA==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/templates/main.cpp</Name>
+					<Name>templates/main.cpp</Name>
 					<SelectString>Main file (.cpp)</SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\gcc\gcc\startup_samv70n20.c</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\gcc\gcc\startup_sams70n20.c</AbsolutePath>
 					<Attribute>config</Attribute>
 					<Category>source</Category>
 					<Condition>GCC Exe</Condition>
-					<FileContentHash>c943xq5LWJbTvU3+8ePI5w==</FileContentHash>
+					<FileContentHash>6q8xLu662f+xKBC1jSYvuQ==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/gcc/gcc/startup_samv70n20.c</Name>
+					<Name>gcc/gcc/startup_sams70n20.c</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\gcc\system_samv70n20.c</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\gcc\system_sams70n20.c</AbsolutePath>
 					<Attribute>config</Attribute>
 					<Category>source</Category>
 					<Condition>GCC Exe</Condition>
-					<FileContentHash>uKvTt3ywPp3moQLX0G9ZnQ==</FileContentHash>
+					<FileContentHash>rnebdw90KSg5+pnbt/iIAg==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/gcc/system_samv70n20.c</Name>
+					<Name>gcc/system_sams70n20.c</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\gcc\gcc\samv70n20_flash.ld</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\gcc\gcc\sams70n20_flash.ld</AbsolutePath>
 					<Attribute>config</Attribute>
 					<Category>linkerScript</Category>
 					<Condition>GCC Exe</Condition>
-					<FileContentHash>ueyUL+1pAiOit4K/u6p+Mw==</FileContentHash>
+					<FileContentHash>rdMEZVEyVLL+aJxyTQ6KCA==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/gcc/gcc/samv70n20_flash.ld</Name>
+					<Name>gcc/gcc/sams70n20_flash.ld</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 				<d4p1:anyType i:type="FileInfo">
-					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMV70_DFP\2.2.82\samv70\gcc\gcc\samv70n20_sram.ld</AbsolutePath>
+					<AbsolutePath>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\SAMS70_DFP\2.1.72\gcc\gcc\sams70n20_sram.ld</AbsolutePath>
 					<Attribute>config</Attribute>
 					<Category>other</Category>
 					<Condition>GCC Exe</Condition>
-					<FileContentHash>I4DGUyfC3yott98mJ+Z8hw==</FileContentHash>
+					<FileContentHash>4FzuU+YlfBAf/TXn/mDNwg==</FileContentHash>
 					<FileVersion></FileVersion>
-					<Name>samv70/gcc/gcc/samv70n20_sram.ld</Name>
+					<Name>gcc/gcc/sams70n20_sram.ld</Name>
 					<SelectString></SelectString>
 					<SourcePath></SourcePath>
 				</d4p1:anyType>
 			</Files>
-			<PackName>SAMV70_DFP</PackName>
-			<PackPath>C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/SAMV70_DFP/2.2.82/Atmel.SAMV70_DFP.pdsc</PackPath>
-			<PackVersion>2.2.82</PackVersion>
+			<PackName>SAMS70_DFP</PackName>
+			<PackPath>C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/SAMS70_DFP/2.1.72/Atmel.SAMS70_DFP.pdsc</PackPath>
+			<PackVersion>2.1.72</PackVersion>
 			<PresentInProject>true</PresentInProject>
-			<ReferenceConditionId>ATSAMV70N20</ReferenceConditionId>
+			<ReferenceConditionId>ATSAMS70N20</ReferenceConditionId>
 			<RteComponents xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
 				<d4p1:string></d4p1:string>
 			</RteComponents>

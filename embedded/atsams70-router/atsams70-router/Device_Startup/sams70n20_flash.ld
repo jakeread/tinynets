@@ -1,7 +1,7 @@
 /**
  * \file
  *
- * \brief GCC linker script (sram) for ATSAMV70N20
+ * \brief GCC linker script (flash) for ATSAMS70N20
  *
  * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
  *
@@ -26,7 +26,7 @@
  */
 
 /*------------------------------------------------------------------------------
- *      Linker script for running in internal SRAM on the ATSAMV70N20
+ *      Linker script for running in internal FLASH on the ATSAMS70N20
  *----------------------------------------------------------------------------*/
 
 OUTPUT_FORMAT("elf32-littlearm", "elf32-littlearm", "elf32-littlearm")
@@ -95,7 +95,15 @@ SECTIONS
 
         . = ALIGN(4);
         _efixed = .;            /* End of text section */
-    } > ram
+    } > rom
+
+    /* .ARM.exidx is sorted, so has to go in its own output section.  */
+    PROVIDE_HIDDEN (__exidx_start = .);
+    .ARM.exidx :
+    {
+      *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+    } > rom
+    PROVIDE_HIDDEN (__exidx_end = .);
 
     . = ALIGN(4);
     _etext = .;
@@ -143,16 +151,7 @@ SECTIONS
         _estack = .;
     } > ram
 
-    /* .ARM.exidx is sorted, so has to go in its own output section.  */
-    PROVIDE_HIDDEN (__exidx_start = .);
-    .ARM.exidx :
-    {
-      *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-    } > ram
-    PROVIDE_HIDDEN (__exidx_end = .);
-
     . = ALIGN(4);
     _end = . ;
     _ram_end_ = ORIGIN(ram) + LENGTH(ram) - 1 ;
 }
-

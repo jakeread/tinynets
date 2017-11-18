@@ -1,7 +1,7 @@
 /**
  * \file
  *
- * \brief GCC startup file for ATSAMV70N20
+ * \brief GCC startup file for ATSAMS70N20
  *
  * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
  *
@@ -25,7 +25,7 @@
  *
  */
 
-#include "samv70n20.h"
+#include "sams70n20.h"
 
 /* Initialize segments */
 extern uint32_t _sfixed;
@@ -44,20 +44,17 @@ int main(void);
 
 void __libc_init_array(void);
 
-/* Reset handler */
-void Reset_Handler(void);
-
 /* Default empty handler */
 void Dummy_Handler(void);
 
 /* Cortex-M7 core handlers */
-void NonMaskableInt_Handler ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
+void NMI_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void HardFault_Handler    ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void MemoryManagement_Handler ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
+void MemManage_Handler    ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void BusFault_Handler     ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void UsageFault_Handler   ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void SVCall_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void DebugMonitor_Handler ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
+void SVC_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
+void DebugMon_Handler     ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void PendSV_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void SysTick_Handler      ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 
@@ -94,8 +91,6 @@ void PWM0_Handler         ( void ) __attribute__ ((weak, alias("Dummy_Handler"))
 void ICM_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void ACC_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void USBHS_Handler        ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void MCAN0_Handler        ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void MCAN1_Handler        ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void AFEC1_Handler        ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TWIHS2_Handler       ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void SPI1_Handler         ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
@@ -109,7 +104,6 @@ void TC8_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler"))
 void TC9_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TC10_Handler         ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TC11_Handler         ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
-void MLB_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void AES_Handler          ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void TRNG_Handler         ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
 void XDMAC_Handler        ( void ) __attribute__ ((weak, alias("Dummy_Handler")));
@@ -125,18 +119,18 @@ const DeviceVectors exception_table = {
         .pvStack = (void*) (&_estack),
 
         .pfnReset_Handler              = (void*) Reset_Handler,
-        .pfnNonMaskableInt_Handler     = (void*) NonMaskableInt_Handler,
+        .pfnNMI_Handler                = (void*) NMI_Handler,
         .pfnHardFault_Handler          = (void*) HardFault_Handler,
-        .pfnMemoryManagement_Handler   = (void*) MemoryManagement_Handler,
+        .pfnMemManage_Handler          = (void*) MemManage_Handler,
         .pfnBusFault_Handler           = (void*) BusFault_Handler,
         .pfnUsageFault_Handler         = (void*) UsageFault_Handler,
-        .pvReservedC9                  = (void*) (0UL), /* Reserved */
-        .pvReservedC8                  = (void*) (0UL), /* Reserved */
-        .pvReservedC7                  = (void*) (0UL), /* Reserved */
-        .pvReservedC6                  = (void*) (0UL), /* Reserved */
-        .pfnSVCall_Handler             = (void*) SVCall_Handler,
-        .pfnDebugMonitor_Handler       = (void*) DebugMonitor_Handler,
-        .pvReservedC3                  = (void*) (0UL), /* Reserved */
+        .pfnReserved1_Handler          = (void*) (0UL), /* Reserved */
+        .pfnReserved2_Handler          = (void*) (0UL), /* Reserved */
+        .pfnReserved3_Handler          = (void*) (0UL), /* Reserved */
+        .pfnReserved4_Handler          = (void*) (0UL), /* Reserved */
+        .pfnSVC_Handler                = (void*) SVC_Handler,
+        .pfnDebugMon_Handler           = (void*) DebugMon_Handler,
+        .pfnReserved5_Handler          = (void*) (0UL), /* Reserved */
         .pfnPendSV_Handler             = (void*) PendSV_Handler,
         .pfnSysTick_Handler            = (void*) SysTick_Handler,
 
@@ -176,9 +170,9 @@ const DeviceVectors exception_table = {
         .pfnICM_Handler                = (void*) ICM_Handler,    /* 32 Integrity Check Monitor */
         .pfnACC_Handler                = (void*) ACC_Handler,    /* 33 Analog Comparator Controller */
         .pfnUSBHS_Handler              = (void*) USBHS_Handler,  /* 34 USB High-Speed Interface */
-        .pfnMCAN0_Handler              = (void*) MCAN0_Handler,  /* 35 Controller Area Network */
+        .pvReserved35                  = (void*) (0UL),          /* 35 Reserved */
         .pvReserved36                  = (void*) (0UL),          /* 36 Reserved */
-        .pfnMCAN1_Handler              = (void*) MCAN1_Handler,  /* 37 Controller Area Network */
+        .pvReserved37                  = (void*) (0UL),          /* 37 Reserved */
         .pvReserved38                  = (void*) (0UL),          /* 38 Reserved */
         .pvReserved39                  = (void*) (0UL),          /* 39 Reserved */
         .pfnAFEC1_Handler              = (void*) AFEC1_Handler,  /* 40 Analog Front-End Controller */
@@ -194,7 +188,7 @@ const DeviceVectors exception_table = {
         .pfnTC9_Handler                = (void*) TC9_Handler,    /* 50 Timer Counter */
         .pfnTC10_Handler               = (void*) TC10_Handler,   /* 51 Timer Counter */
         .pfnTC11_Handler               = (void*) TC11_Handler,   /* 52 Timer Counter */
-        .pfnMLB_Handler                = (void*) MLB_Handler,    /* 53 Media LB */
+        .pvReserved53                  = (void*) (0UL),          /* 53 Reserved */
         .pvReserved54                  = (void*) (0UL),          /* 54 Reserved */
         .pvReserved55                  = (void*) (0UL),          /* 55 Reserved */
         .pfnAES_Handler                = (void*) AES_Handler,    /* 56 Advanced Encryption Standard */

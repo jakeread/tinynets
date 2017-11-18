@@ -1,7 +1,7 @@
 /**
  * \file
  *
- * \brief System configuration file for ATSAMV70N20
+ * \brief System configuration file for ATSAMS70N20
  *
  * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
  *
@@ -25,7 +25,7 @@
  *
  */
 
-#include "samv70n20.h"
+#include "sams70n20.h"
 
 /** \cond 0 */
 /* *INDENT-OFF* */
@@ -39,7 +39,7 @@ extern "C" {
  * Initial system clock frequency. The System RC Oscillator (RCSYS) provides
  *  the source for the main clock at chip startup.
  */
-#define __SYSTEM_CLOCK    (12000000)
+#define __SYSTEM_CLOCK    (4000000)
 
 uint32_t SystemCoreClock = __SYSTEM_CLOCK;  /*!< System Clock Frequency (Core Clock)*/
 

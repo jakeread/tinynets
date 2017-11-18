@@ -112,7 +112,10 @@ I think there's probably a better in-between - and besides, the point is a littl
 
 ## Need to Spec / Footprint
 
-## Revs on Board
+## Incremental
+
+- GND Vias near 3v3 Reg
+- Do Reset Button
 
 # Programming
 
