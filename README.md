@@ -49,7 +49,7 @@ It will be difficult to perform one-to-one comparisons between our network and t
 
 However, we can offer analysis as to why we believe our approach is substantially better than current offerings - or has a better problem-solution fit than other technologies. 
 
-**Realtime / Convergence Free Multipath Routing**
+**Realtime / Convergence Free Multipath Routing in a Distance-Vector Routing Protocol**
 - Existing Multipath Routing Technologies offer multipath routing (which eliminates the switching-bottleneck issues associated with switched ethernet), however, they do so using link-state routing that requires each router to share common knowledge about the complete network graph. In the face of link outages or router failures, networks must re-converge - a process that interrupts flows and causes massive increases, or complete failures, in message deliveries. For example
  - ECMP (Equal Cost Multipath Routing)
  - OSPF (Open Shortest Path First)
@@ -58,14 +58,15 @@ However, we can offer analysis as to why we believe our approach is substantiall
 
 We seek to demonstrate that these re-convergence times would cause operational failure in NCS, thus eliminating ECMP and OSPF as possible solutions to the NCS problem. 
 
-@Dougie 
+**@Dougie** 
 - can you try to work through the literature to build this argument, including references to measured convergence times? actually, I looked at the wikipedia pages (bad scholar!) for most of these protocols, and I think that simply stating that these are all link-state routing policies allows us to poo-poo them for convergence - the key would be to find particular references to expected scales and convergence times. 
 - also, many of these protocols add information to the header, and in the interest of minimizing Message Delivery Times this is BNB (bad news bears)
 
-**Switching Bottlenecks**
+**Avoiding Switching Bottlenecks with Multipath Routing**
 - In a careful literature review and analysis, we will show that Layer-2 Solutions (switched ethernet) necessarily cause switching bottlenecks that create Single Points of Failure and increases in Message Delivery Times to NCS.
 
-@Nick, can you review that worst-case-packet-delay-time paper and see if we can add more beef to this argument, including some charts & graphs & references?
+**@Nick**
+- can you review that worst-case-packet-delay-time paper and see if we can add more beef to this argument, including some charts & graphs & references?
 
 ## Our Cost Functions
 
@@ -104,13 +105,15 @@ In particular, hardware design for embedded systems in the open source (i.e. non
 
 # TinyNet Protocol & Architecture
 
-We develop a switch, protocol and implementation of a software-defined network that: 
+We develop a router, protocol and implementation of a network that: 
+ - Implements a Multipath Distance-Vector Routing Protocol
  - Does Realtime Route Selection
  - Does Automatic, Convergence-free Route Discovery and Optimization
+ - Is robust in the face of link losses and router failures
  - Can be arbitrarily implemented in software on numerous microcontrollers
 
 ## Addressing 
-    - 10-bit address (1024 Unique in System)
+    - 10-bit address (1024 Unique in System, scalable by systems designers at the cost of larger packet size)
     - Addresses are assigned in software (Ethernet: Hardware Addresses)
     - Can be location-based (e.g. first five MSBs correspond to x, last five correspond to y)
 
