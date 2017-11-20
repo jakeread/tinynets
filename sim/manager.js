@@ -11,7 +11,6 @@ function Manager(self) {
     this.addr_table = {};
     this.buffer = [];
     this.maxBufferSize = 252;
-    this.delay = 1000; //ms
     this.seenFloods = [];
 
     this.checkBuffer = function() {
@@ -31,7 +30,6 @@ function Manager(self) {
                 buff: 0
             };
         }
-        setInterval(this.checkBuffer, this.delay);
     };
 
     this.printPorts = function() {

@@ -3,6 +3,7 @@ var net = require("./network"),
 
 const startupDelay = 100;
 const connectDelay = 100;
+const bufferCheckDelay = 1000;
 
 // INITIALIZE NETWORK TOPOLOGY HERE
 var initTopology = [
@@ -26,6 +27,9 @@ for (let i = 0; i < initTopology.length; i++) {
 		});
 		this.delay(500, function() {
 			this.manager.printPorts();
+		});
+		this.tick(bufferCheckDelay, function() {
+			this.manager.checkBuffer();
 		});
 	});
 	for (let j = 0; j < initTopology[i].length; j++) {
