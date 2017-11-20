@@ -11,8 +11,16 @@ function Manager(self) {
     this.addr_table = {};
     this.buffer = [];
     this.maxBufferSize = 252;
-    this.delay = 100; //ms
+    this.delay = 1000; //ms
     this.seenFloods = [];
+
+    this.checkBuffer = function() {
+        console.log(`about to check buffer of node ${self.id}`);
+        if (this.buffer.length > 0) {
+            this.handlePacket(this.buffer.shift());
+        }
+//        console.log(`checked buffer of node ${self.id}`);
+    };
 
     this.setup = function(numports) {
         this.numports = numports;
@@ -27,7 +35,7 @@ function Manager(self) {
     };
 
     this.printPorts = function() {
-        console.log(this.ports);
+//        console.log(this.ports);
     };
 
     this.connect = function(port, id) {
@@ -41,7 +49,7 @@ function Manager(self) {
                 self.disconnect(prevId);
             }
 
-            console.log('im '+ self.id + ' connecting to ' + id);
+//            console.log('im '+ self.id + ' connecting to ' + id);
 
             this.ports[port] = id;
             self.connect(id);
@@ -91,7 +99,7 @@ function Manager(self) {
             this.handlePacket(packet);
             return;
         }
-
+        self.log(`checkpoint`);
         if (port < this.numports && this.ports[port] >= 0) {
             self.send(this.ports[port], 'packet', {name: 'packet', obj: packet});
         }
@@ -108,24 +116,20 @@ function Manager(self) {
             this.buffer.push(packet);
 	}
     };
-    
-    this.checkBuffer = function() {
-        if (this.buffer.length > 0) {
-            this.handlePacket(this.buffer.shift());
-        }
-    };
 
     this.handlePacket = function(packet) {
         // If LUT does not already have the source address, add the entry
-        if (packet.start === STD || packet.start === ACK || packet.start === STF || packet.start === ACF) {
-            if (!this.addr_table[packet.port].dests.hasOwnProperty(packet.src) || this.addr_table[packet.port].dests[packet.src]>packet.hopcount) {
-                this.addr_table[packet.port].dests[packet.src] = packet.hopcount;
-            }
+        if ( (packet.start === STD || packet.start === ACK || packet.start === STF || packet.start === ACF)                                             // If this is not a buffer update
+           && packet.src!==self.id                                                                                                                      // ...or a packet from me
+           && (!this.addr_table[packet.port].dests.hasOwnProperty(packet.src) || this.addr_table[packet.port].dests[packet.src]!==packet.hopcount) ) {  // ...and my entry for the source is invalid
+            this.addr_table[packet.port].dests[packet.src] = packet.hopcount;
         }
         
         if (packet.start === STD) {				// Standard Packet
             if (packet.dest === self.id) {                                      // If I am destination
-                // Process packet
+                self.log(`${self.id} got message ${packet.data}`);
+                const nextPort = getMinCostPort(packet.src);                    // Pick the port to send ACK based off minimizing cost
+                this.sendPacket(ACK, packet.src, 0, self.id, nextPort);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -140,7 +144,7 @@ function Manager(self) {
             }
         } else if (packet.start === ACK) {			// Acknowledgement
             if (packet.dest === self.id) {                                      // If I am destination
-                // Process ACK
+                self.log(`${self.id} got ACK from ${packet.src}`);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -154,8 +158,14 @@ function Manager(self) {
                 }
             }
         } else if (packet.start === STF) {			// Standard Flood
+            if (this.addr_table[packet.port].dests.hasOwnProperty(packet.dest)) // If I thought this port could send to destination, remove it
+                delete this.addr_table[packet.port].dests[packet.dest];         // ...if that node had known, it wouldn't have forwarded it as a flood.
+            if (this.seenFloods.includes(thisFlood))                            // If I have seen it before, don't forward
+                return;
             if (packet.dest === self.id) {                                      // If I am destination
-                // Process packet
+                self.log(`${self.id} got message ${packet.data}`);
+                const nextPort = getMinCostPort(packet.src);                    // Pick the port to send ACK based off minimizing cost
+                this.sendPacket(ACK, packet.src, 0, self.id, nextPort);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 const thisFlood = {                                             // Static information within packet for comparison
@@ -163,8 +173,6 @@ function Manager(self) {
                     src: packet.src,
                     data: packet.data
                 };
-                if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
-                    return;
                 this.seenFloods.push(thisFlood);                                // Remember the packet
                 
                 const nextPort = getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -178,8 +186,10 @@ function Manager(self) {
                 }
             }
         } else if (packet.start === ACF) {			// ACK Flood
+            if (this.addr_table[packet.port].dests.hasOwnProperty(packet.dest)) // If I thought this port could send to destination, remove it
+                delete this.addr_table[packet.port].dests[packet.dest];         // ...if that node had known, it wouldn't have forwarded it as a flood.
             if (packet.dest === self.id) {                                      // If I am destination
-                // Process packet
+                self.log(`${self.id} got ACK from ${packet.src}`);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 const thisFlood = {                                             // Static information within packet for comparison

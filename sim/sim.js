@@ -6,11 +6,8 @@ const connectDelay = 100;
 
 // INITIALIZE NETWORK TOPOLOGY HERE
 var initTopology = [
-	[1, 2, 3, 4],
-	[2, 3, 4, 0],
-	[3, 4, 0, 1],
-	[4, 0, 1, 2],
-	[0, 1, 2, 3]
+	[0],
+	[1]
 ];
 
 // Don't touch this code
@@ -46,12 +43,12 @@ for (let i = 0; i < initTopology.length; i++) {
 
 // PUT CUSTOM CODE HERE:
 
-send(0, 1, 'hi!', 1000);
-send(3, 3, 'what is up?', 1500);
-disconnect(0, 1, 2, 2, 1700);
-send(2, 2, 'You cannot see this cause we are not connected', 2000);
-send(2, 0, 'we are friends now', 2500);
-
+//send(0, 1, 'hi!', 1000);
+//send(3, 3, 'what is up?', 1500);
+//disconnect(0, 1, 2, 2, 1700);
+//send(2, 2, 'You cannot see this cause we are not connected', 2000);
+//send(2, 0, 'we are friends now', 2500);
+sendPacket(0,1,1,"Hello 1!",0);
 
 //Don't add stuff below this:
 
@@ -82,13 +79,13 @@ function sendPacket(from, dest, size, data, delay, periodic=false) {
 	if (periodic) {
 		clients[from].init(function() {
 			this.tick(delay, function() {
-				this.manager.sendPacket(dest, size, data);
+				this.manager.sendPacket(252, dest, -1, undefined, size, data, -1);
 			});
 		});
 	} else {
 		clients[from].init(function() {
 			this.delay(delay, function() {
-				this.manager.sendPacket(dest, size, data);
+				this.manager.sendPacket(252, dest, -1, undefined, size, data, -1);
 			});
 		});
 	}
