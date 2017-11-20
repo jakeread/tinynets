@@ -7,8 +7,11 @@ const bufferCheckDelay = 1000;
 
 // INITIALIZE NETWORK TOPOLOGY HERE
 var initTopology = [
-	[0],
-	[1]
+	[1,2],
+	[0,3],
+        [0,4],
+        [1,4],
+        [3,2]
 ];
 
 // Don't touch this code
@@ -52,7 +55,8 @@ for (let i = 0; i < initTopology.length; i++) {
 //disconnect(0, 1, 2, 2, 1700);
 //send(2, 2, 'You cannot see this cause we are not connected', 2000);
 //send(2, 0, 'we are friends now', 2500);
-sendPacket(0,1,1,"Hello 1!",0);
+sendPacket(0,4,1,"Hello Four!",1000);
+sendPacket(0,4,1,"I love you, Four!",6000)
 
 //Don't add stuff below this:
 
