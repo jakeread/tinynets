@@ -136,27 +136,23 @@ We develop a router, protocol and implementation of a network that:
 On Packet Received:
 ```swift
 
-if hop count > max:
-    kill packet
-
-increment hop count
+if the packet is not a buffer update:
+	update the LUT using packet src. and hop count
 
 if packet is standard:
-    if LUT does not already have source address:
-        add entry to LUT
     if I am destination:
         process data in packet
+		reply with ACK
     else:
+		increment hop count
         if LUT has destination address:
             send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer over all ports
         else:
             send packet to all ports as standard flood
 
 elseif packet is ack:
-    if LUT does not already have source address:
-        add entry to LUT
     if I am destination:
-        process acknowledgement, increment window
+        process acknowledgement
     else:
         increment hop count
         if LUT has destination address:
@@ -165,28 +161,26 @@ elseif packet is ack:
             send packet to all ports as ack flood
 
 elseif packet is standard flood:
-    if LUT does not already have source address:
-        add entry to LUT
-    if I am destination:
-        process data in packet
-        open window for duplicate packet elimination
-        check previous duplicates
-    else:
-        if LUT has destination address:
-            send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer over all ports
-        else:
-            send packet to all ports
+	remove packet src. from LUT at that port if it exists
+	if I have not yet seen this flood:
+		if I am destination:
+			process data in packet
+			reply with ACK
+		else:
+			increment hop count
+			if LUT has destination address:
+				send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer as standard packet
+			else:
+				send packet to all ports
 
 elseif packet is ack flood
-    if LUT does not already have source address:
-        add entry to LUT
+    remove packet src. from LUT at that port if it exists
     if I am destination:
-        process acknowledgement, increment window
-        open timer for duplicate ack elimination
-        check previous duplicates
+        process acknowledgement
     else:
+		increment hop count
         if LUT has destination address:
-            send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer over all ports
+            send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer as standard ACK
         else:
             send packet to all ports
 
