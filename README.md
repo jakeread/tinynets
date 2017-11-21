@@ -65,8 +65,11 @@ We seek to demonstrate that these re-convergence times would cause operational f
 **Avoiding Switching Bottlenecks with Multipath Routing**
 - In a careful literature review and analysis, we will show that Layer-2 Solutions (switched ethernet) necessarily cause switching bottlenecks that create Single Points of Failure and increases in Message Delivery Times to NCS.
 
-**@Nick**
-- can you review that worst-case-packet-delay-time paper and see if we can add more beef to this argument, including some charts & graphs & references?
+From [worst-case-packet-delay-time paper], we know that the worst case communication delay over Ethernet occurs when the number of frames attempting to communicate over a single switch is the greatest. For example, when a spanning tree organizes itself such that 24 stations are connected to a single switching hub, a typical 144-bit message with a bit time of 0.1 us would take more than 1.5 ms to finish sending a single packet from all stations. If the packets could be interconnected without the tree structure required by Ethernet/IP, transmission time could be brought down to just over 300 us. 
+
+![Effects of Varying Parameters on Communication Time](https://github.com/jakeread/tinynets/blob/master/document/worst-case-ethernet.png)
+
+The above figure compares strategies for reducing communication time. The parameter which has the largest parameter is the number of frames being communicated over a single switch. This is to be expected, since that parameter will have a multiplicative effect on the queuing delay. By sacrificing the spanning tree topology and leveraging multipath routing without the added processing delays and stateful nature of ECMP or other link-state routing methodologies, we will drastically reduce frame count and, therefore, communication time.
 
 ## Our Cost Functions
 
