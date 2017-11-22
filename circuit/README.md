@@ -112,15 +112,15 @@ I have been tempted to buy some fancy 'mezannine' connectors - but I ended up (a
 
 OK, Here's my schematic
 
-![schematic](https://raw.githubusercontent.com/jakeread/tinynets/master/document/atsam-router-schematic.png)
+![schematic](https://github.com/jakeread/tinynets/blob/master/document/atsam-router-schematic.png)
 
 And the board
 
-![routed](https://raw.githubusercontent.com/jakeread/tinynets/master/document/atsam-router-board.png)
+![routed](https://github.com/jakeread/tinynets/blob/master/document/atsam-router-board.png)
 
 Fabricated
 
-![fabbed](https://raw.githubusercontent.com/jakeread/tinynets/master/document/one-atsam-router.jpg)
+![fabbed](https://github.com/jakeread/tinynets/blob/master/document/one-atsam-router.jpg)
 
 ## Incremental
 
@@ -139,7 +139,7 @@ Fabricated
 
 It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...
 
-![fabbed](https://raw.githubusercontent.com/jakeread/tinynets/master/circuit/images/swd-not-jtag.jpg)
+![hack alert](https://github.com/jakeread/tinynets/blob/master/circuit/images/swd-not-jtag.jpg)
 
 ### PIO
 
