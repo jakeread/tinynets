@@ -1,36 +1,40 @@
-# Ethernet Killer Switch
+# A Router for TinyNet
 
 ## Why
 
-This board is for switching UART signals in tinynet. I wanted to keep some track of what I was doing, while I was doing it. So here it is.
+This is board for switching UART signals in TinyNet. I wanted to keep some track of what I was doing, while I was doing it. So here it is.
 
-Originally, I had developed a switch on the XMEGA platform. I wanted to get into something a bit heavier duty, as I thought a really neat trick would be to out-perform switched ethernet, outright (for embedded systems, not for datacenters). I think that in ARM chips there was enough speed to do this. As max. UART bitrate is a function, I went straight to the 300MHz ATSAMx70 chips (M7 cores). Now, being more prudent I would do some tests with these chips first, but I'm not going to. This is foolish, I know that. Max UART on the ATSAMS70 is clk/16, so 18.75Mbps. It's not huge, but it's fast enough for realtime small messages on small systems. In any case, I think the question is about system architecture more than it is about outright performance at this point.
+Originally, I had developed a switch on the XMEGA platform. I wanted to get into something a bit heavier duty, as I thought a really neat trick would be to out-perform switched ethernet, outright (for network control systems, not for datacenters). I think that in ARM chips there was enough speed to do this. Maximum UART bitrate is a function of the core clock speed (and in this case, the peripheral clock speed). I went straight to the 300MHz ATSAMx70 chips (M7 cores).
 
-I also think that, for pure switching, an FPGA or PSOC would be a better answer. It probably is. I also want my network switches to double-duty as motor controllers, sensor interfaces, etc - do general embedded-stuff. In another world, where infinite time exists, I would put FPGAs on board with a processor. With the FPGA comes a chance to invent a whole new PHY - w/ 'co-clocking' and auto-maxing bitrates, which is something I am still really interested in implementing, but there are also machines to build. I leave that experiment for another bench.
+Now, being more prudent I would do some tests with these chips first, but I'm not going to. This is foolish, I know that. Max UART on the ATSAMS70 is clk/16, so 18.75Mbps. It's not huge (relative ethernet), but it's fast enough for realtime small messages on small systems. In any case, I think the question is about system architecture more than it is about outright performance at this point.
+
+I also think that, for pure switching, an FPGA or PSOC would be a better answer. It probably is. I want to experiment with those during Networks week in [how to make](http://fab.cba.mit.edu/classes/863.17/CBA/people/jakeread/).
+
+However, I also want my network switches to double-duty as motor controllers, sensor interfaces, etc - do general embedded-stuff. In another world, where infinite time exists, I would put FPGAs on board with a processor. With the FPGA comes a chance to invent a whole new PHY - w/ 'co-clocking' and auto-maxing bitrates, which is something I am still really interested in implementing, but there are also machines to build. I leave that experiment for another bench.
 
 ## The Chip
 
-Here are my notes from selecting a chip for the getting-down:
+First order was picking the right Microcontroller for the job. I want a lot of things, and I expect this chip to become the heart of *much* of the work I'll do during the next two years, so the datasheet stakes have never been so high.
 
-# SAM Selection
-
-- Want a chip with: 
+**I want a chip with: **
  - 5+ uarts
  - Big Clock Speed
- - tite DMA
- - prgmemable
- - probably M4
+ - DMA (direct memory access - peripherals write right into memory)
+ - PWM's
+ - ADC's
+ - I2C
+ - SPI
+ - PIO (parallel input / output) is really exciting for communication
 
-# M7's
+##### M7's
 
-## SAM E
+I ended up looking through Atmel's M4 and M7 Series of chips. These seem reasonably priced (actually cheap relative STM's). They're ARM, so the toolchain should be friendly to others. The M7's have a 300MHz clock that I'm getting childishly excited about.
 
-## SAM S
+My one issue is that they are a bit too fancy, and don't have exactly the peripherals I want. The XMEGAs have like 12 UARTS etc, the M7's max out at 5, even with 144 pins. 
 
-## SAM V71
- - mega, ultra, $10
+I can also tell that programming these is going to be ... well ... less straightforward.
 
-## GO FOR
+##### GO FOR
  - ATSAME70 - series - or ATSAMS70
   - E70 is 'industrial' - and S70 lacks an Ethernet Phy, but seems like it's way more popular...
  - oodles of peripherals
@@ -39,13 +43,13 @@ Here are my notes from selecting a chip for the getting-down:
  - did I mention peripherals?
  - $8 ... a good middle ground 
 
-## ATSAMS70N20
+#### ATSAMS70N20
  - Exact PN  ATSAMS70N20A-AN 
  - N19: 512kb Flash, N20: 1024, N21: 2048
  - 300MHz
  - OOF: Need S70N-series for USART / SPI (has 100 pins :|)
  - Do LQFP for 14.5x14.5mm IC: TFBGA available, is 9x9mm
-
+ - **Reads the datasheet**
   - print p. 1 -> 31 pins
   - print p. 77 -> 84 debug
   - p. 279 -> 346 clock / pmic
@@ -60,9 +64,12 @@ Here are my notes from selecting a chip for the getting-down:
   - p. 1554 -> 1574 Schematics
 
  - UART max clock is the Peripheral Clock or the PMC PCK - divided by 16. PMC PCK is an external clock, so UART clock can remain independent of processor clock.
- - 
+ - So we can have (as measured) 22.8Mbps UART - into high-speed bouncy signal land. Exciting.
 
-## Want coming off-board
+## Bonus Breakout
+
+I want the following (or similar) pinouts coming off of the network node - to do *other stuff* with - i.e. motor control, sensing etc. Particularely, in a first rev of this board I am designing alongside my [bldc motor driver](https://gitlab.cba.mit.edu/jakeread/mkbldcdriver) project. 
+
  - 1x UART
  - 1x SPI w/ 4 cs, 1 for slave select
  - 1-2x i2c
@@ -70,19 +77,23 @@ Here are my notes from selecting a chip for the getting-down:
  - all dac
  - 8-12 adc 
 
+In the end, at this iteration, I have
 
-## USART 
- - http://asf.atmel.com/docs/latest/sam.drivers.usart.usart_synchronous_example.sam3u_ek/html/index.html 
+ - 1 UART
+ - 1 I2C (I2C and UART share one pin, so cannot be used at the same time)
+ - 1 SPI w/ 2 Chip Selects
+ - 1 USART w/ 2 Chip Selects (USART can be configured to do UART, or SPI, or a Clocked Serial line of your design)
+ - 8 PWM's on 4 channels (hi/lo - this is designed for driving half bridges for motor control)
+ - 4 Analog to Digital Converters (I am less pleased with this and want more...)
+ - 3 Spare GPIO
 
-## OK 
+Notes on this so far
+ - More ADC's please
+ - Pin headers could be split - to be breadboard friendly, and to offer some stability between layers
 
-The first thing I did was to get into the datasheet. You can see that in the notes above. I am doing pinouts, figuring what I want on board. I am going to set this up as a kind of modular getdown, where the switch has a board interconnect, and I can build other PCBs w/ different hardwares to ride below. I.E motor controllers, sensor interfaces, human interfaces (yeeees). Picking the set of pins I wanted to pull out of the chip was actually a bit painful. I'm sure I'll go through this more than once.
+# Board Design
 
-![img of schematic](/)
-
-Now I'm going to connect this to a footprint (TQFP 100) in eagle,
-
-![footprint](/) 
+The first thing I did was to get into the datasheet. You can see that in the notes above. I am doing pinouts, figuring what I want on board. I am going to set this up as a kind of modular getdown, where the switch has a board interconnect, and I can build other PCBs w/ different hardwares to ride below. I.E motor controllers, sensor interfaces, human interfaces (!). Picking the set of pins I wanted to pull out of the chip was actually a bit painful. I'm sure I'll go through this more than once.
 
 For JTAG Pinouts, I referenced the Tag-Connect footprint (available for download from Tag-Connect) and the ATSAM note here - http://www.atmel.com/webdoc/atmelice/atmelice.using_ocd_physical_jtag.html see Fig. 18. They match, so I don't have to do any footwork here. Nice.
 
@@ -99,18 +110,17 @@ I'm going to look at the board interconnect - to decide how many pins I want, I 
 
 I have been tempted to buy some fancy 'mezannine' connectors - but I ended up (after a few cycles) deciding to stick with a 2x20 2.54mm pitch connector. This way just about everyone will have access to the hardware, and I like that! It's also the same pitch as most IDC connectors, breadboards, etc - so hopping around between systems should be easy. I am almost tempted to split the pins a bit so that it could get right into a breadboard - or do an edge-style bb, but this seems like too much give in that direction.
 
-I also need to jot down my notes, here, so that I can put this project on pause:
+OK, Here's my schematic
 
-I'm also interested in adding some memory to the chips... I want to be able to store data in longer terms - mostly routing tables, also eventually configurations. I am going down the rabbit hole, I know. But in debugging, etc, it would be cool if I didn't have to go through large startup sequences. I'll spec it out, I won't write software for it until that's necessary... Here's an SD Holder
--  WM12834CT-ND 
-and 
-https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/download 
+![schematic](https://raw.githubusercontent.com/jakeread/tinynets/master/document/atsam-router-schematic.png)
 
-I think there's probably a better in-between - and besides, the point is a little bit to take state out of the controller, not put more in. I need to rethink this, I think. Just write good network schematics that converge quickly, right? This is more overhead than I want.
+And the board
 
-# THE GITDOWN
+![routed](https://raw.githubusercontent.com/jakeread/tinynets/master/document/atsam-router-board.png)
 
-## Need to Spec / Footprint
+Fabricated
+
+![fabbed](https://raw.githubusercontent.com/jakeread/tinynets/master/document/one-atsam-router.jpg)
 
 ## Incremental
 
@@ -126,6 +136,10 @@ I think there's probably a better in-between - and besides, the point is a littl
 - *maybe* flip or double MK header for standoff momentary happiness?
 
 # Programming
+
+It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...
+
+![fabbed](https://raw.githubusercontent.com/jakeread/tinynets/master/circuit/images/swd-not-jtag.jpg)
 
 ### PIO
 
