@@ -6040,8 +6040,8 @@ VIDA Products INC</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="NRST"/>
-<wire x1="25.4" y1="27.94" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
-<label x="17.78" y="27.94" size="1.778" layer="95"/>
+<wire x1="25.4" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
+<label x="5.08" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DM" class="0">
@@ -6580,35 +6580,11 @@ VIDA Products INC</description>
 <junction x="19.05" y="137.16"/>
 </segment>
 </net>
-<net name="TCK" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="PB7/SWCLK/TCK"/>
-<wire x1="25.4" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
-<label x="17.78" y="12.7" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-62.23" y1="3.81" x2="-54.61" y2="3.81" width="0.1524" layer="91"/>
-<label x="-59.69" y="3.81" size="1.778" layer="95"/>
-<pinref part="TP1" gate="G$1" pin="TCK"/>
-</segment>
-</net>
-<net name="TMS" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="PB6/SWDIO/TMS"/>
-<wire x1="25.4" y1="10.16" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
-<label x="17.78" y="10.16" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-62.23" y1="-1.27" x2="-54.61" y2="-1.27" width="0.1524" layer="91"/>
-<label x="-59.69" y="-1.27" size="1.778" layer="95"/>
-<pinref part="TP1" gate="G$1" pin="TMS"/>
-</segment>
-</net>
 <net name="TDO" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="PB5/TDO/TWCK1"/>
-<wire x1="25.4" y1="7.62" x2="17.78" y2="7.62" width="0.1524" layer="91"/>
-<label x="17.78" y="7.62" size="1.778" layer="95"/>
+<wire x1="25.4" y1="7.62" x2="5.08" y2="7.62" width="0.1524" layer="91"/>
+<label x="5.08" y="7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="-62.23" y1="13.97" x2="-54.61" y2="13.97" width="0.1524" layer="91"/>
@@ -6619,8 +6595,8 @@ VIDA Products INC</description>
 <net name="TDI" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="PB4/TDI/TWD1"/>
-<wire x1="25.4" y1="5.08" x2="17.78" y2="5.08" width="0.1524" layer="91"/>
-<label x="17.78" y="5.08" size="1.778" layer="95"/>
+<wire x1="25.4" y1="5.08" x2="5.08" y2="5.08" width="0.1524" layer="91"/>
+<label x="5.08" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="-62.23" y1="-6.35" x2="-54.61" y2="-6.35" width="0.1524" layer="91"/>
@@ -7374,6 +7350,30 @@ VIDA Products INC</description>
 <pinref part="U2" gate="G$1" pin="PA15/PWMC0_PWML3"/>
 <wire x1="88.9" y1="114.3" x2="93.98" y2="114.3" width="0.1524" layer="91"/>
 <label x="91.44" y="114.3" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TCK/SWCLK" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="PB7/SWCLK/TCK"/>
+<wire x1="25.4" y1="12.7" x2="5.08" y2="12.7" width="0.1524" layer="91"/>
+<label x="5.08" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-62.23" y1="3.81" x2="-54.61" y2="3.81" width="0.1524" layer="91"/>
+<label x="-59.69" y="3.81" size="1.778" layer="95"/>
+<pinref part="TP1" gate="G$1" pin="TCK"/>
+</segment>
+</net>
+<net name="TMS/SWDIO" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="PB6/SWDIO/TMS"/>
+<wire x1="25.4" y1="10.16" x2="5.08" y2="10.16" width="0.1524" layer="91"/>
+<label x="5.08" y="10.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-62.23" y1="-1.27" x2="-54.61" y2="-1.27" width="0.1524" layer="91"/>
+<label x="-59.69" y="-1.27" size="1.778" layer="95"/>
+<pinref part="TP1" gate="G$1" pin="TMS"/>
 </segment>
 </net>
 </nets>
