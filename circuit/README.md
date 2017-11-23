@@ -135,6 +135,12 @@ Fabricated
 - push plugs to edges
 - *maybe* flip or double MK header for standoff momentary happiness?
 
+order
+ - 1k 0805
+ - diff. chips
+ - astams
+ - or, draw up a BOM and order for 30 !
+
 # Programming
 
 It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...

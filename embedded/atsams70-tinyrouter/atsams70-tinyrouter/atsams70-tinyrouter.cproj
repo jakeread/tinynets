@@ -33,6 +33,7 @@
   <options>
     <option id="common.boards" value="Add" config="" content-id="Atmel.ASF" />
     <option id="common.services.delay" value="Add" config="" content-id="Atmel.ASF" />
+    <option id="common.services.basic.clock" value="Add" config="" content-id="Atmel.ASF" />
     <option id="sam.utils.linker_scripts" value="Add" config="" content-id="Atmel.ASF" />
   </options>
   <configurations>
@@ -202,7 +203,7 @@
   <documentation help="http://asf.atmel.com/docs/3.35.1/common.applications.user_application.user_board.sams70n20/html/index.html" />
   <offline-documentation help="" />
   <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.26.0" />
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.35.1" />
   </dependencies>
   <project id="common.applications.user_application.user_board.sams70n20" value="Add" config="" content-id="Atmel.ASF" />
   <board id="board.user_board.sams70n20" value="Add" config="" content-id="Atmel.ASF" />
@@ -427,6 +428,7 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Device_Startup\" />
     <Folder Include="src\" />
     <Folder Include="src\ASF\" />
     <Folder Include="src\ASF\common\" />
@@ -470,6 +472,12 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\pin.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\pin.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\delay\delay.h">
       <SubType>compile</SubType>
     </None>

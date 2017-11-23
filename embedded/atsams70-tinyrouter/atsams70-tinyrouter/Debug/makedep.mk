@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\pin.c
+
 src\ASF\common\services\delay\sam\cycle_counter.c
 
 src\ASF\common\services\clock\sams70\sysclk.c
