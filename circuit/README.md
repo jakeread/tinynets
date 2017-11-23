@@ -499,7 +499,9 @@ int main (void)
 }
 ```
 
-OK, I finally got all ports to write to their TX lines. This after some confusing bitwise or-ing of registers
+OK, I finally got all ports to write to their TX lines. This after some confusing bitwise or-ing of registers. 
+
+I'm going to check that all of the lights are on OK pins, and then call this, do the updates and get the big batch of boards out to fab.
 
 
 ## Incremental
@@ -516,6 +518,8 @@ OK, I finally got all ports to write to their TX lines. This after some confusin
 - *maybe* flip or double MK header for standoff momentary happiness?
 - LEDS are too bright
 - tag-connect w/ clips would be nice
+- disconnect or solder jumper usb data lines
+- definitely go for a reset button
 
 order
  - 1k 0805
