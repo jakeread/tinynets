@@ -122,25 +122,6 @@ Fabricated
 
 ![fabbed](https://github.com/jakeread/tinynets/blob/master/document/one-atsam-router.jpg)
 
-## Incremental
-
-- GND Vias near 3v3 Reg
-- Do Reset Button
-- consider networks-only version?
-- swd
-- tag-connect no solder stencil ! 
-- tag-connect 6 pin
-- tag-connect to avr swd?
-- multiple programming? lookup jtag daisychain?
-- push plugs to edges
-- *maybe* flip or double MK header for standoff momentary happiness?
-
-order
- - 1k 0805
- - diff. chips
- - astams
- - or, draw up a BOM and order for 30 !
-
 # Programming
 
 It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...
@@ -421,3 +402,123 @@ void pin_output(pin_t pin){
 ```
 
 to begin abstracting pins - just a struct
+
+Here we are with a basic UART Sketch - lots to abstract
+
+```C
+/**
+ * \file
+ *
+ * \brief Empty user application template
+ *
+ */
+
+/**
+ * \mainpage User Application template doxygen documentation
+ *
+ * \par Empty user application template
+ *
+ * Bare minimum empty user application template
+ *
+ * \par Content
+ *
+ * -# Include the ASF header files (through asf.h)
+ * -# "Insert system clock initialization code here" comment
+ * -# Minimal main function that starts with a call to board_init()
+ * -# "Insert application code here" comment
+ *
+ */
+
+/*
+ * Include header files for all drivers that have been imported from
+ * Atmel Software Framework (ASF).
+ */
+/*
+ * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
+ */
+#include <asf.h>
+#include "pin.h"
+
+pin_t stlb;
+pin_t stlr;
+pin_t button;
+
+pin_t p3lr;
+
+int main (void)
+{
+  /* Insert system clock initialization code here (sysclk_init()). */
+
+  board_init();
+  sysclk_init();
+  
+  PMC->PMC_PCER0 = 1 << ID_PIOA;
+  PMC->PMC_PCER0 = 1 << ID_PIOD;
+  
+  p3lr = pin_new(PIOD, PIO_PER_P10);
+  pin_output(p3lr);
+  
+  stlb = pin_new(PIOA, PIO_PER_P1);
+  pin_output(stlb);
+  
+  stlr = pin_new(PIOD, PIO_PER_P11);
+  pin_output(stlr);
+  
+  button = pin_new(PIOA, PIO_PER_P15);
+  pin_input(button);
+  
+  PMC->PMC_PCER1 = 1 << 14; // UART4 go clock go
+  
+  PIOD->PIO_PDR = PIO_PER_P18;
+  PIOD->PIO_PDR = PIO_PER_P19;
+  
+  PIOD->PIO_ABCDSR[0] = ~PIO_PER_P18;
+  PIOD->PIO_ABCDSR[0] = ~PIO_PER_P19;
+  PIOD->PIO_ABCDSR[1] = PIO_PER_P18;
+  PIOD->PIO_ABCDSR[1] = PIO_PER_P19;
+    
+  UART4->UART_MR = UART_MR_BRSRCCK_PERIPH_CLK | UART_MR_CHMODE_NORMAL;
+  UART4->UART_BRGR = 32; // clock / this value * 16
+  UART4->UART_CR = UART_CR_TXEN | UART_CR_RXEN;
+  
+  while(1){
+    if(pin_get_state(button)){ // hi, button is not pressed
+      pin_clear(stlb);
+      pin_set(stlr);
+      while(!(UART4->UART_SR & UART_SR_TXRDY)){ // wait for ready
+        pin_clear(p3lr);
+      }
+      pin_set(p3lr);
+      UART4->UART_THR = 85;
+    } else {
+      pin_set(stlb);
+      pin_clear(stlr);
+      pin_set(p3lr);
+    }
+  }
+}
+```
+
+OK, I finally got all ports to write to their TX lines. This after some confusing bitwise or-ing of registers
+
+
+## Incremental
+
+- GND Vias near 3v3 Reg
+- Do Reset Button
+- consider networks-only version?
+- swd
+- tag-connect no solder stencil ! 
+- tag-connect 6 pin
+- tag-connect to avr swd?
+- multiple programming? lookup jtag daisychain?
+- push plugs to edges
+- *maybe* flip or double MK header for standoff momentary happiness?
+- LEDS are too bright
+- tag-connect w/ clips would be nice
+
+order
+ - 1k 0805
+ - diff. chips
+ - astams
+ - or, draw up a BOM and order for 30 !

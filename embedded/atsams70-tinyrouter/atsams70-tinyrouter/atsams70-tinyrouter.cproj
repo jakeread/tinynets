@@ -478,6 +478,12 @@
     <Compile Include="src\pin.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\tinyport.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\tinyport.h">
+      <SubType>compile</SubType>
+    </Compile>
     <None Include="src\ASF\common\services\delay\delay.h">
       <SubType>compile</SubType>
     </None>

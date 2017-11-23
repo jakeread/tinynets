@@ -4,6 +4,8 @@
 
 src\pin.c
 
+src\tinyport.c
+
 src\ASF\common\services\delay\sam\cycle_counter.c
 
 src\ASF\common\services\clock\sams70\sysclk.c

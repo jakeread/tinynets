@@ -80,6 +80,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../src/pin.c \
+../src/tinyport.c \
 ../src/ASF/common/services/delay/sam/cycle_counter.c \
 ../src/ASF/common/services/clock/sams70/sysclk.c \
 ../src/ASF/sam/drivers/pmc/pmc.c \
@@ -100,6 +101,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 src/pin.o \
+src/tinyport.o \
 src/ASF/common/services/delay/sam/cycle_counter.o \
 src/ASF/common/services/clock/sams70/sysclk.o \
 src/ASF/sam/drivers/pmc/pmc.o \
@@ -113,6 +115,7 @@ src/main.o
 
 OBJS_AS_ARGS +=  \
 src/pin.o \
+src/tinyport.o \
 src/ASF/common/services/delay/sam/cycle_counter.o \
 src/ASF/common/services/clock/sams70/sysclk.o \
 src/ASF/sam/drivers/pmc/pmc.o \
@@ -126,6 +129,7 @@ src/main.o
 
 C_DEPS +=  \
 src/pin.d \
+src/tinyport.d \
 src/ASF/common/services/delay/sam/cycle_counter.d \
 src/ASF/common/services/clock/sams70/sysclk.d \
 src/ASF/sam/drivers/pmc/pmc.d \
@@ -139,6 +143,7 @@ src/main.d
 
 C_DEPS_AS_ARGS +=  \
 src/pin.d \
+src/tinyport.d \
 src/ASF/common/services/delay/sam/cycle_counter.d \
 src/ASF/common/services/clock/sams70/sysclk.d \
 src/ASF/sam/drivers/pmc/pmc.d \
@@ -165,6 +170,8 @@ LINKER_SCRIPT_DEP+=  \
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
