@@ -374,10 +374,50 @@ OK, enough for that wakeup, now I'm going to try to boot the USB CDC driver. Thi
 
 So, USB is a protocol, UART over USB is what the USB CDC lets you do. This is reductionist - and this also takes up some chunk of processor time, as far as I know - however, the chip has a USB peripheral, so I imagine most of the work is offloaded there. I would be tangentially interested in integrating a USB->Serial chip to compare processor overhead for the USB CDC implementation, but what am I trying to do here? Not that.
 
+I couldn't get this running, not sure if that was about my clock, or what - but after one day lost, I give up. I'm going to build a USB -> UART RS485 Bridge (I also need a power injector, so this is all good) and go forwards with port testing and setup.
 
+## Port Abstractions
 
-USB CDC, interrupts
-CDC, / mods pipe -> pass objects don't parse characters: key: value
+Pins are on Ports, UARTS are on Ports, everything is confusing and ugly if we just write C and bang on registers.
 
-Writeup PR2, do encoder?
-or, do 2nd board, do uart return test, order next boards, dream of experiments
+```C
+
+#ifndef PIN_H_
+#define PIN_H_
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+#include "ASF/sam/utils/cmsis/sams70/include/sams70n20.h"
+
+typedef struct{
+  Pio *port;
+  uint32_t pin_bm;
+}pin_t;
+
+pin_t pin_new(Pio *port, uint32_t pin_bitmask);
+
+#endif /* PIN_H_ */
+```
+
+and
+
+```C
+#include "pin.h"
+#include <asf.h>
+
+pin_t pin_new(Pio *port, uint32_t pin_bitmask){
+  pin_t pin;
+  
+  pin.port = port;
+  pin.pin_bm = pin_bitmask;
+  
+  return pin;
+}
+
+void pin_output(pin_t pin){
+}
+```
+
+to begin abstracting pins - just a struct

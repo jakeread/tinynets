@@ -32,6 +32,8 @@
 #include "pin.h"
 
 pin_t stlb;
+pin_t stlr;
+pin_t button;
 
 int main (void)
 {
@@ -41,20 +43,24 @@ int main (void)
 	sysclk_init();
 	
 	PMC->PMC_PCER0 = 1 << ID_PIOA;
+	PMC->PMC_PCER0 = 1 << ID_PIOD;
 	
 	stlb = pin_new(PIOA, PIO_PER_P1);
+	pin_output(stlb);
 	
-	stlb.port->PIO_PER = stlb.pin_bm;
-	stlb.port->PIO_OER = stlb.pin_bm;
+	stlr = pin_new(PIOD, PIO_PER_P11);
+	pin_output(stlr);
 	
-	PIOA->PIO_PER = PIO_PER_P15;
-	PIOA->PIO_ODR = PIO_PER_P15;
+	button = pin_new(PIOA, PIO_PER_P15);
+	pin_input(button);
 	
 	while(1){
-		if(PIOA->PIO_PDSR & PIO_PER_P15){
-			stlb.port->PIO_CODR = stlb.pin_bm;
+		if(pin_get_state(button)){
+			pin_clear(stlb);
+			pin_set(stlr);
 		} else {
-			stlb.port->PIO_SODR = stlb.pin_bm;
+			pin_set(stlb);
+			pin_clear(stlr);
 		}
 	}
 }
