@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,19 +39,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -222,7 +222,7 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <smd name="R" x="-0.9016" y="-1.5" dx="1.1" dy="1.5" layer="1" rot="R180" stop="no" cream="no"/>
 <smd name="G" x="-0.9016" y="1.5" dx="1.1" dy="1.5" layer="1" rot="R180" stop="no" cream="no"/>
 <smd name="B" x="0.9016" y="1.5" dx="1.1" dy="1.5" layer="1" rot="R180" stop="no" cream="no"/>
-<circle x="1.778" y="-1.524" radius="0.127" width="0.127" layer="21"/>
+<circle x="-1.905" y="-1.524" radius="0.127" width="0.127" layer="21"/>
 </package>
 <package name="6MM_SWITCH">
 <description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
@@ -353,7 +353,7 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
 <smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
 <smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
-<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1" thermals="no"/>
 <text x="-0.8255" y="4.5085" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-1.0795" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
 <rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
@@ -684,6 +684,65 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <rectangle x1="-7.878" y1="5.365" x2="-6.873" y2="5.635" layer="51"/>
 <rectangle x1="-7.878" y1="5.865" x2="-6.873" y2="6.135" layer="51"/>
 </package>
+<package name="SJFAB">
+<wire x1="1.016" y1="0" x2="1.524" y2="0" width="0.1524" layer="51"/>
+<wire x1="-1.016" y1="0" x2="-1.524" y2="0" width="0.1524" layer="51"/>
+<wire x1="-0.254" y1="-0.127" x2="-0.254" y2="0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<wire x1="0.254" y1="0.127" x2="0.254" y2="-0.127" width="1.27" layer="51" curve="-180" cap="flat"/>
+<smd name="1" x="-0.7874" y="0" dx="1.1176" dy="1.6002" layer="1"/>
+<smd name="2" x="0.7874" y="0" dx="1.1176" dy="1.6002" layer="1"/>
+<text x="-1.651" y="1.143" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0.4001" y="0" size="0.02" layer="27">&gt;VALUE</text>
+</package>
+<package name="2X4-SHROUDED-SQUISH">
+<description>&lt;h3&gt;Plated Through Hole - 2x3 Shrouded Header&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:6&lt;/li&gt;
+&lt;li&gt;Pin pitch:0.1"&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Shrouded-10pin.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;CONN_03x2&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="4.5" y1="7.56" x2="4.5" y2="-10.1" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="-10.1" x2="-4.5" y2="-3.47" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="-3.47" x2="-4.5" y2="0.93" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="0.93" x2="-4.5" y2="7.56" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="7.56" x2="4.4" y2="7.56" width="0.2032" layer="21"/>
+<wire x1="4.5" y1="-10.1" x2="-4.5" y2="-10.1" width="0.2032" layer="21"/>
+<wire x1="-3.4" y1="6.46" x2="3.4" y2="6.46" width="0.2032" layer="51"/>
+<wire x1="3.4" y1="6.46" x2="3.4" y2="-9" width="0.2032" layer="51"/>
+<wire x1="-3.4" y1="-9" x2="3.4" y2="-9" width="0.2032" layer="51"/>
+<wire x1="-4.5" y1="0.93" x2="-3" y2="0.93" width="0.2032" layer="21"/>
+<wire x1="-3" y1="0.93" x2="-3" y2="-3.47" width="0.2032" layer="21"/>
+<wire x1="-3" y1="-3.47" x2="-4.5" y2="-3.47" width="0.2032" layer="21"/>
+<wire x1="-3.4" y1="6.46" x2="-3.4" y2="0.93" width="0.2032" layer="51"/>
+<wire x1="-3.4" y1="-9" x2="-3.4" y2="-3.47" width="0.2032" layer="51"/>
+<pad name="1" x="-1.27" y="2.54" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="2" x="1.27" y="2.54" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="3" x="-1.27" y="0" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="4" x="1.27" y="0" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="5" x="-1.27" y="-2.54" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="6" x="1.27" y="-2.54" drill="1.016" diameter="1.6764" rot="R270"/>
+<rectangle x1="1.016" y1="2.286" x2="1.524" y2="2.794" layer="51"/>
+<rectangle x1="-1.524" y1="2.286" x2="-1.016" y2="2.794" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-2.794" x2="1.524" y2="-2.286" layer="51"/>
+<rectangle x1="-1.524" y1="-2.794" x2="-1.016" y2="-2.286" layer="51"/>
+<rectangle x1="-1.524" y1="-2.794" x2="-1.016" y2="-2.286" layer="51"/>
+<rectangle x1="1.016" y1="-2.794" x2="1.524" y2="-2.286" layer="51"/>
+<text x="-3.81" y="7.874" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-3.81" y="-10.922" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+<wire x1="-5.188" y1="3.175" x2="-5.188" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="-2.686" y1="3.175" x2="-2.686" y2="1.905" width="0.2032" layer="22"/>
+<pad name="7" x="-1.27" y="-5.08" drill="1.016" diameter="1.6764" rot="R270"/>
+<pad name="8" x="1.27" y="-5.08" drill="1.016" diameter="1.6764" rot="R270"/>
+<rectangle x1="1.016" y1="-5.334" x2="1.524" y2="-4.826" layer="51"/>
+<rectangle x1="-1.524" y1="-5.334" x2="-1.016" y2="-4.826" layer="51"/>
+<rectangle x1="-1.524" y1="-5.334" x2="-1.016" y2="-4.826" layer="51"/>
+<rectangle x1="1.016" y1="-5.334" x2="1.524" y2="-4.826" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ISL3177E">
@@ -952,6 +1011,16 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <text x="-2.54" y="86.36" size="1.27" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-83.82" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="SJFAB">
+<wire x1="0.381" y1="0.635" x2="0.381" y2="-0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="-0.381" y1="-0.635" x2="-0.381" y2="0.635" width="1.27" layer="94" curve="-180" cap="flat"/>
+<wire x1="2.54" y1="0" x2="1.651" y2="0" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.651" y2="0" width="0.1524" layer="94"/>
+<text x="-2.54" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="0" visible="pad" length="short" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="1" x="-5.08" y="0" visible="pad" length="short" direction="pas" swaplevel="1"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="ISL3177E" prefix="U">
@@ -1125,6 +1194,21 @@ Three footprint variants included:
 <technology name=""/>
 </technologies>
 </device>
+<device name="SHROUDED-SQUISH" package="2X4-SHROUDED-SQUISH">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="ATSAMS70N-TQFP100" prefix="U">
@@ -1234,6 +1318,22 @@ Three footprint variants included:
 <connect gate="G$1" pin="VDDUTMII" pad="93"/>
 <connect gate="G$1" pin="VREFN" pad="6"/>
 <connect gate="G$1" pin="VREFP" pad="9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SOLDER_JUMPER">
+<gates>
+<gate name="G$1" symbol="SJFAB" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SJFAB">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5386,7 +5486,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </library>
 <library name="tag-connect-2050">
 <packages>
-<package name="TC2030-MCP-NL">
+<package name="TC2050-MCP">
 <description>&lt;B&gt;TAG-CONNECT ISP Connector&lt;/B&gt;&lt;BR&gt;&lt;BR&gt;&lt;I&gt;Manufacturer:&lt;/I&gt; &lt;a href="www.tag-connect.com"&gt;Tag-Connect&lt;/a&gt;&lt;BR&gt;
 &lt;BR&gt;Cable for easy In-Circuit PCB Programming. Designed for Standard JTAG 10 Pin, suitable for many others.&lt;BR&gt;
 &lt;BR&gt;Footprint for TC2050 NL &lt;BR&gt;
@@ -5412,15 +5512,59 @@ Modified 7/2011 by Tim McCarthy-Smith
 VIDA Products INC</description>
 <wire x1="0" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="21"/>
 <smd name="10" x="1.27" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
-<smd name="9" x="2.54" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="8" x="3.81" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="3" x="3.81" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="2" x="2.54" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="1" x="1.27" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="7" x="5.08" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="6" x="6.35" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="4" x="5.08" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
-<smd name="5" x="6.35" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100"/>
+<smd name="9" x="2.54" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="8" x="3.81" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="3" x="3.81" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="2" x="2.54" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="1" x="1.27" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="7" x="5.08" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="6" x="6.35" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="4" x="5.08" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="5" x="6.35" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<text x="-0.635" y="1.27" size="1.27" layer="25">&gt;name</text>
+<hole x="0" y="0" drill="1"/>
+<hole x="7.62" y="-1.016" drill="1"/>
+<hole x="7.62" y="1.016" drill="1"/>
+<hole x="0" y="2.54" drill="2.3749"/>
+<hole x="0" y="-2.54" drill="2.3749"/>
+<hole x="5.715" y="2.54" drill="2.3749"/>
+<hole x="5.715" y="-2.54" drill="2.3749"/>
+</package>
+<package name="TC2050-MCP-NL">
+<description>&lt;B&gt;TAG-CONNECT ISP Connector&lt;/B&gt;&lt;BR&gt;&lt;BR&gt;&lt;I&gt;Manufacturer:&lt;/I&gt; &lt;a href="www.tag-connect.com"&gt;Tag-Connect&lt;/a&gt;&lt;BR&gt;
+&lt;BR&gt;Cable for easy In-Circuit PCB Programming. Designed for Standard JTAG 10 Pin, suitable for many others.&lt;BR&gt;
+&lt;BR&gt;Footprint for TC2050 NL &lt;BR&gt;
+
+&lt;TABLE cellspacing=0 cellpadding=0 border=0&gt;
+&lt;TR&gt;&lt;TD width=20&gt;&lt;/TD&gt;&lt;TD&gt;
+&lt;TABLE cellspacing=0 cellpadding=1 border=1&gt;
+&lt;TR bgcolor=silver&gt;&lt;TD align=center&gt;PAD&lt;/TD&gt;&lt;TD align=center&gt;Description&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;1&lt;/TD&gt;&lt;TD&gt;VTREF&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;2&lt;/TD&gt;&lt;TD&gt;nTRST&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;3&lt;/TD&gt;&lt;TD&gt;TDI&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;4&lt;/TD&gt;&lt;TD&gt;TMS&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;5&lt;/TD&gt;&lt;TD&gt;TCK&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;6&lt;/TD&gt;&lt;TD&gt;RTCK&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;7&lt;/TD&gt;&lt;TD&gt;TDO&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;8&lt;/TD&gt;&lt;TD&gt;RESET&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;9&lt;/TD&gt;&lt;TD&gt;GND&lt;/TD&gt;&lt;/TR&gt;
+&lt;TR&gt;&lt;TD align=center&gt;10&lt;/TD&gt;&lt;TD&gt;NC&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;&lt;BR&gt;&lt;BR&gt;
+©2009 ROFA.cz
+Modified 7/2011 by Tim McCarthy-Smith 
+VIDA Products INC</description>
+<wire x1="0" y1="-2.54" x2="7.62" y2="-2.54" width="0.127" layer="21"/>
+<smd name="10" x="1.27" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="9" x="2.54" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="8" x="3.81" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="3" x="3.81" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="2" x="2.54" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="1" x="1.27" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="7" x="5.08" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="6" x="6.35" y="0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="4" x="5.08" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
+<smd name="5" x="6.35" y="-0.635" dx="0.7874" dy="0.7874" layer="1" roundness="100" cream="no"/>
 <text x="-0.635" y="1.27" size="1.27" layer="25">&gt;name</text>
 <hole x="0" y="0" drill="1"/>
 <hole x="7.62" y="-1.016" drill="1"/>
@@ -5447,7 +5591,7 @@ VIDA Products INC</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="TC2050" prefix="TP">
+<deviceset name="TC2050-NL">
 <description>&lt;B&gt;TAG-CONNECT ISP Connector&lt;/B&gt;&lt;BR&gt;&lt;BR&gt;&lt;I&gt;Manufacturer:&lt;/I&gt; &lt;a href="www.tag-connect.com"&gt;Tag-Connect&lt;/a&gt;&lt;BR&gt;
 &lt;BR&gt;Cable for easy In-Circuit PCB Programming. Designed for JTAG 10 pin, suitable for many others.&lt;BR&gt;
 Pin Connection for TC2050 NL.&lt;BR&gt;
@@ -5474,7 +5618,7 @@ VIDA Products INC</description>
 <gate name="G$1" symbol="TC2050" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-MCP-NL" package="TC2030-MCP-NL">
+<device name="-MCP-NL" package="TC2050-MCP-NL">
 <connects>
 <connect gate="G$1" pin="!TRST" pad="9"/>
 <connect gate="G$1" pin="GND" pad="3"/>
@@ -5489,6 +5633,189 @@ VIDA Products INC</description>
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+<device name="" package="TC2050-MCP">
+<connects>
+<connect gate="G$1" pin="!TRST" pad="9"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="NC" pad="5"/>
+<connect gate="G$1" pin="RESET" pad="10"/>
+<connect gate="G$1" pin="RTCK" pad="7"/>
+<connect gate="G$1" pin="TCK" pad="4"/>
+<connect gate="G$1" pin="TDI" pad="8"/>
+<connect gate="G$1" pin="TDO" pad="6"/>
+<connect gate="G$1" pin="TMS" pad="2"/>
+<connect gate="G$1" pin="VTREF" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="borkedlabs-passives">
+<packages>
+<package name="0805">
+<wire x1="-0.3" y1="0.6" x2="0.3" y2="0.6" width="0.1524" layer="21"/>
+<wire x1="-0.3" y1="-0.6" x2="0.3" y2="-0.6" width="0.1524" layer="21"/>
+<smd name="1" x="-0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<smd name="2" x="0.9" y="0" dx="0.8" dy="1.2" layer="1"/>
+<text x="-0.762" y="0.8255" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-2.032" size="1.016" layer="27">&gt;VALUE</text>
+</package>
+<package name="0603-CAP">
+<wire x1="-1.473" y1="0.983" x2="1.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="0.983" x2="1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="-0.983" x2="-1.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-1.473" y1="-0.983" x2="-1.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="-0.356" y1="0.432" x2="0.356" y2="0.432" width="0.1016" layer="51"/>
+<wire x1="-0.356" y1="-0.419" x2="0.356" y2="-0.419" width="0.1016" layer="51"/>
+<wire x1="0" y1="0.0305" x2="0" y2="-0.0305" width="0.5588" layer="21"/>
+<smd name="1" x="-0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<smd name="2" x="0.85" y="0" dx="1.1" dy="1" layer="1"/>
+<text x="-0.889" y="1.397" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.016" y="-2.413" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.8382" y1="-0.4699" x2="-0.3381" y2="0.4801" layer="51"/>
+<rectangle x1="0.3302" y1="-0.4699" x2="0.8303" y2="0.4801" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
+<package name="0402-CAP">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
+<wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
+<wire x1="-1.473" y1="0.483" x2="1.473" y2="0.483" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="0.483" x2="1.473" y2="-0.483" width="0.0508" layer="39"/>
+<wire x1="1.473" y1="-0.483" x2="-1.473" y2="-0.483" width="0.0508" layer="39"/>
+<wire x1="-1.473" y1="-0.483" x2="-1.473" y2="0.483" width="0.0508" layer="39"/>
+<wire x1="0" y1="0.0305" x2="0" y2="-0.0305" width="0.4064" layer="21"/>
+<smd name="1" x="-0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<smd name="2" x="0.65" y="0" dx="0.7" dy="0.9" layer="1"/>
+<text x="-0.889" y="0.6985" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.0795" y="-2.413" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.554" y1="-0.3048" x2="-0.254" y2="0.2951" layer="51"/>
+<rectangle x1="0.2588" y1="-0.3048" x2="0.5588" y2="0.2951" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.3" x2="0.1999" y2="0.3" layer="35"/>
+</package>
+<package name="1210">
+<wire x1="-1.6" y1="1.3" x2="1.6" y2="1.3" width="0.127" layer="51"/>
+<wire x1="1.6" y1="1.3" x2="1.6" y2="-1.3" width="0.127" layer="51"/>
+<wire x1="1.6" y1="-1.3" x2="-1.6" y2="-1.3" width="0.127" layer="51"/>
+<wire x1="-1.6" y1="-1.3" x2="-1.6" y2="1.3" width="0.127" layer="51"/>
+<wire x1="-1.6" y1="1.3" x2="1.6" y2="1.3" width="0.2032" layer="21"/>
+<wire x1="-1.6" y1="-1.3" x2="1.6" y2="-1.3" width="0.2032" layer="21"/>
+<smd name="1" x="-1.6" y="0" dx="1.2" dy="2" layer="1"/>
+<smd name="2" x="1.6" y="0" dx="1.2" dy="2" layer="1"/>
+<text x="-2.07" y="1.77" size="1.016" layer="25">&gt;NAME</text>
+<text x="-2.17" y="-3.24" size="1.016" layer="27">&gt;VALUE</text>
+</package>
+<package name="1206">
+<wire x1="-2.473" y1="0.983" x2="2.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="2.473" y1="-0.983" x2="-2.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-2.473" y1="-0.983" x2="-2.473" y2="0.983" width="0.0508" layer="39"/>
+<wire x1="2.473" y1="0.983" x2="2.473" y2="-0.983" width="0.0508" layer="39"/>
+<wire x1="-0.965" y1="0.787" x2="0.965" y2="0.787" width="0.1016" layer="51"/>
+<wire x1="-0.965" y1="-0.787" x2="0.965" y2="-0.787" width="0.1016" layer="51"/>
+<smd name="1" x="-1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<smd name="2" x="1.4" y="0" dx="1.6" dy="1.8" layer="1"/>
+<text x="-1.27" y="1.143" size="1.016" layer="25">&gt;NAME</text>
+<text x="-1.397" y="-2.794" size="1.016" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.7018" y1="-0.8509" x2="-0.9517" y2="0.8491" layer="51"/>
+<rectangle x1="0.9517" y1="-0.8491" x2="1.7018" y2="0.8509" layer="51"/>
+<rectangle x1="-0.1999" y1="-0.4001" x2="0.1999" y2="0.4001" layer="35"/>
+<wire x1="-0.435" y1="0.635" x2="0.435" y2="0.635" width="0.127" layer="21"/>
+<wire x1="-0.435" y1="-0.635" x2="0.435" y2="-0.635" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="CAP">
+<wire x1="0" y1="2.54" x2="0" y2="2.032" width="0.1524" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="0.508" width="0.1524" layer="94"/>
+<text x="1.524" y="2.921" size="1.778" layer="95">&gt;NAME</text>
+<text x="1.524" y="-2.159" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-2.032" y1="0.508" x2="2.032" y2="1.016" layer="94"/>
+<rectangle x1="-2.032" y1="1.524" x2="2.032" y2="2.032" layer="94"/>
+<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+<text x="1.524" y="-4.064" size="1.27" layer="97">&gt;PACKAGE</text>
+<text x="1.524" y="-5.842" size="1.27" layer="97">&gt;VOLTAGE</text>
+<text x="1.524" y="-7.62" size="1.27" layer="97">&gt;TYPE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CAP" prefix="C" uservalue="yes">
+<description>&lt;b&gt;Capacitor&lt;/b&gt;
+Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
+<gates>
+<gate name="G$1" symbol="CAP" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0805" package="0805">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PACKAGE" value="0805"/>
+<attribute name="TYPE" value="" constant="no"/>
+<attribute name="VOLTAGE" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0603-CAP" package="0603-CAP">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PACKAGE" value="0603"/>
+<attribute name="TYPE" value="" constant="no"/>
+<attribute name="VOLTAGE" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0402-CAP" package="0402-CAP">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PACKAGE" value="0402"/>
+<attribute name="TYPE" value="" constant="no"/>
+<attribute name="VOLTAGE" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="1210" package="1210">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PACKAGE" value="1210" constant="no"/>
+<attribute name="TYPE" value="" constant="no"/>
+<attribute name="VOLTAGE" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="1206" package="1206">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PACKAGE" value="1206" constant="no"/>
+<attribute name="TYPE" value="" constant="no"/>
+<attribute name="VOLTAGE" value="" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -5513,7 +5840,7 @@ VIDA Products INC</description>
 <part name="Q1" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="CRYSTAL" device="CTS406" package3d_urn="urn:adsk.eagle:package:12089/1" value="20MHz"/>
 <part name="U1" library="fab" deviceset="REGULATOR_SOT223" device=""/>
 <part name="J4" library="fab" deviceset="CONN_04X2" device="SHROUDED"/>
-<part name="J5" library="SparkFun-Connectors" deviceset="CONN_20X2" device=""/>
+<part name="J5" library="SparkFun-Connectors" deviceset="CONN_20X2" device="NOSILK" value="CONN_20X2NOSILK"/>
 <part name="+3V34" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V318" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
@@ -5620,11 +5947,18 @@ VIDA Products INC</description>
 <part name="R3" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="" package3d_urn="urn:adsk.eagle:package:13300/1" value="2k2"/>
 <part name="+3V33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="+3V310" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
-<part name="TP1" library="tag-connect-2050" deviceset="TC2050" device="-MCP-NL"/>
+<part name="TP1" library="tag-connect-2050" deviceset="TC2050-NL" device=""/>
 <part name="GND29" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R20" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="" package3d_urn="urn:adsk.eagle:package:13300/1" value="10K"/>
 <part name="+3V1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
+<part name="R19" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="" package3d_urn="urn:adsk.eagle:package:13300/1" value="10K"/>
+<part name="S2" library="fab" deviceset="6MM_SWITCH" device="6MM_SWITCH"/>
+<part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="U$3" library="fab" deviceset="SOLDER_JUMPER" device=""/>
+<part name="U$4" library="fab" deviceset="SOLDER_JUMPER" device=""/>
+<part name="C30" library="borkedlabs-passives" deviceset="CAP" device="1210" value="47uF"/>
+<part name="C31" library="borkedlabs-passives" deviceset="CAP" device="1210" value="47uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -5635,7 +5969,7 @@ VIDA Products INC</description>
 <instance part="D5" gate="G$1" x="154.94" y="64.77" rot="R270"/>
 <instance part="D1" gate="G$1" x="-52.07" y="58.42" rot="R270"/>
 <instance part="S1" gate="2" x="-21.59" y="63.5" rot="R270"/>
-<instance part="X1" gate="G$1" x="0" y="177.8" rot="R270"/>
+<instance part="X1" gate="G$1" x="-29.21" y="195.58" rot="R270"/>
 <instance part="Q1" gate="G$1" x="-3.81" y="16.51" rot="R90"/>
 <instance part="U1" gate="G$1" x="57.15" y="175.26"/>
 <instance part="J4" gate="G$1" x="232.41" y="64.77"/>
@@ -5652,11 +5986,11 @@ VIDA Products INC</description>
 <instance part="R17" gate="G$1" x="143.51" y="69.85"/>
 <instance part="R10" gate="G$1" x="137.16" y="64.77"/>
 <instance part="R18" gate="G$1" x="143.51" y="59.69"/>
-<instance part="P+2" gate="1" x="30.48" y="177.8" rot="R270"/>
-<instance part="GND11" gate="1" x="16.51" y="187.96" rot="R180"/>
+<instance part="P+2" gate="1" x="1.27" y="195.58" rot="R270"/>
+<instance part="GND11" gate="1" x="-12.7" y="205.74" rot="R180"/>
 <instance part="C28" gate="G$1" x="246.38" y="67.31"/>
-<instance part="C15" gate="G$1" x="13.97" y="182.88"/>
-<instance part="+3V35" gate="G$1" x="72.39" y="177.8" rot="R270"/>
+<instance part="C15" gate="G$1" x="-15.24" y="200.66"/>
+<instance part="+3V35" gate="G$1" x="116.84" y="177.8" rot="R270"/>
 <instance part="P+3" gate="1" x="43.18" y="177.8" rot="R90"/>
 <instance part="GND13" gate="1" x="57.15" y="167.64"/>
 <instance part="C19" gate="G$1" x="67.31" y="175.26"/>
@@ -5750,7 +6084,14 @@ VIDA Products INC</description>
 <instance part="GND29" gate="1" x="-83.82" y="53.34" rot="R270"/>
 <instance part="GND30" gate="1" x="-34.29" y="63.5" rot="R270"/>
 <instance part="R20" gate="G$1" x="-8.89" y="58.42" rot="R270"/>
-<instance part="+3V1" gate="G$1" x="-8.89" y="49.53" rot="R180"/>
+<instance part="+3V1" gate="G$1" x="-11.43" y="46.99" rot="R90"/>
+<instance part="R19" gate="G$1" x="-8.89" y="34.29" rot="R270"/>
+<instance part="S2" gate="2" x="-26.67" y="31.75" rot="R270"/>
+<instance part="GND1" gate="1" x="-34.29" y="40.64" rot="R180"/>
+<instance part="U$3" gate="G$1" x="-12.7" y="190.5"/>
+<instance part="U$4" gate="G$1" x="5.08" y="193.04"/>
+<instance part="C30" gate="G$1" x="81.28" y="172.72"/>
+<instance part="C31" gate="G$1" x="90.17" y="172.72"/>
 </instances>
 <busses>
 </busses>
@@ -5794,13 +6135,13 @@ VIDA Products INC</description>
 </segment>
 <segment>
 <pinref part="X1" gate="G$1" pin="GND"/>
-<wire x1="5.08" y1="180.34" x2="10.16" y2="180.34" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="180.34" x2="10.16" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="-24.13" y1="198.12" x2="-19.05" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="-19.05" y1="198.12" x2="-19.05" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="185.42" x2="13.97" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="-19.05" y1="203.2" x2="-15.24" y2="203.2" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
-<wire x1="13.97" y1="185.42" x2="16.51" y2="185.42" width="0.1524" layer="91"/>
-<junction x="13.97" y="185.42"/>
+<wire x1="-15.24" y1="203.2" x2="-12.7" y2="203.2" width="0.1524" layer="91"/>
+<junction x="-15.24" y="203.2"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
@@ -5809,6 +6150,12 @@ VIDA Products INC</description>
 <pinref part="C19" gate="G$1" pin="2"/>
 <wire x1="67.31" y1="170.18" x2="57.15" y2="170.18" width="0.1524" layer="91"/>
 <junction x="57.15" y="170.18"/>
+<pinref part="C30" gate="G$1" pin="2"/>
+<wire x1="67.31" y1="170.18" x2="81.28" y2="170.18" width="0.1524" layer="91"/>
+<junction x="67.31" y="170.18"/>
+<pinref part="C31" gate="G$1" pin="2"/>
+<wire x1="81.28" y1="170.18" x2="90.17" y2="170.18" width="0.1524" layer="91"/>
+<junction x="81.28" y="170.18"/>
 </segment>
 <segment>
 <pinref part="C13" gate="G$1" pin="1"/>
@@ -6031,6 +6378,15 @@ VIDA Products INC</description>
 <junction x="-26.67" y="63.5"/>
 <pinref part="GND30" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="S2" gate="2" pin="P1"/>
+<pinref part="S2" gate="2" pin="P"/>
+<wire x1="-31.75" y1="29.21" x2="-31.75" y2="31.75" width="0.1524" layer="91"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="-31.75" y1="31.75" x2="-34.29" y2="31.75" width="0.1524" layer="91"/>
+<wire x1="-34.29" y1="31.75" x2="-34.29" y2="38.1" width="0.1524" layer="91"/>
+<junction x="-31.75" y="31.75"/>
+</segment>
 </net>
 <net name="RESET" class="0">
 <segment>
@@ -6040,32 +6396,41 @@ VIDA Products INC</description>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="NRST"/>
-<wire x1="25.4" y1="27.94" x2="5.08" y2="27.94" width="0.1524" layer="91"/>
 <label x="5.08" y="27.94" size="1.778" layer="95"/>
+<wire x1="25.4" y1="27.94" x2="-8.89" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-8.89" y1="27.94" x2="-21.59" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="R19" gate="G$1" pin="2"/>
+<wire x1="-8.89" y1="29.21" x2="-8.89" y2="27.94" width="0.1524" layer="91"/>
+<junction x="-8.89" y="27.94"/>
+<pinref part="S2" gate="2" pin="S"/>
+<pinref part="S2" gate="2" pin="S1"/>
+<wire x1="-21.59" y1="31.75" x2="-21.59" y2="29.21" width="0.1524" layer="91"/>
+<wire x1="-21.59" y1="29.21" x2="-21.59" y2="27.94" width="0.1524" layer="91"/>
+<junction x="-21.59" y="29.21"/>
 </segment>
 </net>
 <net name="DM" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="D-"/>
-<wire x1="5.08" y1="175.26" x2="10.16" y2="175.26" width="0.1524" layer="91"/>
-<label x="7.62" y="175.26" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="25.4" y1="38.1" x2="17.78" y2="38.1" width="0.1524" layer="91"/>
 <label x="17.78" y="38.1" size="1.778" layer="95"/>
 <pinref part="U2" gate="G$1" pin="USB_DM"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="2"/>
+<wire x1="-7.62" y1="190.5" x2="24.13" y2="190.5" width="0.1524" layer="91"/>
+<label x="17.78" y="190.5" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="DP" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="D+"/>
-<wire x1="5.08" y1="172.72" x2="10.16" y2="172.72" width="0.1524" layer="91"/>
-<label x="7.62" y="172.72" size="1.778" layer="95"/>
-</segment>
 <segment>
 <wire x1="25.4" y1="40.64" x2="17.78" y2="40.64" width="0.1524" layer="91"/>
 <label x="17.78" y="40.64" size="1.778" layer="95"/>
 <pinref part="U2" gate="G$1" pin="USB_DP"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="193.04" x2="24.13" y2="193.04" width="0.1524" layer="91"/>
+<label x="17.78" y="193.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$25" class="0">
@@ -6133,17 +6498,6 @@ VIDA Products INC</description>
 <pinref part="D5" gate="G$1" pin="A2"/>
 <wire x1="160.02" y1="69.85" x2="173.99" y2="69.85" width="0.1524" layer="91"/>
 <junction x="173.99" y="69.85"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="OUT2"/>
-<pinref part="U1" gate="G$1" pin="OUT1"/>
-<wire x1="64.77" y1="175.26" x2="64.77" y2="177.8" width="0.1524" layer="91"/>
-<pinref part="+3V35" gate="G$1" pin="+3V3"/>
-<wire x1="64.77" y1="177.8" x2="67.31" y2="177.8" width="0.1524" layer="91"/>
-<junction x="64.77" y="177.8"/>
-<pinref part="C19" gate="G$1" pin="1"/>
-<wire x1="67.31" y1="177.8" x2="69.85" y2="177.8" width="0.1524" layer="91"/>
-<junction x="67.31" y="177.8"/>
 </segment>
 <segment>
 <pinref part="+3V34" gate="G$1" pin="+3V3"/>
@@ -6309,7 +6663,27 @@ VIDA Products INC</description>
 <segment>
 <pinref part="R20" gate="G$1" pin="2"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="-8.89" y1="53.34" x2="-8.89" y2="52.07" width="0.1524" layer="91"/>
+<wire x1="-8.89" y1="53.34" x2="-8.89" y2="46.99" width="0.1524" layer="91"/>
+<pinref part="R19" gate="G$1" pin="1"/>
+<wire x1="-8.89" y1="39.37" x2="-8.89" y2="46.99" width="0.1524" layer="91"/>
+<junction x="-8.89" y="46.99"/>
+</segment>
+<segment>
+<pinref part="+3V35" gate="G$1" pin="+3V3"/>
+<wire x1="114.3" y1="177.8" x2="90.17" y2="177.8" width="0.1524" layer="91"/>
+<pinref part="C31" gate="G$1" pin="1"/>
+<pinref part="C30" gate="G$1" pin="1"/>
+<wire x1="90.17" y1="177.8" x2="81.28" y2="177.8" width="0.1524" layer="91"/>
+<junction x="90.17" y="177.8"/>
+<pinref part="U1" gate="G$1" pin="OUT2"/>
+<pinref part="U1" gate="G$1" pin="OUT1"/>
+<wire x1="64.77" y1="175.26" x2="64.77" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="64.77" y1="177.8" x2="67.31" y2="177.8" width="0.1524" layer="91"/>
+<junction x="64.77" y="177.8"/>
+<pinref part="C19" gate="G$1" pin="1"/>
+<wire x1="81.28" y1="177.8" x2="67.31" y2="177.8" width="0.1524" layer="91"/>
+<junction x="81.28" y="177.8"/>
+<junction x="67.31" y="177.8"/>
 </segment>
 </net>
 <net name="P1RX" class="0">
@@ -6457,10 +6831,10 @@ VIDA Products INC</description>
 <segment>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <pinref part="C15" gate="G$1" pin="2"/>
-<wire x1="27.94" y1="177.8" x2="13.97" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="-1.27" y1="195.58" x2="-15.24" y2="195.58" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="VBUS"/>
-<wire x1="13.97" y1="177.8" x2="5.08" y2="177.8" width="0.1524" layer="91"/>
-<junction x="13.97" y="177.8"/>
+<wire x1="-15.24" y1="195.58" x2="-24.13" y2="195.58" width="0.1524" layer="91"/>
+<junction x="-15.24" y="195.58"/>
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
@@ -6586,22 +6960,12 @@ VIDA Products INC</description>
 <wire x1="25.4" y1="7.62" x2="5.08" y2="7.62" width="0.1524" layer="91"/>
 <label x="5.08" y="7.62" size="1.778" layer="95"/>
 </segment>
-<segment>
-<wire x1="-62.23" y1="13.97" x2="-54.61" y2="13.97" width="0.1524" layer="91"/>
-<label x="-59.69" y="13.97" size="1.778" layer="95"/>
-<pinref part="TP1" gate="G$1" pin="TDO"/>
-</segment>
 </net>
 <net name="TDI" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="PB4/TDI/TWD1"/>
 <wire x1="25.4" y1="5.08" x2="5.08" y2="5.08" width="0.1524" layer="91"/>
 <label x="5.08" y="5.08" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-62.23" y1="-6.35" x2="-54.61" y2="-6.35" width="0.1524" layer="91"/>
-<label x="-59.69" y="-6.35" size="1.778" layer="95"/>
-<pinref part="TP1" gate="G$1" pin="TDI"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -7374,6 +7738,20 @@ VIDA Products INC</description>
 <wire x1="-62.23" y1="-1.27" x2="-54.61" y2="-1.27" width="0.1524" layer="91"/>
 <label x="-59.69" y="-1.27" size="1.778" layer="95"/>
 <pinref part="TP1" gate="G$1" pin="TMS"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="1"/>
+<pinref part="X1" gate="G$1" pin="D-"/>
+<wire x1="0" y1="193.04" x2="-24.13" y2="193.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$40" class="0">
+<segment>
+<pinref part="X1" gate="G$1" pin="D+"/>
+<pinref part="U$3" gate="G$1" pin="1"/>
+<wire x1="-24.13" y1="190.5" x2="-17.78" y2="190.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

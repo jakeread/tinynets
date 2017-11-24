@@ -148,6 +148,24 @@ void clearallstatus(void){
 	pin_clear(&p4lb);
 }
 
+void setallstatus(void){
+	pin_set(&p1lr);
+	pin_set(&p1lg);
+	pin_set(&p1lb);
+
+	pin_set(&p2lr);
+	pin_set(&p2lg);
+	pin_set(&p2lb);
+
+	pin_set(&p3lr);
+	pin_set(&p3lg);
+	pin_set(&p3lb);
+
+	pin_set(&p4lr);
+	pin_set(&p4lg);
+	pin_set(&p4lb);
+}
+
 int main (void)
 {
 	/* Insert system clock initialization code here (sysclk_init()). */
@@ -168,11 +186,13 @@ int main (void)
 	tp_init(&tp3);
 	tp_init(&tp4);
 	
+
 	while(1){
 		if(pin_get_state(&button)){ // hi, button is not pressed
 			pin_clear(&stlb);
 			pin_set(&stlr);
 			clearallstatus();
+			setallstatus();
 			tp_putchar(&tp1, 85);
 			tp_putchar(&tp2, 85);
 			tp_putchar(&tp3, 85);

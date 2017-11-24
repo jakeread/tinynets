@@ -506,21 +506,6 @@ I'm going to check that all of the lights are on OK pins, and then call this, do
 
 ## Incremental
 
-- GND Vias near 3v3 Reg
-- Do Reset Button
-- consider networks-only version?
-- swd
-- tag-connect no solder stencil ! 
-- tag-connect 6 pin
-- tag-connect to avr swd?
-- multiple programming? lookup jtag daisychain?
-- push plugs to edges
-- *maybe* flip or double MK header for standoff momentary happiness?
-- LEDS are too bright
-- tag-connect w/ clips would be nice
-- disconnect or solder jumper usb data lines
-- definitely go for a reset button
-
 order
  - 1k 0805
  - diff. chips
