@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,19 +39,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -743,6 +743,38 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <rectangle x1="-1.524" y1="-5.334" x2="-1.016" y2="-4.826" layer="51"/>
 <rectangle x1="1.016" y1="-5.334" x2="1.524" y2="-4.826" layer="51"/>
 </package>
+<package name="MSOP8-8MILPADS">
+<description>&lt;b&gt;8M, 8-Lead, 0.118" Wide, Miniature Small Outline Package&lt;/b&gt;&lt;p&gt;
+MSOP&lt;br&gt;
+8M-Package doc1097.pdf</description>
+<wire x1="-1.48" y1="1.23" x2="-1.23" y2="1.48" width="0.1524" layer="21" curve="-90" cap="flat"/>
+<wire x1="1.23" y1="1.48" x2="1.48" y2="1.23" width="0.1524" layer="21" curve="-90"/>
+<wire x1="1.23" y1="-1.49" x2="1.48" y2="-1.24" width="0.1524" layer="21" curve="90"/>
+<wire x1="-1.48" y1="-1.24" x2="-1.23" y2="-1.49" width="0.1524" layer="21" curve="90" cap="flat"/>
+<wire x1="1.24" y1="-1.49" x2="-1.22" y2="-1.49" width="0.1524" layer="21"/>
+<wire x1="-1.22" y1="1.48" x2="1.24" y2="1.48" width="0.1524" layer="21"/>
+<wire x1="-1.48" y1="1.23" x2="-1.48" y2="-1.23" width="0.1524" layer="21"/>
+<wire x1="1.48" y1="-1.24" x2="1.48" y2="1.23" width="0.1524" layer="21"/>
+<smd name="1" x="-0.975" y="-2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="2" x="-0.325" y="-2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="3" x="0.325" y="-2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="4" x="0.975" y="-2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="5" x="0.975" y="2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="6" x="0.325" y="2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="7" x="-0.325" y="2.25" dx="0.2286" dy="1.143" layer="1"/>
+<smd name="8" x="-0.975" y="2.25" dx="0.2286" dy="1.143" layer="1"/>
+<text x="-2.54" y="-1.27" size="0.4064" layer="25" rot="R90">&gt;NAME</text>
+<text x="2.54" y="-1.27" size="0.4064" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.175" y1="-2.45" x2="-0.775" y2="-1.55" layer="51"/>
+<rectangle x1="-0.525" y1="-2.45" x2="-0.125" y2="-1.55" layer="51"/>
+<rectangle x1="0.125" y1="-2.45" x2="0.525" y2="-1.55" layer="51"/>
+<rectangle x1="0.775" y1="-2.45" x2="1.175" y2="-1.55" layer="51"/>
+<rectangle x1="0.775" y1="1.55" x2="1.175" y2="2.45" layer="51"/>
+<rectangle x1="0.125" y1="1.55" x2="0.525" y2="2.45" layer="51"/>
+<rectangle x1="-0.525" y1="1.55" x2="-0.125" y2="2.45" layer="51"/>
+<rectangle x1="-1.175" y1="1.55" x2="-0.775" y2="2.45" layer="51"/>
+<circle x="-1.6256" y="-2.0574" radius="0.091578125" width="0.4064" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="ISL3177E">
@@ -946,14 +978,14 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <pin name="PB9/XIN" x="-33.02" y="-53.34" length="middle"/>
 <pin name="PB12/ERASE" x="-33.02" y="-50.8" length="middle"/>
 <pin name="PB13/DAC0/SCK0" x="-33.02" y="-48.26" length="middle"/>
-<pin name="PD1/PWMC1_PWMLO" x="30.48" y="-2.54" length="middle" rot="R180"/>
-<pin name="PD2/PWMC1_PWMH0" x="30.48" y="-5.08" length="middle" rot="R180"/>
-<pin name="PD3/PWMC1_PWML1" x="30.48" y="-7.62" length="middle" rot="R180"/>
-<pin name="PD4/PWMC1_PWMH1" x="30.48" y="-10.16" length="middle" rot="R180"/>
-<pin name="PD5/PWMC1_PWML2" x="30.48" y="-12.7" length="middle" rot="R180"/>
-<pin name="PD6/PWMC1_PWMH2" x="30.48" y="-15.24" length="middle" rot="R180"/>
-<pin name="PD7/PWMC1_PWML3" x="30.48" y="-17.78" length="middle" rot="R180"/>
-<pin name="PD8/PWMC1_PWMH3" x="30.48" y="-20.32" length="middle" rot="R180"/>
+<pin name="PD1/PWMC1_PWMH0" x="30.48" y="-2.54" length="middle" rot="R180"/>
+<pin name="PD2/PWMC1_PWML1" x="30.48" y="-5.08" length="middle" rot="R180"/>
+<pin name="PD3/PWMC1_PWMH1" x="30.48" y="-7.62" length="middle" rot="R180"/>
+<pin name="PD4/PWMC1_PWML2" x="30.48" y="-10.16" length="middle" rot="R180"/>
+<pin name="PD5/PWMC1_PWMH2" x="30.48" y="-12.7" length="middle" rot="R180"/>
+<pin name="PD6/PWMC1_PWML3" x="30.48" y="-15.24" length="middle" rot="R180"/>
+<pin name="PD7/PWMC1_PWMH3" x="30.48" y="-17.78" length="middle" rot="R180"/>
+<pin name="PD8" x="30.48" y="-20.32" length="middle" rot="R180"/>
 <pin name="PD9" x="30.48" y="-22.86" length="middle" rot="R180"/>
 <pin name="PD10/PWMC0_PWML0" x="30.48" y="-25.4" length="middle" rot="R180"/>
 <pin name="PD11/PWMC0_PWMH0" x="30.48" y="-27.94" length="middle" rot="R180"/>
@@ -975,7 +1007,7 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 <pin name="PD28/URXD3/TWCK2" x="30.48" y="-68.58" length="middle" rot="R180"/>
 <pin name="PD30/UTXD3" x="30.48" y="-71.12" length="middle" rot="R180"/>
 <pin name="PD31" x="30.48" y="-73.66" length="middle" rot="R180"/>
-<pin name="PD0/DAC1" x="30.48" y="0" length="middle" rot="R180"/>
+<pin name="PD0/DAC1/PWMC1_PWML0" x="30.48" y="0" length="middle" rot="R180"/>
 <pin name="VDDIO1" x="-33.02" y="58.42" length="middle"/>
 <pin name="VDDIO2" x="-33.02" y="55.88" length="middle"/>
 <pin name="VDDIO3" x="-33.02" y="53.34" length="middle"/>
@@ -1029,6 +1061,21 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LA_LY E67B.pdf</description>
 </gates>
 <devices>
 <device name="" package="MSOP8">
+<connects>
+<connect gate="G$1" pin="A" pad="8"/>
+<connect gate="G$1" pin="B" pad="7"/>
+<connect gate="G$1" pin="DI" pad="3"/>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="RO" pad="2"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+<connect gate="G$1" pin="Y" pad="5"/>
+<connect gate="G$1" pin="Z" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="MILL" package="MSOP8-8MILPADS">
 <connects>
 <connect gate="G$1" pin="A" pad="8"/>
 <connect gate="G$1" pin="B" pad="7"/>
@@ -1268,8 +1315,8 @@ Three footprint variants included:
 <connect gate="G$1" pin="PB7/SWCLK/TCK" pad="63"/>
 <connect gate="G$1" pin="PB8/XOUT" pad="98"/>
 <connect gate="G$1" pin="PB9/XIN" pad="99"/>
-<connect gate="G$1" pin="PD0/DAC1" pad="1"/>
-<connect gate="G$1" pin="PD1/PWMC1_PWMLO" pad="92"/>
+<connect gate="G$1" pin="PD0/DAC1/PWMC1_PWML0" pad="1"/>
+<connect gate="G$1" pin="PD1/PWMC1_PWMH0" pad="92"/>
 <connect gate="G$1" pin="PD10/PWMC0_PWML0" pad="71"/>
 <connect gate="G$1" pin="PD11/PWMC0_PWMH0" pad="69"/>
 <connect gate="G$1" pin="PD12/SPI0_NPCS2" pad="65"/>
@@ -1280,7 +1327,7 @@ Three footprint variants included:
 <connect gate="G$1" pin="PD17" pad="53"/>
 <connect gate="G$1" pin="PD18/URXD4" pad="49"/>
 <connect gate="G$1" pin="PD19/UTXD4" pad="47"/>
-<connect gate="G$1" pin="PD2/PWMC1_PWMH0" pad="91"/>
+<connect gate="G$1" pin="PD2/PWMC1_PWML1" pad="91"/>
 <connect gate="G$1" pin="PD20/SPI0_MISO" pad="45"/>
 <connect gate="G$1" pin="PD21/SPI0_MOSI" pad="43"/>
 <connect gate="G$1" pin="PD22_SPI0_SPCK" pad="41"/>
@@ -1289,14 +1336,14 @@ Three footprint variants included:
 <connect gate="G$1" pin="PD26/UTXD2" pad="36"/>
 <connect gate="G$1" pin="PD27/SPI0_NPCS3/TWD2" pad="32"/>
 <connect gate="G$1" pin="PD28/URXD3/TWCK2" pad="51"/>
-<connect gate="G$1" pin="PD3/PWMC1_PWML1" pad="89"/>
+<connect gate="G$1" pin="PD3/PWMC1_PWMH1" pad="89"/>
 <connect gate="G$1" pin="PD30/UTXD3" pad="23"/>
 <connect gate="G$1" pin="PD31" pad="2"/>
-<connect gate="G$1" pin="PD4/PWMC1_PWMH1" pad="88"/>
-<connect gate="G$1" pin="PD5/PWMC1_PWML2" pad="87"/>
-<connect gate="G$1" pin="PD6/PWMC1_PWMH2" pad="85"/>
-<connect gate="G$1" pin="PD7/PWMC1_PWML3" pad="84"/>
-<connect gate="G$1" pin="PD8/PWMC1_PWMH3" pad="80"/>
+<connect gate="G$1" pin="PD4/PWMC1_PWML2" pad="88"/>
+<connect gate="G$1" pin="PD5/PWMC1_PWMH2" pad="87"/>
+<connect gate="G$1" pin="PD6/PWMC1_PWML3" pad="85"/>
+<connect gate="G$1" pin="PD7/PWMC1_PWMH3" pad="84"/>
+<connect gate="G$1" pin="PD8" pad="80"/>
 <connect gate="G$1" pin="PD9" pad="78"/>
 <connect gate="G$1" pin="TST" pad="60"/>
 <connect gate="G$1" pin="USB_DM" pad="94"/>
@@ -7317,14 +7364,14 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 </net>
 <net name="MK-DAC" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="PD0/DAC1"/>
+<pinref part="U2" gate="G$1" pin="PD0/DAC1/PWMC1_PWML0"/>
 <wire x1="88.9" y1="71.12" x2="95.25" y2="71.12" width="0.1524" layer="91"/>
 <label x="90.17" y="71.12" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MK-PWM1L0" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="PD1/PWMC1_PWMLO"/>
+<pinref part="U2" gate="G$1" pin="PD1/PWMC1_PWMH0"/>
 <wire x1="88.9" y1="68.58" x2="95.25" y2="68.58" width="0.1524" layer="91"/>
 <label x="90.17" y="68.58" size="1.778" layer="95"/>
 </segment>
@@ -7355,7 +7402,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="242.57" y="12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD2/PWMC1_PWMH0"/>
+<pinref part="U2" gate="G$1" pin="PD2/PWMC1_PWML1"/>
 <wire x1="88.9" y1="66.04" x2="95.25" y2="66.04" width="0.1524" layer="91"/>
 <label x="90.17" y="66.04" size="1.778" layer="95"/>
 </segment>
@@ -7367,7 +7414,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="209.55" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD3/PWMC1_PWML1"/>
+<pinref part="U2" gate="G$1" pin="PD3/PWMC1_PWMH1"/>
 <wire x1="88.9" y1="63.5" x2="95.25" y2="63.5" width="0.1524" layer="91"/>
 <label x="90.17" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -7379,7 +7426,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="242.57" y="10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD4/PWMC1_PWMH1"/>
+<pinref part="U2" gate="G$1" pin="PD4/PWMC1_PWML2"/>
 <wire x1="88.9" y1="60.96" x2="95.25" y2="60.96" width="0.1524" layer="91"/>
 <label x="90.17" y="60.96" size="1.778" layer="95"/>
 </segment>
@@ -7391,7 +7438,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="209.55" y="7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD5/PWMC1_PWML2"/>
+<pinref part="U2" gate="G$1" pin="PD5/PWMC1_PWMH2"/>
 <wire x1="88.9" y1="58.42" x2="95.25" y2="58.42" width="0.1524" layer="91"/>
 <label x="90.17" y="58.42" size="1.778" layer="95"/>
 </segment>
@@ -7403,7 +7450,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="242.57" y="7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD6/PWMC1_PWMH2"/>
+<pinref part="U2" gate="G$1" pin="PD6/PWMC1_PWML3"/>
 <wire x1="88.9" y1="55.88" x2="95.25" y2="55.88" width="0.1524" layer="91"/>
 <label x="90.17" y="55.88" size="1.778" layer="95"/>
 </segment>
@@ -7415,7 +7462,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="209.55" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD7/PWMC1_PWML3"/>
+<pinref part="U2" gate="G$1" pin="PD7/PWMC1_PWMH3"/>
 <wire x1="88.9" y1="53.34" x2="95.25" y2="53.34" width="0.1524" layer="91"/>
 <label x="90.17" y="53.34" size="1.778" layer="95"/>
 </segment>
@@ -7427,7 +7474,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="242.57" y="5.08" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PD8/PWMC1_PWMH3"/>
+<pinref part="U2" gate="G$1" pin="PD8"/>
 <wire x1="88.9" y1="50.8" x2="95.25" y2="50.8" width="0.1524" layer="91"/>
 <label x="90.17" y="50.8" size="1.778" layer="95"/>
 </segment>
@@ -7752,6 +7799,13 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="X1" gate="G$1" pin="D+"/>
 <pinref part="U$3" gate="G$1" pin="1"/>
 <wire x1="-24.13" y1="190.5" x2="-17.78" y2="190.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$45" class="0">
+<segment>
+<wire x1="106.68" y1="67.31" x2="109.22" y2="67.31" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="67.31" x2="109.22" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="53.34" x2="106.68" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
