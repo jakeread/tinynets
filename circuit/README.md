@@ -123,14 +123,34 @@ Fabricated
 ![fabbed](https://github.com/jakeread/tinynets/blob/master/document/one-atsam-router.jpg)
 
 
+## Bill of Materials
+
+| Part | Value | Package | Number | PN | 
+| --- | --- | --- | --- | ---- |
+| C | 0.1uF | 0603 | 11 | - |
+| C | 22pF | 0603 | 2 | - |
+| C | 10pF | 0805 | 1 | - |
+| C | 0.47uF | 0805 | 4 | - |
+| C | 4.7uF | 0805 | 2 | - |
+| C | 22uF 16V | 0805 | 9 | - |
+| C | 47uF 16V | 1210 | 2 | - |
+| R | 2R2 | 0805 | 2 | - |
+| R | 1K | 0805 | 5 | - |
+| R | 2K2 | 0805 | 10 | - |
+| R | 5K62 | 0805 | 1 | - |
+| R | 10K | 0805 | 2 | - |
+| L | 10uH | 1812 | 2 | - |
+| Q | 12MHz | CT406 | 1 | - |
+| D | LEDRGBNEW | P-LCC-4 | 5 | - |
+| U | ISL3177E | MSOP8 | 4 | - |
+| U | ATSAMS70N | TQFP100 | 1 | - |
+| U | 3V3 Reg | SOT223 | 1 | - |
+| Connector | 02x04 Shrouded | - | 4 | - |
+| Switch | FAB Momentary | - | 2 | - |
+
+
 ## Incremental
 
 next board
  - tiny inductor filters on vddpll and vddoutmic, maybe shield usb, as this might work?
  - if end of term / long time span, do v71 for usb dreams?
-
-order
- - 1k 0805
- - diff. chips
- - astams
- - or, draw up a BOM and order for 30 !

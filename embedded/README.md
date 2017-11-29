@@ -1,4 +1,3 @@
-
 # Programming
 
 It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...
