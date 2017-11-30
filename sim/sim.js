@@ -4,14 +4,16 @@ var net = require("./network"),
 const startupDelay = 100;
 const connectDelay = 100;
 const bufferCheckDelay = 1000;
+const heartbeatPeriod = 400;
 
 // INITIALIZE NETWORK TOPOLOGY HERE
 var initTopology = [
-	[1,2],
-	[0,3],
-        [0,4],
-        [1,4],
-        [3,2]
+	[1,2],      // 0
+	[0,3],      // 1
+        [0,4,5],    // 2
+        [1,4],      // 3
+        [3,2],      // 4
+        [2]         // 5
 ];
 
 // Don't touch this code
@@ -34,6 +36,12 @@ for (let i = 0; i < initTopology.length; i++) {
 		this.tick(bufferCheckDelay, function() {
 			this.manager.checkBuffer();
 		});
+		this.tick(heartbeatPeriod, function() {
+			this.manager.heartbeat();
+		});
+                this.tick(2*heartbeatPeriod, function() {
+                        this.manager.takePulse();
+                });
 	});
 	for (let j = 0; j < initTopology[i].length; j++) {
 		if (initTopology[i][j] == -1) {
@@ -48,17 +56,30 @@ for (let i = 0; i < initTopology.length; i++) {
 	}
 }
 
+//----------------------------------------------------------------------------//
 // PUT CUSTOM CODE HERE:
-
-//send(0, 1, 'hi!', 1000);
-//send(3, 3, 'what is up?', 1500);
-//disconnect(0, 1, 2, 2, 1700);
-//send(2, 2, 'You cannot see this cause we are not connected', 2000);
-//send(2, 0, 'we are friends now', 2500);
 sendPacket(0,4,1,"Hello Four!",1000);
-sendPacket(0,4,1,"I love you, Four!",6000)
+
+// To test link failure, uncomment one. To test node failure, uncomment both.
+//disconnect(0,1,2,0,6000);
+//disconnect(2,1,4,1,6000);
+
+// To test how network reacts to heavy traffic at a desired node, uncomment.
+//sendPacket(5,2,1,"Distraction 0!",6000);
+//sendPacket(5,2,1,"Distraction 1!",6000);
+//sendPacket(5,2,1,"Distraction 2!",6000);
+//sendPacket(5,2,1,"Distraction 3!",6000);
+//sendPacket(5,2,1,"Distraction 4!",6000);
+//sendPacket(5,2,1,"Distraction 5!",6000);
+//sendPacket(5,2,1,"Distraction 6!",6000);
+//sendPacket(5,2,1,"Distraction 7!",6000);
+//sendPacket(5,2,1,"Distraction 8!",6000);
+
+sendPacket(4,0,1,"I love you, One!",8000);
+
 
 //Don't add stuff below this:
+//----------------------------------------------------------------------------//
 
 for (let i = 0; i < initTopology.length; i++) {
 	net.add(1, clients[i]);

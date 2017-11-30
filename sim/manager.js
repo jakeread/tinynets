@@ -1,10 +1,10 @@
 function Manager(self) {
     self.manager = this;
 
-    const STD = 252;
-    const ACK = 253;
-    const STF = 254;
-    const ACF = 255;
+    const STD = 252;                    // Standard Message label
+    const ACK = 253;                    // Acknowledgement label
+    const STF = 254;                    // Standard Flood label
+    const ACF = 255;                    // Flood ACK label
 	
     this.ports = [];
     this.numports = 0;
@@ -19,7 +19,8 @@ function Manager(self) {
         for (var p = 0; p < numports; p++) {
             this.addr_table[p] = {
                 dests: {},
-                buff: 0
+                buff: 0,
+                heartbeat: false
             };
         }
     };
@@ -79,8 +80,33 @@ function Manager(self) {
 //        self.log(this.buffer);
         if (this.buffer.length > 0) {
             this.handlePacket(this.buffer.shift());
+        } else {
+            self.setColor("black");
         }
 //        self.log(`checked buffer of node ${self.id}`);
+    };
+    
+    this.heartbeat = function() {
+        for (let p=0; p<this.numports; p++) {
+            this.sendPacket(this.buffer.length, undefined, undefined, undefined, undefined, undefined, p);
+        }
+    };
+    
+    this.takePulse = function() {
+        for (let p=0; p<this.numports; p++) {
+            if (this.addr_table[p].heartbeat) {
+                this.addr_table[p].heartbeat = false;
+            } else {
+                for (var prop in this.addr_table[p].dests) {
+                    if (this.addr_table[p].dests.hasOwnProperty(prop)) {
+                        this.addr_table[p].dests = {};
+                        this.addr_table[p].buff = 0;
+                        self.log(`did not receive heartbeat from port ${p}`);
+                        return;
+                    }
+                }
+            }
+        }
     };
 
     this.sendPacket = function(start, dest=-1, hopcount=0, src=self.id, size=0, data=null, port=-1) {
@@ -112,7 +138,10 @@ function Manager(self) {
         var packet = o.obj;
         packet.port = port;
         
-        if (this.buffer.length < this.maxBufferSize) {
+        if (packet.start !== STD && packet.start !== ACK && packet.start !== STF && packet.start !== ACF) {
+            this.addr_table[port].buff = packet.start;
+            this.addr_table[port].heartbeat = true;
+        } else if (this.buffer.length < this.maxBufferSize) {
             this.buffer.push(packet);
 	}
     };
@@ -127,26 +156,26 @@ function Manager(self) {
         }
         
         if (packet.start === STD) {				// Standard Packet
+            self.setColor("blue");
             if (packet.dest === self.id) {                                      // If I am destination
                 const nextPort = this.getMinCostPort(packet.src);               // Pick the port to send ACK based off minimizing cost
                 self.log(`got message ${packet.data}. ACKing port ${nextPort}`);
-                this.sendPacket(ACK, packet.src, 0, self.id, nextPort);
+                this.sendPacket(ACK, packet.src, undefined, self.id, undefined, undefined, nextPort);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 const nextPort = this.getMinCostPort(packet.dest);              // Pick the port to send to based off minimizing cost
                 if (nextPort === -1) {                                          // If LUT does not have dest
                     self.log(`flooding message ${packet.data}`);
                     for (let p = 0; p < this.numports; p++) {                   // Flood packet
-                        if (p !== packet.port) {
-                            this.sendPacket(STF, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
-                        }
+                        this.sendPacket(STF, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
-                    self.log(`sending packet ${packet.data}`);
+                    self.log(`sending packet ${packet.data} along port ${nextPort}`);
                     this.sendPacket(STD, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else if (packet.start === ACK) {			// Acknowledgement
+            self.setColor("red");
             if (packet.dest === self.id) {                                      // If I am destination
                 self.log(`got ACK from ${packet.src}`);
             } else {
@@ -155,15 +184,15 @@ function Manager(self) {
                 if (nextPort === -1) {                                          // If LUT does not have dest
                     self.log(`flooding ACK`);
                     for (let p = 0; p < this.numports; p++) {                   // Flood ACK
-                        if (p !== packet.port)
-                            this.sendPacket(ACF, packet.dest, packet.hopcount, packet.src, 0, null, p);
+                        this.sendPacket(ACF, packet.dest, packet.hopcount, packet.src, 0, null, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
-                    self.log(`forwarding ACK`);
+                    self.log(`forwarding ACK along port ${nextPort}`);
                     this.sendPacket(ACK, packet.dest, packet.hopcount, packet.src, 0, null, nextPort);
                 }
             }
         } else if (packet.start === STF) {			// Standard Flood
+            self.setColor("cyan");
             if (this.addr_table[packet.port].dests.hasOwnProperty(packet.dest)) // If I thought this port could send to destination, remove it
                 delete this.addr_table[packet.port].dests[packet.dest];         // ...if that node had known, it wouldn't have forwarded it as a flood.
             const thisFlood = {                                                 // Static information within packet for comparison
@@ -192,11 +221,12 @@ function Manager(self) {
                         }
                     }
                 } else {                                                        // If LUT does have dest, send to that port
-                    self.log(`forwarding message ${packet.data}`);
+                    self.log(`forwarding message ${packet.data} along ${nextPort}`);
                     this.sendPacket(STD, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else if (packet.start === ACF) {			// ACK Flood
+            self.setColor("magenta");
             if (this.addr_table[packet.port].dests.hasOwnProperty(packet.dest)) // If I thought this port could send to destination, remove it
                 delete this.addr_table[packet.port].dests[packet.dest];         // ...if that node had known, it wouldn't have forwarded it as a flood.
             if (packet.dest === self.id) {                                      // If I am destination
@@ -220,12 +250,12 @@ function Manager(self) {
                             this.sendPacket(ACF, packet.dest, packet.hopcount, packet.src, 0, null, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
-                    self.log(`forwarding ACK`);
+                    self.log(`forwarding ACK along port ${nextPort}`);
                     this.sendPacket(ACK, packet.dest, packet.hopcount, packet.src, 0, null, nextPort);
                 }
             }
-        } else {                                                // Buffer Update
-            this.addr_table[packet.port].buff = packet.start;
+        } else {                                                // Buffer Update. Should have been handled elsewhere
+            self.log(`Packet start error`);
         }
     };
 

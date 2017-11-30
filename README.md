@@ -171,7 +171,7 @@ elseif packet is standard flood:
 			if LUT has destination address:
 				send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer as standard packet
 			else:
-				send packet to all ports
+				send packet to all ports except one from which it was received
 
 elseif packet is ack flood
     remove packet src. from LUT at that port if it exists
@@ -182,7 +182,7 @@ elseif packet is ack flood
         if LUT has destination address:
             send packet to port which minimizes C(hops, buffer) = hops + \lambda*buffer as standard ACK
         else:
-            send packet to all ports
+            send packet to all ports except one from which it was received
 
 else:
     write buffer depth to LUT
