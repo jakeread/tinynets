@@ -51,16 +51,21 @@ However, we can offer analysis as to why we believe our approach is substantiall
 
 **Realtime / Convergence Free Multipath Routing in a Distance-Vector Routing Protocol**
 - Existing Multipath Routing Technologies offer multipath routing (which eliminates the switching-bottleneck issues associated with switched ethernet), however, they do so using link-state routing that requires each router to share common knowledge about the complete network graph. In the face of link outages or router failures, networks must re-converge - a process that interrupts flows and causes massive increases, or complete failures, in message deliveries. For example
- - ECMP (Equal Cost Multipath Routing)
- - OSPF (Open Shortest Path First)
- - SPB (Shortest Path Bridging)
- - TRILL (TRansparent Interconnect of Lots of Links)
+ - ECMP (Equal Cost Multipath Routing): more of a tool than an actual strategy; simply considers multiple paths when there are multiple best paths, i.e. load balancing mechanism
+ - OSPF (Open Shortest Path First): Computes shortest path tree using Dijstra -- must know entire graph; wikipedia states convergence time is on the order of seconds (links to Cisco default parameters that set timeouts to be multiple seconds); specifically for Ethernet and offers a multipath version
+ - SPB (Shortest Path Bridging): allows multiple equal cost paths and claims network is unaffected when a node fails except for the path(s) affected by the node failure, i.e. still cannot find another path if there is a unique shortest path containing a broken link
+ - TRILL (TRansparent Interconnect of Lots of Links): must know entire graph, otherwise extremely similar to our protocol (uses hop counts and has similar flooding procedure); operates in Layer 2 and uses Fabric Shortest Path First (FSPF) to calculate alternate routes in node failure scenarios
 
 We seek to demonstrate that these re-convergence times would cause operational failure in NCS, thus eliminating ECMP and OSPF as possible solutions to the NCS problem. 
 
-**@Dougie** 
-- can you try to work through the literature to build this argument, including references to measured convergence times? actually, I looked at the wikipedia pages (bad scholar!) for most of these protocols, and I think that simply stating that these are all link-state routing policies allows us to poo-poo them for convergence - the key would be to find particular references to expected scales and convergence times. 
-- also, many of these protocols add information to the header, and in the interest of minimizing Message Delivery Times this is BNB (bad news bears)
+The three protocols in question (OSPF, SPB, TRILL) require knowing the entire graph to perform a global shortest path calculation. All three of them allow for multipath consideration when there are multiple best paths. 200 ms seems to be the lower bound on convergence times as FSPF is quoted to having as good as 200 ms convergence time in the book "IBM SAN Solution Design Best Practices for VMWare" book. The vanilla OSPF protocol that Cisco offers indicates around an order second convergence time while optimized versions offer similar timing to FSPF (see paper).
+
+200 ms sounds like a reasonable convergence time (and is quoted as being extremely fast) so to prove our merit, we need to demonstrate systems that do not have multiple shortest paths using the protocols above. This should highlight the main benefit of our protocol, that being the capability to perform real time alternate path calculations in a reasonable amount of time.
+
+We propose designing multiple experiments to showcase the benefit of our protocol:
+1. Grid structure network - test latency of corner communication and traffic of network during node failure. This test will serve as a control since there will be many shortest paths (if hop count is used as the metric).
+2. Ring structure network - we already have graphs for this from the other protocol and it will demonstrate the speed at which each protocol finds the only other path in the event of a node failure.
+3. Mesh network - fully connected network that will test our network utilization (ensure ringing doesn't happen or is at least bounded tightly). Test the latency of cross network communication in the event of a node failure. We should expect to see minimal decision time in our protocol and minimal flooding.
 
 **Avoiding Switching Bottlenecks with Multipath Routing**
 - In a careful literature review and analysis, we will show that Layer-2 Solutions (switched ethernet) necessarily cause switching bottlenecks that create Single Points of Failure and increases in Message Delivery Times to NCS.
