@@ -201,14 +201,14 @@ function Manager(self) {
                 data: packet.data
             };
             if (this.hasSeen(thisFlood)) {                                      // If I have seen it before, don't forward
-                self.log(`not forwarding ${packet.data} from port ${packet.port}`);
+//                self.log(`not forwarding ${packet.data} from port ${packet.port}`);
                 return;
             }
             this.seenFloods.push(thisFlood);                                    // Remember the packet
             if (packet.dest === self.id) {                                      // If I am destination
                 const nextPort = this.getMinCostPort(packet.src);               // Pick the port to send ACK based off minimizing cost
                 self.log(`got flood ${packet.data} from port ${packet.port}. ACKing ${packet.src} along port ${nextPort}`);
-                this.sendPacket(ACK, packet.src, 0, self.id, nextPort);
+                this.sendPacket(ACK, packet.src, undefined, self.id, undefined, undefined, nextPort);
             } else {
                 packet.hopcount++;                                              // Increment hopcount
                 

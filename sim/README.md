@@ -1,3 +1,5 @@
+EDIT: The important files are now located in sim/TinyNets/public_html/
+
 # TinyNets Simulator
 
 A modified version of [simbit](https://github.com/ebfull/simbit).

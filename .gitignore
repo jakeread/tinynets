@@ -4,3 +4,6 @@ jake/
 **.lss
 **.map
 **.srec
+
+sim/js_code.txt
+sim/TinyNets/nbproject/
