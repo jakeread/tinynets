@@ -186,7 +186,7 @@ int main (void)
 	tp_init(&tp3);
 	tp_init(&tp4);
 	
-	/*
+	
 	clearallstatus();
 	delay_ms(100);
 	setallstatus();
@@ -199,7 +199,7 @@ int main (void)
 	delay_ms(100);
 	setallstatus();
 	delay_ms(100);
-	*/
+	
 
 	while(1){
 		if(pin_get_state(&button)){ // hi, button is not pressed
@@ -217,3 +217,4 @@ int main (void)
 		}
 	}
 }
+
