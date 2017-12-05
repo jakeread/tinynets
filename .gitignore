@@ -4,6 +4,10 @@ jake/
 **.lss
 **.map
 **.srec
+**.o
+**.d
+**.DS_Store
+**.b##
 
 sim/js_code.txt
 sim/TinyNets/nbproject/

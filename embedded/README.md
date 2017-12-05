@@ -1,3 +1,21 @@
+# 'API'
+
+OK, hacking it together aside, it's time to write a real set of functions for the ports.
+
+First order is to setup each port to ring-return. I'll test that, and the abstractions, with the FTDI.
+
+Roll stlr's into tp's
+
+Try doing this with DMA? Might make it easier on TX'ing
+
+- four ports, each doing rx -> single char hold, on while loop, check each port and ship char home on respective tx line
+
+Then I need to get a ringbuffer setup on top of each pipe. I'll test that again with four rx returns, this time sending multiple chars... 
+
+# Interrupts
+
+These were originally very difficult to figure out - I think I finally found [a good document](http://www.atmel.com/Images/Section3_Interrupts.pdf)
+
 # Programming
 
 It turns out this chip defaults to SWD, not JTAG. Should have read the datasheet more carefully. Also, I forgot to order the tag-connect for this number of pins...

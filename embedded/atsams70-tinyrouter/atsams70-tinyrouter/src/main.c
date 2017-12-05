@@ -57,17 +57,19 @@ tinyport_t tp2;
 tinyport_t tp3;
 tinyport_t tp4;
 
-void peripheralsetup(void){
-	PMC->PMC_PCER0 = 1 << ID_PIOA;
-	PMC->PMC_PCER0 = 1 << ID_PIOD;
+
+void setupperipherals(void){
+
+	PMC->PMC_PCER0 = 1 << ID_PIOA; // Pins
+	PMC->PMC_PCER0 = 1 << ID_PIOD; // Pins
 	PMC->PMC_PCER0 = 1 << ID_UART0; // UART0
 	PMC->PMC_PCER0 = 1 << ID_UART1; // UART1
 	PMC->PMC_PCER1 = 1 << 12; // UART2
 	PMC->PMC_PCER1 = 1 << 14; // UART4 go clock go
 	
-	// tp1, uart2
-	//PIOD->PIO_ABCDSR[0] = ~PIO_PER_P25;
-	//PIOD->PIO_ABCDSR[0] = ~PIO_PER_P26;
+	// tp1, uart2 & uart 4
+	PIOD->PIO_ABCDSR[0] = ~(PIO_PER_P25 | PIO_PER_P18);
+	PIOD->PIO_ABCDSR[0] = ~(PIO_PER_P26 | PIO_PER_P19);
 	PIOD->PIO_ABCDSR[1] = PIO_PER_P25;
 	PIOD->PIO_ABCDSR[1] = PIO_PER_P26;
 	
@@ -86,10 +88,37 @@ void peripheralsetup(void){
 	
 	
 	//tp4, uart4
-	//PIOD->PIO_ABCDSR[0] = ~PIO_PER_P18;
-	//PIOD->PIO_ABCDSR[0] = ~PIO_PER_P19;
+	//PIOD->PIO_ABCDSR[0] &= ~PIO_PER_P18;
+	//PIOD->PIO_ABCDSR[0] &= ~PIO_PER_P19;
 	PIOD->PIO_ABCDSR[1] |= PIO_PER_P18;
 	PIOD->PIO_ABCDSR[1] |= PIO_PER_P19;
+	
+}
+
+void killwatchdog(void){
+	WDT->WDT_MR = WDT_MR_WDDIS; // RIP
+}
+
+void setupinterrupts(void){
+	NVIC_DisableIRQ(UART2_IRQn);
+	NVIC_ClearPendingIRQ(UART2_IRQn);
+	NVIC_SetPriority(UART2_IRQn, 8);
+	NVIC_EnableIRQ(UART2_IRQn);
+	
+	NVIC_DisableIRQ(UART0_IRQn);
+	NVIC_ClearPendingIRQ(UART0_IRQn);
+	NVIC_SetPriority(UART0_IRQn, 8);
+	NVIC_EnableIRQ(UART0_IRQn);
+	
+	NVIC_DisableIRQ(UART1_IRQn);
+	NVIC_ClearPendingIRQ(UART1_IRQn);
+	NVIC_SetPriority(UART1_IRQn, 8);
+	NVIC_EnableIRQ(UART1_IRQn);
+	
+	NVIC_DisableIRQ(UART4_IRQn);
+	NVIC_ClearPendingIRQ(UART4_IRQn);
+	NVIC_SetPriority(UART4_IRQn, 8);
+	NVIC_EnableIRQ(UART4_IRQn);
 }
 
 void setupstatus(void){
@@ -171,9 +200,11 @@ int main (void)
 	/* Insert system clock initialization code here (sysclk_init()). */
 
 	board_init();
-	sysclk_init();
+	sysclk_init();	
 	
-	peripheralsetup();
+	setupperipherals();
+	killwatchdog();
+	
 	setupstatus();
 	
 	tp1 = tinyport_new(UART2, PIOD, PERIPHERAL_C, PIO_PER_P25, PIO_PER_P26);
@@ -186,35 +217,65 @@ int main (void)
 	tp_init(&tp3);
 	tp_init(&tp4);
 	
+	setupinterrupts();
 	
 	clearallstatus();
 	delay_ms(100);
 	setallstatus();
-	delay_ms(100);
+	delay_ms(50);
 	clearallstatus();
-	delay_ms(100);
+	delay_ms(25);
 	setallstatus();
-	delay_ms(100);
-	clearallstatus();
-	delay_ms(100);
-	setallstatus();
-	delay_ms(100);
-	
 
 	while(1){
-		if(pin_get_state(&button)){ // hi, button is not pressed
-			pin_clear(&stlb);
-			pin_set(&stlr);
-			clearallstatus();
-			setallstatus();
-			tp_putchar(&tp1, 85);
-			tp_putchar(&tp2, 85);
-			tp_putchar(&tp3, 85);
-			tp_putchar(&tp4, 85);
-		} else {
-			pin_set(&stlb);
-			pin_clear(&stlr);
+		if(tp1.haschar == 1){
+			tp_putchar(&tp1, tp1.tempchar);
+			tp1.haschar = 0;
 		}
+		if(tp2.haschar == 1){
+			tp_putchar(&tp2, tp2.tempchar);
+			tp2.haschar = 0;
+		}
+		if(tp3.haschar == 1){
+			tp_putchar(&tp3, tp3.tempchar);
+			tp3.haschar = 0;
+		}
+		if(tp4.haschar == 1){
+			tp_putchar(&tp4, tp4.tempchar);
+			tp4.haschar = 0;
+		}
+		delay_cycles(1); // one clock tick, otherwise interrupts no firey
+		/*
+		delay_ms(1000);
+		tp_putchar(&tp1, 'A');
+		tp_putchar(&tp1, 0x0A);
+		delay_ms(1000);
+		tp_putchar(&tp1, 'B');
+		tp_putchar(&tp1, 0x0A);
+		*/
 	}
 }
 
+void UART2_Handler(){
+	if(UART2->UART_SR & UART_SR_RXRDY){
+		tp_rxhandler(&tp1);
+	}
+}
+
+void UART0_Handler(){
+	if(UART0->UART_SR & UART_SR_RXRDY){
+		tp_rxhandler(&tp2);
+	}
+}
+
+void UART1_Handler(){
+	if(UART1->UART_SR & UART_SR_RXRDY){
+		tp_rxhandler(&tp3);
+	}
+}
+
+void UART4_Handler(){
+	if(UART4->UART_SR & UART_SR_RXRDY){
+		tp_rxhandler(&tp4);
+	}
+}
