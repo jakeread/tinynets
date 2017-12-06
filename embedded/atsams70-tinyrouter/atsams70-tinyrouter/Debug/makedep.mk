@@ -2,7 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\packet.c
+
 src\pin.c
+
+src\ringbuffer.c
 
 src\tinyport.c
 

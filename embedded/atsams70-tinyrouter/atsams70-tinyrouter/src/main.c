@@ -36,26 +36,34 @@ pin_t stlb;
 pin_t stlr;
 pin_t button;
 
+tinyport_t tp1;
+ringbuffer_t p1rbrx;
+ringbuffer_t p1rbtx;
 pin_t p1lr;
 pin_t p1lg;
 pin_t p1lb;
 
+tinyport_t tp2;
+ringbuffer_t p2rbrx;
+ringbuffer_t p2rbtx;
 pin_t p2lr;
 pin_t p2lg;
 pin_t p2lb;
 
+tinyport_t tp3;
+ringbuffer_t p3rbrx;
+ringbuffer_t p3rbtx;
 pin_t p3lr;
 pin_t p3lg;
 pin_t p3lb;
 
+tinyport_t tp4;
+ringbuffer_t p4rbrx;
+ringbuffer_t p4rbtx;
 pin_t p4lr;
 pin_t p4lg;
 pin_t p4lb;
 
-tinyport_t tp1;
-tinyport_t tp2;
-tinyport_t tp3;
-tinyport_t tp4;
 
 
 void setupperipherals(void){
@@ -197,62 +205,63 @@ void setallstatus(void){
 
 int main (void)
 {
-	/* Insert system clock initialization code here (sysclk_init()). */
-
-	board_init();
-	sysclk_init();	
+	board_init(); // asf
+	sysclk_init();	// asf clock
 	
-	setupperipherals();
-	killwatchdog();
+	setupperipherals(); // peripheral clocks
+	killwatchdog(); // no thanks
 	
-	setupstatus();
+	setupstatus(); // pin setup
 	
-	tp1 = tinyport_new(UART2, PIOD, PERIPHERAL_C, PIO_PER_P25, PIO_PER_P26);
-	tp2 = tinyport_new(UART0, PIOA, PERIPHERAL_A, PIO_PER_P9, PIO_PER_P10);
-	tp3 = tinyport_new(UART1, PIOA, PERIPHERAL_C, PIO_PER_P5, PIO_PER_P4);
-	tp4 = tinyport_new(UART4, PIOD, PERIPHERAL_C, PIO_PER_P18, PIO_PER_P19);
+	tp1 = tinyport_new(UART2, PIOD, PERIPHERAL_C, PIO_PER_P25, PIO_PER_P26, &p1rbrx, &p1rbtx, &p1lr, &p1lg, &p1lb);
+	tp2 = tinyport_new(UART0, PIOA, PERIPHERAL_A, PIO_PER_P9, PIO_PER_P10, &p2rbrx, &p2rbtx, &p2lr, &p2lg, &p2lb);
+	tp3 = tinyport_new(UART1, PIOA, PERIPHERAL_C, PIO_PER_P5, PIO_PER_P4, &p3rbrx, &p3rbtx, &p3lr, &p3lg, &p3lb);
+	tp4 = tinyport_new(UART4, PIOD, PERIPHERAL_C, PIO_PER_P18, PIO_PER_P19, &p4rbrx, &p4rbtx, &p4lr, &p4lg, &p4lb);
 	
 	tp_init(&tp1);
 	tp_init(&tp2);
 	tp_init(&tp3);
 	tp_init(&tp4);
 	
-	setupinterrupts();
+	tinyport_t ports[4] = {tp1, tp2, tp3, tp4};
 	
-	clearallstatus();
-	delay_ms(100);
-	setallstatus();
-	delay_ms(50);
-	clearallstatus();
-	delay_ms(25);
-	setallstatus();
+	setupinterrupts(); // turns interrupt NVICs on
+	
+	setallstatus(); // lights off
+	pin_set(&stlr);
+	pin_clear(&stlb);
+	
+	tp_testlights(&tp1); // fancy
+	tp_testlights(&tp3);
+	tp_testlights(&tp2);
+	tp_testlights(&tp4);
 
 	while(1){
-		if(tp1.haschar == 1){
-			tp_putchar(&tp1, tp1.tempchar);
-			tp1.haschar = 0;
+		// loop over ports to run packet deciphering... allows quick handling of RXINT w/ simpler rxhandler
+		// each returns one packet at a time
+		for(int i = 0; i < 4; i++){
+			tp_packetparser(&ports[i]);
 		}
-		if(tp2.haschar == 1){
-			tp_putchar(&tp2, tp2.tempchar);
-			tp2.haschar = 0;
+		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
+			if(ports[i].haspacket == TP_HAS_PACKET){
+				// pull into packet buffer
+				packet_clean(&ports[i].packet);
+			}
+			/*
+			if(!rb_empty(ports[i].rbrx)){
+				tp_putchar(&ports[i], rb_get(ports[i].rbrx));
+			}
+			*/
 		}
-		if(tp3.haschar == 1){
-			tp_putchar(&tp3, tp3.tempchar);
-			tp3.haschar = 0;
-		}
-		if(tp4.haschar == 1){
-			tp_putchar(&tp4, tp4.tempchar);
-			tp4.haschar = 0;
-		}
-		delay_cycles(1); // one clock tick, otherwise interrupts no firey
+		
+		// loop over packet buffer and handle packets
+		
 		/*
-		delay_ms(1000);
-		tp_putchar(&tp1, 'A');
-		tp_putchar(&tp1, 0x0A);
-		delay_ms(1000);
-		tp_putchar(&tp1, 'B');
-		tp_putchar(&tp1, 0x0A);
+		if(!rb_empty(tp1.rbrx)){
+			tp_putchar(&tp1, rb_get(tp1.rbrx));
+		}
 		*/
+		delay_cycles(1); // one clock tick to relax interrupt scheduler
 	}
 }
 

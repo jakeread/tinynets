@@ -7,7 +7,8 @@ jake/
 **.o
 **.d
 **.DS_Store
-**.b##
+**.b#*
+**.s#*
 
 sim/js_code.txt
 sim/TinyNets/nbproject/

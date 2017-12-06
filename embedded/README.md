@@ -2,15 +2,14 @@
 
 OK, hacking it together aside, it's time to write a real set of functions for the ports.
 
-First order is to setup each port to ring-return. I'll test that, and the abstractions, with the FTDI.
+Try doing this with DMA? Might make it easier on TX'ing, not with RX'ing. Want to dump big memory block into tx...
+ - to test, do 'packet' search bounded by #-------@ or something ... have it read in on ringbuffer, write loop for checking this ? when complete do ship out via TX (at first) then via DMA channel on single interrupt... to flag ready-again
 
-Roll stlr's into tp's
+RXIN -> State
+ RingBuffer
 
-Try doing this with DMA? Might make it easier on TX'ing
 
-- four ports, each doing rx -> single char hold, on while loop, check each port and ship char home on respective tx line
-
-Then I need to get a ringbuffer setup on top of each pipe. I'll test that again with four rx returns, this time sending multiple chars... 
+[start][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n] 0-255 bytes
 
 # Interrupts
 
