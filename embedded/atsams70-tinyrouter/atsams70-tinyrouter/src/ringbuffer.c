@@ -24,8 +24,7 @@ uint8_t rb_reset(ringbuffer_t *rb){
 	}
 }
 
-
-uint8_t rb_put(ringbuffer_t *rb, uint8_t data){
+uint8_t rb_putchar(ringbuffer_t *rb, uint8_t data){
 	if(rb){
 		rb->buffer[rb->head] = data;
 		rb->head = (rb->head + 1) % rb->size; // for wrap around
@@ -35,6 +34,14 @@ uint8_t rb_put(ringbuffer_t *rb, uint8_t data){
 		return 1;
 		} else {
 		return 0;
+	}
+}
+
+uint8_t rb_putdata(ringbuffer_t *rb, uint8_t *data, uint8_t size){
+	uint8_t i = 0;
+	while(!rb_full(rb) && i < size){
+		rb_putchar(rb, data[i]);
+		i ++;
 	}
 }
 

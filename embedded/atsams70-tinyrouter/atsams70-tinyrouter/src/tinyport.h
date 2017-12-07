@@ -90,9 +90,13 @@ void tp_init(tinyport_t *tp);
 
 void tp_putchar(tinyport_t *tp, uint8_t data);
 
+int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size);
+
 void tp_rxhandler(tinyport_t *tp);
 
 void tp_packetparser(tinyport_t *tp);
+
+void tp_txout(tinyport_t *tp);
 
 void tp_txhandler(tinyport_t *tp);
 

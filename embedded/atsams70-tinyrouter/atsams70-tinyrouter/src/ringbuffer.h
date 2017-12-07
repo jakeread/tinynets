@@ -32,7 +32,9 @@ uint8_t rb_init(ringbuffer_t *rb, size_t size);
 uint8_t rb_reset(ringbuffer_t *rb);
 
 // writes one byte to next slot
-uint8_t rb_put(ringbuffer_t *rb, uint8_t data);
+uint8_t rb_putchar(ringbuffer_t *rb, uint8_t data);
+
+uint8_t rb_putdata(ringbuffer_t *rb, uint8_t *data, uint8_t size);
 
 // reads one byte from buffer
 uint8_t rb_get(ringbuffer_t *rb);

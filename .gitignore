@@ -10,5 +10,7 @@ jake/
 **.b#*
 **.s#*
 
+js/node_modules/
+
 sim/js_code.txt
 sim/TinyNets/nbproject/

@@ -235,6 +235,8 @@ int main (void)
 	tp_testlights(&tp3);
 	tp_testlights(&tp2);
 	tp_testlights(&tp4);
+	
+	packet_t packetlooper;
 
 	while(1){
 		// loop over ports to run packet deciphering... allows quick handling of RXINT w/ simpler rxhandler
@@ -242,10 +244,26 @@ int main (void)
 		for(int i = 0; i < 4; i++){
 			tp_packetparser(&ports[i]);
 		}
+		
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
-			if(ports[i].haspacket == TP_HAS_PACKET){
-				// pull into packet buffer
-				packet_clean(&ports[i].packet);
+			if(ports[i].haspacket){
+				packetlooper = ports[i].packet; // pull into buffer
+				
+				packet_clean(&ports[i].packet); // reset packet states
+				ports[i].haspacket = TP_NO_PACKET; 
+				
+				pin_clear(ports[i].stlb); // for debugging: we have seen a packet on this port
+				
+				for(int c = 0; c < packetlooper.size; c ++){ // blocking echo
+					tp_putchar(&ports[i], packetlooper.raw[c]);
+				}
+				
+				// put data in  block, error if returns 0 b/c overfull ringbuffer
+				/*
+				if(!tp_putdata(&ports[i], packetlooper.raw, packetlooper.size)){
+					pin_clear(ports[i].stlr); 
+				}
+				*/
 			}
 			/*
 			if(!rb_empty(ports[i].rbrx)){
@@ -256,11 +274,6 @@ int main (void)
 		
 		// loop over packet buffer and handle packets
 		
-		/*
-		if(!rb_empty(tp1.rbrx)){
-			tp_putchar(&tp1, rb_get(tp1.rbrx));
-		}
-		*/
 		delay_cycles(1); // one clock tick to relax interrupt scheduler
 	}
 }
@@ -269,6 +282,12 @@ void UART2_Handler(){
 	if(UART2->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp1);
 	}
+	
+	/*
+	if(UART2->UART_SR & UART_SR_TXRDY){
+		tp_txhandler(&tp1);
+	}
+	*/
 }
 
 void UART0_Handler(){

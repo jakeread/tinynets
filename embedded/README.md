@@ -1,12 +1,8 @@
 # 'API'
 
-OK, hacking it together aside, it's time to write a real set of functions for the ports.
-
-Try doing this with DMA? Might make it easier on TX'ing, not with RX'ing. Want to dump big memory block into tx...
- - to test, do 'packet' search bounded by #-------@ or something ... have it read in on ringbuffer, write loop for checking this ? when complete do ship out via TX (at first) then via DMA channel on single interrupt... to flag ready-again
-
-RXIN -> State
- RingBuffer
+Currently: test packet parsing w/ 'real' packet ... try py terminal? loop return
+ - need healthy tx transmit side of ringbuffer output...
+ - need to increment hop count ... in packet handler?
 
 
 [start][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n] 0-255 bytes

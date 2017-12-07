@@ -45,6 +45,7 @@ void tp_init(tinyport_t *tp){
 	rb_init(tp->rbtx, RINGBUFFER_SIZE);
 	
 	tp->packetstate = TP_PACKETSTATE_OUTSIDE;
+	tp->haspacket = TP_NO_PACKET;
 	tp->bufferdepth = 255;
 	
 	tp->packet = packet_new();
@@ -55,9 +56,15 @@ void tp_putchar(tinyport_t *tp, uint8_t data){
 	tp->uart->UART_THR = data;
 }
 
+int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
+	// drops block of mems into ringbuffer (need to update rb for this)
+	rb_putdata(tp->rbtx, data, size);
+	tp_txout(tp);
+}
+
 void tp_rxhandler(tinyport_t *tp){
 	uint8_t data = tp->uart->UART_RHR;
-	rb_put(tp->rbrx, data);
+	rb_putchar(tp->rbrx, data);
 }
 
 void tp_packetparser(tinyport_t *tp){
@@ -65,7 +72,7 @@ void tp_packetparser(tinyport_t *tp){
 	// probably run in a while(!(rb_empty()) and break when completing a packet, so we return max. 1 packet at a time to top level
 	// critically, this must run when packets are half-rx'd
 	
-	while(!rb_empty(tp->rbrx) && !tp->haspacket){
+	while(!rb_empty(tp->rbrx) && !tp->haspacket){ // while the ringbuffer contains data and we don't have a packet yet
 		
 		uint8_t data = rb_get(tp->rbrx); // grab a byte from the ringbuffer
 		
@@ -87,13 +94,11 @@ void tp_packetparser(tinyport_t *tp){
 				// writing to packet
 				// check for size byte
 				// check for end of packet w/ counter (counter is _current_ byte, is incremented at end of handle)
-				// ack other side when packet complete ?
-				if(tp->packet.counter > tp->packet.size){ // end of packet
-					tp->haspacket = TP_HAS_PACKET; // now we have one, this will be last tick in loop
+				if(tp->packet.counter >= tp->packet.size){ // check counter against packet size to see if @ end of packet
+					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
-					break;
-				} else if(tp->packet.counter == 6){
-					tp->packet.size = data;
+				} else if(tp->packet.counter == 6){ 
+					tp->packet.size = data; // 7th byte in packet structure is size
 				}
 				tp->packet.raw[tp->packet.counter] = data;
 				tp->packet.counter ++;
@@ -106,8 +111,13 @@ void tp_packetparser(tinyport_t *tp){
 	} // end while
 } // end packetparser
 
+void tp_txout(tinyport_t *tp){
+	// set txready interrupt on
+	// handler puts chars on ports until no chars left
+}
 
 void tp_txhandler(tinyport_t *tp){
+	while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
 	tp->uart->UART_THR = rb_get(tp->rbtx);
 }
 
