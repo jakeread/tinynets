@@ -472,10 +472,19 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\node.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\packet.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\packet.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\packet_handling.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\packet_handling.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\pin.c">

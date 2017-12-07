@@ -49,7 +49,7 @@
 #define TP_DELIMITER_START 255
 
 #define UART_BAUD_DIVIDER 81 // 977: 9600 baud, 81: 115200, 10: 921600
-#define RINGBUFFER_SIZE 512 // in bytes, or 4 full length packets, have 384KBytes total in system
+#define RINGBUFFER_SIZE 1024 // in bytes, or 4 full length packets, have 384KBytes total in system
 
 #include "asf.h"
 #include "pin.h"

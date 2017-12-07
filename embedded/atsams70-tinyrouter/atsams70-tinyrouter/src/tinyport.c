@@ -81,7 +81,7 @@ void tp_packetparser(tinyport_t *tp){
 			case TP_PACKETSTATE_OUTSIDE:
 				// check if start, add 1st byte, change state
 				// if not start, assume buffer depth data, update
-				if(data == TP_DELIMITER_START){
+				if(data == TP_DELIMITER_START){ // TODO: more types, and types, not delimiters
 					tp->packetstate = TP_PACKETSTATE_INSIDE;
 					tp->packet.raw[tp->packet.counter] = data;
 					tp->packet.counter ++;

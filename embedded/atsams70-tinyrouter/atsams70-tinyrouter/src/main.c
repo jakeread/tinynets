@@ -31,6 +31,7 @@
 #include <asf.h>
 #include "pin.h"
 #include "tinyport.h"
+#include "packet_handler.h"
 
 pin_t stlb;
 pin_t stlr;
@@ -63,8 +64,6 @@ ringbuffer_t p4rbtx;
 pin_t p4lr;
 pin_t p4lg;
 pin_t p4lb;
-
-
 
 void setupperipherals(void){
 
@@ -247,10 +246,11 @@ int main (void)
 		
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
 			if(ports[i].haspacket){
-				packetlooper = ports[i].packet; // pull into buffer
 				
+				packetlooper = ports[i].packet; // pull into buffer
 				packet_clean(&ports[i].packet); // reset packet states
 				ports[i].haspacket = TP_NO_PACKET; 
+				// TODO: update heartbeat / buffer depth
 				
 				pin_clear(ports[i].stlb); // for debugging: we have seen a packet on this port
 				
@@ -258,13 +258,18 @@ int main (void)
 					tp_putchar(&ports[i], packetlooper.raw[c]);
 				}
 				
+				handle_packet();
 				// put data in  block, error if returns 0 b/c overfull ringbuffer
 				/*
 				if(!tp_putdata(&ports[i], packetlooper.raw, packetlooper.size)){
 					pin_clear(ports[i].stlr); 
 				}
 				*/
-			}
+		}
+		
+		// packet handler
+		// pull a packet from the buffer,
+		// handle_packet()
 			/*
 			if(!rb_empty(ports[i].rbrx)){
 				tp_putchar(&ports[i], rb_get(ports[i].rbrx));

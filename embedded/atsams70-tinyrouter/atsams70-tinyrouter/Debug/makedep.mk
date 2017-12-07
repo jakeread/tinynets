@@ -4,6 +4,8 @@
 
 src\packet.c
 
+src\packet_handling.c
+
 src\pin.c
 
 src\ringbuffer.c
