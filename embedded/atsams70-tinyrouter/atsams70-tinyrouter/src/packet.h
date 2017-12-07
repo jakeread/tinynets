@@ -9,7 +9,8 @@
 #ifndef PACKET_H_
 #define PACKET_H_
 
-#include "asf.h"
+//#include "asf.h"
+#include <stdint.h>
 
 typedef struct{
 	uint8_t raw[255];

@@ -3,7 +3,7 @@
  *
  * Created: 12/7/2017 2:14:08 PM
  *  Author: Jake
- */ 
+ */
 
 
 #ifndef PACKET_HANDLING_H_
@@ -19,10 +19,8 @@ void send_packet(packet_t* p, uint8_t port);
 
 void broadcast_packet(packet_t* p, uint8_t exclude);
 
-packet_t* turn_to_standard_flood(node_t* n, packet_t* p);
-
 void handle_packet(node_t* n, packet_t* p, uint8_t port);
 
-
+int in_table(node_t* n, uint8_t dest);
 
 #endif /* PACKET_HANDLING_H_ */

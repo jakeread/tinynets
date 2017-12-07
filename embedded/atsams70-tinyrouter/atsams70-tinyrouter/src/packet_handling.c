@@ -2,6 +2,9 @@
 #include "node.h"
 #include "packet_handling.h"
 #include <string.h>
+#include <stdlib.h>
+
+#define MAX_HOPCOUNT 6
 
 int parse_type(packet_t* p) {
   return p->raw[0];
@@ -12,7 +15,7 @@ void update_LUT(node_t* n, uint16_t src, uint8_t hopCount, uint8_t port) {
 }
 
 void send_packet(packet_t* p, uint8_t port) {
- // TODO: 
+ // TODO:
 }
 
 void broadcast_packet(packet_t* p, uint8_t exclude) {
@@ -22,21 +25,21 @@ void broadcast_packet(packet_t* p, uint8_t exclude) {
   if (exclude != 3) send_packet(p, 3);
 }
 
-packet_t* turn_to_standard_flood(node_t* n, packet_t* p) {
-  packet_t* newPacket = (packet_t*)malloc(sizeof(packet_t));
-  memcpy((void*)newPacket->raw, (const void*)p->raw, (size_t)256);
-  newPacket->destination = p->destination;
-  newPacket->source = n->myAddress;
-  newPacket->hopcount = p->hopcount;
-  newPacket->size = p->size;
-  newPacket->counter = p->counter;
-  return newPacket;
+int in_table(node_t* n, uint8_t dest) {
+  return !(n->LUT[dest][0] != MAX_HOPCOUNT && n->LUT[dest][1] != MAX_HOPCOUNT &&
+         n->LUT[dest][2] != MAX_HOPCOUNT && n->LUT[dest][3] != MAX_HOPCOUNT);
 }
 
 void handle_packet(node_t* n, packet_t* p, uint8_t port) {
+  if (p->hopcount > MAX_HOPCOUNT) {
+    free((void*)p);
+    return;
+  }
+
   if (parse_type(p) != BUFFER_UPDATE) {
     update_LUT(n, p->source, p->hopcount, port);
   }
+
   switch (parse_type(p)) {
     case STANDARD:
       if (p->destination == n->myAddress) {
@@ -44,7 +47,7 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
         //reply
       } else {
         p->hopcount++;
-        if (n->LUT[p->destination]) {
+        if (in_table(n, p->destination)) {
           int bestPort = 0;
           int bestHopCount = n->LUT[p->destination][0];
           for (int i = 0; i < 4; i++) {
@@ -55,7 +58,8 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
           }
           send_packet(p, bestPort);
         } else {
-          broadcast_packet(turn_to_standard_flood(n, p), port);
+          p->raw[0] = STANDARD_FLOOD;
+          broadcast_packet(p, 4);
         }
       }
       break;
@@ -64,7 +68,7 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
         //process
       } else {
         p->hopcount++;
-        if (n->LUT[p->destination]) {
+        if (in_table(n, p->destination)) {
           int bestPort = 0;
           int bestHopCount = n->LUT[p->destination][0];
           for (int i = 0; i < 4; i++) {
@@ -75,12 +79,13 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
           }
           send_packet(p, bestPort);
         } else {
-          broadcast_packet(turn_to_standard_flood(n, p), port);
+          p->raw[0] = STANDARD_FLOOD;
+          broadcast_packet(p, 4);
         }
       }
       break;
     case STANDARD_FLOOD:
-      n->LUT[p->destination][port] = 255;
+      n->LUT[p->destination][port] = MAX_HOPCOUNT;
       if (p->destination == n->myAddress) {
         //process
         //reply
@@ -97,12 +102,13 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
           }
           send_packet(p, bestPort);
         } else {
-          broadcast_packet(turn_to_standard_flood(n, p), port);
+          p->raw[0] = STANDARD_FLOOD;
+          broadcast_packet(p, port);
         }
       }
       break;
     case ACK_FLOOD:
-    n->LUT[p->destination][port] = 255;
+    n->LUT[p->destination][port] = MAX_HOPCOUNT;
     if (p->destination == n->myAddress) {
       //process
     } else {
@@ -118,7 +124,8 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
         }
         send_packet(p, bestPort);
       } else {
-        broadcast_packet(turn_to_standard_flood(n, p), port);
+        p->raw[0] = STANDARD_FLOOD;
+        broadcast_packet(p, port);
       }
     }
       break;
@@ -126,4 +133,9 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
       n->portBufferSizes[port] = p->raw[0];
       break;
   }
+}
+
+int main() {
+
+  return 0;
 }
