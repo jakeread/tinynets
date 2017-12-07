@@ -3,7 +3,7 @@
  *
  * Created: 12/5/2017 7:31:53 PM
  *  Author: Jake
- */ 
+ */
 
 
 #ifndef PACKET_H_
@@ -17,9 +17,11 @@ typedef struct{
 	uint16_t source;
 	uint8_t hopcount;
 	uint8_t size;
-	
+
 	uint8_t counter;
 }packet_t;
+
+enum packetType {STANDARD, ACK, STANDARD_FLOOD, ACK_FLOOD, BUFFER_UPDATE};
 
 packet_t packet_new(void);
 
