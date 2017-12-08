@@ -94,7 +94,7 @@ void tp_packetparser(tinyport_t *tp){
 				// writing to packet
 				// check for size byte
 				// check for end of packet w/ counter (counter is _current_ byte, is incremented at end of handle)
-				if(tp->packet.counter >= tp->packet.size){ // check counter against packet size to see if @ end of packet
+				if(tp->packet.counter >= tp->packet.size - 1){ // check counter against packet size to see if @ end of packet
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
 					pin_clear(tp->stlb);
@@ -114,11 +114,11 @@ void tp_packetparser(tinyport_t *tp){
 
 void tp_txhandler(tinyport_t *tp){
 	if(!rb_empty(tp->rbtx)){
-		pin_clear(tp->stlr);
+		pin_clear(tp->stlg);
 		tp->uart->UART_THR = rb_get(tp->rbtx);
 	} else {
 		tp->uart->UART_IDR = UART_IER_TXRDY; // if nothing left to tx, turn isr off
-		pin_set(tp->stlr);
+		pin_set(tp->stlg);
 	}
 	//while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
 }

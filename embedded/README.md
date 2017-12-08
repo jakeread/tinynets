@@ -1,11 +1,10 @@
 # 'API'
 
-Currently: test packet parsing w/ 'real' packet ... try py terminal? loop return
- - need healthy tx transmit side of ringbuffer output...
- - need to increment hop count ... in packet handler?
-
-
 [start][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n] 0-255 bytes
+
+Packet Loops ...
+
+do Packet Handle cleanup / integrate with new node-> incl. ports
 
 # Interrupts
 

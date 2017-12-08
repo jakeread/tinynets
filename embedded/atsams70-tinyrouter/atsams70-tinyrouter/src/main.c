@@ -203,21 +203,7 @@ void setallstatus(void){
 	pin_set(&p4lb);
 }
 
-int main (void){
-	/*
-	node_t* n = (node_t*)malloc(sizeof(node_t));
-	n->myAddress = ADDRESS;
-	n->portBufferSizes = (uint8_t*)malloc(32);
-	for (int port = 0; port < 4; port++) {
-		n->portBufferSizes[port] = 0;
-	}
-	n->LUT = (uint8_t**)malloc(4096);
-	for (int i = 0; i < 4; i++) {
-		for (int port = 0; port < 4; port++) {
-			n->LUT[i][port] = 255;
-		}
-	}
-	*/
+int main (void){	
 	board_init(); // asf
 	sysclk_init();	// asf clock
 
@@ -236,8 +222,6 @@ int main (void){
 	tp_init(&tp3);
 	tp_init(&tp4);
 
-	tinyport_t ports[4] = {tp1, tp2, tp3, tp4};
-
 	setupinterrupts(); // turns interrupt NVICs on
 
 	setallstatus(); // lights off
@@ -248,6 +232,23 @@ int main (void){
 	tp_testlights(&tp3);
 	tp_testlights(&tp2);
 	tp_testlights(&tp4);
+	
+	tinyport_t ports[4] = {tp1, tp2, tp3, tp4};
+	
+	/*
+	node_t* n;// = (node_t*)malloc(sizeof(node_t));
+	n->myAddress = ADDRESS;
+	n->portBufferSizes = (uint8_t*)malloc(32);
+	for (int port = 0; port < 4; port++) {
+		n->portBufferSizes[port] = 0;
+	}
+	n->LUT = (uint8_t**)malloc(4096);
+	for (int i = 0; i < 1024; i++) {
+		for (int port = 0; port < 4; port++) {
+			n->LUT[i][port] = 255; // MD w/ malloc ? we want [1024][4], no?
+		}
+	}
+	*/
 
 	packet_t packetlooper;
 
@@ -266,12 +267,12 @@ int main (void){
 				packet_clean(&ports[i].packet); // reset packet states
 				ports[i].haspacket = TP_NO_PACKET;
 				
-				tp_putdata(&ports[i], packetlooper.raw, packetlooper.size + 1); // non-blocking put
+				//handle_packet(n, &packetlooper, i);
+				tp_putdata(&ports[i], packetlooper.raw, packetlooper.size); // non-blocking put
 				
 				packet_clean(&packetlooper);
-				pin_set(ports[i].stlb); // for debugging: we have seen a packet on this port
+				pin_set(ports[i].stlb); 
 				
-				//handle_packet();
 			}
 		}
 	} // end while
@@ -285,7 +286,6 @@ void UART2_Handler(){
 	if(UART2->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp1);
 	}
-
 	if(UART2->UART_SR & UART_SR_TXRDY){
 		tp_txhandler(&tp1);
 	}
@@ -295,16 +295,25 @@ void UART0_Handler(){
 	if(UART0->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp2);
 	}
+	if(UART0->UART_SR & UART_SR_TXRDY){
+		tp_txhandler(&tp2);
+	}
 }
 
 void UART1_Handler(){
 	if(UART1->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp3);
 	}
+	if(UART1->UART_SR & UART_SR_TXRDY){
+		tp_txhandler(&tp3);
+	}
 }
 
 void UART4_Handler(){
 	if(UART4->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp4);
+	}
+	if(UART4->UART_SR & UART_SR_TXRDY){
+		tp_txhandler(&tp4);
 	}
 }

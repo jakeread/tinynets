@@ -15,7 +15,7 @@ void update_LUT(node_t* n, uint16_t src, uint8_t hopCount, uint8_t port) {
 }
 
 void send_packet(packet_t* p, uint8_t port) {
- // TODO:
+	//tp_putdata() // need global ports[];
 }
 
 void broadcast_packet(packet_t* p, uint8_t exclude) {
@@ -32,7 +32,7 @@ int in_table(node_t* n, uint8_t dest) {
 
 void handle_packet(node_t* n, packet_t* p, uint8_t port) {
   if (p->hopcount > MAX_HOPCOUNT) {
-    //free((void*)p);
+    free((void*)p);
     return;
   }
 
