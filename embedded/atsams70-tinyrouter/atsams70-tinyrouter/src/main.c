@@ -203,8 +203,7 @@ void setallstatus(void){
 	pin_set(&p4lb);
 }
 
-int main (void)
-{
+int main (void){
 	/*
 	node_t* n = (node_t*)malloc(sizeof(node_t));
 	n->myAddress = ADDRESS;
@@ -266,51 +265,30 @@ int main (void)
 				packetlooper = ports[i].packet;
 				packet_clean(&ports[i].packet); // reset packet states
 				ports[i].haspacket = TP_NO_PACKET;
-								
-				for(int c = 0; c <= packetlooper.size; c ++){ // blocking echo
-					tp_putchar(&ports[i], packetlooper.raw[c]);
-				}
+				
+				tp_putdata(&ports[i], packetlooper.raw, packetlooper.size + 1); // non-blocking put
 				
 				packet_clean(&packetlooper);
 				pin_set(ports[i].stlb); // for debugging: we have seen a packet on this port
 				
 				//handle_packet();
-				// put data in  block, error if returns 0 b/c overfull ringbuffer
-				/*
-				if(!tp_putdata(&ports[i], packetlooper.raw, packetlooper.size)){
-					pin_clear(ports[i].stlr);
-				}
-				*/
-				
-		}
-
-		// packet handler
-		// pull a packet from the buffer,
-		// handle_packet()
-			/*
-			if(!rb_empty(ports[i].rbrx)){
-				tp_putchar(&ports[i], rb_get(ports[i].rbrx));
 			}
-			*/
 		}
+	} // end while
+	
+	delay_cycles(1); // one clock tick to relax interrupt scheduler
 
-		// loop over packet buffer and handle packets
+} // end main
 
-		delay_cycles(1); // one clock tick to relax interrupt scheduler
-		//pin_set(&stlb);
-	}
-}
 
 void UART2_Handler(){
 	if(UART2->UART_SR & UART_SR_RXRDY){
 		tp_rxhandler(&tp1);
 	}
 
-	/*
 	if(UART2->UART_SR & UART_SR_TXRDY){
 		tp_txhandler(&tp1);
 	}
-	*/
 }
 
 void UART0_Handler(){

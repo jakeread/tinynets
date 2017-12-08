@@ -16,7 +16,8 @@ const rl = readline.createInterface({
 
 rl.on('line', parseLineIn);
 
-var buf = Buffer.from([255,8,8,8,8,8,8,10,11])
+// [type][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n]
+var buf = Buffer.from([255,1,2,3,4,5,9,10,11,12])
 
 function parseLineIn(data) {
 	if (debug) {

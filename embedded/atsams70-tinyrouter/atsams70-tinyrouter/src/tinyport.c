@@ -59,7 +59,7 @@ void tp_putchar(tinyport_t *tp, uint8_t data){
 int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
 	// drops block of mems into ringbuffer (need to update rb for this)
 	rb_putdata(tp->rbtx, data, size);
-	tp_txout(tp);
+	tp->uart->UART_IER |= UART_IER_TXRDY;
 }
 
 void tp_rxhandler(tinyport_t *tp){
@@ -112,14 +112,15 @@ void tp_packetparser(tinyport_t *tp){
 	} // end while
 } // end packetparser
 
-void tp_txout(tinyport_t *tp){
-	// set txready interrupt on
-	// handler puts chars on ports until no chars left
-}
-
 void tp_txhandler(tinyport_t *tp){
-	while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
-	tp->uart->UART_THR = rb_get(tp->rbtx);
+	if(!rb_empty(tp->rbtx)){
+		pin_clear(tp->stlr);
+		tp->uart->UART_THR = rb_get(tp->rbtx);
+	} else {
+		tp->uart->UART_IDR = UART_IER_TXRDY; // if nothing left to tx, turn isr off
+		pin_set(tp->stlr);
+	}
+	//while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
 }
 
 void tp_testlights(tinyport_t *tp){

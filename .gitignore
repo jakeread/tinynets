@@ -1,6 +1,7 @@
 jake/
 **.elf
 **.hex
+**.bin
 **.lss
 **.map
 **.srec
