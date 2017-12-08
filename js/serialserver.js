@@ -34,14 +34,17 @@ wss.on('connection',function(ws) {
    //
    // check address
    //
+   /*
    if (ws._socket.remoteAddress != client_address) {
       console.log("connection rejected from "+ws._socket.remoteAddress)
       ws.send('socket closed')
       ws.close()
       }
+
    else {
       console.log("connection accepted from "+ws._socket.remoteAddress)
       }
+   */
    //
    // handle messages
    //

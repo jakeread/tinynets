@@ -9,7 +9,7 @@
 #ifndef PACKET_HANDLING_H_
 #define PACKET_HANDLING_H_
 
-
+#include "node.h"
 
 int parse_type(packet_t* p);
 

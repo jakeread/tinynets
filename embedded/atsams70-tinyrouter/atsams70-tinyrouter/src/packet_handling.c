@@ -32,7 +32,7 @@ int in_table(node_t* n, uint8_t dest) {
 
 void handle_packet(node_t* n, packet_t* p, uint8_t port) {
   if (p->hopcount > MAX_HOPCOUNT) {
-    free((void*)p);
+    //free((void*)p);
     return;
   }
 
@@ -133,9 +133,4 @@ void handle_packet(node_t* n, packet_t* p, uint8_t port) {
       n->portBufferSizes[port] = p->raw[0];
       break;
   }
-}
-
-int main() {
-
-  return 0;
 }

@@ -97,6 +97,7 @@ void tp_packetparser(tinyport_t *tp){
 				if(tp->packet.counter >= tp->packet.size){ // check counter against packet size to see if @ end of packet
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
+					pin_clear(tp->stlb);
 				} else if(tp->packet.counter == 6){ 
 					tp->packet.size = data; // 7th byte in packet structure is size
 				}

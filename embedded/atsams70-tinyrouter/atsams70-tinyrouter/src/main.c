@@ -31,7 +31,8 @@
 #include <asf.h>
 #include "pin.h"
 #include "tinyport.h"
-#include "packet_handler.h"
+#include "packet_handling.h"
+#include "node.h"
 
 pin_t stlb;
 pin_t stlr;
@@ -204,19 +205,21 @@ void setallstatus(void){
 
 int main (void)
 {
+	/*
 	node_t* n = (node_t*)malloc(sizeof(node_t));
-  n->myAddress = ADDRESS;
-  n->portBufferSizes = (uint8_t*)malloc(32);
-  for (int port = 0; port < 4; port++) {
-    n->portBufferSizes[port] = 0;
-  }
-  nb->LUT = (uint8_t**)malloc(4096);
-  for (int i = 0; i < 4; i++) {
-    for (int port = 0; port < 4; port++) {
-      n->LUT[i][port] = 255;
-    }
-  }
-	//board_init(); // asf
+	n->myAddress = ADDRESS;
+	n->portBufferSizes = (uint8_t*)malloc(32);
+	for (int port = 0; port < 4; port++) {
+		n->portBufferSizes[port] = 0;
+	}
+	n->LUT = (uint8_t**)malloc(4096);
+	for (int i = 0; i < 4; i++) {
+		for (int port = 0; port < 4; port++) {
+			n->LUT[i][port] = 255;
+		}
+	}
+	*/
+	board_init(); // asf
 	sysclk_init();	// asf clock
 
 	setupperipherals(); // peripheral clocks
@@ -259,24 +262,26 @@ int main (void)
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
 			if(ports[i].haspacket){
 
-				packetlooper = ports[i].packet; // pull into buffer
+				// TODO: update heartbeat / buffer depth
+				packetlooper = ports[i].packet;
 				packet_clean(&ports[i].packet); // reset packet states
 				ports[i].haspacket = TP_NO_PACKET;
-				// TODO: update heartbeat / buffer depth
-
-				pin_clear(ports[i].stlb); // for debugging: we have seen a packet on this port
-
-				for(int c = 0; c < packetlooper.size; c ++){ // blocking echo
+								
+				for(int c = 0; c <= packetlooper.size; c ++){ // blocking echo
 					tp_putchar(&ports[i], packetlooper.raw[c]);
 				}
-
-				handle_packet();
+				
+				packet_clean(&packetlooper);
+				pin_set(ports[i].stlb); // for debugging: we have seen a packet on this port
+				
+				//handle_packet();
 				// put data in  block, error if returns 0 b/c overfull ringbuffer
 				/*
 				if(!tp_putdata(&ports[i], packetlooper.raw, packetlooper.size)){
 					pin_clear(ports[i].stlr);
 				}
 				*/
+				
 		}
 
 		// packet handler
@@ -292,6 +297,7 @@ int main (void)
 		// loop over packet buffer and handle packets
 
 		delay_cycles(1); // one clock tick to relax interrupt scheduler
+		//pin_set(&stlb);
 	}
 }
 

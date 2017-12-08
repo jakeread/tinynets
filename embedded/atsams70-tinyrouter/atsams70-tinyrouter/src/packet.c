@@ -10,6 +10,7 @@
 packet_t packet_new(void){
 	packet_t packet;
 	packet.counter = 0;
+	packet.size = 255;
 	
 	return packet;
 }
