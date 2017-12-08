@@ -32,39 +32,8 @@
 #include "pin.h"
 #include "tinyport.h"
 #include "packet_handling.h"
+#include "ports.h"
 #include "node.h"
-
-pin_t stlb;
-pin_t stlr;
-pin_t button;
-
-tinyport_t tp1;
-ringbuffer_t p1rbrx;
-ringbuffer_t p1rbtx;
-pin_t p1lr;
-pin_t p1lg;
-pin_t p1lb;
-
-tinyport_t tp2;
-ringbuffer_t p2rbrx;
-ringbuffer_t p2rbtx;
-pin_t p2lr;
-pin_t p2lg;
-pin_t p2lb;
-
-tinyport_t tp3;
-ringbuffer_t p3rbrx;
-ringbuffer_t p3rbtx;
-pin_t p3lr;
-pin_t p3lg;
-pin_t p3lb;
-
-tinyport_t tp4;
-ringbuffer_t p4rbrx;
-ringbuffer_t p4rbtx;
-pin_t p4lr;
-pin_t p4lg;
-pin_t p4lb;
 
 void setupperipherals(void){
 
@@ -226,29 +195,25 @@ int main (void){
 
 	setallstatus(); // lights off
 	pin_set(&stlr);
-	pin_clear(&stlb);
+	pin_set(&stlb);
 
 	tp_testlights(&tp1); // fancy
 	tp_testlights(&tp3);
 	tp_testlights(&tp2);
 	tp_testlights(&tp4);
 	
-	tinyport_t ports[4] = {tp1, tp2, tp3, tp4};
+	ports[0] = &tp1;
+	ports[1] = &tp2;
+	ports[2] = &tp3;
+	ports[3] = &tp4;
 	
-	/*
-	node_t* n;// = (node_t*)malloc(sizeof(node_t));
-	n->myAddress = ADDRESS;
-	n->portBufferSizes = (uint8_t*)malloc(32);
-	for (int port = 0; port < 4; port++) {
-		n->portBufferSizes[port] = 0;
-	}
-	n->LUT = (uint8_t**)malloc(4096);
+	myAddress = MYADDRESS;
+	
 	for (int i = 0; i < 1024; i++) {
 		for (int port = 0; port < 4; port++) {
-			n->LUT[i][port] = 255; // MD w/ malloc ? we want [1024][4], no?
+			LUT[i][port] = 255; 
 		}
 	}
-	*/
 
 	packet_t packetlooper;
 
@@ -256,23 +221,23 @@ int main (void){
 		// loop over ports to run packet deciphering... allows quick handling of RXINT w/ simpler rxhandler
 		// each returns one packet at a time
 		for(int i = 0; i < 4; i++){
-			tp_packetparser(&ports[i]);
+			tp_packetparser(ports[i]);
 		}
 
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
-			if(ports[i].haspacket){
+			if(ports[i]->haspacket){
 
 				// TODO: update heartbeat / buffer depth
-				packetlooper = ports[i].packet;
-				packet_clean(&ports[i].packet); // reset packet states
-				ports[i].haspacket = TP_NO_PACKET;
+				packetlooper = ports[i]->packet; 
+				packet_clean(&ports[i]->packet); // reset packet states
+				ports[i]->haspacket = TP_NO_PACKET;
 				
-				//handle_packet(n, &packetlooper, i);
-				tp_putdata(&ports[i], packetlooper.raw, packetlooper.size); // non-blocking put
+				handle_packet(&packetlooper, i);
+				
+				//tp_putdata(ports[i], packetlooper.raw, packetlooper.size); // non-blocking put
 				
 				packet_clean(&packetlooper);
-				pin_set(ports[i].stlb); 
-				
+				pin_set(ports[i]->stlb);
 			}
 		}
 	} // end while

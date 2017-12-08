@@ -80,7 +80,7 @@ typedef struct{
 	uint8_t packetstate;
 	uint8_t packetcounter;
 	packet_t packet;
-	uint8_t bufferdepth; // depth of buffer on the other side, updated on heartbeats
+	uint8_t buffersize; // depth of buffer on the other side, updated on heartbeats
 	
 }tinyport_t;
 

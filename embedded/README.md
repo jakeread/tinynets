@@ -1,6 +1,10 @@
 # 'API'
 
-[start][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n] 0-255 bytes
+// to echo with new system
+ - do packet handler fills in packet data: addresses, hop counts, etc ... use raw[] as often as possible
+// to seeing flood on all ports
+
+[0:start][1:destination-msb:9][2:destination-8:lsb][3:hopcount][4:source][5:source][6:#bytestotal][byte_7][byte_6]...[byte_n] 0-255 bytes
 
 Packet Loops ...
 

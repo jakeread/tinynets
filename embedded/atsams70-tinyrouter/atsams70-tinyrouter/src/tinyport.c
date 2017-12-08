@@ -46,7 +46,7 @@ void tp_init(tinyport_t *tp){
 	
 	tp->packetstate = TP_PACKETSTATE_OUTSIDE;
 	tp->haspacket = TP_NO_PACKET;
-	tp->bufferdepth = 255;
+	tp->buffersize = 0;
 	
 	tp->packet = packet_new();
 }
@@ -60,6 +60,7 @@ int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
 	// drops block of mems into ringbuffer (need to update rb for this)
 	rb_putdata(tp->rbtx, data, size);
 	tp->uart->UART_IER |= UART_IER_TXRDY;
+	return 1;
 }
 
 void tp_rxhandler(tinyport_t *tp){
@@ -68,9 +69,6 @@ void tp_rxhandler(tinyport_t *tp){
 }
 
 void tp_packetparser(tinyport_t *tp){
-	
-	// probably run in a while(!(rb_empty()) and break when completing a packet, so we return max. 1 packet at a time to top level
-	// critically, this must run when packets are half-rx'd
 	
 	while(!rb_empty(tp->rbrx) && !tp->haspacket){ // while the ringbuffer contains data and we don't have a packet yet
 		
@@ -86,15 +84,20 @@ void tp_packetparser(tinyport_t *tp){
 					tp->packet.raw[tp->packet.counter] = data;
 					tp->packet.counter ++;
 					} else {
-					tp->bufferdepth = data;
+					tp->buffersize = data;
 				}
 				break;
 				
 			case TP_PACKETSTATE_INSIDE: 
 				// writing to packet
 				// check for size byte
-				// check for end of packet w/ counter (counter is _current_ byte, is incremented at end of handle)
+				// check for end of packet w/ counter 
+				// (counter is _current_ byte, is incremented at end of handle)
+				// when done, fill in fields for easy access in handling
 				if(tp->packet.counter >= tp->packet.size - 1){ // check counter against packet size to see if @ end of packet
+					tp->packet.hopcount = tp->packet.raw[3];
+					tp->packet.destination = ((uint16_t)tp->packet.raw[1] << 8) | tp->packet.raw[2];
+					tp->packet.source = ((uint16_t)tp->packet.raw[4] << 8) | tp->packet.raw[5];
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
 					pin_clear(tp->stlb);

@@ -17,7 +17,7 @@ const rl = readline.createInterface({
 rl.on('line', parseLineIn);
 
 // [type][destination][destination][hopcount][source][source][#bytestotal][byte_7][byte_6]...[byte_n]
-var buf = Buffer.from([255,2,3,4,5,6,12,8,9,10,11,12])
+var buf = Buffer.from([255,0,3,1,3,3,12,8,9,10,11,12])
 
 function parseLineIn(data) {
 	if (debug) {
@@ -37,7 +37,7 @@ var SerialPort = require('serialport');
 
 var ByteLength = SerialPort.parsers.ByteLength;
 
-var port = new SerialPort('COM15', {
+var port = new SerialPort('COM4', {
 	baudRate: 115200,
 	dataBits: 8,
 	parity: 'none',

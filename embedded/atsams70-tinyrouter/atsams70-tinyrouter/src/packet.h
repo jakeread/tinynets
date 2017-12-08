@@ -9,7 +9,12 @@
 #ifndef PACKET_H_
 #define PACKET_H_
 
-//#include "asf.h"
+#define P_STANDARD			255
+#define P_ACK				254
+#define P_STANDARD_FLOOD	253
+#define P_ACK_FLOOD			252
+
+#include "asf.h"
 #include <stdint.h>
 
 typedef struct{
@@ -21,8 +26,6 @@ typedef struct{
 
 	uint8_t counter;
 }packet_t;
-
-enum packetType {STANDARD, ACK, STANDARD_FLOOD, ACK_FLOOD, BUFFER_UPDATE};
 
 packet_t packet_new(void);
 
