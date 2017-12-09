@@ -472,6 +472,12 @@
     <Folder Include="src\config\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\application.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\application.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\node.h">
       <SubType>compile</SubType>
     </Compile>

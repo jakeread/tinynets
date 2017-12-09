@@ -79,6 +79,7 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../src/application.c \
 ../src/packet.c \
 ../src/packet_handling.c \
 ../src/pin.c \
@@ -103,6 +104,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+src/application.o \
 src/packet.o \
 src/packet_handling.o \
 src/pin.o \
@@ -120,6 +122,7 @@ src/ASF/sam/utils/syscalls/gcc/syscalls.o \
 src/main.o
 
 OBJS_AS_ARGS +=  \
+src/application.o \
 src/packet.o \
 src/packet_handling.o \
 src/pin.o \
@@ -137,6 +140,7 @@ src/ASF/sam/utils/syscalls/gcc/syscalls.o \
 src/main.o
 
 C_DEPS +=  \
+src/application.d \
 src/packet.d \
 src/packet_handling.d \
 src/pin.d \
@@ -154,6 +158,7 @@ src/ASF/sam/utils/syscalls/gcc/syscalls.d \
 src/main.d
 
 C_DEPS_AS_ARGS +=  \
+src/application.d \
 src/packet.d \
 src/packet_handling.d \
 src/pin.d \
@@ -185,6 +190,8 @@ LINKER_SCRIPT_DEP+=  \
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

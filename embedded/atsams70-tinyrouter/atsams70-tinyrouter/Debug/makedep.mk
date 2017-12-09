@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\application.c
+
 src\packet.c
 
 src\packet_handling.c

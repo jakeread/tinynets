@@ -79,7 +79,7 @@ void tp_packetparser(tinyport_t *tp){
 			case TP_PACKETSTATE_OUTSIDE:
 				// check if start, add 1st byte, change state
 				// if not start, assume buffer depth data, update
-				if(data == TP_DELIMITER_START){ // TODO: more types, and types, not delimiters
+				if(data == P_STANDARD | data == P_STANDARD_FLOOD | data == P_ACK | data == P_ACK_FLOOD){ 
 					tp->packetstate = TP_PACKETSTATE_INSIDE;
 					tp->packet.raw[tp->packet.counter] = data;
 					tp->packet.counter ++;
@@ -95,14 +95,15 @@ void tp_packetparser(tinyport_t *tp){
 				// (counter is _current_ byte, is incremented at end of handle)
 				// when done, fill in fields for easy access in handling
 				if(tp->packet.counter >= tp->packet.size - 1){ // check counter against packet size to see if @ end of packet
-					tp->packet.hopcount = tp->packet.raw[3];
-					tp->packet.destination = ((uint16_t)tp->packet.raw[1] << 8) | tp->packet.raw[2];
-					tp->packet.source = ((uint16_t)tp->packet.raw[4] << 8) | tp->packet.raw[5];
+					tp->packet.type = tp->packet.raw[0];
+					tp->packet.destination = tp->packet.raw[1];//((uint16_t)tp->packet.raw[1] << 8) | tp->packet.raw[2];
+					tp->packet.hopcount = tp->packet.raw[2];
+					tp->packet.source = tp->packet.raw[3];//((uint16_t)tp->packet.raw[4] << 8) | tp->packet.raw[5];
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
 					pin_clear(tp->stlb);
-				} else if(tp->packet.counter == 6){ 
-					tp->packet.size = data; // 7th byte in packet structure is size
+				} else if(tp->packet.counter == 4){ 
+					tp->packet.size = data; // 5th byte in packet structure is size
 				}
 				tp->packet.raw[tp->packet.counter] = data;
 				tp->packet.counter ++;

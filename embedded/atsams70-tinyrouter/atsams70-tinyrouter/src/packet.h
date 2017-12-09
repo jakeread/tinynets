@@ -18,16 +18,18 @@
 #include <stdint.h>
 
 typedef struct{
+	uint8_t counter;
 	uint8_t raw[255];
-	uint16_t destination;
-	uint16_t source;
+	uint8_t type;
+	uint8_t destination;
+	uint8_t source;
 	uint8_t hopcount;
 	uint8_t size;
-
-	uint8_t counter;
 }packet_t;
 
 packet_t packet_new(void);
+
+void packet_buildraw(packet_t *packet);
 
 void packet_clean(packet_t *packet);
 

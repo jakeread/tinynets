@@ -21,6 +21,8 @@ void broadcast_packet(packet_t* p, uint8_t exclude);
 
 void handle_packet(packet_t* p, uint8_t port);
 
+void acknowledge(packet_t* p);
+
 int in_table(uint8_t dest);
 
 #endif /* PACKET_HANDLING_H_ */

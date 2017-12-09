@@ -3,6 +3,7 @@
 #include "ports.h"
 #include "tinyport.h"
 #include "packet_handling.h"
+#include "application.h"
 #include <string.h>
 #include <stdlib.h>
 
@@ -17,6 +18,7 @@ void update_LUT(uint16_t src, uint8_t hopCount, uint8_t port) {
 void send_packet(packet_t* p, uint8_t port) {
 	tp_putdata(ports[port], p->raw, p->size); 
 	//free((void*)p); // need rethink packet passing ?
+	// @Dougie: when I use free here I don't get the full packet return?
 }
 
 void broadcast_packet(packet_t* p, uint8_t exclude) {
@@ -26,8 +28,8 @@ void broadcast_packet(packet_t* p, uint8_t exclude) {
   if (exclude != 3) send_packet(p, 3);
 }
 
-int in_table( uint8_t dest) {
-  return !(LUT[dest][0] != MAX_HOPCOUNT && LUT[dest][1] != MAX_HOPCOUNT &&
+int in_table(uint8_t dest) {
+  return (LUT[dest][0] != MAX_HOPCOUNT && LUT[dest][1] != MAX_HOPCOUNT &&
          LUT[dest][2] != MAX_HOPCOUNT && LUT[dest][3] != MAX_HOPCOUNT);
 }
 
@@ -45,8 +47,8 @@ void handle_packet(packet_t* p, uint8_t port) {
   switch (parse_type(p)) {
     case P_STANDARD:
       if (p->destination == myAddress) {
-		  pin_clear(&stlr);
-		  // TODO: process? send to application layer?
+		  app_onpacket(*p);
+		  acknowledge(p);
       } else {
         if (in_table(p->destination)) {
           int bestPort = 0;
@@ -66,8 +68,7 @@ void handle_packet(packet_t* p, uint8_t port) {
       break;
     case P_ACK:
       if (p->destination == myAddress) {
-        pin_clear(&stlb);
-		// TODO: process, window?
+        app_onack(*p);
       } else {
         if (in_table(p->destination)) {
           int bestPort = 0;
@@ -80,15 +81,15 @@ void handle_packet(packet_t* p, uint8_t port) {
           }
           send_packet(p, bestPort);
         } else {
-          p->raw[0] = P_STANDARD_FLOOD;
-          broadcast_packet(p, 4);
+          p->raw[0] = P_ACK_FLOOD;
+          broadcast_packet(p, port);
         }
       }
       break;
     case P_STANDARD_FLOOD:
       if (p->destination == myAddress) {
-        //TODO:
-		// process, reply
+        app_onpacket(*p);
+		acknowledge(p);
       } else {
 		LUT[p->destination][port] = MAX_HOPCOUNT;
         if (LUT[p->destination]) {
@@ -102,15 +103,13 @@ void handle_packet(packet_t* p, uint8_t port) {
           }
           send_packet(p, bestPort);
         } else {
-          // Dougie: I removed this: p->raw[0] = P_STANDARD_FLOOD;
           broadcast_packet(p, port);
         }
       }
       break;
     case P_ACK_FLOOD:
     if (p->destination == myAddress) {
-      //TODO:
-	  // process
+      app_onack(*p);
     } else {
 	  LUT[p->destination][port] = MAX_HOPCOUNT; 
       if (LUT[p->destination]) {
@@ -124,7 +123,6 @@ void handle_packet(packet_t* p, uint8_t port) {
         }
         send_packet(p, bestPort);
       } else {
-		// Dougie: I removed this: p->raw[0] = P_STANDARD_FLOOD;
         broadcast_packet(p, port);
       }
     }
@@ -133,4 +131,33 @@ void handle_packet(packet_t* p, uint8_t port) {
 	  pin_clear(&stlr); // err indicator
 	  break;
   }
+}
+
+void acknowledge(packet_t* p){
+	packet_t ackpack = packet_new();
+	
+	ackpack.type = P_ACK;
+	ackpack.destination = p->source;
+	ackpack.source = p->destination;
+	ackpack.hopcount = 0;
+	ackpack.size = 5;
+	
+	packet_buildraw(&ackpack);
+	
+	if (in_table(ackpack.destination)) {
+		int bestPort = 0;
+		int bestHopCount = LUT[ackpack.destination][0];
+		for (int i = 0; i < 4; i++) {
+			if (LUT[ackpack.destination][i] < bestHopCount) {
+				bestPort = i;
+				bestHopCount = LUT[ackpack.destination][i];
+			}
+		}
+		send_packet(&ackpack, bestPort);
+		} else {
+		p->raw[0] = P_STANDARD_FLOOD;
+		broadcast_packet(p, 4);
+	}
+	
+	//handle_packet(&ackpack, 4); // port is self
 }
