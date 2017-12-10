@@ -11,6 +11,8 @@ jake/
 **.b#*
 **.s#*
 
+**/ASF/
+
 js/node_modules/
 
 sim/js_code.txt
