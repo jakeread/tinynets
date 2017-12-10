@@ -94,7 +94,12 @@ void tp_packetparser(tinyport_t *tp){
 				// check for end of packet w/ counter 
 				// (counter is _current_ byte, is incremented at end of handle)
 				// when done, fill in fields for easy access in handling
-				if(tp->packet.counter >= tp->packet.size - 1){ // check counter against packet size to see if @ end of packet
+				tp->packet.raw[tp->packet.counter] = data;
+				tp->packet.counter ++;
+				if(tp->packet.counter == 5){
+					tp->packet.size = data; // 5th byte in packet structure is size
+				}
+				if(tp->packet.counter >= tp->packet.size){ // check counter against packet size to see if @ end of packet
 					tp->packet.type = tp->packet.raw[0];
 					tp->packet.destination = tp->packet.raw[1];//((uint16_t)tp->packet.raw[1] << 8) | tp->packet.raw[2];
 					tp->packet.hopcount = tp->packet.raw[2];
@@ -102,11 +107,7 @@ void tp_packetparser(tinyport_t *tp){
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
 					pin_set(tp->stlb);
-				} else if(tp->packet.counter == 4){ 
-					tp->packet.size = data; // 5th byte in packet structure is size
 				}
-				tp->packet.raw[tp->packet.counter] = data;
-				tp->packet.counter ++;
 				break;
 				
 			default:

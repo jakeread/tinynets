@@ -212,7 +212,7 @@ int main (void){
 	
 	for (int i = 0; i < 1024; i++) {
 		for (int port = 0; port < 4; port++) {
-			LUT[i][port] = 255; 
+			LUT[i][port] = MAX_HOPCOUNT; 
 		}
 	}
 
@@ -235,9 +235,7 @@ int main (void){
 				ports[i]->haspacket = TP_NO_PACKET;
 				
 				handle_packet(&packetlooper, i);
-				
-				//tp_putdata(ports[i], packetlooper.raw, packetlooper.size); // non-blocking put
-				
+								
 				packet_clean(&packetlooper);
 			}
 		}
