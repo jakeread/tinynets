@@ -66,8 +66,8 @@ int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
 void tp_rxhandler(tinyport_t *tp){
 	uint8_t data = tp->uart->UART_RHR;
 	rb_putchar(tp->rbrx, data);
-	pin_clear(tp->stlb);
-	pin_set(&tstrx);
+	//pin_clear(tp->stlb);
+	//pin_set(&tstrx);
 }
 
 void tp_packetparser(tinyport_t *tp){
@@ -123,14 +123,9 @@ void tp_packetparser(tinyport_t *tp){
 void tp_txhandler(tinyport_t *tp){
 	if(!rb_empty(tp->rbtx)){
 		tp->uart->UART_THR = rb_get(tp->rbtx);
-		pin_clear(tp->stlg);
-		pin_set(&tsttx);
 	} else {
 		tp->uart->UART_IDR = UART_IER_TXRDY; // if nothing left to tx, turn isr off
-		pin_set(tp->stlg);
-		pin_clear(&tsttx); // tricky, adding these increases transfer time... 
 	}
-	//while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
 }
 
 void tp_testlights(tinyport_t *tp){

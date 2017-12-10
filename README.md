@@ -91,7 +91,7 @@ In addition to proving our merit with a careful literature review, we can devise
 
 # Key Contributions
 
-A strategy for stateless multipath routing that increases message deliver time determinism and network robustness.
+A strategy for stateless multipath routing that increases message delivery time determinism and network robustness.
 
 A real-time cost function, using next-hop buffer size (i.e. busyness metric) as well as historical hop-count for per-packet dynamic re-routing, that increases packet delivery-time determinism. 
 
