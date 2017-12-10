@@ -20,15 +20,25 @@ rl.on('line', parseLineIn);
 //var buf = Buffer.from([255,0,2,1,0,1,9,1,1])
 
 // [type][destination][hopcount][source][#bytestotal][byte_7][byte_6]...[byte_n]
-var buf = Buffer.from([255,2,0,12,7,1,0])
+var buf = Buffer.from([255,1,0,0,7,1,1])
 
 function parseLineIn(data) {
 	if (debug) {
 		console.log("rl: parseLineIn: " + data);
 	}
 	if(data == 'packet'){
-		console.log('packet out !');
 		data_out(buf);
+	} else if(data.includes('packet')) {
+		if(data.includes('addr') && data.includes('key') && data.includes('val')){
+			console.log('parsing: ', data);
+			var addr = parseInt(data.slice(data.indexOf('addr') + 5, data.indexOf(' ', data.indexOf('addr') + 5)));
+			var key = parseInt(data.slice(data.indexOf('key') + 4, data.indexOf(' ', data.indexOf('key') + 4)));
+			var val = parseInt(data.slice(data.indexOf('val') + 4, data.length));
+			var packet = Buffer.from([255,addr,0,0,7,key,val]);
+			data_out(packet);
+		} else {
+			console.log('no bueno commando');
+		}
 	} else {
 		data_out(data);
 	}	
@@ -56,6 +66,7 @@ function data_in(data){
 }
 
 function data_out(data){
+	console.log('sent: ', data);
 	port.write(data, function(err){
 		if(err) {
 			return console.log('Error on write: ', err.message);

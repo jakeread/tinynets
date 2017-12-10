@@ -57,7 +57,6 @@ void tp_putchar(tinyport_t *tp, uint8_t data){
 }
 
 int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
-	// drops block of mems into ringbuffer (need to update rb for this)
 	rb_putdata(tp->rbtx, data, size);
 	tp->uart->UART_IER |= UART_IER_TXRDY;
 	return 1;
@@ -66,12 +65,13 @@ int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
 void tp_rxhandler(tinyport_t *tp){
 	uint8_t data = tp->uart->UART_RHR;
 	rb_putchar(tp->rbrx, data);
+	pin_clear(tp->stlb);
 }
 
 void tp_packetparser(tinyport_t *tp){
 	
-	while(!rb_empty(tp->rbrx) && !tp->haspacket){ // while the ringbuffer contains data and we don't have a packet yet
-		
+	while(!tp->haspacket && !rb_empty(tp->rbrx)){ // while the ringbuffer contains data and we don't have a packet yet
+
 		uint8_t data = rb_get(tp->rbrx); // grab a byte from the ringbuffer
 		
 		switch(tp->packetstate){
@@ -101,7 +101,7 @@ void tp_packetparser(tinyport_t *tp){
 					tp->packet.source = tp->packet.raw[3];//((uint16_t)tp->packet.raw[4] << 8) | tp->packet.raw[5];
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
-					pin_clear(tp->stlb);
+					pin_set(tp->stlb);
 				} else if(tp->packet.counter == 4){ 
 					tp->packet.size = data; // 5th byte in packet structure is size
 				}
@@ -118,8 +118,8 @@ void tp_packetparser(tinyport_t *tp){
 
 void tp_txhandler(tinyport_t *tp){
 	if(!rb_empty(tp->rbtx)){
-		pin_clear(tp->stlg);
 		tp->uart->UART_THR = rb_get(tp->rbtx);
+		pin_clear(tp->stlg);
 	} else {
 		tp->uart->UART_IDR = UART_IER_TXRDY; // if nothing left to tx, turn isr off
 		pin_set(tp->stlg);

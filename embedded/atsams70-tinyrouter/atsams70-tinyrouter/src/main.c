@@ -196,7 +196,7 @@ int main (void){
 	setallstatus(); // lights off
 	pin_set(&stlr);
 	pin_set(&stlb);
-
+	
 	tp_testlights(&tp1); // fancy
 	tp_testlights(&tp3);
 	tp_testlights(&tp2);
@@ -206,6 +206,7 @@ int main (void){
 	ports[1] = &tp2;
 	ports[2] = &tp3;
 	ports[3] = &tp4;
+	
 	
 	myAddress = MYADDRESS;
 	
@@ -218,6 +219,7 @@ int main (void){
 	packet_t packetlooper;
 
 	while(1){
+		
 		// loop over ports to run packet deciphering... allows quick handling of RXINT w/ simpler rxhandler
 		// each returns one packet at a time
 		for(int i = 0; i < 4; i++){
@@ -237,13 +239,10 @@ int main (void){
 				//tp_putdata(ports[i], packetlooper.raw, packetlooper.size); // non-blocking put
 				
 				packet_clean(&packetlooper);
-				pin_set(ports[i]->stlb);
 			}
 		}
+		delay_cycles(1); // one clock tick to relax interrupt scheduler
 	} // end while
-	
-	delay_cycles(1); // one clock tick to relax interrupt scheduler
-
 } // end main
 
 
