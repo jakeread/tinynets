@@ -4,6 +4,25 @@
 // test at higher bitrates?
 // how to do big packet pushing?
 // better app layer - and make sure to clear space?
+ - towards timing measurement
+
+// status updates & lambda function
+
+// testing ... 
+ - p1 -> hi when rx buffer non-empty
+ - p2 -> hi when packet handler has packet
+ - p3 -> hi when tx buffer non-empty
+
+# Results
+
+// do writeup
+
+In this screenshot, a falling edge on Channel 4 indicates an end of the main while() loop - so intervals between are packet processing and decision making. 
+
+see captures saved ... 43us processing time, the rest is bitrate
+
+-> can we push bitrate by improving rx / tx interrupts? eliminate everything, try cranking past brgr 6
+
 
 [0:start][1:destination-msb:9][2:hopcount][3:source][4:#bytestotal][byte_5][byte_7]...[byte_n] 0-255 bytes
 

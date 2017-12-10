@@ -30,6 +30,7 @@
  */
 #include <asf.h>
 #include "pin.h"
+#include "testpins.h"
 #include "tinyport.h"
 #include "packet_handling.h"
 #include "ports.h"
@@ -187,6 +188,7 @@ int main (void){
 	tp4 = tinyport_new(UART4, PIOD, PERIPHERAL_C, PIO_PER_P18, PIO_PER_P19, &p4rbrx, &p4rbtx, &p4lr, &p4lg, &p4lb);
 
 	tp_init(&tp1);
+	UART2->UART_BRGR = 81; // manual set to FTDI speed
 	tp_init(&tp2);
 	tp_init(&tp3);
 	tp_init(&tp4);
@@ -207,6 +209,19 @@ int main (void){
 	ports[2] = &tp3;
 	ports[3] = &tp4;
 	
+	// test indicators
+	tstrx = pin_new(PIOD, PIO_PER_P8);
+	pin_output(&tstrx);
+	pin_clear(&tstrx);
+	tstpckt = pin_new(PIOD, PIO_PER_P6);
+	pin_output(&tstpckt);
+	pin_clear(&tstpckt);
+	tstclk = pin_new(PIOD, PIO_PER_P2);
+	pin_output(&tstclk);
+	pin_clear(&tsttx);
+	tsttx = pin_new(PIOD, PIO_PER_P4);
+	pin_output(&tsttx);
+	pin_clear(&tsttx);
 	
 	myAddress = MYADDRESS;
 	
@@ -219,13 +234,12 @@ int main (void){
 	packet_t packetlooper;
 
 	while(1){
-		
+		pin_set(&tstclk);
 		// loop over ports to run packet deciphering... allows quick handling of RXINT w/ simpler rxhandler
 		// each returns one packet at a time
 		for(int i = 0; i < 4; i++){
 			tp_packetparser(ports[i]);
 		}
-
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
 			if(ports[i]->haspacket){
 
@@ -239,6 +253,7 @@ int main (void){
 				packet_clean(&packetlooper);
 			}
 		}
+		pin_clear(&tstclk);
 		delay_cycles(1); // one clock tick to relax interrupt scheduler
 	} // end while
 } // end main

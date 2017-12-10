@@ -48,5 +48,4 @@ pin_t p4lb;
 
 tinyport_t* ports[4];
 
-
 #endif /* PORTS_H_ */

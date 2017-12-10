@@ -35,8 +35,9 @@ void tp_init(tinyport_t *tp){
 	// do abcdsr - a, b, c, d | 00, 01, 10, 11
 	// this is handled in global setup
 	
-	tp->uart->UART_MR = UART_MR_BRSRCCK_PERIPH_CLK | UART_MR_CHMODE_NORMAL| UART_MR_PAR_NO | UART_MR_FILTER_DISABLED;
-	tp->uart->UART_BRGR = UART_BAUD_DIVIDER; 
+	tp->uart->UART_MR = UART_MR_BRSRCCK_PERIPH_CLK | UART_MR_CHMODE_NORMAL | UART_MR_PAR_NO | UART_MR_FILTER_DISABLED;
+	tp->uart->UART_BRGR = UART_BAUD_DIVIDER;
+	
 	tp->uart->UART_CR = UART_CR_TXEN | UART_CR_RXEN;
 	
 	tp->uart->UART_IER = UART_IER_RXRDY;
@@ -66,6 +67,7 @@ void tp_rxhandler(tinyport_t *tp){
 	uint8_t data = tp->uart->UART_RHR;
 	rb_putchar(tp->rbrx, data);
 	pin_clear(tp->stlb);
+	pin_set(&tstrx);
 }
 
 void tp_packetparser(tinyport_t *tp){
@@ -107,6 +109,7 @@ void tp_packetparser(tinyport_t *tp){
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
 					pin_set(tp->stlb);
+					pin_clear(&tstrx);
 				}
 				break;
 				
@@ -121,9 +124,11 @@ void tp_txhandler(tinyport_t *tp){
 	if(!rb_empty(tp->rbtx)){
 		tp->uart->UART_THR = rb_get(tp->rbtx);
 		pin_clear(tp->stlg);
+		pin_set(&tsttx);
 	} else {
 		tp->uart->UART_IDR = UART_IER_TXRDY; // if nothing left to tx, turn isr off
 		pin_set(tp->stlg);
+		pin_clear(&tsttx); // tricky, adding these increases transfer time... 
 	}
 	//while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // blocking
 }

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="20" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -205,8 +205,10 @@ cat</text>
 <text x="21.128990625" y="23.38705" size="0.8128" layer="21" font="vector" rot="R180">7</text>
 <text x="21.128990625" y="20.806409375" size="0.8128" layer="21" font="vector" rot="R180">5</text>
 <text x="21.128990625" y="18.22576875" size="0.8128" layer="21" font="vector" rot="R180">3</text>
-<dimension x1="11.684" y1="63.5" x2="11.684" y2="14.224" x3="0" y3="38.862" textsize="1.778" layer="48"/>
-<dimension x1="11.684" y1="63.5" x2="42.672" y2="63.5" x3="27.178" y3="70.104" textsize="1.778" layer="48"/>
+<dimension x1="11.684" y1="63.754" x2="11.684" y2="14.732" x3="1.27" y3="39.243" textsize="1.778" layer="48"/>
+<dimension x1="11.684" y1="63.754" x2="42.672" y2="63.754" x3="27.178" y3="69.342" textsize="1.778" layer="48"/>
+<dimension x1="11.684" y1="63.754" x2="11.684" y2="66.802" x3="-1.778" y3="65.278" textsize="1.778" layer="48"/>
+<dimension x1="11.684" y1="63.754" x2="8.636" y2="63.754" x3="10.16" y3="75.184" textsize="1.778" layer="48"/>
 </plain>
 <libraries>
 <library name="crystal" urn="urn:adsk.eagle:library:204">

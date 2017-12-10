@@ -48,11 +48,12 @@
 // packet delimiters
 #define TP_DELIMITER_START 255
 
-#define UART_BAUD_DIVIDER 81 // 977: 9600 baud, 81: 115200, 10: 921600
+#define UART_BAUD_DIVIDER 6 // 977: 9600 baud, 81: 115200, 10: 921600: newclock: 63: 115200
 #define RINGBUFFER_SIZE 1024 // in bytes, or 4 full length packets, have 384KBytes total in system
 
 #include "asf.h"
 #include "pin.h"
+#include "testpins.h"
 #include "ringbuffer.h"
 #include "packet.h"
 

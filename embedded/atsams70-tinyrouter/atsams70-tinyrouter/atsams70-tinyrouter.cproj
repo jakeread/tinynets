@@ -508,6 +508,9 @@
     <Compile Include="src\ringbuffer.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\testpins.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\tinyport.c">
       <SubType>compile</SubType>
     </Compile>
