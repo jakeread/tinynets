@@ -1,0 +1,332 @@
+
+VM10943:1 GET http://localhost:8383/TinyNets/ko.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:610
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11002:1
+VM10943:1 GET http://localhost:8383/TinyNets/knockout.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:614
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11002:1
+http://localhost:8383./network.js:419 [2111]: 5: got ACK from 8. RTT = 0.0055
+http://localhost:8383./network.js:419 [2111]: 3: got ACK from 6. RTT = 0.0055
+http://localhost:8383./network.js:419 [2111]: 4: got ACK from 7. RTT = 0.0055
+http://localhost:8383./network.js:419 [2232]: 1: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [2253]: 2: got ACK from 3. RTT = 0.0265
+http://localhost:8383./network.js:419 [2262]: 1: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [2283]: 2: got ACK from 5. RTT = 0.0415
+http://localhost:8383./network.js:419 [2292]: 1: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [2293]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [2293]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [2293]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [2313]: 2: got ACK from 4. RTT = 0.0565
+http://localhost:8383./network.js:419 [2334]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [2334]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [2334]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [2432]: 1: got ACK from 5. RTT = 0.016
+http://localhost:8383./network.js:419 [2432]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [2462]: 2: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [2462]: 1: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [2492]: 2: got ACK from 3. RTT = 0.046
+http://localhost:8383./network.js:419 [2492]: 1: got ACK from 4. RTT = 0.046
+http://localhost:8383./network.js:419 [2493]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [2493]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [2493]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [2534]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [2534]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [2534]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [2632]: 1: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [2632]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [2662]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [2662]: 1: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [2692]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [2692]: 1: got ACK from 3. RTT = 0.046
+http://localhost:8383./network.js:419 [2693]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [2693]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [2693]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [2734]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [2734]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [2734]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [2832]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [2832]: 1: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [2852]: 5: got ACK from 8. RTT = 0.026
+http://localhost:8383./network.js:419 [2862]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [2862]: 1: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [2892]: 1: got ACK from 3. RTT = 0.046
+http://localhost:8383./network.js:419 [2892]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [2893]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [2893]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [2933]: 5: got ACK from 8. RTT = 0.0165
+http://localhost:8383./network.js:419 [2934]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [2934]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [3052]: 2: got ACK from 5. RTT = 0.026
+http://localhost:8383./network.js:419 [3082]: 2: got ACK from 4. RTT = 0.041
+http://localhost:8383./network.js:419 [3093]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [3093]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [3093]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [3112]: 2: got ACK from 3. RTT = 0.056
+http://localhost:8383./network.js:419 [3134]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [3155]: 1: got ACK from 5. RTT = 0.0775
+http://localhost:8383./network.js:419 [3175]: 5: got ACK from 8. RTT = 0.0375
+http://localhost:8383./network.js:419 [3175]: 4: got ACK from 7. RTT = 0.0375
+http://localhost:8383./network.js:419 [3185]: 1: got ACK from 3. RTT = 0.0925
+http://localhost:8383./network.js:419 [3247]: 1: got ACK from 4. RTT = 0.1235
+http://localhost:8383./network.js:419 [3256]: 2: got ACK from 4. RTT = 0.028
+http://localhost:8383./network.js:419 [3278]: 0: got ACK from 6. RTT = 0.04633333333333334
+http://localhost:8383./network.js:419 [3296]: 2: got ACK from 3. RTT = 0.048
+http://localhost:8383./network.js:419 [3317]: 0: got ACK from 7. RTT = 0.052833333333333336
+http://localhost:8383./network.js:419 [3326]: 2: got ACK from 5. RTT = 0.063
+http://localhost:8383./network.js:419 [3346]: 3: got ACK from 6. RTT = 0.073
+http://localhost:8383./network.js:419 [3347]: 5: got ACK from 8. RTT = 0.0735
+http://localhost:8383./network.js:419 [3347]: 4: got ACK from 7. RTT = 0.0735
+http://localhost:8383./network.js:419 [3356]: 0: got ACK from 8. RTT = 0.059333333333333335
+http://localhost:8383./network.js:419 [3376]: 3: got ACK from 6. RTT = 0.038
+http://localhost:8383./network.js:419 [3377]: 5: got ACK from 8. RTT = 0.0385
+http://localhost:8383./network.js:419 [3377]: 4: got ACK from 7. RTT = 0.0385
+http://localhost:8383./network.js:419 [3394]: 1: got ACK from 3. RTT = 0.097
+http://localhost:8383./network.js:419 [3456]: 1: got ACK from 5. RTT = 0.128
+http://localhost:8383./network.js:419 [3459]: 2: got ACK from 3. RTT = 0.0295
+http://localhost:8383./network.js:419 [3486]: 1: got ACK from 4. RTT = 0.143
+http://localhost:8383./network.js:419 [3489]: 2: got ACK from 4. RTT = 0.0445
+http://localhost:8383./network.js:419 [3499]: 3: got ACK from 6. RTT = 0.0495
+http://localhost:8383./network.js:419 [3511]: 4: got ACK from 7. RTT = 0.0555
+http://localhost:8383./network.js:419 [3511]: 5: got ACK from 8. RTT = 0.0555
+http://localhost:8383./network.js:419 [3516]: 1: got ACK from 3. RTT = 0.058
+http://localhost:8383./network.js:419 [3519]: 2: got ACK from 5. RTT = 0.0595
+http://localhost:8383./network.js:419 [3540]: 3: got ACK from 6. RTT = 0.02
+http://localhost:8383./network.js:419 [3541]: 5: got ACK from 8. RTT = 0.0205
+http://localhost:8383./network.js:419 [3541]: 4: got ACK from 7. RTT = 0.0205
+http://localhost:8383./network.js:419 [3546]: 1: got ACK from 4. RTT = 0.073
+http://localhost:8383./network.js:419 [3576]: 1: got ACK from 5. RTT = 0.088
+http://localhost:8383./network.js:419 [3632]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [3638]: 1: got ACK from 3. RTT = 0.019
+http://localhost:8383./network.js:419 [3652]: 4: got ACK from 7. RTT = 0.026
+http://localhost:8383./network.js:419 [3662]: 2: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [3668]: 1: got ACK from 5. RTT = 0.034
+http://localhost:8383./network.js:419 [3692]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [3693]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [3693]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [3698]: 1: got ACK from 4. RTT = 0.049
+http://localhost:8383./network.js:419 [3733]: 4: got ACK from 7. RTT = 0.0165
+http://localhost:8383./network.js:419 [3734]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [3734]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [3832]: 1: got ACK from 5. RTT = 0.016
+http://localhost:8383./network.js:419 [3832]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [3862]: 1: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [3862]: 2: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [3892]: 5: got ACK from 8. RTT = 0.046
+http://localhost:8383./network.js:419 [3892]: 1: got ACK from 4. RTT = 0.046
+http://localhost:8383./network.js:419 [3892]: 2: got ACK from 3. RTT = 0.046
+http://localhost:8383./network.js:419 [3893]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [3893]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [3933]: 5: got ACK from 8. RTT = 0.0165
+http://localhost:8383./network.js:419 [3934]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [3934]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [4032]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [4062]: 2: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [4092]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [4093]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [4093]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [4093]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [4134]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [4155]: 1: got ACK from 3. RTT = 0.0775
+http://localhost:8383./network.js:419 [4175]: 4: got ACK from 7. RTT = 0.0375
+http://localhost:8383./network.js:419 [4175]: 5: got ACK from 8. RTT = 0.0375
+http://localhost:8383./network.js:419 [4185]: 1: got ACK from 5. RTT = 0.0925
+http://localhost:8383./network.js:419 [4247]: 1: got ACK from 4. RTT = 0.1235
+http://localhost:8383./network.js:419 [4255]: 2: got ACK from 3. RTT = 0.0275
+http://localhost:8383./network.js:419 [4278]: 0: got ACK from 6. RTT = 0.04633333333333334
+http://localhost:8383./network.js:419 [4297]: 2: got ACK from 5. RTT = 0.0485
+http://localhost:8383./network.js:419 [4317]: 0: got ACK from 8. RTT = 0.052833333333333336
+http://localhost:8383./network.js:419 [4327]: 2: got ACK from 4. RTT = 0.0635
+http://localhost:8383./network.js:419 [4346]: 3: got ACK from 6. RTT = 0.073
+http://localhost:8383./network.js:419 [4347]: 4: got ACK from 7. RTT = 0.0735
+http://localhost:8383./network.js:419 [4347]: 5: got ACK from 8. RTT = 0.0735
+http://localhost:8383./network.js:419 [4355]: 0: got ACK from 7. RTT = 0.059166666666666666
+http://localhost:8383./network.js:419 [4376]: 3: got ACK from 6. RTT = 0.038
+http://localhost:8383./network.js:419 [4377]: 4: got ACK from 7. RTT = 0.0385
+http://localhost:8383./network.js:419 [4377]: 5: got ACK from 8. RTT = 0.0385
+http://localhost:8383./network.js:419 [4394]: 1: got ACK from 5. RTT = 0.097
+http://localhost:8383./network.js:419 [4456]: 1: got ACK from 4. RTT = 0.128
+http://localhost:8383./network.js:419 [4458]: 3: got ACK from 6. RTT = 0.029
+http://localhost:8383./network.js:419 [4459]: 2: got ACK from 5. RTT = 0.0295
+http://localhost:8383./network.js:419 [4486]: 1: got ACK from 3. RTT = 0.143
+http://localhost:8383./network.js:419 [4489]: 2: got ACK from 4. RTT = 0.0445
+http://localhost:8383./network.js:419 [4500]: 4: got ACK from 7. RTT = 0.05
+http://localhost:8383./network.js:419 [4511]: 5: got ACK from 8. RTT = 0.0555
+http://localhost:8383./network.js:419 [4516]: 1: got ACK from 3. RTT = 0.058
+http://localhost:8383./network.js:419 [4519]: 2: got ACK from 3. RTT = 0.0595
+http://localhost:8383./network.js:419 [4539]: 3: got ACK from 6. RTT = 0.0195
+http://localhost:8383./network.js:419 [4541]: 5: got ACK from 8. RTT = 0.0205
+http://localhost:8383./network.js:419 [4541]: 4: got ACK from 7. RTT = 0.0205
+http://localhost:8383./network.js:419 [4546]: 1: got ACK from 5. RTT = 0.073
+http://localhost:8383./network.js:419 [4576]: 1: got ACK from 4. RTT = 0.088
+http://localhost:8383./network.js:419 [4632]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [4638]: 1: got ACK from 5. RTT = 0.019
+http://localhost:8383./network.js:419 [4662]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [4668]: 1: got ACK from 4. RTT = 0.034
+http://localhost:8383./network.js:419 [4692]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [4693]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [4693]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [4693]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [4698]: 1: got ACK from 3. RTT = 0.049
+http://localhost:8383./network.js:419 [4734]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [4734]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [4734]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [4832]: 1: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [4852]: 4: got ACK from 7. RTT = 0.026
+http://localhost:8383./network.js:419 [4853]: 2: got ACK from 5. RTT = 0.0265
+http://localhost:8383./network.js:419 [4862]: 1: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [4883]: 2: got ACK from 3. RTT = 0.0415
+http://localhost:8383./network.js:419 [4892]: 1: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [4893]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [4893]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [4913]: 2: got ACK from 4. RTT = 0.0565
+http://localhost:8383./network.js:419 [4933]: 4: got ACK from 7. RTT = 0.0165
+http://localhost:8383./network.js:419 [4934]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [4934]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [5053]: 2: got ACK from 3. RTT = 0.0265
+http://localhost:8383./network.js:419 [5083]: 2: got ACK from 4. RTT = 0.0415
+http://localhost:8383./network.js:419 [5093]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [5093]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [5093]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [5113]: 2: got ACK from 5. RTT = 0.0565
+http://localhost:8383./network.js:419 [5134]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [5155]: 1: got ACK from 3. RTT = 0.0775
+http://localhost:8383./network.js:419 [5175]: 5: got ACK from 8. RTT = 0.0375
+http://localhost:8383./network.js:419 [5175]: 4: got ACK from 7. RTT = 0.0375
+http://localhost:8383./network.js:419 [5185]: 1: got ACK from 5. RTT = 0.0925
+http://localhost:8383./network.js:419 [5247]: 1: got ACK from 4. RTT = 0.1235
+http://localhost:8383./network.js:419 [5254]: 2: got ACK from 3. RTT = 0.027
+http://localhost:8383./network.js:419 [5278]: 0: got ACK from 6. RTT = 0.04633333333333334
+http://localhost:8383./network.js:419 [5284]: 2: got ACK from 4. RTT = 0.042
+http://localhost:8383./network.js:419 [5314]: 2: got ACK from 5. RTT = 0.057
+http://localhost:8383./network.js:419 [5317]: 0: got ACK from 7. RTT = 0.052833333333333336
+http://localhost:8383./network.js:419 [5346]: 3: got ACK from 6. RTT = 0.073
+http://localhost:8383./network.js:419 [5347]: 4: got ACK from 7. RTT = 0.0735
+http://localhost:8383./network.js:419 [5347]: 5: got ACK from 8. RTT = 0.0735
+http://localhost:8383./network.js:419 [5356]: 0: got ACK from 8. RTT = 0.059333333333333335
+http://localhost:8383./network.js:419 [5376]: 3: got ACK from 6. RTT = 0.038
+http://localhost:8383./network.js:419 [5377]: 4: got ACK from 7. RTT = 0.0385
+http://localhost:8383./network.js:419 [5377]: 5: got ACK from 8. RTT = 0.0385
+http://localhost:8383./network.js:419 [5394]: 1: got ACK from 5. RTT = 0.097
+http://localhost:8383./network.js:419 [5432]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [5456]: 1: got ACK from 3. RTT = 0.128
+http://localhost:8383./network.js:419 [5462]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [5486]: 1: got ACK from 4. RTT = 0.143
+http://localhost:8383./network.js:419 [5492]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [5499]: 3: got ACK from 6. RTT = 0.0495
+http://localhost:8383./network.js:419 [5500]: 5: got ACK from 8. RTT = 0.05
+http://localhost:8383./network.js:419 [5511]: 4: got ACK from 7. RTT = 0.0555
+http://localhost:8383./network.js:419 [5516]: 1: got ACK from 5. RTT = 0.058
+http://localhost:8383./network.js:419 [5540]: 3: got ACK from 6. RTT = 0.02
+http://localhost:8383./network.js:419 [5541]: 4: got ACK from 7. RTT = 0.0205
+http://localhost:8383./network.js:419 [5541]: 5: got ACK from 8. RTT = 0.0205
+http://localhost:8383./network.js:419 [5546]: 1: got ACK from 3. RTT = 0.073
+http://localhost:8383./network.js:419 [5576]: 1: got ACK from 4. RTT = 0.088
+http://localhost:8383./network.js:419 [5632]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [5638]: 1: got ACK from 5. RTT = 0.019
+http://localhost:8383./network.js:419 [5662]: 2: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [5668]: 1: got ACK from 3. RTT = 0.034
+http://localhost:8383./network.js:419 [5692]: 5: got ACK from 8. RTT = 0.046
+http://localhost:8383./network.js:419 [5692]: 2: got ACK from 3. RTT = 0.046
+http://localhost:8383./network.js:419 [5693]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [5693]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [5698]: 1: got ACK from 4. RTT = 0.049
+http://localhost:8383./network.js:419 [5733]: 5: got ACK from 8. RTT = 0.0165
+http://localhost:8383./network.js:419 [5734]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [5734]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [5832]: 1: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [5852]: 2: got ACK from 3. RTT = 0.026
+http://localhost:8383./network.js:419 [5862]: 1: got ACK from 5. RTT = 0.031
+http://localhost:8383./network.js:419 [5882]: 2: got ACK from 5. RTT = 0.041
+http://localhost:8383./network.js:419 [5892]: 3: got ACK from 6. RTT = 0.046
+http://localhost:8383./network.js:419 [5892]: 1: got ACK from 4. RTT = 0.046
+http://localhost:8383./network.js:419 [5893]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [5893]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [5912]: 2: got ACK from 4. RTT = 0.056
+http://localhost:8383./network.js:419 [5933]: 3: got ACK from 6. RTT = 0.0165
+http://localhost:8383./network.js:419 [5934]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [5934]: 4: got ACK from 7. RTT = 0.017
+http://localhost:8383./network.js:419 [6032]: 2: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [6062]: 2: got ACK from 3. RTT = 0.031
+http://localhost:8383./network.js:419 [6092]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [6093]: 4: got ACK from 7. RTT = 0.0465
+http://localhost:8383./network.js:419 [6093]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [6093]: 3: got ACK from 6. RTT = 0.0465
+http://localhost:8383./network.js:419 [6134]: 3: got ACK from 6. RTT = 0.017
+http://localhost:8383./network.js:419 [6155]: 1: got ACK from 5. RTT = 0.0775
+http://localhost:8383./network.js:419 [6175]: 5: got ACK from 8. RTT = 0.0375
+http://localhost:8383./network.js:419 [6175]: 4: got ACK from 7. RTT = 0.0375
+http://localhost:8383./network.js:419 [6185]: 1: got ACK from 4. RTT = 0.0925
+http://localhost:8383./network.js:419 [6247]: 1: got ACK from 3. RTT = 0.1235
+http://localhost:8383./network.js:419 [6255]: 2: got ACK from 3. RTT = 0.0275
+http://localhost:8383./network.js:419 [6278]: 0: got ACK from 6. RTT = 0.04633333333333334
+http://localhost:8383./network.js:419 [6297]: 2: got ACK from 4. RTT = 0.0485
+http://localhost:8383./network.js:419 [6316]: 0: got ACK from 7. RTT = 0.05266666666666667
+http://localhost:8383./network.js:419 [6327]: 2: got ACK from 5. RTT = 0.0635
+http://localhost:8383./network.js:419 [6346]: 3: got ACK from 6. RTT = 0.073
+http://localhost:8383./network.js:419 [6347]: 5: got ACK from 8. RTT = 0.0735
+http://localhost:8383./network.js:419 [6347]: 4: got ACK from 7. RTT = 0.0735
+http://localhost:8383./network.js:419 [6356]: 0: got ACK from 8. RTT = 0.059333333333333335
+http://localhost:8383./network.js:419 [6376]: 3: got ACK from 6. RTT = 0.038
+http://localhost:8383./network.js:419 [6377]: 5: got ACK from 8. RTT = 0.0385
+http://localhost:8383./network.js:419 [6377]: 4: got ACK from 7. RTT = 0.0385
+http://localhost:8383./network.js:419 [6394]: 1: got ACK from 5. RTT = 0.097
+http://localhost:8383./network.js:419 [6432]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [6456]: 1: got ACK from 4. RTT = 0.128
+http://localhost:8383./network.js:419 [6459]: 5: got ACK from 8. RTT = 0.0295
+http://localhost:8383./network.js:419 [6462]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [6486]: 1: got ACK from 3. RTT = 0.143
+http://localhost:8383./network.js:419 [6492]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [6499]: 3: got ACK from 6. RTT = 0.0495
+http://localhost:8383./network.js:419 [6511]: 4: got ACK from 7. RTT = 0.0555
+http://localhost:8383./network.js:419 [6516]: 1: got ACK from 5. RTT = 0.058
+http://localhost:8383./network.js:419 [6540]: 5: got ACK from 8. RTT = 0.02
+http://localhost:8383./network.js:419 [6540]: 3: got ACK from 6. RTT = 0.02
+http://localhost:8383./network.js:419 [6541]: 4: got ACK from 7. RTT = 0.0205
+http://localhost:8383./network.js:419 [6546]: 1: got ACK from 3. RTT = 0.073
+http://localhost:8383./network.js:419 [6576]: 1: got ACK from 4. RTT = 0.088
+http://localhost:8383./network.js:419 [6632]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [6638]: 1: got ACK from 5. RTT = 0.019
+http://localhost:8383./network.js:419 [6652]: 3: got ACK from 6. RTT = 0.026
+http://localhost:8383./network.js:419 [6652]: 4: got ACK from 7. RTT = 0.026
+http://localhost:8383./network.js:419 [6662]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [6683]: 1: got ACK from 3. RTT = 0.0415
+http://localhost:8383./network.js:419 [6692]: 2: got ACK from 5. RTT = 0.046
+http://localhost:8383./network.js:419 [6693]: 5: got ACK from 8. RTT = 0.0465
+http://localhost:8383./network.js:419 [6713]: 1: got ACK from 4. RTT = 0.0565
+http://localhost:8383./network.js:419 [6733]: 4: got ACK from 7. RTT = 0.0165
+http://localhost:8383./network.js:419 [6733]: 3: got ACK from 6. RTT = 0.0165
+http://localhost:8383./network.js:419 [6734]: 5: got ACK from 8. RTT = 0.017
+http://localhost:8383./network.js:419 [6832]: 1: got ACK from 4. RTT = 0.016
+http://localhost:8383./network.js:419 [6832]: 2: got ACK from 3. RTT = 0.016
+http://localhost:8383./network.js:419 [6862]: 2: got ACK from 4. RTT = 0.031
+http://localhost:8383./network.js:419 [6862]: 1: got ACK from 5. RTT = 0.031
+VM10943:1 GET http://localhost:8383/TinyNets/ko.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:610
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11003:1
+VM10943:1 GET http://localhost:8383/TinyNets/knockout.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:614
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11003:1
+VM10943:1 GET http://localhost:8383/TinyNets/ko.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:610
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11004:1
+VM10943:1 GET http://localhost:8383/TinyNets/knockout.js net::ERR_EMPTY_RESPONSE
+(anonymous) @ VM10943:1
+require @ require.js:12
+NetBeans.getKnockout @ VM10989:614
+NetBeans.getKnockoutVersion @ VM10989:624
+(anonymous) @ VM11004:1
