@@ -11,7 +11,7 @@ function latency(a, b) {
 	var min = 10 + Math.abs(((a*topologySeed)^(b*topologySeed)) % 300);
 	var avgVariance = 15;
 
-	return Math.floor((Math.log(1-Math.random())/-1) * (avgVariance)) + min
+	return 0;//Math.floor((Math.log(1-Math.random())/-1) * (avgVariance)) + min
 }
 
 /*
@@ -413,6 +413,7 @@ Network.prototype = {
 	},
 
 	log: function(str) {
+            console.log(str);
 		if (this.visualizer)
 			this.visualizer.log(str)
 		else
