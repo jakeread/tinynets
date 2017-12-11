@@ -11,7 +11,7 @@ int parse_type(packet_t* p) {
   return p->raw[0];
 }
 
-void update_LUT(uint16_t src, uint8_t hopCount, uint8_t port) {
+void update_LUT(uint8_t src, uint8_t hopCount, uint8_t port) {
   LUT[src][port] = LUT[src][port] > hopCount ? hopCount : LUT[src][port];
 }
 
@@ -31,35 +31,17 @@ int in_table(uint8_t dest) {
          LUT[dest][2] == MAX_HOPCOUNT && LUT[dest][3] == MAX_HOPCOUNT);
 }
 
-packet_t ackpack;
-
-void acknowledge_packet(packet_t* p){	
-	ackpack.raw[0] = P_ACK;			// is ack
-	ackpack.raw[1] = p->raw[3];		// destination = source
-	ackpack.raw[2] = 0;				// hopcount = 0
-	ackpack.raw[3] = p->raw[1];		// source = destination (should be us)
-	ackpack.raw[4] = 5;				// all acks are 5 bytes
-		
-	if (in_table(ackpack.raw[1])) {
-		send_on_bestport(&ackpack);
-	} else {
-		// altho, this should not happen - we have presumably just seen this come in.
-		p->raw[0] = P_ACK_FLOOD;
-		broadcast_packet(p, 4);
-	}
-}
-
 void send_on_bestport(packet_t* p){
 	// empty buffer reads buffersize '1'
 	// from there, 8 bytes in buffer is + 1 (x >> 3)
 	// so divide by 1 is like ~ packet lambda (where packet is 3 byte payload)
 	// divide by 3 for one hopcount = three packets in buffer *shrugman*
 	int bestPort = 0;
-	int bestLambda = LUT[p->raw[1]][0] + ports[0]->buffersize / 3;
+	int bestLambda = LUT[p->raw[1]][0];// + ports[0]->buffersize / 3;
 	for (int i = 0; i < 4; i++) {
 		if (LUT[p->raw[1]][i] < bestLambda) {
 			bestPort = i;
-			bestLambda = LUT[p->raw[1]][0] + ports[0]->buffersize / 3;
+			bestLambda = LUT[p->raw[1]][0];// + ports[0]->buffersize / 3;
 		}
 	}
 	send_packet(p, bestPort);
@@ -144,5 +126,23 @@ void handle_packet(packet_t* p, uint8_t port) {
 		default:
 			pin_clear(&stlr); // err indicator
 		break;
+	}
+}
+
+packet_t ackpack;
+
+void acknowledge_packet(packet_t* p){
+	ackpack.raw[0] = P_ACK;			// is ack
+	ackpack.raw[1] = p->raw[3];		// destination = source
+	ackpack.raw[2] = 0;				// hopcount = 0
+	ackpack.raw[3] = p->raw[1];		// source = destination (should be us)
+	ackpack.raw[4] = 5;				// all acks are 5 bytes
+	
+	if (in_table(ackpack.raw[1])) {
+		send_on_bestport(&ackpack);
+		} else {
+		// altho, this should not happen - we have presumably just seen this come in.
+		p->raw[0] = P_ACK_FLOOD;
+		broadcast_packet(p, 4);
 	}
 }

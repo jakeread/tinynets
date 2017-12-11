@@ -234,9 +234,20 @@ int main (void){
 	}
 
 	packet_t packetlooper = packet_new();
+	packet_t packetsend = packet_new();
 	
 	uint32_t beatTicker = 0;
 	uint32_t packetTicker = 0;
+	
+	window = 2;
+	
+	packetsend.raw[0] = P_STANDARD;
+	packetsend.raw[1] = 12; // destination
+	packetsend.raw[2] = 0; // hops
+	packetsend.raw[3] = 1; // source
+	packetsend.raw[4] = 7; // # bytes
+	packetsend.raw[5] = 1;
+	packetsend.raw[6] = 1;
 
 	while(1){
 		pin_set(&tstclk);
@@ -256,6 +267,18 @@ int main (void){
 				packet_clean(&packetlooper);
 			}
 		}
+		
+		#if IS_HOME_PORT
+		if(window < 2){
+			window ++;
+			if (in_table(packetsend.raw[1])) {
+				send_on_bestport(&packetsend);
+				} else {
+				packetsend.raw[0] = P_STANDARD_FLOOD;
+				broadcast_packet(&packetsend, 4);
+			}
+		}
+		#endif
 		
 		pin_clear(&tstclk);
 		/*

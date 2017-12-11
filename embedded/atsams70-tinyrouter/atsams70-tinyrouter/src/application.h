@@ -10,6 +10,8 @@
 #define APPLICATION_H_
 
 #include "packet.h"
+#include "ports.h"
+#include "node.h"
 
 void app_onpacket(packet_t p);
 

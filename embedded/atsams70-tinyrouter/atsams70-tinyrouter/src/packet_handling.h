@@ -16,7 +16,7 @@
 
 int parse_type(packet_t* p);
 
-void update_LUT(uint16_t src, uint8_t hopCount, uint8_t port);
+void update_LUT(uint8_t src, uint8_t hopCount, uint8_t port);
 
 void send_packet(packet_t* p, uint8_t port);
 

@@ -1,7 +1,11 @@
 # 'API'
 
-// how to do big packet pushing? how to verify?
-// start writing now
+Send Packet on Every Ack - window 1, write this.
+
+Also, every Ack, write to pin.
+
+Then say, if button has been pushed, 
+
 // better app layer - and make sure to clear space?
 
 # Results
