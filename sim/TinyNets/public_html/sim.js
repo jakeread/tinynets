@@ -35,8 +35,9 @@ rawFile.onreadystatechange = function () {
 rawFile.send(null);
 */
 
+const D_INIT = .5e4;
 const CTRL = 2;
-const MOTOR = 3;
+const MOTOR = 7;
 var ctrl = [];
 for (let c=1; c<=CTRL; c++) {
     ctrl.push(c);
@@ -139,17 +140,17 @@ for (let i=1; i<=MOTOR; i++) {
 }
 
 for (let m=0; m<MOTOR; m++) {
-    sendPacket(motor[m],encoder[m],1 ,"10k",.1,true);
+    sendPacket(motor[m],encoder[m],1 ,"2.5k",.4,true);
 }
 
 motor.forEach(function(m) {
     ctrl.forEach(function (c) {
-        sendPacket(c,m,1,"5k",.2,true);
+        sendPacket(c,m,1,"1k",1,true);
     });
 });
 
 for (let i=1; i<=MOTOR; i++) {
-    sendPacket(0,motor[motor.length-1]+i,1,"1k",1,true);
+    sendPacket(0,motor[motor.length-1]+i,1,"500",2,true);
 }
 
 //sendPacket(0,9,1,"hello",1000);
@@ -203,7 +204,7 @@ net.run(1000 * 100); // runs for 100 seconds
 function sendPacket(from, dest, size, data, delay, periodic=false) {
 	if (periodic) {
 		clients[from].init(function() {
-                    this.delay(2000, function() {
+                    this.delay(D_INIT, function() {
 			this.tick(syrup*delay, function() {
 				this.manager.sendPacket(252, dest, 1, undefined, size, data);
 			});

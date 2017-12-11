@@ -168,9 +168,9 @@ function Manager(self) {
     };
 
     this.handlePacket = function(packet) {
-        this.waitUntil = Math.max(self.now(),this.waitUntil);
-        if (packet.src!==self.id)
-            this.waitUntil+=D_PKT;
+        this.waitUntil = Math.max(self.now(),this.waitUntil)+D_PKT;
+//        if (packet.src!==self.id)
+//            this.waitUntil+=D_PKT;
         // If LUT does not already have the source address, add the entry
         if ( (packet.start === STD || packet.start === ACK || packet.start === STF || packet.start === ACF)                                             // If this is not a buffer update
            && packet.src!==self.id                                                                                                                      // ...or a packet from me
