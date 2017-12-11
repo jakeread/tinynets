@@ -188,7 +188,9 @@ int main (void){
 	tp4 = tinyport_new(UART4, PIOD, PERIPHERAL_C, PIO_PER_P18, PIO_PER_P19, &p4rbrx, &p4rbtx, &p4lr, &p4lg, &p4lb);
 
 	tp_init(&tp1);
+	#if IS_HOME_PORT
 	UART2->UART_BRGR = 81; // manual set to FTDI speed
+	#endif
 	tp_init(&tp2);
 	tp_init(&tp3);
 	tp_init(&tp4);
@@ -231,7 +233,10 @@ int main (void){
 		}
 	}
 
-	packet_t packetlooper;
+	packet_t packetlooper = packet_new();
+	
+	uint32_t beatTicker = 0;
+	uint32_t packetTicker = 0;
 
 	while(1){
 		pin_set(&tstclk);
@@ -242,18 +247,32 @@ int main (void){
 		}
 		for(int i = 0; i < 4; i++){ // loop over ports and check for packets, add packets to packet buffer
 			if(ports[i]->haspacket){
-
+				packetTicker ++;
 				// TODO: update heartbeat / buffer depth
 				packetlooper = ports[i]->packet; 
 				packet_clean(&ports[i]->packet); // reset packet states
 				ports[i]->haspacket = TP_NO_PACKET;
-				
 				handle_packet(&packetlooper, i);
-								
 				packet_clean(&packetlooper);
 			}
 		}
+		
 		pin_clear(&tstclk);
+		/*
+		if(!(packetTicker % HEARTBEAT_PERPACKET_MODULO)){
+			packetTicker ++; // unlock
+			send_heartbeats();
+			beatTicker = 0;
+		}
+		
+		beatTicker ++;
+		if(!(beatTicker % HEARTBEAT_MODULO)){
+			pin_set(&tstpckt);
+			send_heartbeats();
+		} else {
+			pin_clear(&tstpckt);
+		}
+		*/
 		delay_cycles(1); // one clock tick to relax interrupt scheduler
 	} // end while
 } // end main

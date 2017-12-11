@@ -1,21 +1,12 @@
 # 'API'
 
-// test with 8 or so?
-// test at higher bitrates?
-// how to do big packet pushing?
+// how to do big packet pushing? how to verify?
+// start writing now
 // better app layer - and make sure to clear space?
- - towards timing measurement
-
-// status updates & lambda function
-
-// testing ... 
- - p1 -> hi when rx buffer non-empty
- - p2 -> hi when packet handler has packet
- - p3 -> hi when tx buffer non-empty
 
 # Results
 
-// do writeup
+// writeup str8 to latex
 
 In this screenshot, a falling edge on Channel 4 indicates an end of the main while() loop - so intervals between are packet processing and decision making. 
 

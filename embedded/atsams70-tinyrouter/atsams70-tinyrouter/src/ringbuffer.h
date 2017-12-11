@@ -12,12 +12,15 @@
 a ringbuffer,
 s/o https://github.com/dhess/c-ringbuf
 s/o https://embeddedartistry.com/blog/2017/4/6/circular-buffers-in-cc
+s/o https://www.downtowndougbrown.com/2013/01/microcontrollers-interrupt-safe-ring-buffers/
 */
 
 #include <stdlib.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+
+#include <asf.h>
 
 typedef struct {
 	uint8_t * buffer;
@@ -42,5 +45,7 @@ uint8_t rb_get(ringbuffer_t *rb);
 uint8_t rb_empty(ringbuffer_t *rb);
 
 uint8_t rb_full(ringbuffer_t *rb);
+
+size_t rb_free_space(ringbuffer_t *rb);
 
 #endif

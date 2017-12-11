@@ -20,11 +20,11 @@
 typedef struct{
 	uint8_t counter;
 	uint8_t raw[255];
-	uint8_t type;
-	uint8_t destination;
-	uint8_t source;
-	uint8_t hopcount;
-	uint8_t size;
+	//uint8_t type;
+	//uint8_t destination;
+	//uint8_t source;
+	//uint8_t hopcount;
+	//uint8_t size;
 }packet_t;
 
 packet_t packet_new(void);

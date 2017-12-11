@@ -53,21 +53,14 @@ void tp_init(tinyport_t *tp){
 }
 
 void tp_putchar(tinyport_t *tp, uint8_t data){
-	while(!(tp->uart->UART_SR & UART_SR_TXRDY)); // but wait
-	tp->uart->UART_THR = data;
+	rb_putchar(tp->rbtx, data);
+	tp->uart->UART_IER |= UART_IER_TXRDY;
 }
 
 int tp_putdata(tinyport_t *tp, uint8_t *data, uint8_t size){
 	rb_putdata(tp->rbtx, data, size);
 	tp->uart->UART_IER |= UART_IER_TXRDY;
 	return 1;
-}
-
-void tp_rxhandler(tinyport_t *tp){
-	uint8_t data = tp->uart->UART_RHR;
-	rb_putchar(tp->rbrx, data);
-	//pin_clear(tp->stlb);
-	//pin_set(&tstrx);
 }
 
 void tp_packetparser(tinyport_t *tp){
@@ -85,7 +78,7 @@ void tp_packetparser(tinyport_t *tp){
 					tp->packetstate = TP_PACKETSTATE_INSIDE;
 					tp->packet.raw[tp->packet.counter] = data;
 					tp->packet.counter ++;
-					} else {
+				} else {
 					tp->buffersize = data;
 				}
 				break;
@@ -98,18 +91,9 @@ void tp_packetparser(tinyport_t *tp){
 				// when done, fill in fields for easy access in handling
 				tp->packet.raw[tp->packet.counter] = data;
 				tp->packet.counter ++;
-				if(tp->packet.counter == 5){
-					tp->packet.size = data; // 5th byte in packet structure is size
-				}
-				if(tp->packet.counter >= tp->packet.size){ // check counter against packet size to see if @ end of packet
-					tp->packet.type = tp->packet.raw[0];
-					tp->packet.destination = tp->packet.raw[1];//((uint16_t)tp->packet.raw[1] << 8) | tp->packet.raw[2];
-					tp->packet.hopcount = tp->packet.raw[2];
-					tp->packet.source = tp->packet.raw[3];//((uint16_t)tp->packet.raw[4] << 8) | tp->packet.raw[5];
+				if(tp->packet.counter >= tp->packet.raw[4]){ // check counter against packet size to see if @ end of packet
 					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
 					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
-					pin_set(tp->stlb);
-					pin_clear(&tstrx);
 				}
 				break;
 				
@@ -119,6 +103,11 @@ void tp_packetparser(tinyport_t *tp){
 		} // end switch
 	} // end while
 } // end packetparser
+
+void tp_rxhandler(tinyport_t *tp){
+	uint8_t data = tp->uart->UART_RHR;
+	rb_putchar(tp->rbrx, data);
+}
 
 void tp_txhandler(tinyport_t *tp){
 	if(!rb_empty(tp->rbtx)){
