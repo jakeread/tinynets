@@ -239,7 +239,7 @@ int main (void){
 	uint32_t beatTicker = 0;
 	uint32_t packetTicker = 0;
 	
-	window = 2;
+	window = 255;
 	
 	packetsend.raw[0] = P_STANDARD;
 	packetsend.raw[1] = 12; // destination
@@ -263,14 +263,16 @@ int main (void){
 				packetlooper = ports[i]->packet; 
 				packet_clean(&ports[i]->packet); // reset packet states
 				ports[i]->haspacket = TP_NO_PACKET;
+				pin_clear(ports[i]->stlg);
 				handle_packet(&packetlooper, i);
+				pin_set(ports[i]->stlg);
 				packet_clean(&packetlooper);
 			}
 		}
 		
 		#if IS_HOME_PORT
-		if(window < 2){
-			window ++;
+		while(window < 3){
+			window ++; // and ack decrements
 			if (in_table(packetsend.raw[1])) {
 				send_on_bestport(&packetsend);
 				} else {

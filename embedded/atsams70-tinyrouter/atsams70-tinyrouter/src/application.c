@@ -27,7 +27,7 @@ void app_onpacket(packet_t p){
 			if(p.raw[6] == 1){
 				window = 0; // should kick off cycle
 			} else {
-				window = 2; // should stop cycle
+				window = 6; // should stop cycle
 			}
 		default:
 			pin_set(&stlb);

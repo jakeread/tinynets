@@ -74,26 +74,37 @@ void tp_packetparser(tinyport_t *tp){
 			case TP_PACKETSTATE_OUTSIDE:
 				// check if start, add 1st byte, change state
 				// if not start, assume buffer depth data, update
-				if(data == P_STANDARD | data == P_STANDARD_FLOOD | data == P_ACK | data == P_ACK_FLOOD){ 
+				pin_set(tp->stlb);
+				if((data == P_STANDARD) | (data == P_STANDARD_FLOOD) | (data == P_ACK) | (data == P_ACK_FLOOD)){ 
 					tp->packetstate = TP_PACKETSTATE_INSIDE;
-					tp->packet.raw[tp->packet.counter] = data;
-					tp->packet.counter ++;
+					tp->packet.raw[0] = data;
+					tp->packet.counter = 1;
 				} else {
 					tp->buffersize = data;
 				}
 				break;
 				
 			case TP_PACKETSTATE_INSIDE: 
-				// writing to packet
-				// check for size byte
-				// check for end of packet w/ counter 
-				// (counter is _current_ byte, is incremented at end of handle)
-				// when done, fill in fields for easy access in handling
-				tp->packet.raw[tp->packet.counter] = data;
-				tp->packet.counter ++;
-				if(tp->packet.counter >= tp->packet.raw[4]){ // check counter against packet size to see if @ end of packet
-					tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
-					tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
+				// debug
+				pin_clear(tp->stlb);
+				// clears double arrivals?
+				if((data == P_STANDARD) | (data == P_STANDARD_FLOOD) | (data == P_ACK) | (data == P_ACK_FLOOD)){ 
+					tp->packet.raw[0] = data;
+					tp->packet.raw[4] = 255;
+					tp->packet.counter = 1;
+				} else {
+					// writing to packet
+					// check for size byte
+					// check for end of packet w/ counter 
+					// (counter is _current_ byte, is incremented at end of handle)
+					// when done, fill in fields for easy access in handling
+					tp->packet.raw[tp->packet.counter] = data;
+					tp->packet.counter ++;
+					if(tp->packet.counter >= tp->packet.raw[4]){ // check counter against packet size to see if @ end of packet
+						tp->haspacket = TP_HAS_PACKET; // this data is final byte, we have packet, this will be last tick in loop
+						tp->packetstate = TP_PACKETSTATE_OUTSIDE; // and we're outside again
+						pin_set(tp->stlb);
+					}
 				}
 				break;
 				

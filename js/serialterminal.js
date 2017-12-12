@@ -1,6 +1,3 @@
-
-var debug = true;
-
 //----------------------------------------- readline
 // command-line / terminal inputs are handled
 // just as inputs from web terminal
@@ -23,9 +20,6 @@ rl.on('line', parseLineIn);
 var buf = Buffer.from([255,1,0,0,7,1,1])
 
 function parseLineIn(data) {
-	if (debug) {
-		console.log("rl: parseLineIn: " + data);
-	}
 	if(data == 'packet'){
 		data_out(buf);
 	} else if(data.includes('packet')) {
