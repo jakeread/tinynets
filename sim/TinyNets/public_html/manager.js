@@ -22,9 +22,11 @@ function Manager(self) {
     this.numports = 0;
     this.addr_table = {};
     this.buffer = [];
+    this.toSend = [];
     this.maxBufferSize = 252;
     this.seenFloods = [];
     this.waitUntil = 0;
+    this.lifeline = false;
 
     this.setup = function(numports) {
         this.numports = numports;
@@ -85,9 +87,22 @@ function Manager(self) {
         if (self.now()<this.waitUntil)
             return;
         
+        if (this.toSend.length>0) {
+            for (let p=0; p<this.toSend.length; p++) {
+                var pkt = this.toSend[p];
+                this.sendPacket(pkt.start, pkt.dest, pkt.hopcount, pkt.src, pkt.size, pkt.data, pkt.port);
+            }
+            this.toSend = [];
+        }
+        
         if (this.buffer.length > 100) {
             self.log(`WARNING: BUFFER VERY FULL`);
-            this.heartbeat();
+            if (!this.lifeline) {
+                this.heartbeat();
+                this.lifeline = true;
+            }
+        } else if (this.buffer.length < 50) {
+            this.lifeline = false;
         }
         
         if (this.buffer.length > 0) {
@@ -169,14 +184,13 @@ function Manager(self) {
 
     this.handlePacket = function(packet) {
         this.waitUntil = Math.max(self.now(),this.waitUntil)+D_PKT;
-//        if (packet.src!==self.id)
-//            this.waitUntil+=D_PKT;
         // If LUT does not already have the source address, add the entry
         if ( (packet.start === STD || packet.start === ACK || packet.start === STF || packet.start === ACF)                                             // If this is not a buffer update
            && packet.src!==self.id                                                                                                                      // ...or a packet from me
-           && (!this.addr_table[packet.port].dests.hasOwnProperty(packet.src) || this.addr_table[packet.port].dests[packet.src]!==packet.hopcount) ) {  // ...and my entry for the source is invalid
+           && (!this.addr_table[packet.port].dests.hasOwnProperty(packet.src) || this.addr_table[packet.port].dests[packet.src]>packet.hopcount) ) {  // ...and my entry for the source is invalid
+           // NICK: TODO: > or !== ? !== would be more robust to dropped nodes, but > is stable (see SIM=2, (3,6))
             this.addr_table[packet.port].dests[packet.src] = packet.hopcount;
-//            self.log(`added ${packet.src} to its LUT under port ${packet.port}`);
+             if (verbose) self.log(`added ${packet.src} to its LUT under port ${packet.port}`);
         }
         
         packet.hopcount++;                                                      // Increment hopcount
@@ -187,7 +201,14 @@ function Manager(self) {
                 const nextPort = this.getMinCostPort(packet.src);               // Pick the port to send ACK based off minimizing cost
                 if (verbose) self.log(`got message ${packet.data}. ACKing port ${nextPort}`);
                 this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                this.sendPacket(ACK, packet.src, 1, self.id, undefined, packet.data, nextPort);
+                packet.start = ACK;
+                packet.dest = packet.src;
+                packet.hopcount = 1;
+                packet.src = self.id;
+                packet.size = 0;
+                packet.port = nextPort;
+                this.toSend.push(packet);
+//                this.sendPacket(ACK, packet.src, 1, self.id, undefined, packet.data, nextPort);
             } else {
                 const nextPort = this.getMinCostPort(packet.dest);              // Pick the port to send to based off minimizing cost
                 if (nextPort === -1) {                                          // If LUT does not have dest
@@ -195,18 +216,23 @@ function Manager(self) {
                     if (verbose) self.log(`flooding message ${packet.data}`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE*this.numports+10/BITRATE);
                     for (let p = 0; p < this.numports; p++) {                   // Flood packet
-                        this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                        var pkt = Object.assign({}, packet);
+                        pkt.port = p;
+                        this.toSend.push(pkt);
+//                        this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
                     if (verbose) self.log(`sending packet ${packet.data} along port ${nextPort}`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                    packet.port = nextPort;
+                    this.toSend.push(packet);
+//                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else if (packet.start === ACK) {                                      // Acknowledgement
             self.setColor("red");
             if (packet.dest === self.id) {                                      // If I am destination
-                self.log(`got ACK from ${packet.src}. RTT = ${(self.now()-packet.data)/2/this.getMinHopCountTo(packet.src)/syrup}`);
+                self.log(`got ACK from ${packet.src}. RTT = ${(self.now()-packet.data)/2/this.getMinHopCountTo(packet.src)}`);
 //                self.log(`got ACK from ${packet.src}. RTT = ${self.now()-packet.data}`);
             } else {
                 const nextPort = this.getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -215,12 +241,17 @@ function Manager(self) {
                     if (verbose) self.log(`flooding ACK`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE*this.numports+10/BITRATE);
                     for (let p = 0; p < this.numports; p++) {                   // Flood ACK
-                        this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                        var pkt = Object.assign({}, packet);
+                        pkt.port = p;
+                        this.toSend.push(pkt);
+//                        this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
                     if (verbose) self.log(`forwarding ACK along port ${nextPort}`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                    packet.port = nextPort;
+                    this.toSend.push(packet);
+//                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else if (packet.start === STF) {                                      // Standard Flood
@@ -242,7 +273,14 @@ function Manager(self) {
                 const nextPort = this.getMinCostPort(packet.src);               // Pick the port to send ACK based off minimizing cost
                 if (verbose) self.log(`got flood ${packet.data} from port ${packet.port}. ACKing ${packet.src} along port ${nextPort}`);
                 this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                this.sendPacket(ACK, packet.src, 1, self.id, undefined, packet.data, nextPort);
+                packet.start = ACK;
+                packet.dest = packet.src;
+                packet.hopcount = 1;
+                packet.src = self.id;
+                packet.size = 0;
+                packet.port = nextPort;
+                this.toSend.push(packet);
+//                this.sendPacket(ACK, packet.src, 1, self.id, undefined, packet.data, nextPort);
             } else {
                 const nextPort = this.getMinCostPort(packet.dest);              // Pick the port to send to based off minimizing cost
                 if (nextPort === -1) {                                          // If LUT does not have dest
@@ -250,14 +288,19 @@ function Manager(self) {
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE*(this.numports-1)+10/BITRATE);
                     for (let p = 0; p < this.numports; p++) {                   // Flood packet
                         if (p !== packet.port) {
-                            this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                            var pkt = Object.assign({}, packet);
+                            pkt.port = p;
+                            this.toSend.push(pkt);
+//                            this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
                         }
                     }
                 } else {                                                        // If LUT does have dest, send to that port
                     packet.start = STD;
                     if (verbose) self.log(`forwarding message ${packet.data} along ${nextPort}`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                    packet.port = nextPort;
+                    this.toSend.push(packet);
+//                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else if (packet.start === ACF) {                                      // ACK Flood
@@ -282,13 +325,18 @@ function Manager(self) {
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE*(this.numports-1)+10/BITRATE);
                     for (let p = 0; p < this.numports; p++) {                   // Flood ACK
                         if (p !== packet.port)
-                            this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                            var pkt = Object.assign({}, packet);
+                            pkt.port = p;
+                            this.toSend.push(pkt);
+//                            this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
                     }
                 } else {                                                        // If LUT does have dest, send to that port
                     packet.start = ACK;
                     if (verbose) self.log(`forwarding ACK along port ${nextPort}`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE+10/BITRATE);
-                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
+                    packet.port = nextPort;
+                    this.toSend.push(packet);
+//                    this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, nextPort);
                 }
             }
         } else {                                                                // Buffer Update. Should have been handled elsewhere
