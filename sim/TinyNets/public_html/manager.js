@@ -232,7 +232,7 @@ function Manager(self) {
         } else if (packet.start === ACK) {                                      // Acknowledgement
             self.setColor("red");
             if (packet.dest === self.id) {                                      // If I am destination
-                self.log(`got ACK from ${packet.src}. RTT = ${(self.now()-packet.data)/2/this.getMinHopCountTo(packet.src)}`);
+                self.log(`got ACK from ${packet.src}. RTT = ${Math.round((self.now()-packet.data)/2/this.getMinHopCountTo(packet.src))}`);
 //                self.log(`got ACK from ${packet.src}. RTT = ${self.now()-packet.data}`);
             } else {
                 const nextPort = this.getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -310,25 +310,26 @@ function Manager(self) {
             if (packet.dest === self.id) {                                      // If I am destination
                 if (verbose) self.log(`got ACK from ${packet.src}`);
             } else {
-//                const thisFlood = {                                             // Static information within packet for comparison
-//                    dest: packet.dest,
-//                    src: packet.src,
-//                    data: null
-//                };
-//                if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
-//                    return;
-//                this.seenFloods.push(thisFlood);                                // Remember the packet
+                const thisFlood = {                                             // Static information within packet for comparison
+                    dest: packet.dest,
+                    src: packet.src,
+                    data: null
+                };
+                if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
+                    return;
+                this.seenFloods.push(thisFlood);                                // Remember the packet
                 
                 const nextPort = this.getMinCostPort(packet.dest);              // Pick the port to send to based off minimizing cost
                 if (nextPort === -1) {                                          // If LUT does not have dest
                     if (verbose) self.log(`flooding ACK`);
                     this.waitUntil+=(packet.size+PKT_HEADER)*(D_BYTE*(this.numports-1)+10/BITRATE);
                     for (let p = 0; p < this.numports; p++) {                   // Flood ACK
-                        if (p !== packet.port)
+                        if (p !== packet.port) {
                             var pkt = Object.assign({}, packet);
                             pkt.port = p;
                             this.toSend.push(pkt);
 //                            this.sendPacket(packet.start, packet.dest, packet.hopcount, packet.src, packet.size, packet.data, p);
+                        }
                     }
                 } else {                                                        // If LUT does have dest, send to that port
                     packet.start = ACK;

@@ -11,19 +11,19 @@ var net = require("./network"),
 SIM = 3;
 
 // Airplane Wing Params
-const D_INIT = 5e3;
+const D_INIT = 1e3;
 const CTRL = 3;
 const MOTOR = 8;
 
 // Grid Params
-const ROWS = 10;
-const COLS = 10;
+const ROWS = 4;
+const COLS = 4;
 
 const syrup = 1000;
 const dt = .001;
 
 const PERIOD_CLEAR_F = 10;                  //[ms] Period with which to clear seenFloods
-const PERIOD_TX_HB = 5;                    //[ms] Period with which heartbeats are transmitted to all neighbors
+const PERIOD_TX_HB = 1;                    //[ms] Period with which heartbeats are transmitted to all neighbors
 const PERIOD_TAKE_PULSE = 2*PERIOD_TX_HB;   //[ms] Period with which received heartbeats are processed
 
 const startupDelay = .01;
@@ -118,6 +118,9 @@ switch (SIM) {
         }
         break;
 }
+var topology = initTopology.map(function(arr) {
+    return arr.slice();
+});
 
 var clients = [];
 for (let i = 0; i < initTopology.length; i++) {
@@ -217,8 +220,18 @@ switch (SIM) {
         sendPacket(ROWS-1,ROWS*(COLS-1),1,"Init",.1);
         sendPacket(ROWS*(COLS-1),ROWS-1,1,"Init",.1);
         
-        sendPacket(0,ROWS*COLS-1,1,"Hi",.5,true);
+        sendPacket(0,ROWS*COLS-1,1,"Hi",.2,true);
         sendPacket(ROWS-1,ROWS*(COLS-1),1,"Cross",.1,true);
+        
+        for (let n=1; n<=4; n++) {
+            var failNode = Math.floor(Math.random()*(topology.length-2)+1);
+            if (failNode===ROWS-1 || failNode===ROWS*(COLS-1))
+                failNode++;
+            for (let p=0; p<topology[failNode].length; p++) {
+                if (typeof topology[topology[failNode][p]] !== 'undefined')
+                    disconnect(failNode, p, topology[failNode][p], topology[topology[failNode][p]].indexOf(failNode), 11);
+            }
+        }
         break;
 }
 
@@ -229,7 +242,7 @@ switch (SIM) {
 for (let i = 0; i < initTopology.length; i++) {
 	net.add(1, clients[i]);
 }
-net.run(syrup * 1000 * 100); // runs for 100 seconds
+net.run(syrup * 60); // runs for 100 seconds
 
 function sendPacket(from, dest, size, data, delay, periodic=false) {
 	if (periodic) {
@@ -264,13 +277,15 @@ function connect(a, aPort, b, bPort, delay) {
 
 function disconnect(a, aPort, b, bPort, delay) {
 	clients[a].init(function() {
-		this.delay(delay, function() {
+		this.delay(syrup*delay, function() {
 			this.manager.disconnect(aPort);
 		});
 	});
 	clients[b].init(function() {
-		this.delay(delay, function() {
+		this.delay(syrup*delay, function() {
 			this.manager.disconnect(bPort);
 		});
 	});
+        topology[a][aPort] = [];
+        topology[b][bPort] = [];
 }
