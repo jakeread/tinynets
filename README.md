@@ -1,6 +1,6 @@
 # Tiny Nets
 
-TinyNets presents a networking strategy for distributed robotic control systems.
+TinyNets presents a networking strategy for distributed robotic control systems. Resilient Stateless Multipath Message Passing for Very Fast Very Small Messages: RSMMRVFVSM ... 
 
 ## Networked Control Systems (NCS)
 
@@ -221,6 +221,22 @@ Buffer Depth Updates are Periodic as well as event-based (on buffer-depth change
 
 See /circuit 
 See /embedded 
+
+# Next Steps
+
+Presents a good option for wired routing over robust networks, with some complexity pushed into the nodes. Only really advantageous when we want to be able to re-route messages upstream in order to move around bottlenecks. TN does load-balancing without thinking about it... other approaches would require some implementation. Perhaps there's a learning function for network path planning & routing? 
+
+If we include flows, needs per-flow, not per-packet, routing - if we are going to hop about per buffers etc. 
+
+Wants a C API for packetizing streams / flows. 
+
+Still some question about duplicate message arrivals after message? OR don't packetize flows - add source -> destination 0-255 counter, only take next in this series. 
+
+TN wins over the blissfully simple APA when we want a *very big* network, say, want 1,000,000 objects to individually address 1,000,000 objects. Here we also need to introduce heirarchichal addressing. 
+
+'Napoleon's Messenger' 
+
+APA is *loads* simpler to implement on FPGA
 
 # Reading
 
