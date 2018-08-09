@@ -4,12 +4,12 @@ TinyNets presents a networking strategy for distributed robotic control systems.
 
 ## Networked Control Systems (NCS)
 
-The field of Networked Control Systems, or NCS, is unique from many other networking fields. NCS refers to any application where many devices are linked together to perform control of a physical system. They are common in robotics and avionics, where many sensors and actuators work together to perform a common goal (i.e. walking, stabilization, etc), and in manufacturing, where machine degrees of freedom are linked to close positioning control loops, and where multiple machines are linked to coordinate material handling and production scheduling. 
+The field of Networked Control Systems, or NCS, is unique from many other networking fields. NCS refers to any application where many devices are linked together to perform control of a physical system. They are common in robotics and avionics, where many sensors and actuators work together to perform a common goal (i.e. walking, stabilization, etc.), and in manufacturing, where machine degrees of freedom are linked to close positioning control loops, and where multiple machines are linked to coordinate material handling and production scheduling. 
 
 Critically,
 - In NCS, **total throughput is valued but not a key metric.** 
-- Rather, message sizes are typically very small (between three to fifty bytes) and message delay time is the critical metric. Often, messages are only one-packet in length.  
-- **Determinism in Message Delivery Time is critical** - systems must guarantee that certain control loops 'close' within a defined set of time, less they become unstable. 
+- Rather, message sizes are typically very small (between three and fifty bytes) and message delay time is the critical metric. Often, messages are only one packet in length.  
+- **Determinism in Message Delivery Time is critical** - systems must guarantee that certain control loops 'close' within a defined set of time less they become unstable. 
 - **Robustness is critical** - NCS should not contain any Single Points of Failure
 - **Statelessness is critical** - NCS should not pause operation under any circumstances to re-converge on routing solutions, as this adds fatal indeterminism to message delivery. 
 
@@ -27,9 +27,9 @@ In Switched Ethernet, because a Minimum Spanning Tree is created, nodes in a par
 
 In addition, Switched Ethernet contains Single Points of Failure, where a broken link or switch means that the network must re-run the Spanning Tree Protocol algorithm - a process that often takes seconds. Because Switched Ethernet graphs are highly heirarchical, it is often the case that failure on a single link can cause entire sections of the network to fail, or become unreachable. 
 
-Device endpoints in NCS are scaling down in size and up in number. Requiring that each endpoint carries with it an RJ45 Magnetic Jack and Ethernet PHY is dubious, and sets a lower limit on the size and complexity that sensors and actuators in an NCS must posses. 
+Device endpoints in NCS are scaling down in size and up in number. Requiring that each endpoint carries with it an RJ45 Magnetic Jack and Ethernet PHY is dubious, and sets a lower limit on the size and complexity that sensors and actuators in an NCS must possess. 
 
-Switched Ethernet is non-programmable. I.E. Switches are black-box ICs and do not allow systems designers to arbitrarily add functions to a system on the networking layer. For example, many NCS designers would like to implement message priorities and load balancing, but this is not possible on Layer 2. 
+Switched Ethernet is non-programmable. I.E. Switches are black-box IC's and do not allow systems designers to arbitrarily add functions to a system on the networking layer. For example, many NCS designers would like to implement message priorities and load balancing, but this is not possible on Layer 2. 
 
 # Constraints and Cost Functions for TinyNet
 
