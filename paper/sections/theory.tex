@@ -1,0 +1,74 @@
+\section{Theory}
+The TinyNet protocol significantly reduces the need for administrative communication between nodes. Rather than exchanging detailed topological data, nodes simply send periodic heartbeats to their immediate neighbors and route packets to designated ports, rendering the protocol essentially stateless. This approach allows TinyNet to operate effectively in both standard and failure situations, adopting a distributed method where the responsibility of message transmission is shifted to neighboring nodes instead of relying on pre-defined routes. Such a mechanism not only enhances link utilization but also improves the overall effective throughput (goodput) compared to alternative protocols.
+
+We design TinyNet with the following constraints:
+\begin{itemize}
+	\item \textbf{Endpoint Integration:} TinyNet is engineered for straightforward integration into robotic endpoints. Utilizing a UART link, a common peripheral in most microcontrollers, the protocol is encapsulated within a C library. This design ensures that it can be effortlessly incorporated into existing firmware setups.
+	\item \textbf{Open-Source Development:} We have developed TinyNet as an open-source initiative, enabling wide applicability in the development of Network Control Systems. By avoiding the creation of a proprietary standard, we envisage TinyNet being adopted in diverse hardware environments, thereby fostering various practical implementations.
+	\item \textbf{Statelessness:} A core objective in TinyNet's development is to minimize the need for centralized state awareness in routing processes. This principle not only bolsters the network's overall resilience but also obviates the necessity for a central network controller or complex network configurations.
+	\item \textbf{Real-Time Multipath Capability:} A significant focus of TinyNet is to provide real-time multipath routing capabilities. This feature is crucial for efficient port-forwarding and adaptive network traffic management.
+	\item \textbf{Robustness:} A fundamental requirement of TinyNet is its consistent performance even in the face of link disruptions or router failures, ensuring reliability and continuity in network operations.
+\end{itemize}
+
+TinyNet's design philosophy emphasizes simplicity, adaptability, and resilience, making it an ideal solution for modern Networked Control Systems.
+
+\subsection{The TinyNet Algorithm}
+Each node handles incoming packets as follows:
+\begin{algorithmic}
+	\If {the packet is not a buffer update}
+		\State update the LUT using packet src. and hop count
+	\EndIf
+	\If {packet is standard}
+		\If {I am destination}
+			\State process data in packet
+			\State reply with ACK
+		\Else
+			\State increment hop count
+			\If {LUT has destination address}
+				\State send packet to port which minimizes C(hops, buffer) over all ports
+			\Else
+				\State send packet to all ports as standard flood
+			\EndIf
+		\EndIf
+	\ElsIf {packet is ACK}
+		\If {I am destination}
+			\State process acknowledgement
+		\Else
+			\State increment hop count
+			\If {LUT has destination address}
+				\State send packet to port which minimizes C(hops, buffer) over all ports
+			\Else
+				\State send packet to all ports as ack flood
+			\EndIf
+		\EndIf
+	\ElsIf {packet is standard flood}
+		\State remove packet dest. from LUT at that port if it exists
+		\If {I have not yet seen this flood}
+			\If {I am destination}
+				\State process data in packet
+				\State reply with ACK
+			\Else
+				\State increment hop count
+				\If {LUT has destination address}
+					\State send packet to port which minimizes C(hops, buffer) as standard packet
+				\Else
+					\State send packet to all ports except one from which it was received
+				\EndIf
+			\EndIf
+		\EndIf
+	\ElsIf {packet is ACK flood}
+		\State remove packet dest. from LUT at that port if it exists
+		\If {I am destination}
+			\State process acknowledgement
+		\Else
+			\State increment hop count
+			\If {LUT has destination address}
+				\State send packet to port which minimizes C(hops, buffer) as standard ACK
+			\Else
+				\State send packet to all ports except one from which it was received
+			\EndIf
+		\EndIf
+	\Else
+		\State write buffer depth to LUT
+	\EndIf
+\end{algorithmic}
