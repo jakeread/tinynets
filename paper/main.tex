@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{algpseudocode}
+\usepackage{url}
 
 \begin{document}
 
@@ -36,16 +37,19 @@ meeting. Corresponding author N.~S.~Selby.}
 \input{sections/intro.tex}
 \input{sections/related.tex}
 \input{sections/theory.tex}
+\input{sections/imp.tex}
+\input{sections/eval.tex}
+\input{sections/conc.tex}
+\input{sections/declaration.tex}
 
-\begin{ack}                               % Place acknowledgements
-Partially supported by the Roman Senate.  % here.
+\begin{ack}
+	This research has received no external funding.
 \end{ack}
 
 \bibliographystyle{plain}
 \bibliography{main}
 
 \appendix
-\section{A summary of Latin grammar}    % Each appendix must have a short title.
-\section{Some Latin vocabulary}         % Sections and subsections are supported  
-										% in the appendices.
+\input{sections/app.tex}
+
 \end{document}
