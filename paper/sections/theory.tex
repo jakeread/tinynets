@@ -85,15 +85,15 @@ The packet handling algorithm identifies whether the incoming packet is a standa
 	\centering
 	\begin{tabular}{||c|c c c c c c||} 
 		\hline
-		Type & 8 b & 10 b & 6 b & 10 b & 6 b & N B \\
+		Type & 8 b & 10 b & 6 b & 10 b & 6 b & $N$ B \\
 		\hline\hline
-		STD & 0xFF or 0xFE & Dest. & HC & Src. & Len. & Msg. \\
+		STD & 0xFF or 0xFE & Dest. & HC & Src. & $N$ & Msg. \\
 		ACK & 0xFD or 0xFC & Dest. & HC & Src. & -    & -    \\
 		HB  & Buffer Depth & -     & -  & -    & -    & -    \\
 		\hline
 	\end{tabular}
 \end{table}
-where STD is standard packet, ACK is an acknowledgement, and HB is a heartbeat containing only a buffer depth between 0 and 251 so as to avoid ambiguity with the four other packet types. The first eight bits of the message designate the message type: 0xFF designates the packet as Standard, 0xFE as Standard Flood, 0xFD as ACK, and 0xFC as ACK Flood. In the top row, lowercase ``b'' stands for ``bits'' and uppercase ``B'' stands for ``bytes.'' ``Dest.,'' ``HC,'' ``Src.,'' ``Len.,'' and ``MSG'' are the destination ID, hop count, source ID, length of the message payload in bytes, and message payload, respectively.
+where STD is standard packet, ACK is an acknowledgement, and HB is a heartbeat containing only a buffer depth between 0 and 251 so as to avoid ambiguity with the four other packet types. The first eight bits of the message designate the message type: 0xFF designates the packet as Standard, 0xFE as Standard Flood, 0xFD as ACK, and 0xFC as ACK Flood. In the top row, lowercase ``b'' stands for ``bits'' and uppercase ``B'' stands for ``bytes.'' ``Dest.,'' ``HC,'' ``Src.,'' ``$N$,'' and ``MSG'' are the destination ID, hop count, source ID, length of the message payload in bytes, and message payload, respectively.
 
 \subsection{Message Delay Determinism}
 A critical performance measure for TinyNet is its capability in Message Delay Determinism, referring to the speed and reliability with which a packet reaches its intended destination. The total time a packet spends at a node is quantifiable as:
