@@ -1,0 +1,75 @@
+\section{Evaluation}
+To assess the effectiveness of TinyNet, we employ our hardware testbed, focusing on accurately timing key message passing intervals and associated delays. These empirical measurements serve to calibrate and inform our simulation model. The simulation, in turn, facilitates rapid iteration across a variety of network traffic scenarios. It enables us to meticulously analyze and quantify the routing paths of messages within the network, offering a detailed insight into TinyNet's performance under different conditions. This combined approach of practical testing and simulation provides a comprehensive evaluation of TinyNet's capabilities.
+
+\subsection{Hardware}
+For our hardware evaluation, we utilized the Saleae Logic 8 Logic Analyzer to capture logic level voltages from the microcontrollers. This was crucial for monitoring the router firmware at both the application and networking layers, where pin states (high or low) are indicative of significant event occurrences.
+
+\subsubsection{Processing Delay}
+\begin{figure*}[th]
+    \centering
+    \includegraphics[width=\textwidth]{figures/results-D_p.png}
+    \caption{Measuring Packet Delay Time}
+    \label{fig:packet-delay}
+\end{figure*}
+Processing Delay, denoted $\mathrm{D}_{\mathrm{process}}$, is defined as the duration required for a router to determine the appropriate port for forwarding a received packet. To characterize this delay, we recorded signals at the link layer using the logic analyzer, tracking a packet's journey through a single router. Specifically, $\mathrm{D}_{\mathrm{process}}$ was measured as the interval between the end of an incoming packet and the start of the outgoing packet's transmission. By averaging results from 10 such packet traversals, we determined an average processing delay of $37 \mu\mathrm{s}$.
+
+\subsubsection{Link Transmission Time}
+Link Transmission Time, defined in equation~(\ref{eq:ltt}) as $\mathrm{L}_{\mathrm{tt}}$, is the time taken for a packet to travel across a link. This calculation was verified using a logic analyzer. Additionally, it's important to note that the transmission and reception of bytes consume some processor time. As the UART link handles bit-shifting asynchronously on each port, each received character triggers an interrupt requiring processor attention. We measured this interrupt handling time to be $\mathrm{D}_{\mathrm{byte}}=1.5 \mu \mathrm{s}$ per byte. This process is depicted in Fig.~\ref{fig:packet-delay}, Channel 3. We discuss in Section~\ref{sec:sim-val} how we account for these delays to align our simulation results with our hardware findings.
+
+\subsubsection{Router Behavior}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\linewidth]{figures/hardware-12_routers.jpg}
+    \caption{A Testbed of 12 TinyNet Routers}
+    \label{fig:12-routers}
+\end{figure}
+To assess multi-link routing performance, we assembled a network comprising 12 interconnected TinyNet routers. This setup is illustrated in Fig.~\ref{fig:12-routers}, along with the logic analyzer used for timing Round-Trip Time (RTT) and $\mathrm{D}_{\mathrm{packet}}$ and verifying $\mathrm{L}_{\mathrm{tt}}$. Additionally, a TinyNet Bridge is shown, enabling network access via USB Port. We measured the RTT between Router 1 and Router 12, finding an average RTT of $511 \mu \mathrm{s}$.
+
+\subsection{Simulation Validation}
+\label{sec:sim-val}
+Our simulation, capable of representing various network topologies and traffic conditions, operates in JavaScript and leverages the open-source Simbit architecture \cite{simbit}. To validate the simulation's effectiveness, we emulate a 12-node grid network, mirroring our hardware setup. We initialize the simulated nodes with parameters derived from hardware measurements via the logic analyzer. This process ensures that our simulation closely resembles real-world hardware operations.
+
+We facilitate message transmission diagonally across the grid and record the round-trip time (RTT). Comparing the RTT of $511 \mu \mathrm{s}$ obtained from our hardware tests with the simulation's RTT of $505 \mu \mathrm{s}$, we observe a minor discrepancy of only $1.2\%$. This close alignment indicates that our simulation is a reliable replica of the actual hardware system, qualifying it as a robust tool for conducting more expansive and varied experiments.
+
+\subsection{Determinism of Communication Time}
+A crucial measure of TinyNet's effectiveness is communication time determinism, specifically the standard deviation of the round trip time for each hop a message makes. Different from previous systems that relied on spanning tree models, TinyNet thrives in more extensive network topologies. Therefore, our evaluation focuses on both determinism and robustness within a compact grid setting.
+
+\subsubsection{Evaluation in a 4-by-4 Grid}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\linewidth]{figures/pdf_grid_cross.png}
+    \caption{Histograms of Message Delay Times in a 4-by-4 Router Grid with Varying Levels of Cross-Traffic}
+    \label{fig:hists-cross}
+\end{figure}
+We begin by simulating a 4-by-4 grid of nodes, with each node having a packet delay time of $30 \mu \mathrm{s}$ and each link operating at a bitrate of 20 MHz. We transmit crucial messages diagonally across the grid at 5 kHz for 30 ms. Simultaneously, we model varying levels of cross-traffic on the opposite diagonal: 5 kHz, 10 kHz, and 13 kHz in separate simulations. The resulting histograms of per-packet round trip times are shown in Fig.~\ref{fig:hists-cross}, with standard deviations of $4 \mu \mathrm{s}$, $85 \mu \mathrm{s}$, and $140 \mu \mathrm{s}$ for each traffic scenario, respectively.
+
+\subsubsection{Evaluation in a Simulated Airplane Wing Network}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/pdf_RTT.png}
+    \caption{Histograms of Message Delay Times in an Airplane Wing Model Network}
+    \label{fig:hists-airplane}
+\end{figure}
+In addition, we assess determinism within a simulated airplane wing network, structured into four layers: a single master node on top, three controllers in the second layer, each connected to eight motors in the third layer, and each motor linked to two neighboring motors and an encoder in the fourth layer. Under the same hardware parameters as the grid, the motors maintain a 2.5-kHz control loop with their encoders, the controllers manage a 1-kHz loop with each motor, and the master node queries each encoder at 500 Hz. This simulation, conducted over 30 ms, reveals per-hop round trip times as illustrated in Fig.~\ref{fig:hists-airplane}, with a standard deviation of $15 \mu \mathrm{s}$ for master-encoder queries, $45 \mu \mathrm{s}$ for controller-motor loops, and $7 \mu \mathrm{s}$ for motor-encoder loops.
+
+These results highlight two key outcomes:
+\begin{itemize}
+    \item \textbf{Impact of Network Traffic on Determinism:} An increase in network traffic tends to reduce network determinism. As the number of packets traversing the network grows, so does the buffer depth at individual nodes, leading to increased message latency and variability in latency.
+    \item \textbf{TinyNet's Adaptability:} Despite the challenges of heavy cross-traffic, TinyNet maintains a high level of message determinism. Its dynamic adaptation to changing traffic conditions across different network areas effectively distributes the load among numerous nodes. This approach not only reduces message delivery time but also helps in consistently maintaining low latency levels.
+\end{itemize}
+
+\subsection{Robustness to Node Failure}
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/node_failure_recovery.png}
+    \caption{Message Delay Time of Grid Network Before and After Random Node Failure}
+    \label{fig:failure}
+\end{figure}
+Robustness to node failure is the second crucial dimension of TinyNet's performance, focusing on the network's ability to rapidly respond to and recover from node failures. For assessing this essential aspect, we conducted simulations on a 4-by-4 grid of nodes, using the same hardware parameters as in our message determinism evaluation. In these simulations, corner nodes sent messages diagonally across the grid at frequencies of 10 kHz and 5 kHz. At 11 milliseconds into the simulation, we randomly disconnected one, two, three, or four nodes, then observed and recorded the subsequent message delay times. The findings, depicted in Fig.~\ref{fig:failure}, indicate that after a single node failure, the network recovered in 1.3 ms; after two failures, in 1.9 ms; and after three failures, in 3.9 ms.
+
+Key observations from these results include:
+\begin{itemize}
+    \item \textbf{Rapid Recovery from Failures:} TinyNet demonstrates almost instantaneous recovery from node failures. Even with up to $18\%$ of the network failing simultaneously, TinyNet's quick recovery---on the scale of milliseconds---drastically reduces packet loss and maintains round trip times effectively. This is a significant improvement over stateful techniques, which may require several seconds to adjust to node failures.
+    \item \textbf{Impact of Multiple Node Failures:} The loss of a single node does not significantly affect long-term communication. However, multiple node failures can adversely affect both message latency and network determinism. This outcome is predictable as TinyNet's load-balancing capabilities are most effective when there are sufficient alternative nodes for message rerouting.
+    \item \textbf{Capacity for Message Maintenance in Failures:} TinyNet shows a strong ability to sustain message transmission even with substantial network failures. Unlike traditional spanning tree protocols, where a single node failure could result in losing connectivity to a whole network branch, TinyNet proactively identifies and reroutes around failed nodes, maintaining its state. That said, the network experiences instability in latency when failures exceed a certain threshold, observed at a $25\%$ node failure rate for the given parameters.
+\end{itemize}
