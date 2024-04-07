@@ -1,4 +1,4 @@
-DOCNAME=main
+DOCNAME=root
 
 all: report
 
