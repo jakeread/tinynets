@@ -11,9 +11,10 @@ report:
 	pdflatex $(DOCNAME).tex
 	@echo "Word Count:"
 	detex $(DOCNAME).tex | wc -w
+	wslview $(DOCNAME).pdf
 
 view: report
-	open $(DOCNAME).pdf
+	wslview $(DOCNAME).pdf
 
 clean:
 	rm *.blg *.bbl *.aux *.log

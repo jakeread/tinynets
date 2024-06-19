@@ -17,7 +17,7 @@ Processing Delay, denoted $\mathrm{D}_{\mathrm{process}}$, is defined as the dur
 Link Transmission Time, defined in equation~(\ref{eq:ltt}) as $\mathrm{L}_{\mathrm{tt}}$, is the time taken for a packet to travel across a link. This calculation was verified using a logic analyzer. Additionally, it's important to note that the transmission and reception of bytes consume some processor time. As the UART link handles bit-shifting asynchronously on each port, each received character triggers an interrupt requiring processor attention. We measured this interrupt handling time to be $\mathrm{D}_{\mathrm{byte}}=1.5 \mu \mathrm{s}$ per byte. This process is depicted in Fig.~\ref{fig:packet-delay}, Channel 3. We discuss in Section~\ref{sec:sim-val} how we account for these delays to align our simulation results with our hardware findings.
 
 \subsubsection{Router Behavior}
-\begin{figure}[b]
+\begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/hardware-12_routers.jpg}
     \caption{A Testbed of 12 TinyNet Routers}
@@ -35,7 +35,7 @@ We facilitate message transmission diagonally across the grid and record the rou
 A crucial measure of TinyNet's effectiveness is communication time determinism, specifically the standard deviation of the round trip time for each hop a message makes. Different from previous systems that relied on spanning tree models, TinyNet thrives in more extensive network topologies. Therefore, our evaluation focuses on both determinism and robustness within a compact grid setting.
 
 \subsubsection{Evaluation in a 4-by-4 Grid}
-\begin{figure}[b]
+\begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/pdf_grid_cross.png}
     \caption{Histograms of Message Delay Times in a 4-by-4 Router Grid with Varying Levels of Cross-Traffic}
@@ -44,7 +44,7 @@ A crucial measure of TinyNet's effectiveness is communication time determinism, 
 We begin by simulating a 4-by-4 grid of nodes, with each node having a packet delay time of $30 \mu \mathrm{s}$ and each link operating at a bitrate of 20 MHz. We transmit crucial messages diagonally across the grid at 5 kHz for 30 ms. Simultaneously, we model varying levels of cross-traffic on the opposite diagonal: 5 kHz, 10 kHz, and 13 kHz in separate simulations. The resulting histograms of per-packet round trip times are shown in Fig.~\ref{fig:hists-cross}, with standard deviations of $4 \mu \mathrm{s}$, $85 \mu \mathrm{s}$, and $140 \mu \mathrm{s}$ for each traffic scenario, respectively.
 
 \subsubsection{Evaluation in a Simulated Airplane Wing Network}
-\begin{figure}
+\begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/pdf_RTT.png}
     \caption{Histograms of Message Delay Times in an Airplane Wing Model Network}
@@ -59,7 +59,7 @@ These results highlight two key outcomes:
 \end{itemize}
 
 \subsection{Robustness to Node Failure}
-\begin{figure}
+\begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/node_failure_recovery.png}
     \caption{Message Delay Time of Grid Network Before and After Random Node Failure}

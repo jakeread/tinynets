@@ -1,38 +1,135 @@
-\documentclass[twocolumn]{autart}
+\documentclass[preprint,12pt]{elsarticle}
 
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{algpseudocode}
 \usepackage{url}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Journal of Network and Computer Applications}
 
 \begin{document}
 
 \begin{frontmatter}
 
-\title{A Lightweight Networking Strategy for Robotic Control Systems\thanksref{footnoteinfo}}
+%% Title, authors and addresses
 
-\thanks[footnoteinfo]{This paper was not presented at any IFAC meeting. Corresponding author N.~S.~Selby.}
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%% \fntext[label3]{}
 
-\author[MIT]{Jake Robert Read\thanksref{equalAuth}}\ead{jake.read@cba.mit.edu},
-\author[Ethiopia]{Nicholas Stearns Selby\thanksref{equalAuth}}\ead{nicholas.selby@renewvia.com},\author[Patrick]{Patrick Wahl}\ead{pwahl@alum.mit.edu},
-\author[Doug]{Douglas Kogut}\ead{dkogut@alum.mit.edu}
+\title{A Lightweight Networking Strategy for Robotic Control Systems}
 
-\thanks[equalAuth]{Authors Jake Robert Read and Nicholas Stearns Selby contributed equally to this work.}
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
 
-\address[Ethiopia]{Renewvia Solar Ethiopia PLC, Addis Ababa, Ethiopia, Bole sub-city, Woreda 03, House No. 174/175, Saya Building, 5th Floor}
-\address[MIT]{The MIT Center for Bits and Atoms, Room E15-401, 20 Ames Street, Cambridge, MA 02139}
-\address[Patrick]{210 Green Street, Cambridge, MA 02139}
-\address[Doug]{77 Massachusetts Avenue, Cambridge, MA 02139}
-		  
-\begin{keyword} % 5-10 chosend from IFAC keyword list
-	Networked control systems; Control of networks; networked robotics; computer networks; fault-tolerant
-\end{keyword}
+\author{Jake Robert Read\fnref{equalAuth}}
+% \ead{jake.read@cba.mit.edu}
+\affiliation{organization={The MIT Center for Bits and Atoms},
+             addressline={Room E15-401, 20 Ames Street}, 
+             city={Cambridge},
+             postcode={02139}, 
+             state={MA},
+             country={USA}}
 
+\author{Nicholas Stearns Selby\fnref{equalAuth}}
+\ead{nicholas.selby@renewvia.com}
+\affiliation{organization={Renewvia Solar Ethiopia PLC},
+             addressline={Bole sub-city, Woreda 03, House No. 174/175, Saya Building, 5th Floor}, 
+            %  city={Addis Ababa},
+            %  postcode={02139}, 
+            %  state={MA},
+             country={Ethiopia}}
 
-\begin{abstract}    % Word limit: 200
+\author{Patrick Wahl}
+% \ead{pwahl@alum.mit.edu}
+\affiliation{%organization={Renewvia Solar Ethiopia PLC},
+             addressline={210 Green Street}, 
+             city={Cambridge},
+             postcode={02139}, 
+             state={MA},
+             country={USA}}	
+
+\author{Douglas Kogut}
+% \ead{dkogut@alum.mit.edu}
+\affiliation{%organization={Renewvia Solar Ethiopia PLC},
+             addressline={77 Massachusetts Avenue}, 
+             city={Cambridge},
+             postcode={02139}, 
+             state={MA},
+             country={USA}}
+
+\fntext[equalAuth]{Authors JR Read and NS Selby contributed equally to this work.}
+
+\begin{abstract}
 	\input{sections/abstract.tex}
 \end{abstract}
 
+%%Research highlights
+\begin{highlights}
+\item \textbf{Stateless Multipath Routing} that enables autonomous node packet processing
+\item \textbf{Enhanced Network Robustness and Efficiency} optimizing network flow and reliability
+\end{highlights}
+
+\begin{keyword}
+	Networked control systems \sep Control of networks \sep networked robotics \sep computer networks \sep fault-tolerant
+\end{keyword}
+
 \end{frontmatter}
+
+%% \linenumbers
 
 \input{sections/intro.tex}
 \input{sections/related.tex}
@@ -41,14 +138,14 @@
 \input{sections/eval.tex}
 \input{sections/conc.tex}
 \input{sections/declaration.tex}
+\input{sections/ack.tex}
 
-\begin{ack}
-	This research has received no external funding.
-\end{ack}
-
-\bibliographystyle{plain}
+\newpage
+\bibliographystyle{elsarticle-num}
 \bibliography{root}
 
+\appendix
 \input{sections/app.tex}
 
 \end{document}
+\endinput
