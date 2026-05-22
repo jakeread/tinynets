@@ -1,7 +1,7 @@
 DOCNAME=root
 ELSARTICLE_URL=https://assets.ctfassets.net/o78em1y1w4i4/4MpsJHO0MOJ2xZuwGTAbOZ/7bc64af36477c5d6cfce335a1f872363/elsarticle.zip	
 
-all: report
+all: report graphical_abstract.pdf
 
 .PHONY: clean distclean
 
@@ -20,6 +20,9 @@ report: elsarticle.cls
 	@echo "Word Count:"
 	detex $(DOCNAME).tex | wc -w
 	wslview $(DOCNAME).pdf
+
+graphical_abstract.pdf: graphical_abstract.tex
+	pdflatex graphical_abstract.tex
 
 view: report
 	wslview $(DOCNAME).pdf
