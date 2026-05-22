@@ -12,7 +12,7 @@ elsarticle.cls: elsarticle.zip
 	unzip -jo elsarticle.zip '*.ins' '*.dtx' '*.bst'
 	latex elsarticle.ins
 
-report:
+report: elsarticle.cls
 	pdflatex $(DOCNAME).tex
 	bibtex $(DOCNAME).aux
 	pdflatex $(DOCNAME).tex
