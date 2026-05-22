@@ -77,13 +77,15 @@ Each node handles incoming packets as follows:
 		\State write buffer depth to LUT
 	\EndIf
 \end{algorithmic}
-where LUT is look-up table, ACK is acknowledgement, and C is the cost function defined in equation (\ref{eq:cost}).
+where LUT is look-up table, ACK is acknowledgement, and C is the cost function defined in equation (\ref{eq:cost}). Figure~\ref{fig:tinynets-behaviors} illustrates the three core behaviors of TinyNet: heartbeat-based buffer-depth propagation, cost-function multipath routing, and flooding-based failure recovery.
 
-The packet handling algorithm identifies whether the incoming packet is a standard message or an ACK, whether or not it is a flood, and whether or not it is a heartbeat, all by reading the first byte of the packet. Packets are structured as follows:\\
+The packet handling algorithm identifies whether the incoming packet is a standard message or an ACK, whether or not it is a flood, and whether or not it is a heartbeat, all by reading the first byte of the packet. Packets are structured as shown in Table~\ref{tab:packet-structure}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{||c|c c c c c c||} 
+	\caption{TinyNet Packet Structure}
+	\label{tab:packet-structure}
+	\begin{tabular}{||c|c c c c c c||}
 		\hline
 		Type & 8 b & 10 b & 6 b & 10 b & 6 b & $N$ B \\
 		\hline\hline
@@ -94,6 +96,77 @@ The packet handling algorithm identifies whether the incoming packet is a standa
 	\end{tabular}
 \end{table}
 where STD is standard packet, ACK is an acknowledgement, and HB is a heartbeat containing only a buffer depth between 0 and 251 so as to avoid ambiguity with the four other packet types. The first eight bits of the message designate the message type: 0xFF designates the packet as Standard, 0xFE as Standard Flood, 0xFD as ACK, and 0xFC as ACK Flood. In the top row, lowercase ``b'' stands for ``bits'' and uppercase ``B'' stands for ``bytes.'' ``Dest.,'' ``HC,'' ``Src.,'' ``$N$,'' and ``MSG'' are the destination ID, hop count, source ID, length of the message payload in bytes, and message payload, respectively.
+
+\begin{figure}[t]
+\centering
+\tikzset{
+  nd/.style={circle, draw, thick, minimum size=0.75cm, font=\small},
+  lnk/.style={thick},
+  hbarrow/.style={-{Stealth}, thick, dashed, gray},
+  goodarrow/.style={-{Stealth}, thick, blue!70!black},
+  badarrow/.style={-{Stealth}, thick, red!70!black, dashed},
+  floodarrow/.style={-{Stealth}, thick, orange!80!black, dashed},
+  faillink/.style={thick, red!70!black}
+}
+%--- (a) Heartbeat propagation ---
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\begin{tikzpicture}
+  \node[nd] (A) at (0,0)   {A};
+  \node[nd] (B) at (1.8,0) {B};
+  \node[nd] (C) at (3.6,0) {C};
+  \draw[lnk] (A)--(B)--(C);
+  \draw[hbarrow, bend left=35] (B) to node[above,font=\scriptsize]{BD$=5$} (A);
+  \draw[hbarrow, bend left=35] (B) to node[above,font=\scriptsize]{BD$=5$} (C);
+\end{tikzpicture}
+\smallskip\\
+{\small (a) Heartbeat propagation}
+\end{minipage}
+\hfill
+%--- (b) Cost-function multipath routing ---
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\begin{tikzpicture}
+  \node[nd] (S) at (0,0)    {S};
+  \node[nd] (N) at (1.3,1)  {N};
+  \node[nd] (M) at (1.3,-1) {M};
+  \node[nd] (D) at (2.6,0)  {D};
+  \draw[lnk] (S)--(N)--(D) (S)--(M)--(D) (N)--(M);
+  % congested path via N
+  \draw[badarrow] (S) to node[above left,font=\scriptsize]{$C\!=\!17$} (N);
+  \draw[badarrow] (N) to (D);
+  % selected path via M
+  \draw[goodarrow] (S) to node[below left,font=\scriptsize]{$C\!=\!4$} (M);
+  \draw[goodarrow] (M) to (D);
+\end{tikzpicture}
+\smallskip\\
+{\small (b) Cost-function routing}
+\end{minipage}
+\hfill
+%--- (c) Flood on failure ---
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\begin{tikzpicture}
+  \node[nd] (S) at (0,0)    {S};
+  \node[nd] (N) at (1.3,1)  {N};
+  \node[nd] (M) at (1.3,-1) {M};
+  \node[nd] (D) at (2.6,0)  {D};
+  \draw[lnk] (N)--(D) (N)--(M);
+  % failed link S--M
+  \draw[faillink] (S) -- node[below,font=\scriptsize]{$\times$} (M);
+  % S floods to N
+  \draw[floodarrow] (S) to node[above left,font=\scriptsize]{flood} (N);
+  % N routes normally to D
+  \draw[goodarrow] (N) to node[above right,font=\scriptsize]{route} (D);
+  % S--N link (underlying)
+  \draw[lnk] (S)--(N);
+\end{tikzpicture}
+\smallskip\\
+{\small (c) Flood on link failure}
+\end{minipage}
+\caption{TinyNet behaviors. \textbf{(a)} Each node periodically broadcasts its transmit buffer depth (BD) as a single-byte heartbeat to immediate neighbors only. \textbf{(b)} A node routes each packet to the port minimizing $C=\mathrm{HC}+\lambda\cdot\mathrm{BD}$; here the path via M ($C=4$) is selected over the congested path via N ($C=17$, with $\lambda=0.5$). \textbf{(c)} When the link S--M fails, heartbeats from M cease; S floods the next packet to all remaining ports. Node N, which has a valid LUT entry for destination D, converts the flood to a standard packet and forwards it normally.}
+\label{fig:tinynets-behaviors}
+\end{figure}
 
 \subsection{Message Delay Determinism}
 A critical performance measure for TinyNet is its capability in Message Delay Determinism, referring to the speed and reliability with which a packet reaches its intended destination. The total time a packet spends at a node is quantifiable as:
@@ -124,12 +197,14 @@ where $N$ is the count of ports used for sending the packet. It is important to 
 
 In scenarios where a node receives multiple packets faster than they can be processed, a queue forms, increasing both the queue depth and the latency between receiving and transmitting packets. Thus, it's crucial for nodes to signal other network components, using backpressure, about more efficient routing alternatives.
 
-TinyNet employs periodic heartbeats for this backpressure mechanism. At set intervals, each node transmits a byte representing its current buffer depth to adjacent nodes. This information is not propagated further but is used locally to enhance the path cost function, integrating both the hop count (HC) and a ``busyness metric'' (BD):
+TinyNet employs periodic heartbeats for this backpressure mechanism. At set intervals, each node transmits a single byte representing its current transmit buffer occupancy to each immediate neighbor. Specifically, the buffer depth reported in a heartbeat is the number of bytes currently enqueued in the transmit buffer of the link connecting the sending node to the neighbor receiving that heartbeat. This information is not propagated further but is used locally to enhance the path cost function, integrating both the hop count (HC) and a ``busyness metric'' (BD):
 \begin{equation}
 	\mathrm{C}(\mathrm{HC},\mathrm{BD})=\mathrm{HC}+\lambda \mathrm{BD}
 	\label{eq:cost}
 \end{equation}
 where the hop count (HC) is derived from earlier packets received from the destination node on this port, while buffer depth (BD) information comes from the heartbeat. The parameter $\lambda$ is adjustable by the network designer and aids in balancing hop count and node congestion levels in routing decisions.
+
+ACK packets are routed back to the original sender using the same cost-function routing as standard packets. When a node receives any packet (including the original request), it records the source address and the port on which the packet arrived in its LUT. This allows intermediate nodes to route ACK packets toward the original sender without flooding: each intermediate node simply looks up the sender's address in its LUT and forwards the ACK along the port minimizing $\mathrm{C}$.
 
 \subsection{Robustness to Failure}
 In traditional network protocols, the handling of node failures differs markedly between stateful and stateless systems. Stateful protocols, which require nodes to have comprehensive and up-to-date knowledge of the network topology, often face delays in disseminating information about node failures. For example, in a network utilizing OSPF in which each node must possess real-time topological information for routing, when a node failure occurs, the information about this failure must be communicated and processed by all other nodes, leading to potential delays.
