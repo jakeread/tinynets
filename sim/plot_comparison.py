@@ -60,68 +60,70 @@ print(f'Saved comparison_cross.png  '
       f'Stateful σ={np.std(rtt_stateful):.0f} µs)')
 
 # -----------------------------------------------------------------------
-# Figure 2: Failure recovery over time
+# Figure 2: Cumulative packets delivered under node failure
 # -----------------------------------------------------------------------
-def read_timeseries(filename, min_time=D_INIT, node_filter=None, src_filter=None):
-    rows = []
+ROWS = 4; COLS = 4
+PLOT_END = 70 * SYRUP   # ms: well past stateful recovery at ~61.5 ms
+
+def read_delivery_times(filename, node_filter=0, src_filter=ROWS*COLS-1):
+    """Return sorted array of ACK arrival times (ms) for the given node pair."""
+    times = []
     with open(filename) as f:
         for line in f:
             m = pattern.search(line)
             if m:
                 t, node, src, rtt = m.groups()
-                if node_filter is not None and int(node) != node_filter:
+                if int(node) != node_filter or int(src) != src_filter:
                     continue
-                if src_filter is not None and int(src) != src_filter:
+                tf = float(t)
+                if tf < D_INIT or tf > PLOT_END:
                     continue
-                rows.append((float(t), float(rtt)))
-    if not rows:
-        return np.array([]), np.array([])
-    arr = np.array(rows)
-    arr = arr[arr[:, 0] >= min_time]
-    return arr[:, 0] / SYRUP, arr[:, 1]
+                times.append(tf / SYRUP)
+    return np.array(sorted(times))
 
-# Filter to the primary traffic pair (node 0 receiving ACK from node 15) so that
-# the 49 ms blackout gap is visible without cross-traffic filling it in.
-ROWS = 4; COLS = 4
-t_tiny,     rtt_t = read_timeseries('log_cross_1f.txt',      node_filter=0, src_filter=ROWS*COLS-1)
-t_stateful, rtt_s = read_timeseries('log_stateful_fail.txt', node_filter=0, src_filter=ROWS*COLS-1)
-
-def smooth_seg(t, rtt, gap_start, gap_end, frac=0.05):
-    """Smooth in segments separated by a gap; insert NaN between them so
-    matplotlib leaves a visible break rather than drawing a connecting line."""
-    out_t, out_r = [], []
-    for mask in [t <= gap_start, t >= gap_end]:
-        ts, rs = t[mask], rtt[mask]
-        if len(ts) == 0:
-            continue
-        w = max(1, int(len(rs) * frac))
-        if out_t:                          # separator between segments
-            out_t.append(np.array([np.nan]))
-            out_r.append(np.array([np.nan]))
-        out_t.append(ts)
-        out_r.append(uniform_filter1d(rs.astype(float), size=w))
-    if not out_t:
-        return np.array([]), np.array([])
-    return np.concatenate(out_t), np.concatenate(out_r)
-
-# Blackout window edges (ms): last pre-gap ACK and first post-gap ACK.
-GAP_START = D_FAIL / SYRUP          # ~11 ms  (failure event)
-GAP_END   = (D_FAIL + 50 * SYRUP) / SYRUP  # ~61 ms (LFA cutover)
+t_tiny_d = read_delivery_times('log_fail_clean.txt')
+t_stat_d = read_delivery_times('log_stateful_fail.txt')
 
 fig2, ax2 = plt.subplots(figsize=(7, 4))
-if len(t_tiny) > 0:
-    w = max(1, int(len(rtt_t) * 0.05))
-    ax2.plot(t_tiny, uniform_filter1d(rtt_t.astype(float), size=w),
-             color='steelblue', label='TinyNet')
-if len(t_stateful) > 0:
-    ts_seg, rs_seg = smooth_seg(t_stateful, rtt_s, GAP_START, GAP_END)
-    ax2.plot(ts_seg, rs_seg, color='firebrick', label='Stateful baseline')
-ax2.axvline(D_FAIL / SYRUP, color='black', linewidth=1)
-ax2.text(D_FAIL / SYRUP + 0.15, ax2.get_ylim()[1] * 0.9, 'Node Failure', fontsize=9)
+
+for times, color, label in [
+    (t_tiny_d, 'steelblue', 'TinyNet'),
+    (t_stat_d, 'firebrick', 'Stateful (LFA)'),
+]:
+    if len(times) == 0:
+        continue
+    counts = np.arange(1, len(times) + 1)
+    # Prepend the origin so the line starts at zero at the first delivery time
+    ax2.step(np.concatenate([[times[0]], times]),
+             np.concatenate([[0], counts]),
+             where='post', color=color, label=label, linewidth=1.5)
+
+t_fail = D_FAIL / SYRUP
+ax2.axvline(t_fail, color='black', linewidth=1, linestyle='--', alpha=0.8)
+ax2.text(t_fail + 0.4, 1, 'Node failure', ha='left', va='bottom', fontsize=8)
+
+# Locate the stateful blackout as the longest inter-arrival gap.
+gaps = np.diff(t_stat_d)
+gi = int(np.argmax(gaps))
+t_blackout_start = t_stat_d[gi]
+t_blackout_end   = t_stat_d[gi + 1]
+n_stat_at_gap    = gi + 1          # cumulative count on the flat segment
+
+# Place the annotation in the white space between the two lines at the gap midpoint.
+t_mid = (t_blackout_start + t_blackout_end) / 2
+n_tiny_at_mid = int(np.sum(t_tiny_d <= t_mid))
+y_arrow = (n_stat_at_gap + n_tiny_at_mid) / 2   # midpoint between the two lines
+
+ax2.annotate('', xy=(t_blackout_end, y_arrow), xytext=(t_blackout_start, y_arrow),
+             arrowprops=dict(arrowstyle='<->', color='firebrick', lw=1.2))
+ax2.text(t_mid, y_arrow + 3,
+         f'{t_blackout_end - t_blackout_start:.0f} ms blackout',
+         ha='center', va='bottom', color='firebrick', fontsize=8)
+
 ax2.set_xlabel('Time (ms)')
-ax2.set_ylabel(r'RTT/hop ($\mu$s)')
-ax2.set_ylim(bottom=0)
-ax2.legend()
+ax2.set_ylabel('Cumulative packets delivered')
+ax2.set_xlim(D_INIT / SYRUP, PLOT_END / SYRUP)
+ax2.legend(loc='upper left')
 fig2.tight_layout()
 fig2.savefig('../paper/figures/comparison_failure.png', dpi=150)
 print('Saved comparison_failure.png')

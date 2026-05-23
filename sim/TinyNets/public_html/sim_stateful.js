@@ -142,8 +142,7 @@ if (SIM_STATEFUL === 'cross') {
 } else if (SIM_STATEFUL === 'fail') {
     // Main path: corner 0 -> corner (ROWS*COLS-1), 5 kHz (matches sim.js SIM=3)
     sendPacket(0, ROWS*COLS-1, 1, 'Hi', 0.2, true);
-    // Cross-traffic: opposite diagonal, 10 kHz
-    sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 0.1, true);
+    // No cross-traffic: this scenario isolates failure-recovery behavior only.
 
     // Disconnect an interior node at 11 ms that lies on the primary BFS path
     // from corner 0 to corner 15 (0→1→2→3→7→11→15), so the failure produces
