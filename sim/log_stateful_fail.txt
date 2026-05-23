@@ -1,1790 +1,1060 @@
-[592]: 0: got ACK from 15. RTT = 38
-[592]: 0: got ACK from 15. RTT = 38
-[593]: 3: got ACK from 12. RTT = 38
-[593]: 3: got ACK from 12. RTT = 38
-[633]: 15: got ACK from 0. RTT = 41
-[633]: 15: got ACK from 0. RTT = 41
+[593]: 0: got ACK from 15. RTT = 38
+[594]: 3: got ACK from 12. RTT = 38
 [633]: 12: got ACK from 3. RTT = 41
-[633]: 12: got ACK from 3. RTT = 41
-[1669]: 0: got ACK from 15. RTT = 44
-[1669]: 0: got ACK from 15. RTT = 44
-[1768]: 3: got ACK from 12. RTT = 44
-[1768]: 3: got ACK from 12. RTT = 44
-[1953]: 0: got ACK from 15. RTT = 59
-[1953]: 0: got ACK from 15. RTT = 59
-[1983]: 0: got ACK from 15. RTT = 54
-[1983]: 0: got ACK from 15. RTT = 54
+[634]: 15: got ACK from 0. RTT = 41
+[1653]: 3: got ACK from 12. RTT = 43
+[1733]: 0: got ACK from 15. RTT = 41
+[1858]: 3: got ACK from 12. RTT = 51
+[1978]: 3: got ACK from 12. RTT = 53
+[2044]: 0: got ACK from 15. RTT = 50
 [2088]: 3: got ACK from 12. RTT = 54
-[2088]: 3: got ACK from 12. RTT = 54
-[2175]: 0: got ACK from 15. RTT = 61
-[2175]: 0: got ACK from 15. RTT = 61
-[2246]: 0: got ACK from 15. RTT = 59
-[2246]: 0: got ACK from 15. RTT = 59
-[2335]: 3: got ACK from 12. RTT = 58
-[2335]: 3: got ACK from 12. RTT = 58
-[2396]: 0: got ACK from 15. RTT = 61
-[2396]: 0: got ACK from 15. RTT = 61
-[2548]: 0: got ACK from 15. RTT = 67
-[2548]: 0: got ACK from 15. RTT = 67
-[2655]: 3: got ACK from 12. RTT = 68
-[2655]: 3: got ACK from 12. RTT = 68
-[2658]: 0: got ACK from 15. RTT = 65
-[2658]: 0: got ACK from 15. RTT = 65
-[2769]: 0: got ACK from 15. RTT = 68
-[2769]: 0: got ACK from 15. RTT = 68
-[2879]: 0: got ACK from 15. RTT = 69
-[2879]: 0: got ACK from 15. RTT = 69
-[2901]: 3: got ACK from 12. RTT = 72
-[2901]: 3: got ACK from 12. RTT = 72
-[3076]: 0: got ACK from 15. RTT = 75
-[3076]: 0: got ACK from 15. RTT = 75
-[3136]: 3: got ACK from 12. RTT = 75
-[3136]: 3: got ACK from 12. RTT = 75
-[3154]: 0: got ACK from 15. RTT = 76
-[3154]: 0: got ACK from 15. RTT = 76
-[3356]: 0: got ACK from 15. RTT = 83
-[3356]: 0: got ACK from 15. RTT = 83
-[3441]: 3: got ACK from 12. RTT = 83
-[3441]: 3: got ACK from 12. RTT = 83
-[3476]: 0: got ACK from 15. RTT = 84
-[3476]: 0: got ACK from 15. RTT = 84
-[3586]: 0: got ACK from 15. RTT = 87
-[3586]: 0: got ACK from 15. RTT = 87
-[3698]: 0: got ACK from 15. RTT = 87
-[3698]: 0: got ACK from 15. RTT = 87
-[3736]: 3: got ACK from 12. RTT = 91
-[3736]: 3: got ACK from 12. RTT = 91
-[3849]: 0: got ACK from 15. RTT = 90
-[3849]: 0: got ACK from 15. RTT = 90
-[3978]: 3: got ACK from 12. RTT = 93
-[3978]: 3: got ACK from 12. RTT = 93
-[3999]: 0: got ACK from 15. RTT = 93
-[3999]: 0: got ACK from 15. RTT = 93
-[4070]: 0: got ACK from 15. RTT = 93
-[4070]: 0: got ACK from 15. RTT = 93
-[4278]: 0: got ACK from 15. RTT = 100
-[4278]: 0: got ACK from 15. RTT = 100
-[4302]: 3: got ACK from 12. RTT = 105
-[4302]: 3: got ACK from 12. RTT = 105
-[4396]: 0: got ACK from 15. RTT = 104
-[4396]: 0: got ACK from 15. RTT = 104
-[4458]: 3: got ACK from 12. RTT = 101
-[4458]: 3: got ACK from 12. RTT = 101
-[4547]: 0: got ACK from 15. RTT = 106
-[4547]: 0: got ACK from 15. RTT = 106
-[4697]: 0: got ACK from 15. RTT = 112
-[4697]: 0: got ACK from 15. RTT = 112
-[4768]: 0: got ACK from 15. RTT = 108
-[4768]: 0: got ACK from 15. RTT = 108
+[2177]: 3: got ACK from 12. RTT = 53
+[2321]: 0: got ACK from 15. RTT = 57
+[2369]: 3: got ACK from 12. RTT = 60
+[2453]: 3: got ACK from 12. RTT = 59
+[2560]: 0: got ACK from 15. RTT = 60
+[2746]: 3: got ACK from 12. RTT = 74
+[2776]: 3: got ACK from 12. RTT = 70
+[2790]: 0: got ACK from 15. RTT = 62
+[2950]: 3: got ACK from 12. RTT = 75
+[2980]: 3: got ACK from 12. RTT = 68
+[3062]: 0: got ACK from 15. RTT = 68
+[3180]: 3: got ACK from 12. RTT = 78
+[3253]: 0: got ACK from 15. RTT = 68
+[3341]: 3: got ACK from 12. RTT = 83
+[3451]: 3: got ACK from 12. RTT = 84
+[3641]: 3: got ACK from 12. RTT = 90
+[3644]: 0: got ACK from 15. RTT = 81
+[3751]: 3: got ACK from 12. RTT = 93
+[3795]: 0: got ACK from 15. RTT = 78
+[3872]: 3: got ACK from 12. RTT = 94
+[4068]: 3: got ACK from 12. RTT = 102
+[4098]: 3: got ACK from 12. RTT = 96
+[4185]: 0: got ACK from 15. RTT = 94
+[4280]: 3: got ACK from 12. RTT = 102
+[4336]: 0: got ACK from 15. RTT = 90
+[4369]: 3: got ACK from 12. RTT = 102
+[4480]: 3: got ACK from 12. RTT = 102
+[4566]: 0: got ACK from 15. RTT = 94
+[4577]: 3: got ACK from 12. RTT = 103
 [4778]: 3: got ACK from 12. RTT = 111
-[4778]: 3: got ACK from 12. RTT = 111
-[4960]: 0: got ACK from 15. RTT = 118
-[4960]: 0: got ACK from 15. RTT = 118
-[5082]: 0: got ACK from 15. RTT = 119
-[5082]: 0: got ACK from 15. RTT = 119
-[5098]: 3: got ACK from 12. RTT = 121
-[5098]: 3: got ACK from 12. RTT = 121
-[5192]: 0: got ACK from 15. RTT = 119
-[5192]: 0: got ACK from 15. RTT = 119
-[5263]: 0: got ACK from 15. RTT = 118
-[5263]: 0: got ACK from 15. RTT = 118
-[5298]: 3: got ACK from 12. RTT = 120
-[5298]: 3: got ACK from 12. RTT = 120
-[5454]: 0: got ACK from 15. RTT = 125
-[5454]: 0: got ACK from 15. RTT = 125
-[5585]: 3: got ACK from 12. RTT = 128
-[5585]: 3: got ACK from 12. RTT = 128
-[5599]: 0: got ACK from 15. RTT = 127
-[5599]: 0: got ACK from 15. RTT = 127
-[5750]: 0: got ACK from 15. RTT = 134
-[5750]: 0: got ACK from 15. RTT = 134
-[5899]: 3: got ACK from 12. RTT = 136
-[5899]: 3: got ACK from 12. RTT = 136
-[5945]: 0: got ACK from 15. RTT = 139
-[5945]: 0: got ACK from 15. RTT = 139
-[6056]: 0: got ACK from 15. RTT = 142
-[6056]: 0: got ACK from 15. RTT = 142
-[6086]: 0: got ACK from 15. RTT = 135
-[6086]: 0: got ACK from 15. RTT = 135
-[6102]: 3: got ACK from 12. RTT = 138
-[6102]: 3: got ACK from 12. RTT = 138
-[6282]: 0: got ACK from 15. RTT = 145
-[6282]: 0: got ACK from 15. RTT = 145
-[6392]: 0: got ACK from 15. RTT = 145
-[6392]: 0: got ACK from 15. RTT = 145
-[6503]: 3: got ACK from 12. RTT = 153
-[6503]: 3: got ACK from 12. RTT = 153
-[6583]: 0: got ACK from 15. RTT = 151
-[6583]: 0: got ACK from 15. RTT = 151
-[6654]: 0: got ACK from 15. RTT = 148
-[6654]: 0: got ACK from 15. RTT = 148
-[6666]: 3: got ACK from 12. RTT = 151
-[6666]: 3: got ACK from 12. RTT = 151
-[6862]: 0: got ACK from 15. RTT = 159
-[6862]: 0: got ACK from 15. RTT = 159
-[6973]: 0: got ACK from 15. RTT = 161
-[6973]: 0: got ACK from 15. RTT = 161
-[7073]: 3: got ACK from 12. RTT = 168
-[7073]: 3: got ACK from 12. RTT = 168
-[7083]: 0: got ACK from 15. RTT = 161
-[7083]: 0: got ACK from 15. RTT = 161
-[7275]: 0: got ACK from 15. RTT = 168
-[7275]: 0: got ACK from 15. RTT = 168
-[7278]: 3: got ACK from 12. RTT = 170
-[7278]: 3: got ACK from 12. RTT = 170
-[7480]: 0: got ACK from 15. RTT = 176
-[7480]: 0: got ACK from 15. RTT = 176
-[7546]: 3: got ACK from 12. RTT = 175
-[7546]: 3: got ACK from 12. RTT = 175
-[7551]: 0: got ACK from 15. RTT = 175
-[7551]: 0: got ACK from 15. RTT = 175
-[7581]: 0: got ACK from 15. RTT = 168
-[7581]: 0: got ACK from 15. RTT = 168
-[7772]: 0: got ACK from 15. RTT = 175
-[7772]: 0: got ACK from 15. RTT = 175
-[7841]: 3: got ACK from 12. RTT = 182
-[7841]: 3: got ACK from 12. RTT = 182
-[7843]: 0: got ACK from 15. RTT = 174
-[7843]: 0: got ACK from 15. RTT = 174
-[8059]: 0: got ACK from 15. RTT = 183
-[8059]: 0: got ACK from 15. RTT = 183
-[8103]: 3: got ACK from 12. RTT = 186
-[8103]: 3: got ACK from 12. RTT = 186
-[8170]: 0: got ACK from 15. RTT = 185
-[8170]: 0: got ACK from 15. RTT = 185
-[8280]: 0: got ACK from 15. RTT = 185
-[8280]: 0: got ACK from 15. RTT = 185
+[4878]: 0: got ACK from 15. RTT = 103
+[4980]: 3: got ACK from 12. RTT = 120
+[5051]: 3: got ACK from 12. RTT = 118
+[5108]: 0: got ACK from 15. RTT = 104
+[5180]: 3: got ACK from 12. RTT = 119
+[5338]: 0: got ACK from 15. RTT = 106
+[5341]: 3: got ACK from 12. RTT = 123
+[5451]: 3: got ACK from 12. RTT = 126
+[5649]: 0: got ACK from 15. RTT = 116
+[5668]: 3: got ACK from 12. RTT = 133
+[5698]: 3: got ACK from 12. RTT = 127
+[5873]: 3: got ACK from 12. RTT = 136
+[5918]: 0: got ACK from 15. RTT = 123
+[5993]: 3: got ACK from 12. RTT = 137
+[6144]: 3: got ACK from 12. RTT = 142
+[6149]: 0: got ACK from 15. RTT = 123
+[6280]: 3: got ACK from 12. RTT = 144
+[6341]: 0: got ACK from 15. RTT = 122
+[6383]: 3: got ACK from 12. RTT = 145
+[6541]: 3: got ACK from 12. RTT = 150
+[6651]: 0: got ACK from 15. RTT = 132
+[6654]: 3: got ACK from 12. RTT = 150
+[6764]: 3: got ACK from 12. RTT = 152
+[6884]: 3: got ACK from 12. RTT = 153
+[6922]: 0: got ACK from 15. RTT = 139
+[7076]: 3: got ACK from 12. RTT = 161
+[7153]: 0: got ACK from 15. RTT = 142
+[7191]: 3: got ACK from 12. RTT = 162
+[7262]: 3: got ACK from 12. RTT = 160
+[7441]: 3: got ACK from 12. RTT = 166
+[7464]: 0: got ACK from 15. RTT = 151
+[7641]: 3: got ACK from 12. RTT = 175
+[7695]: 0: got ACK from 15. RTT = 151
+[7751]: 3: got ACK from 12. RTT = 174
+[7872]: 3: got ACK from 12. RTT = 175
+[7967]: 0: got ACK from 15. RTT = 158
+[7991]: 3: got ACK from 12. RTT = 177
+[8144]: 3: got ACK from 12. RTT = 183
+[8197]: 0: got ACK from 15. RTT = 162
 [8280]: 3: got ACK from 12. RTT = 185
-[8280]: 3: got ACK from 12. RTT = 185
-[8351]: 0: got ACK from 15. RTT = 183
-[8351]: 0: got ACK from 15. RTT = 183
-[8544]: 3: got ACK from 12. RTT = 192
-[8544]: 3: got ACK from 12. RTT = 192
-[8587]: 0: got ACK from 15. RTT = 196
-[8587]: 0: got ACK from 15. RTT = 196
-[8686]: 0: got ACK from 15. RTT = 194
-[8686]: 0: got ACK from 15. RTT = 194
-[8870]: 3: got ACK from 12. RTT = 202
-[8870]: 3: got ACK from 12. RTT = 202
-[8958]: 0: got ACK from 15. RTT = 208
-[8958]: 0: got ACK from 15. RTT = 208
-[8988]: 0: got ACK from 15. RTT = 204
-[8988]: 0: got ACK from 15. RTT = 204
-[9145]: 3: got ACK from 12. RTT = 207
-[9145]: 3: got ACK from 12. RTT = 207
-[9179]: 0: got ACK from 15. RTT = 210
-[9179]: 0: got ACK from 15. RTT = 210
-[9250]: 0: got ACK from 15. RTT = 209
-[9250]: 0: got ACK from 15. RTT = 209
-[9361]: 0: got ACK from 15. RTT = 208
-[9361]: 0: got ACK from 15. RTT = 208
-[9506]: 3: got ACK from 12. RTT = 220
-[9506]: 3: got ACK from 12. RTT = 220
-[9552]: 0: got ACK from 15. RTT = 215
-[9552]: 0: got ACK from 15. RTT = 215
-[9582]: 0: got ACK from 15. RTT = 212
-[9582]: 0: got ACK from 15. RTT = 212
-[9719]: 3: got ACK from 12. RTT = 221
-[9719]: 3: got ACK from 12. RTT = 221
-[9773]: 0: got ACK from 15. RTT = 218
-[9773]: 0: got ACK from 15. RTT = 218
-[9970]: 0: got ACK from 15. RTT = 225
-[9970]: 0: got ACK from 15. RTT = 225
-[10080]: 0: got ACK from 15. RTT = 228
-[10080]: 0: got ACK from 15. RTT = 228
-[10107]: 3: got ACK from 12. RTT = 236
-[10107]: 3: got ACK from 12. RTT = 236
-[10151]: 0: got ACK from 15. RTT = 226
-[10151]: 0: got ACK from 15. RTT = 226
-[10271]: 3: got ACK from 12. RTT = 236
-[10271]: 3: got ACK from 12. RTT = 236
-[10342]: 0: got ACK from 15. RTT = 233
-[10342]: 0: got ACK from 15. RTT = 233
-[10372]: 0: got ACK from 15. RTT = 227
-[10372]: 0: got ACK from 15. RTT = 227
-[10480]: 3: got ACK from 12. RTT = 237
-[10480]: 3: got ACK from 12. RTT = 237
-[10645]: 0: got ACK from 15. RTT = 239
-[10645]: 0: got ACK from 15. RTT = 239
-[10780]: 0: got ACK from 15. RTT = 245
-[10780]: 0: got ACK from 15. RTT = 245
-[10788]: 3: got ACK from 12. RTT = 246
-[10788]: 3: got ACK from 12. RTT = 246
-[10851]: 0: got ACK from 15. RTT = 241
-[10851]: 0: got ACK from 15. RTT = 241
-[11000]: 5: port 2 failed; reconverging for 200 ms
-[11000]: 5: port 2 failed; reconverging for 200 ms
-[11000]: 5: port 3 failed; reconverging for 200 ms
-[11000]: 5: port 3 failed; reconverging for 200 ms
-[11000]: 1: port 1 failed; reconverging for 200 ms
-[11000]: 1: port 1 failed; reconverging for 200 ms
-[11000]: 5: port 1 failed; reconverging for 200 ms
-[11000]: 5: port 1 failed; reconverging for 200 ms
-[11000]: 5: port 0 failed; reconverging for 200 ms
-[11000]: 5: port 0 failed; reconverging for 200 ms
-[11000]: 9: port 0 failed; reconverging for 200 ms
-[11000]: 9: port 0 failed; reconverging for 200 ms
-[11000]: 6: port 1 failed; reconverging for 200 ms
-[11000]: 6: port 1 failed; reconverging for 200 ms
-[11000]: 4: port 1 failed; reconverging for 200 ms
-[11000]: 4: port 1 failed; reconverging for 200 ms
-[11011]: 1: dropping pkt to 12 (converging)
-[11011]: 1: dropping pkt to 12 (converging)
-[11041]: 1: dropping pkt to 3 (converging)
-[11041]: 1: dropping pkt to 3 (converging)
-[11042]: 0: got ACK from 15. RTT = 249
-[11042]: 0: got ACK from 15. RTT = 249
-[11042]: 4: dropping pkt to 12 (converging)
-[11042]: 4: dropping pkt to 12 (converging)
-[11069]: 6: dropping pkt to 15 (converging)
-[11069]: 6: dropping pkt to 15 (converging)
-[11071]: 1: dropping pkt to 15 (converging)
-[11071]: 1: dropping pkt to 15 (converging)
-[11101]: 1: dropping pkt to 0 (converging)
-[11101]: 1: dropping pkt to 0 (converging)
-[11131]: 1: dropping pkt to 0 (converging)
-[11131]: 1: dropping pkt to 0 (converging)
-[11149]: 3: got ACK from 12. RTT = 257
-[11149]: 3: got ACK from 12. RTT = 257
-[11161]: 1: dropping pkt to 15 (converging)
-[11161]: 1: dropping pkt to 15 (converging)
-[11191]: 1: dropping pkt to 12 (converging)
-[11191]: 1: dropping pkt to 12 (converging)
-[11221]: 1: dropping pkt to 3 (converging)
-[11221]: 1: dropping pkt to 3 (converging)
-[11229]: 6: dropping pkt to 15 (converging)
-[11229]: 6: dropping pkt to 15 (converging)
-[11251]: 1: dropping pkt to 15 (converging)
-[11251]: 1: dropping pkt to 15 (converging)
-[11270]: 6: dropping pkt to 15 (converging)
-[11270]: 6: dropping pkt to 15 (converging)
-[11281]: 1: dropping pkt to 0 (converging)
-[11281]: 1: dropping pkt to 0 (converging)
-[11311]: 1: dropping pkt to 15 (converging)
-[11311]: 1: dropping pkt to 15 (converging)
-[11341]: 1: dropping pkt to 12 (converging)
-[11341]: 1: dropping pkt to 12 (converging)
-[11371]: 1: dropping pkt to 15 (converging)
-[11371]: 1: dropping pkt to 15 (converging)
-[11389]: 3: got ACK from 12. RTT = 262
-[11389]: 3: got ACK from 12. RTT = 262
-[11401]: 1: dropping pkt to 0 (converging)
-[11401]: 1: dropping pkt to 0 (converging)
-[11430]: 6: dropping pkt to 15 (converging)
-[11430]: 6: dropping pkt to 15 (converging)
-[11431]: 1: dropping pkt to 3 (converging)
-[11431]: 1: dropping pkt to 3 (converging)
-[11461]: 1: dropping pkt to 0 (converging)
-[11461]: 1: dropping pkt to 0 (converging)
-[11491]: 1: dropping pkt to 15 (converging)
-[11491]: 1: dropping pkt to 15 (converging)
-[11510]: 6: dropping pkt to 15 (converging)
-[11510]: 6: dropping pkt to 15 (converging)
-[11521]: 1: dropping pkt to 0 (converging)
-[11521]: 1: dropping pkt to 0 (converging)
-[11551]: 1: dropping pkt to 3 (converging)
-[11551]: 1: dropping pkt to 3 (converging)
-[11581]: 1: dropping pkt to 15 (converging)
-[11581]: 1: dropping pkt to 15 (converging)
-[11589]: 3: got ACK from 12. RTT = 262
-[11589]: 3: got ACK from 12. RTT = 262
-[11611]: 1: dropping pkt to 12 (converging)
-[11611]: 1: dropping pkt to 12 (converging)
-[11641]: 1: dropping pkt to 0 (converging)
-[11641]: 1: dropping pkt to 0 (converging)
-[11670]: 6: dropping pkt to 15 (converging)
-[11670]: 6: dropping pkt to 15 (converging)
-[11671]: 1: dropping pkt to 15 (converging)
-[11671]: 1: dropping pkt to 15 (converging)
-[11701]: 1: dropping pkt to 12 (converging)
-[11701]: 1: dropping pkt to 12 (converging)
-[11731]: 1: dropping pkt to 15 (converging)
-[11731]: 1: dropping pkt to 15 (converging)
-[11750]: 6: dropping pkt to 15 (converging)
-[11750]: 6: dropping pkt to 15 (converging)
-[11761]: 1: dropping pkt to 0 (converging)
-[11761]: 1: dropping pkt to 0 (converging)
-[11791]: 1: dropping pkt to 15 (converging)
-[11791]: 1: dropping pkt to 15 (converging)
-[11821]: 1: dropping pkt to 0 (converging)
-[11821]: 1: dropping pkt to 0 (converging)
-[11851]: 1: dropping pkt to 15 (converging)
-[11851]: 1: dropping pkt to 15 (converging)
-[11881]: 1: dropping pkt to 12 (converging)
-[11881]: 1: dropping pkt to 12 (converging)
-[11911]: 1: dropping pkt to 15 (converging)
-[11911]: 1: dropping pkt to 15 (converging)
-[11941]: 1: dropping pkt to 0 (converging)
-[11941]: 1: dropping pkt to 0 (converging)
-[11971]: 1: dropping pkt to 15 (converging)
-[11971]: 1: dropping pkt to 15 (converging)
-[12001]: 1: dropping pkt to 12 (converging)
-[12001]: 1: dropping pkt to 12 (converging)
-[12031]: 1: dropping pkt to 0 (converging)
-[12031]: 1: dropping pkt to 0 (converging)
-[12061]: 1: dropping pkt to 15 (converging)
-[12061]: 1: dropping pkt to 15 (converging)
-[12091]: 1: dropping pkt to 0 (converging)
-[12091]: 1: dropping pkt to 0 (converging)
-[12121]: 1: dropping pkt to 15 (converging)
-[12121]: 1: dropping pkt to 15 (converging)
-[12151]: 1: dropping pkt to 0 (converging)
-[12151]: 1: dropping pkt to 0 (converging)
-[12181]: 1: dropping pkt to 12 (converging)
-[12181]: 1: dropping pkt to 12 (converging)
-[12211]: 1: dropping pkt to 15 (converging)
-[12211]: 1: dropping pkt to 15 (converging)
-[12241]: 1: dropping pkt to 0 (converging)
-[12241]: 1: dropping pkt to 0 (converging)
-[12271]: 1: dropping pkt to 12 (converging)
-[12271]: 1: dropping pkt to 12 (converging)
-[12301]: 1: dropping pkt to 15 (converging)
-[12301]: 1: dropping pkt to 15 (converging)
-[12331]: 1: dropping pkt to 0 (converging)
-[12331]: 1: dropping pkt to 0 (converging)
-[12361]: 1: dropping pkt to 12 (converging)
-[12361]: 1: dropping pkt to 12 (converging)
-[12391]: 1: dropping pkt to 12 (converging)
-[12391]: 1: dropping pkt to 12 (converging)
-[12421]: 1: dropping pkt to 15 (converging)
-[12421]: 1: dropping pkt to 15 (converging)
-[12451]: 1: dropping pkt to 12 (converging)
-[12451]: 1: dropping pkt to 12 (converging)
-[12481]: 1: dropping pkt to 12 (converging)
-[12481]: 1: dropping pkt to 12 (converging)
-[12511]: 1: dropping pkt to 15 (converging)
-[12511]: 1: dropping pkt to 15 (converging)
-[12541]: 1: dropping pkt to 15 (converging)
-[12541]: 1: dropping pkt to 15 (converging)
-[12571]: 1: dropping pkt to 12 (converging)
-[12571]: 1: dropping pkt to 12 (converging)
-[12601]: 1: dropping pkt to 15 (converging)
-[12601]: 1: dropping pkt to 15 (converging)
-[12631]: 1: dropping pkt to 15 (converging)
-[12631]: 1: dropping pkt to 15 (converging)
-[12661]: 1: dropping pkt to 12 (converging)
-[12661]: 1: dropping pkt to 12 (converging)
-[12691]: 1: dropping pkt to 15 (converging)
-[12691]: 1: dropping pkt to 15 (converging)
-[12721]: 1: dropping pkt to 15 (converging)
-[12721]: 1: dropping pkt to 15 (converging)
-[12751]: 1: dropping pkt to 12 (converging)
-[12751]: 1: dropping pkt to 12 (converging)
-[12781]: 1: dropping pkt to 15 (converging)
-[12781]: 1: dropping pkt to 15 (converging)
-[12842]: 1: dropping pkt to 15 (converging)
-[12842]: 1: dropping pkt to 15 (converging)
-[12883]: 1: dropping pkt to 12 (converging)
-[12883]: 1: dropping pkt to 12 (converging)
-[12942]: 1: dropping pkt to 15 (converging)
-[12942]: 1: dropping pkt to 15 (converging)
-[13042]: 1: dropping pkt to 15 (converging)
-[13042]: 1: dropping pkt to 15 (converging)
-[13084]: 1: dropping pkt to 12 (converging)
-[13084]: 1: dropping pkt to 12 (converging)
-[13142]: 1: dropping pkt to 15 (converging)
-[13142]: 1: dropping pkt to 15 (converging)
-[13242]: 1: dropping pkt to 15 (converging)
-[13242]: 1: dropping pkt to 15 (converging)
-[13283]: 1: dropping pkt to 12 (converging)
-[13283]: 1: dropping pkt to 12 (converging)
-[13342]: 1: dropping pkt to 15 (converging)
-[13342]: 1: dropping pkt to 15 (converging)
-[13441]: 1: dropping pkt to 15 (converging)
-[13441]: 1: dropping pkt to 15 (converging)
-[13483]: 1: dropping pkt to 12 (converging)
-[13483]: 1: dropping pkt to 12 (converging)
-[13541]: 1: dropping pkt to 15 (converging)
-[13541]: 1: dropping pkt to 15 (converging)
-[13642]: 1: dropping pkt to 15 (converging)
-[13642]: 1: dropping pkt to 15 (converging)
-[13683]: 1: dropping pkt to 12 (converging)
-[13683]: 1: dropping pkt to 12 (converging)
-[13741]: 1: dropping pkt to 15 (converging)
-[13741]: 1: dropping pkt to 15 (converging)
-[13841]: 1: dropping pkt to 15 (converging)
-[13841]: 1: dropping pkt to 15 (converging)
-[13884]: 1: dropping pkt to 12 (converging)
-[13884]: 1: dropping pkt to 12 (converging)
-[13942]: 1: dropping pkt to 15 (converging)
-[13942]: 1: dropping pkt to 15 (converging)
-[14042]: 1: dropping pkt to 15 (converging)
-[14042]: 1: dropping pkt to 15 (converging)
-[14083]: 1: dropping pkt to 12 (converging)
-[14083]: 1: dropping pkt to 12 (converging)
-[14142]: 1: dropping pkt to 15 (converging)
-[14142]: 1: dropping pkt to 15 (converging)
-[14242]: 1: dropping pkt to 15 (converging)
-[14242]: 1: dropping pkt to 15 (converging)
-[14284]: 1: dropping pkt to 12 (converging)
-[14284]: 1: dropping pkt to 12 (converging)
-[14341]: 1: dropping pkt to 15 (converging)
-[14341]: 1: dropping pkt to 15 (converging)
-[14442]: 1: dropping pkt to 15 (converging)
-[14442]: 1: dropping pkt to 15 (converging)
-[14483]: 1: dropping pkt to 12 (converging)
-[14483]: 1: dropping pkt to 12 (converging)
-[14541]: 1: dropping pkt to 15 (converging)
-[14541]: 1: dropping pkt to 15 (converging)
-[14641]: 1: dropping pkt to 15 (converging)
-[14641]: 1: dropping pkt to 15 (converging)
-[14684]: 1: dropping pkt to 12 (converging)
-[14684]: 1: dropping pkt to 12 (converging)
-[14741]: 1: dropping pkt to 15 (converging)
-[14741]: 1: dropping pkt to 15 (converging)
-[14841]: 1: dropping pkt to 15 (converging)
-[14841]: 1: dropping pkt to 15 (converging)
-[14883]: 1: dropping pkt to 12 (converging)
-[14883]: 1: dropping pkt to 12 (converging)
-[14941]: 1: dropping pkt to 15 (converging)
-[14941]: 1: dropping pkt to 15 (converging)
-[15041]: 1: dropping pkt to 15 (converging)
-[15041]: 1: dropping pkt to 15 (converging)
-[15083]: 1: dropping pkt to 12 (converging)
-[15083]: 1: dropping pkt to 12 (converging)
-[15141]: 1: dropping pkt to 15 (converging)
-[15141]: 1: dropping pkt to 15 (converging)
-[15241]: 1: dropping pkt to 15 (converging)
-[15241]: 1: dropping pkt to 15 (converging)
-[15283]: 1: dropping pkt to 12 (converging)
-[15283]: 1: dropping pkt to 12 (converging)
-[15341]: 1: dropping pkt to 15 (converging)
-[15341]: 1: dropping pkt to 15 (converging)
-[15441]: 1: dropping pkt to 15 (converging)
-[15441]: 1: dropping pkt to 15 (converging)
-[15484]: 1: dropping pkt to 12 (converging)
-[15484]: 1: dropping pkt to 12 (converging)
-[15542]: 1: dropping pkt to 15 (converging)
-[15542]: 1: dropping pkt to 15 (converging)
-[15642]: 1: dropping pkt to 15 (converging)
-[15642]: 1: dropping pkt to 15 (converging)
-[15683]: 1: dropping pkt to 12 (converging)
-[15683]: 1: dropping pkt to 12 (converging)
-[15742]: 1: dropping pkt to 15 (converging)
-[15742]: 1: dropping pkt to 15 (converging)
-[15842]: 1: dropping pkt to 15 (converging)
-[15842]: 1: dropping pkt to 15 (converging)
-[15884]: 1: dropping pkt to 12 (converging)
-[15884]: 1: dropping pkt to 12 (converging)
-[15942]: 1: dropping pkt to 15 (converging)
-[15942]: 1: dropping pkt to 15 (converging)
-[16042]: 1: dropping pkt to 15 (converging)
-[16042]: 1: dropping pkt to 15 (converging)
-[16084]: 1: dropping pkt to 12 (converging)
-[16084]: 1: dropping pkt to 12 (converging)
-[16142]: 1: dropping pkt to 15 (converging)
-[16142]: 1: dropping pkt to 15 (converging)
-[16241]: 1: dropping pkt to 15 (converging)
-[16241]: 1: dropping pkt to 15 (converging)
-[16283]: 1: dropping pkt to 12 (converging)
-[16283]: 1: dropping pkt to 12 (converging)
-[16341]: 1: dropping pkt to 15 (converging)
-[16341]: 1: dropping pkt to 15 (converging)
-[16441]: 1: dropping pkt to 15 (converging)
-[16441]: 1: dropping pkt to 15 (converging)
-[16483]: 1: dropping pkt to 12 (converging)
-[16483]: 1: dropping pkt to 12 (converging)
-[16542]: 1: dropping pkt to 15 (converging)
-[16542]: 1: dropping pkt to 15 (converging)
-[16641]: 1: dropping pkt to 15 (converging)
-[16641]: 1: dropping pkt to 15 (converging)
-[16683]: 1: dropping pkt to 12 (converging)
-[16683]: 1: dropping pkt to 12 (converging)
-[16742]: 1: dropping pkt to 15 (converging)
-[16742]: 1: dropping pkt to 15 (converging)
-[16841]: 1: dropping pkt to 15 (converging)
-[16841]: 1: dropping pkt to 15 (converging)
-[16882]: 1: dropping pkt to 12 (converging)
-[16882]: 1: dropping pkt to 12 (converging)
-[16941]: 1: dropping pkt to 15 (converging)
-[16941]: 1: dropping pkt to 15 (converging)
-[17041]: 1: dropping pkt to 15 (converging)
-[17041]: 1: dropping pkt to 15 (converging)
-[17083]: 1: dropping pkt to 12 (converging)
-[17083]: 1: dropping pkt to 12 (converging)
-[17141]: 1: dropping pkt to 15 (converging)
-[17141]: 1: dropping pkt to 15 (converging)
-[17241]: 1: dropping pkt to 15 (converging)
-[17241]: 1: dropping pkt to 15 (converging)
-[17283]: 1: dropping pkt to 12 (converging)
-[17283]: 1: dropping pkt to 12 (converging)
-[17341]: 1: dropping pkt to 15 (converging)
-[17341]: 1: dropping pkt to 15 (converging)
-[17441]: 1: dropping pkt to 15 (converging)
-[17441]: 1: dropping pkt to 15 (converging)
-[17483]: 1: dropping pkt to 12 (converging)
-[17483]: 1: dropping pkt to 12 (converging)
-[17541]: 1: dropping pkt to 15 (converging)
-[17541]: 1: dropping pkt to 15 (converging)
-[17641]: 1: dropping pkt to 15 (converging)
-[17641]: 1: dropping pkt to 15 (converging)
-[17683]: 1: dropping pkt to 12 (converging)
-[17683]: 1: dropping pkt to 12 (converging)
-[17741]: 1: dropping pkt to 15 (converging)
-[17741]: 1: dropping pkt to 15 (converging)
-[17842]: 1: dropping pkt to 15 (converging)
-[17842]: 1: dropping pkt to 15 (converging)
-[17884]: 1: dropping pkt to 12 (converging)
-[17884]: 1: dropping pkt to 12 (converging)
-[17941]: 1: dropping pkt to 15 (converging)
-[17941]: 1: dropping pkt to 15 (converging)
-[18041]: 1: dropping pkt to 15 (converging)
-[18041]: 1: dropping pkt to 15 (converging)
-[18083]: 1: dropping pkt to 12 (converging)
-[18083]: 1: dropping pkt to 12 (converging)
-[18141]: 1: dropping pkt to 15 (converging)
-[18141]: 1: dropping pkt to 15 (converging)
-[18241]: 1: dropping pkt to 15 (converging)
-[18241]: 1: dropping pkt to 15 (converging)
-[18283]: 1: dropping pkt to 12 (converging)
-[18283]: 1: dropping pkt to 12 (converging)
-[18341]: 1: dropping pkt to 15 (converging)
-[18341]: 1: dropping pkt to 15 (converging)
-[18441]: 1: dropping pkt to 15 (converging)
-[18441]: 1: dropping pkt to 15 (converging)
-[18484]: 1: dropping pkt to 12 (converging)
-[18484]: 1: dropping pkt to 12 (converging)
-[18542]: 1: dropping pkt to 15 (converging)
-[18542]: 1: dropping pkt to 15 (converging)
-[18642]: 1: dropping pkt to 15 (converging)
-[18642]: 1: dropping pkt to 15 (converging)
-[18683]: 1: dropping pkt to 12 (converging)
-[18683]: 1: dropping pkt to 12 (converging)
-[18742]: 1: dropping pkt to 15 (converging)
-[18742]: 1: dropping pkt to 15 (converging)
-[18842]: 1: dropping pkt to 15 (converging)
-[18842]: 1: dropping pkt to 15 (converging)
-[18884]: 1: dropping pkt to 12 (converging)
-[18884]: 1: dropping pkt to 12 (converging)
-[18942]: 1: dropping pkt to 15 (converging)
-[18942]: 1: dropping pkt to 15 (converging)
-[19042]: 1: dropping pkt to 15 (converging)
-[19042]: 1: dropping pkt to 15 (converging)
-[19084]: 1: dropping pkt to 12 (converging)
-[19084]: 1: dropping pkt to 12 (converging)
-[19142]: 1: dropping pkt to 15 (converging)
-[19142]: 1: dropping pkt to 15 (converging)
-[19242]: 1: dropping pkt to 15 (converging)
-[19242]: 1: dropping pkt to 15 (converging)
-[19283]: 1: dropping pkt to 12 (converging)
-[19283]: 1: dropping pkt to 12 (converging)
-[19341]: 1: dropping pkt to 15 (converging)
-[19341]: 1: dropping pkt to 15 (converging)
-[19442]: 1: dropping pkt to 15 (converging)
-[19442]: 1: dropping pkt to 15 (converging)
-[19483]: 1: dropping pkt to 12 (converging)
-[19483]: 1: dropping pkt to 12 (converging)
-[19542]: 1: dropping pkt to 15 (converging)
-[19542]: 1: dropping pkt to 15 (converging)
-[19642]: 1: dropping pkt to 15 (converging)
-[19642]: 1: dropping pkt to 15 (converging)
-[19684]: 1: dropping pkt to 12 (converging)
-[19684]: 1: dropping pkt to 12 (converging)
-[19742]: 1: dropping pkt to 15 (converging)
-[19742]: 1: dropping pkt to 15 (converging)
-[19842]: 1: dropping pkt to 15 (converging)
-[19842]: 1: dropping pkt to 15 (converging)
-[19883]: 1: dropping pkt to 12 (converging)
-[19883]: 1: dropping pkt to 12 (converging)
-[19942]: 1: dropping pkt to 15 (converging)
-[19942]: 1: dropping pkt to 15 (converging)
-[20041]: 1: dropping pkt to 15 (converging)
-[20041]: 1: dropping pkt to 15 (converging)
-[20083]: 1: dropping pkt to 12 (converging)
-[20083]: 1: dropping pkt to 12 (converging)
-[20142]: 1: dropping pkt to 15 (converging)
-[20142]: 1: dropping pkt to 15 (converging)
-[20241]: 1: dropping pkt to 15 (converging)
-[20241]: 1: dropping pkt to 15 (converging)
-[20284]: 1: dropping pkt to 12 (converging)
-[20284]: 1: dropping pkt to 12 (converging)
-[20342]: 1: dropping pkt to 15 (converging)
-[20342]: 1: dropping pkt to 15 (converging)
-[20442]: 1: dropping pkt to 15 (converging)
-[20442]: 1: dropping pkt to 15 (converging)
-[20483]: 1: dropping pkt to 12 (converging)
-[20483]: 1: dropping pkt to 12 (converging)
-[20541]: 1: dropping pkt to 15 (converging)
-[20541]: 1: dropping pkt to 15 (converging)
-[20641]: 1: dropping pkt to 15 (converging)
-[20641]: 1: dropping pkt to 15 (converging)
-[20683]: 1: dropping pkt to 12 (converging)
-[20683]: 1: dropping pkt to 12 (converging)
-[20741]: 1: dropping pkt to 15 (converging)
-[20741]: 1: dropping pkt to 15 (converging)
-[20841]: 1: dropping pkt to 15 (converging)
-[20841]: 1: dropping pkt to 15 (converging)
-[20883]: 1: dropping pkt to 12 (converging)
-[20883]: 1: dropping pkt to 12 (converging)
-[20941]: 1: dropping pkt to 15 (converging)
-[20941]: 1: dropping pkt to 15 (converging)
-[21041]: 1: dropping pkt to 15 (converging)
-[21041]: 1: dropping pkt to 15 (converging)
-[21083]: 1: dropping pkt to 12 (converging)
-[21083]: 1: dropping pkt to 12 (converging)
-[21141]: 1: dropping pkt to 15 (converging)
-[21141]: 1: dropping pkt to 15 (converging)
-[21241]: 1: dropping pkt to 15 (converging)
-[21241]: 1: dropping pkt to 15 (converging)
-[21283]: 1: dropping pkt to 12 (converging)
-[21283]: 1: dropping pkt to 12 (converging)
-[21341]: 1: dropping pkt to 15 (converging)
-[21341]: 1: dropping pkt to 15 (converging)
-[21441]: 1: dropping pkt to 15 (converging)
-[21441]: 1: dropping pkt to 15 (converging)
-[21483]: 1: dropping pkt to 12 (converging)
-[21483]: 1: dropping pkt to 12 (converging)
-[21541]: 1: dropping pkt to 15 (converging)
-[21541]: 1: dropping pkt to 15 (converging)
-[21641]: 1: dropping pkt to 15 (converging)
-[21641]: 1: dropping pkt to 15 (converging)
-[21683]: 1: dropping pkt to 12 (converging)
-[21683]: 1: dropping pkt to 12 (converging)
-[21741]: 1: dropping pkt to 15 (converging)
-[21741]: 1: dropping pkt to 15 (converging)
-[21841]: 1: dropping pkt to 15 (converging)
-[21841]: 1: dropping pkt to 15 (converging)
-[21883]: 1: dropping pkt to 12 (converging)
-[21883]: 1: dropping pkt to 12 (converging)
-[21941]: 1: dropping pkt to 15 (converging)
-[21941]: 1: dropping pkt to 15 (converging)
-[22041]: 1: dropping pkt to 15 (converging)
-[22041]: 1: dropping pkt to 15 (converging)
-[22084]: 1: dropping pkt to 12 (converging)
-[22084]: 1: dropping pkt to 12 (converging)
-[22142]: 1: dropping pkt to 15 (converging)
-[22142]: 1: dropping pkt to 15 (converging)
-[22241]: 1: dropping pkt to 15 (converging)
-[22241]: 1: dropping pkt to 15 (converging)
-[22282]: 1: dropping pkt to 12 (converging)
-[22282]: 1: dropping pkt to 12 (converging)
-[22341]: 1: dropping pkt to 15 (converging)
-[22341]: 1: dropping pkt to 15 (converging)
-[22441]: 1: dropping pkt to 15 (converging)
-[22441]: 1: dropping pkt to 15 (converging)
-[22484]: 1: dropping pkt to 12 (converging)
-[22484]: 1: dropping pkt to 12 (converging)
-[22542]: 1: dropping pkt to 15 (converging)
-[22542]: 1: dropping pkt to 15 (converging)
-[22642]: 1: dropping pkt to 15 (converging)
-[22642]: 1: dropping pkt to 15 (converging)
-[22684]: 1: dropping pkt to 12 (converging)
-[22684]: 1: dropping pkt to 12 (converging)
-[22742]: 1: dropping pkt to 15 (converging)
-[22742]: 1: dropping pkt to 15 (converging)
-[22841]: 1: dropping pkt to 15 (converging)
-[22841]: 1: dropping pkt to 15 (converging)
-[22883]: 1: dropping pkt to 12 (converging)
-[22883]: 1: dropping pkt to 12 (converging)
-[22941]: 1: dropping pkt to 15 (converging)
-[22941]: 1: dropping pkt to 15 (converging)
-[23041]: 1: dropping pkt to 15 (converging)
-[23041]: 1: dropping pkt to 15 (converging)
-[23083]: 1: dropping pkt to 12 (converging)
-[23083]: 1: dropping pkt to 12 (converging)
-[23142]: 1: dropping pkt to 15 (converging)
-[23142]: 1: dropping pkt to 15 (converging)
-[23242]: 1: dropping pkt to 15 (converging)
-[23242]: 1: dropping pkt to 15 (converging)
-[23284]: 1: dropping pkt to 12 (converging)
-[23284]: 1: dropping pkt to 12 (converging)
-[23342]: 1: dropping pkt to 15 (converging)
-[23342]: 1: dropping pkt to 15 (converging)
-[23442]: 1: dropping pkt to 15 (converging)
-[23442]: 1: dropping pkt to 15 (converging)
-[23483]: 1: dropping pkt to 12 (converging)
-[23483]: 1: dropping pkt to 12 (converging)
-[23542]: 1: dropping pkt to 15 (converging)
-[23542]: 1: dropping pkt to 15 (converging)
-[23642]: 1: dropping pkt to 15 (converging)
-[23642]: 1: dropping pkt to 15 (converging)
-[23684]: 1: dropping pkt to 12 (converging)
-[23684]: 1: dropping pkt to 12 (converging)
-[23742]: 1: dropping pkt to 15 (converging)
-[23742]: 1: dropping pkt to 15 (converging)
-[23841]: 1: dropping pkt to 15 (converging)
-[23841]: 1: dropping pkt to 15 (converging)
-[23883]: 1: dropping pkt to 12 (converging)
-[23883]: 1: dropping pkt to 12 (converging)
-[23942]: 1: dropping pkt to 15 (converging)
-[23942]: 1: dropping pkt to 15 (converging)
-[24041]: 1: dropping pkt to 15 (converging)
-[24041]: 1: dropping pkt to 15 (converging)
-[24083]: 1: dropping pkt to 12 (converging)
-[24083]: 1: dropping pkt to 12 (converging)
-[24142]: 1: dropping pkt to 15 (converging)
-[24142]: 1: dropping pkt to 15 (converging)
-[24241]: 1: dropping pkt to 15 (converging)
-[24241]: 1: dropping pkt to 15 (converging)
-[24283]: 1: dropping pkt to 12 (converging)
-[24283]: 1: dropping pkt to 12 (converging)
-[24341]: 1: dropping pkt to 15 (converging)
-[24341]: 1: dropping pkt to 15 (converging)
-[24442]: 1: dropping pkt to 15 (converging)
-[24442]: 1: dropping pkt to 15 (converging)
-[24484]: 1: dropping pkt to 12 (converging)
-[24484]: 1: dropping pkt to 12 (converging)
-[24542]: 1: dropping pkt to 15 (converging)
-[24542]: 1: dropping pkt to 15 (converging)
-[24642]: 1: dropping pkt to 15 (converging)
-[24642]: 1: dropping pkt to 15 (converging)
-[24683]: 1: dropping pkt to 12 (converging)
-[24683]: 1: dropping pkt to 12 (converging)
-[24741]: 1: dropping pkt to 15 (converging)
-[24741]: 1: dropping pkt to 15 (converging)
-[24841]: 1: dropping pkt to 15 (converging)
-[24841]: 1: dropping pkt to 15 (converging)
-[24883]: 1: dropping pkt to 12 (converging)
-[24883]: 1: dropping pkt to 12 (converging)
-[24941]: 1: dropping pkt to 15 (converging)
-[24941]: 1: dropping pkt to 15 (converging)
-[25042]: 1: dropping pkt to 15 (converging)
-[25042]: 1: dropping pkt to 15 (converging)
-[25083]: 1: dropping pkt to 12 (converging)
-[25083]: 1: dropping pkt to 12 (converging)
-[25141]: 1: dropping pkt to 15 (converging)
-[25141]: 1: dropping pkt to 15 (converging)
-[25241]: 1: dropping pkt to 15 (converging)
-[25241]: 1: dropping pkt to 15 (converging)
-[25283]: 1: dropping pkt to 12 (converging)
-[25283]: 1: dropping pkt to 12 (converging)
-[25341]: 1: dropping pkt to 15 (converging)
-[25341]: 1: dropping pkt to 15 (converging)
-[25441]: 1: dropping pkt to 15 (converging)
-[25441]: 1: dropping pkt to 15 (converging)
-[25483]: 1: dropping pkt to 12 (converging)
-[25483]: 1: dropping pkt to 12 (converging)
-[25542]: 1: dropping pkt to 15 (converging)
-[25542]: 1: dropping pkt to 15 (converging)
-[25641]: 1: dropping pkt to 15 (converging)
-[25641]: 1: dropping pkt to 15 (converging)
-[25683]: 1: dropping pkt to 12 (converging)
-[25683]: 1: dropping pkt to 12 (converging)
-[25742]: 1: dropping pkt to 15 (converging)
-[25742]: 1: dropping pkt to 15 (converging)
-[25841]: 1: dropping pkt to 15 (converging)
-[25841]: 1: dropping pkt to 15 (converging)
-[25882]: 1: dropping pkt to 12 (converging)
-[25882]: 1: dropping pkt to 12 (converging)
-[25941]: 1: dropping pkt to 15 (converging)
-[25941]: 1: dropping pkt to 15 (converging)
-[26041]: 1: dropping pkt to 15 (converging)
-[26041]: 1: dropping pkt to 15 (converging)
-[26083]: 1: dropping pkt to 12 (converging)
-[26083]: 1: dropping pkt to 12 (converging)
-[26141]: 1: dropping pkt to 15 (converging)
-[26141]: 1: dropping pkt to 15 (converging)
-[26241]: 1: dropping pkt to 15 (converging)
-[26241]: 1: dropping pkt to 15 (converging)
-[26283]: 1: dropping pkt to 12 (converging)
-[26283]: 1: dropping pkt to 12 (converging)
-[26341]: 1: dropping pkt to 15 (converging)
-[26341]: 1: dropping pkt to 15 (converging)
-[26441]: 1: dropping pkt to 15 (converging)
-[26441]: 1: dropping pkt to 15 (converging)
-[26483]: 1: dropping pkt to 12 (converging)
-[26483]: 1: dropping pkt to 12 (converging)
-[26541]: 1: dropping pkt to 15 (converging)
-[26541]: 1: dropping pkt to 15 (converging)
-[26641]: 1: dropping pkt to 15 (converging)
-[26641]: 1: dropping pkt to 15 (converging)
-[26683]: 1: dropping pkt to 12 (converging)
-[26683]: 1: dropping pkt to 12 (converging)
-[26741]: 1: dropping pkt to 15 (converging)
-[26741]: 1: dropping pkt to 15 (converging)
-[26841]: 1: dropping pkt to 15 (converging)
-[26841]: 1: dropping pkt to 15 (converging)
-[26884]: 1: dropping pkt to 12 (converging)
-[26884]: 1: dropping pkt to 12 (converging)
-[26942]: 1: dropping pkt to 15 (converging)
-[26942]: 1: dropping pkt to 15 (converging)
-[27042]: 1: dropping pkt to 15 (converging)
-[27042]: 1: dropping pkt to 15 (converging)
-[27083]: 1: dropping pkt to 12 (converging)
-[27083]: 1: dropping pkt to 12 (converging)
-[27142]: 1: dropping pkt to 15 (converging)
-[27142]: 1: dropping pkt to 15 (converging)
-[27242]: 1: dropping pkt to 15 (converging)
-[27242]: 1: dropping pkt to 15 (converging)
-[27284]: 1: dropping pkt to 12 (converging)
-[27284]: 1: dropping pkt to 12 (converging)
-[27342]: 1: dropping pkt to 15 (converging)
-[27342]: 1: dropping pkt to 15 (converging)
-[27442]: 1: dropping pkt to 15 (converging)
-[27442]: 1: dropping pkt to 15 (converging)
-[27484]: 1: dropping pkt to 12 (converging)
-[27484]: 1: dropping pkt to 12 (converging)
-[27542]: 1: dropping pkt to 15 (converging)
-[27542]: 1: dropping pkt to 15 (converging)
-[27641]: 1: dropping pkt to 15 (converging)
-[27641]: 1: dropping pkt to 15 (converging)
-[27682]: 1: dropping pkt to 12 (converging)
-[27682]: 1: dropping pkt to 12 (converging)
-[27741]: 1: dropping pkt to 15 (converging)
-[27741]: 1: dropping pkt to 15 (converging)
-[27841]: 1: dropping pkt to 15 (converging)
-[27841]: 1: dropping pkt to 15 (converging)
-[27884]: 1: dropping pkt to 12 (converging)
-[27884]: 1: dropping pkt to 12 (converging)
-[27941]: 1: dropping pkt to 15 (converging)
-[27941]: 1: dropping pkt to 15 (converging)
-[28042]: 1: dropping pkt to 15 (converging)
-[28042]: 1: dropping pkt to 15 (converging)
-[28084]: 1: dropping pkt to 12 (converging)
-[28084]: 1: dropping pkt to 12 (converging)
-[28142]: 1: dropping pkt to 15 (converging)
-[28142]: 1: dropping pkt to 15 (converging)
-[28242]: 1: dropping pkt to 15 (converging)
-[28242]: 1: dropping pkt to 15 (converging)
-[28283]: 1: dropping pkt to 12 (converging)
-[28283]: 1: dropping pkt to 12 (converging)
-[28342]: 1: dropping pkt to 15 (converging)
-[28342]: 1: dropping pkt to 15 (converging)
-[28442]: 1: dropping pkt to 15 (converging)
-[28442]: 1: dropping pkt to 15 (converging)
-[28484]: 1: dropping pkt to 12 (converging)
-[28484]: 1: dropping pkt to 12 (converging)
-[28542]: 1: dropping pkt to 15 (converging)
-[28542]: 1: dropping pkt to 15 (converging)
-[28642]: 1: dropping pkt to 15 (converging)
-[28642]: 1: dropping pkt to 15 (converging)
-[28684]: 1: dropping pkt to 12 (converging)
-[28684]: 1: dropping pkt to 12 (converging)
-[28741]: 1: dropping pkt to 15 (converging)
-[28741]: 1: dropping pkt to 15 (converging)
-[28841]: 1: dropping pkt to 15 (converging)
-[28841]: 1: dropping pkt to 15 (converging)
-[28882]: 1: dropping pkt to 12 (converging)
-[28882]: 1: dropping pkt to 12 (converging)
-[28941]: 1: dropping pkt to 15 (converging)
-[28941]: 1: dropping pkt to 15 (converging)
-[29041]: 1: dropping pkt to 15 (converging)
-[29041]: 1: dropping pkt to 15 (converging)
-[29084]: 1: dropping pkt to 12 (converging)
-[29084]: 1: dropping pkt to 12 (converging)
-[29142]: 1: dropping pkt to 15 (converging)
-[29142]: 1: dropping pkt to 15 (converging)
-[29242]: 1: dropping pkt to 15 (converging)
-[29242]: 1: dropping pkt to 15 (converging)
-[29284]: 1: dropping pkt to 12 (converging)
-[29284]: 1: dropping pkt to 12 (converging)
-[29342]: 1: dropping pkt to 15 (converging)
-[29342]: 1: dropping pkt to 15 (converging)
-[29442]: 1: dropping pkt to 15 (converging)
-[29442]: 1: dropping pkt to 15 (converging)
-[29482]: 1: dropping pkt to 12 (converging)
-[29482]: 1: dropping pkt to 12 (converging)
-[29542]: 1: dropping pkt to 15 (converging)
-[29542]: 1: dropping pkt to 15 (converging)
-[29642]: 1: dropping pkt to 15 (converging)
-[29642]: 1: dropping pkt to 15 (converging)
-[29684]: 1: dropping pkt to 12 (converging)
-[29684]: 1: dropping pkt to 12 (converging)
-[29741]: 1: dropping pkt to 15 (converging)
-[29741]: 1: dropping pkt to 15 (converging)
-[29841]: 1: dropping pkt to 15 (converging)
-[29841]: 1: dropping pkt to 15 (converging)
-[29884]: 1: dropping pkt to 12 (converging)
-[29884]: 1: dropping pkt to 12 (converging)
-[29941]: 1: dropping pkt to 15 (converging)
-[29941]: 1: dropping pkt to 15 (converging)
-[30041]: 1: dropping pkt to 15 (converging)
-[30041]: 1: dropping pkt to 15 (converging)
-[30082]: 1: dropping pkt to 12 (converging)
-[30082]: 1: dropping pkt to 12 (converging)
-[30141]: 1: dropping pkt to 15 (converging)
-[30141]: 1: dropping pkt to 15 (converging)
-[30241]: 1: dropping pkt to 15 (converging)
-[30241]: 1: dropping pkt to 15 (converging)
-[30284]: 1: dropping pkt to 12 (converging)
-[30284]: 1: dropping pkt to 12 (converging)
-[30341]: 1: dropping pkt to 15 (converging)
-[30341]: 1: dropping pkt to 15 (converging)
-[30441]: 1: dropping pkt to 15 (converging)
-[30441]: 1: dropping pkt to 15 (converging)
-[30484]: 1: dropping pkt to 12 (converging)
-[30484]: 1: dropping pkt to 12 (converging)
-[30541]: 1: dropping pkt to 15 (converging)
-[30541]: 1: dropping pkt to 15 (converging)
-[30641]: 1: dropping pkt to 15 (converging)
-[30641]: 1: dropping pkt to 15 (converging)
-[30682]: 1: dropping pkt to 12 (converging)
-[30682]: 1: dropping pkt to 12 (converging)
-[30741]: 1: dropping pkt to 15 (converging)
-[30741]: 1: dropping pkt to 15 (converging)
-[30841]: 1: dropping pkt to 15 (converging)
-[30841]: 1: dropping pkt to 15 (converging)
-[30884]: 1: dropping pkt to 12 (converging)
-[30884]: 1: dropping pkt to 12 (converging)
-[30942]: 1: dropping pkt to 15 (converging)
-[30942]: 1: dropping pkt to 15 (converging)
-[31041]: 1: dropping pkt to 15 (converging)
-[31041]: 1: dropping pkt to 15 (converging)
-[31084]: 1: dropping pkt to 12 (converging)
-[31084]: 1: dropping pkt to 12 (converging)
-[31142]: 1: dropping pkt to 15 (converging)
-[31142]: 1: dropping pkt to 15 (converging)
-[31241]: 1: dropping pkt to 15 (converging)
-[31241]: 1: dropping pkt to 15 (converging)
-[31282]: 1: dropping pkt to 12 (converging)
-[31282]: 1: dropping pkt to 12 (converging)
-[31341]: 1: dropping pkt to 15 (converging)
-[31341]: 1: dropping pkt to 15 (converging)
-[31441]: 1: dropping pkt to 15 (converging)
-[31441]: 1: dropping pkt to 15 (converging)
-[31484]: 1: dropping pkt to 12 (converging)
-[31484]: 1: dropping pkt to 12 (converging)
-[31541]: 1: dropping pkt to 15 (converging)
-[31541]: 1: dropping pkt to 15 (converging)
-[31641]: 1: dropping pkt to 15 (converging)
-[31641]: 1: dropping pkt to 15 (converging)
-[31684]: 1: dropping pkt to 12 (converging)
-[31684]: 1: dropping pkt to 12 (converging)
-[31741]: 1: dropping pkt to 15 (converging)
-[31741]: 1: dropping pkt to 15 (converging)
-[31841]: 1: dropping pkt to 15 (converging)
-[31841]: 1: dropping pkt to 15 (converging)
-[31882]: 1: dropping pkt to 12 (converging)
-[31882]: 1: dropping pkt to 12 (converging)
-[31941]: 1: dropping pkt to 15 (converging)
-[31941]: 1: dropping pkt to 15 (converging)
-[32041]: 1: dropping pkt to 15 (converging)
-[32041]: 1: dropping pkt to 15 (converging)
-[32084]: 1: dropping pkt to 12 (converging)
-[32084]: 1: dropping pkt to 12 (converging)
-[32142]: 1: dropping pkt to 15 (converging)
-[32142]: 1: dropping pkt to 15 (converging)
-[32242]: 1: dropping pkt to 15 (converging)
-[32242]: 1: dropping pkt to 15 (converging)
-[32284]: 1: dropping pkt to 12 (converging)
-[32284]: 1: dropping pkt to 12 (converging)
-[32342]: 1: dropping pkt to 15 (converging)
-[32342]: 1: dropping pkt to 15 (converging)
-[32442]: 1: dropping pkt to 15 (converging)
-[32442]: 1: dropping pkt to 15 (converging)
-[32483]: 1: dropping pkt to 12 (converging)
-[32483]: 1: dropping pkt to 12 (converging)
-[32542]: 1: dropping pkt to 15 (converging)
-[32542]: 1: dropping pkt to 15 (converging)
-[32642]: 1: dropping pkt to 15 (converging)
-[32642]: 1: dropping pkt to 15 (converging)
-[32684]: 1: dropping pkt to 12 (converging)
-[32684]: 1: dropping pkt to 12 (converging)
-[32742]: 1: dropping pkt to 15 (converging)
-[32742]: 1: dropping pkt to 15 (converging)
-[32842]: 1: dropping pkt to 15 (converging)
-[32842]: 1: dropping pkt to 15 (converging)
-[32884]: 1: dropping pkt to 12 (converging)
-[32884]: 1: dropping pkt to 12 (converging)
-[32942]: 1: dropping pkt to 15 (converging)
-[32942]: 1: dropping pkt to 15 (converging)
-[33042]: 1: dropping pkt to 15 (converging)
-[33042]: 1: dropping pkt to 15 (converging)
-[33083]: 1: dropping pkt to 12 (converging)
-[33083]: 1: dropping pkt to 12 (converging)
-[33142]: 1: dropping pkt to 15 (converging)
-[33142]: 1: dropping pkt to 15 (converging)
-[33242]: 1: dropping pkt to 15 (converging)
-[33242]: 1: dropping pkt to 15 (converging)
-[33284]: 1: dropping pkt to 12 (converging)
-[33284]: 1: dropping pkt to 12 (converging)
-[33342]: 1: dropping pkt to 15 (converging)
-[33342]: 1: dropping pkt to 15 (converging)
-[33441]: 1: dropping pkt to 15 (converging)
-[33441]: 1: dropping pkt to 15 (converging)
-[33483]: 1: dropping pkt to 12 (converging)
-[33483]: 1: dropping pkt to 12 (converging)
-[33541]: 1: dropping pkt to 15 (converging)
-[33541]: 1: dropping pkt to 15 (converging)
-[33641]: 1: dropping pkt to 15 (converging)
-[33641]: 1: dropping pkt to 15 (converging)
-[33683]: 1: dropping pkt to 12 (converging)
-[33683]: 1: dropping pkt to 12 (converging)
-[33742]: 1: dropping pkt to 15 (converging)
-[33742]: 1: dropping pkt to 15 (converging)
-[33842]: 1: dropping pkt to 15 (converging)
-[33842]: 1: dropping pkt to 15 (converging)
-[33883]: 1: dropping pkt to 12 (converging)
-[33883]: 1: dropping pkt to 12 (converging)
-[33942]: 1: dropping pkt to 15 (converging)
-[33942]: 1: dropping pkt to 15 (converging)
-[34042]: 1: dropping pkt to 15 (converging)
-[34042]: 1: dropping pkt to 15 (converging)
-[34084]: 1: dropping pkt to 12 (converging)
-[34084]: 1: dropping pkt to 12 (converging)
-[34142]: 1: dropping pkt to 15 (converging)
-[34142]: 1: dropping pkt to 15 (converging)
-[34242]: 1: dropping pkt to 15 (converging)
-[34242]: 1: dropping pkt to 15 (converging)
-[34283]: 1: dropping pkt to 12 (converging)
-[34283]: 1: dropping pkt to 12 (converging)
-[34341]: 1: dropping pkt to 15 (converging)
-[34341]: 1: dropping pkt to 15 (converging)
-[34442]: 1: dropping pkt to 15 (converging)
-[34442]: 1: dropping pkt to 15 (converging)
-[34483]: 1: dropping pkt to 12 (converging)
-[34483]: 1: dropping pkt to 12 (converging)
-[34542]: 1: dropping pkt to 15 (converging)
-[34542]: 1: dropping pkt to 15 (converging)
-[34642]: 1: dropping pkt to 15 (converging)
-[34642]: 1: dropping pkt to 15 (converging)
-[34684]: 1: dropping pkt to 12 (converging)
-[34684]: 1: dropping pkt to 12 (converging)
-[34742]: 1: dropping pkt to 15 (converging)
-[34742]: 1: dropping pkt to 15 (converging)
-[34842]: 1: dropping pkt to 15 (converging)
-[34842]: 1: dropping pkt to 15 (converging)
-[34883]: 1: dropping pkt to 12 (converging)
-[34883]: 1: dropping pkt to 12 (converging)
-[34942]: 1: dropping pkt to 15 (converging)
-[34942]: 1: dropping pkt to 15 (converging)
-[35042]: 1: dropping pkt to 15 (converging)
-[35042]: 1: dropping pkt to 15 (converging)
-[35083]: 1: dropping pkt to 12 (converging)
-[35083]: 1: dropping pkt to 12 (converging)
-[35142]: 1: dropping pkt to 15 (converging)
-[35142]: 1: dropping pkt to 15 (converging)
-[35242]: 1: dropping pkt to 15 (converging)
-[35242]: 1: dropping pkt to 15 (converging)
-[35284]: 1: dropping pkt to 12 (converging)
-[35284]: 1: dropping pkt to 12 (converging)
-[35342]: 1: dropping pkt to 15 (converging)
-[35342]: 1: dropping pkt to 15 (converging)
-[35442]: 1: dropping pkt to 15 (converging)
-[35442]: 1: dropping pkt to 15 (converging)
-[35483]: 1: dropping pkt to 12 (converging)
-[35483]: 1: dropping pkt to 12 (converging)
-[35542]: 1: dropping pkt to 15 (converging)
-[35542]: 1: dropping pkt to 15 (converging)
-[35641]: 1: dropping pkt to 15 (converging)
-[35641]: 1: dropping pkt to 15 (converging)
-[35683]: 1: dropping pkt to 12 (converging)
-[35683]: 1: dropping pkt to 12 (converging)
-[35741]: 1: dropping pkt to 15 (converging)
-[35741]: 1: dropping pkt to 15 (converging)
-[35842]: 1: dropping pkt to 15 (converging)
-[35842]: 1: dropping pkt to 15 (converging)
-[35884]: 1: dropping pkt to 12 (converging)
-[35884]: 1: dropping pkt to 12 (converging)
-[35941]: 1: dropping pkt to 15 (converging)
-[35941]: 1: dropping pkt to 15 (converging)
-[36042]: 1: dropping pkt to 15 (converging)
-[36042]: 1: dropping pkt to 15 (converging)
-[36083]: 1: dropping pkt to 12 (converging)
-[36083]: 1: dropping pkt to 12 (converging)
-[36141]: 1: dropping pkt to 15 (converging)
-[36141]: 1: dropping pkt to 15 (converging)
-[36242]: 1: dropping pkt to 15 (converging)
-[36242]: 1: dropping pkt to 15 (converging)
-[36283]: 1: dropping pkt to 12 (converging)
-[36283]: 1: dropping pkt to 12 (converging)
-[36342]: 1: dropping pkt to 15 (converging)
-[36342]: 1: dropping pkt to 15 (converging)
-[36442]: 1: dropping pkt to 15 (converging)
-[36442]: 1: dropping pkt to 15 (converging)
-[36484]: 1: dropping pkt to 12 (converging)
-[36484]: 1: dropping pkt to 12 (converging)
-[36542]: 1: dropping pkt to 15 (converging)
-[36542]: 1: dropping pkt to 15 (converging)
-[36641]: 1: dropping pkt to 15 (converging)
-[36641]: 1: dropping pkt to 15 (converging)
-[36682]: 1: dropping pkt to 12 (converging)
-[36682]: 1: dropping pkt to 12 (converging)
-[36741]: 1: dropping pkt to 15 (converging)
-[36741]: 1: dropping pkt to 15 (converging)
-[36841]: 1: dropping pkt to 15 (converging)
-[36841]: 1: dropping pkt to 15 (converging)
-[36883]: 1: dropping pkt to 12 (converging)
-[36883]: 1: dropping pkt to 12 (converging)
-[36941]: 1: dropping pkt to 15 (converging)
-[36941]: 1: dropping pkt to 15 (converging)
-[37041]: 1: dropping pkt to 15 (converging)
-[37041]: 1: dropping pkt to 15 (converging)
-[37084]: 1: dropping pkt to 12 (converging)
-[37084]: 1: dropping pkt to 12 (converging)
-[37142]: 1: dropping pkt to 15 (converging)
-[37142]: 1: dropping pkt to 15 (converging)
-[37242]: 1: dropping pkt to 15 (converging)
-[37242]: 1: dropping pkt to 15 (converging)
-[37283]: 1: dropping pkt to 12 (converging)
-[37283]: 1: dropping pkt to 12 (converging)
-[37342]: 1: dropping pkt to 15 (converging)
-[37342]: 1: dropping pkt to 15 (converging)
-[37442]: 1: dropping pkt to 15 (converging)
-[37442]: 1: dropping pkt to 15 (converging)
-[37484]: 1: dropping pkt to 12 (converging)
-[37484]: 1: dropping pkt to 12 (converging)
-[37542]: 1: dropping pkt to 15 (converging)
-[37542]: 1: dropping pkt to 15 (converging)
-[37642]: 1: dropping pkt to 15 (converging)
-[37642]: 1: dropping pkt to 15 (converging)
-[37684]: 1: dropping pkt to 12 (converging)
-[37684]: 1: dropping pkt to 12 (converging)
-[37742]: 1: dropping pkt to 15 (converging)
-[37742]: 1: dropping pkt to 15 (converging)
-[37841]: 1: dropping pkt to 15 (converging)
-[37841]: 1: dropping pkt to 15 (converging)
-[37883]: 1: dropping pkt to 12 (converging)
-[37883]: 1: dropping pkt to 12 (converging)
-[37941]: 1: dropping pkt to 15 (converging)
-[37941]: 1: dropping pkt to 15 (converging)
-[38041]: 1: dropping pkt to 15 (converging)
-[38041]: 1: dropping pkt to 15 (converging)
-[38083]: 1: dropping pkt to 12 (converging)
-[38083]: 1: dropping pkt to 12 (converging)
-[38142]: 1: dropping pkt to 15 (converging)
-[38142]: 1: dropping pkt to 15 (converging)
-[38241]: 1: dropping pkt to 15 (converging)
-[38241]: 1: dropping pkt to 15 (converging)
-[38283]: 1: dropping pkt to 12 (converging)
-[38283]: 1: dropping pkt to 12 (converging)
-[38342]: 1: dropping pkt to 15 (converging)
-[38342]: 1: dropping pkt to 15 (converging)
-[38441]: 1: dropping pkt to 15 (converging)
-[38441]: 1: dropping pkt to 15 (converging)
-[38482]: 1: dropping pkt to 12 (converging)
-[38482]: 1: dropping pkt to 12 (converging)
-[38541]: 1: dropping pkt to 15 (converging)
-[38541]: 1: dropping pkt to 15 (converging)
-[38641]: 1: dropping pkt to 15 (converging)
-[38641]: 1: dropping pkt to 15 (converging)
-[38683]: 1: dropping pkt to 12 (converging)
-[38683]: 1: dropping pkt to 12 (converging)
-[38741]: 1: dropping pkt to 15 (converging)
-[38741]: 1: dropping pkt to 15 (converging)
-[38841]: 1: dropping pkt to 15 (converging)
-[38841]: 1: dropping pkt to 15 (converging)
-[38883]: 1: dropping pkt to 12 (converging)
-[38883]: 1: dropping pkt to 12 (converging)
-[38941]: 1: dropping pkt to 15 (converging)
-[38941]: 1: dropping pkt to 15 (converging)
-[39041]: 1: dropping pkt to 15 (converging)
-[39041]: 1: dropping pkt to 15 (converging)
-[39083]: 1: dropping pkt to 12 (converging)
-[39083]: 1: dropping pkt to 12 (converging)
-[39141]: 1: dropping pkt to 15 (converging)
-[39141]: 1: dropping pkt to 15 (converging)
-[39241]: 1: dropping pkt to 15 (converging)
-[39241]: 1: dropping pkt to 15 (converging)
-[39283]: 1: dropping pkt to 12 (converging)
-[39283]: 1: dropping pkt to 12 (converging)
-[39341]: 1: dropping pkt to 15 (converging)
-[39341]: 1: dropping pkt to 15 (converging)
-[39442]: 1: dropping pkt to 15 (converging)
-[39442]: 1: dropping pkt to 15 (converging)
-[39484]: 1: dropping pkt to 12 (converging)
-[39484]: 1: dropping pkt to 12 (converging)
-[39541]: 1: dropping pkt to 15 (converging)
-[39541]: 1: dropping pkt to 15 (converging)
-[39641]: 1: dropping pkt to 15 (converging)
-[39641]: 1: dropping pkt to 15 (converging)
-[39683]: 1: dropping pkt to 12 (converging)
-[39683]: 1: dropping pkt to 12 (converging)
-[39741]: 1: dropping pkt to 15 (converging)
-[39741]: 1: dropping pkt to 15 (converging)
-[39841]: 1: dropping pkt to 15 (converging)
-[39841]: 1: dropping pkt to 15 (converging)
-[39883]: 1: dropping pkt to 12 (converging)
-[39883]: 1: dropping pkt to 12 (converging)
-[39941]: 1: dropping pkt to 15 (converging)
-[39941]: 1: dropping pkt to 15 (converging)
-[40041]: 1: dropping pkt to 15 (converging)
-[40041]: 1: dropping pkt to 15 (converging)
-[40084]: 1: dropping pkt to 12 (converging)
-[40084]: 1: dropping pkt to 12 (converging)
-[40142]: 1: dropping pkt to 15 (converging)
-[40142]: 1: dropping pkt to 15 (converging)
-[40242]: 1: dropping pkt to 15 (converging)
-[40242]: 1: dropping pkt to 15 (converging)
-[40283]: 1: dropping pkt to 12 (converging)
-[40283]: 1: dropping pkt to 12 (converging)
-[40342]: 1: dropping pkt to 15 (converging)
-[40342]: 1: dropping pkt to 15 (converging)
-[40442]: 1: dropping pkt to 15 (converging)
-[40442]: 1: dropping pkt to 15 (converging)
-[40484]: 1: dropping pkt to 12 (converging)
-[40484]: 1: dropping pkt to 12 (converging)
-[40542]: 1: dropping pkt to 15 (converging)
-[40542]: 1: dropping pkt to 15 (converging)
-[40642]: 1: dropping pkt to 15 (converging)
-[40642]: 1: dropping pkt to 15 (converging)
-[40684]: 1: dropping pkt to 12 (converging)
-[40684]: 1: dropping pkt to 12 (converging)
-[40742]: 1: dropping pkt to 15 (converging)
-[40742]: 1: dropping pkt to 15 (converging)
-[40842]: 1: dropping pkt to 15 (converging)
-[40842]: 1: dropping pkt to 15 (converging)
-[40883]: 1: dropping pkt to 12 (converging)
-[40883]: 1: dropping pkt to 12 (converging)
-[40941]: 1: dropping pkt to 15 (converging)
-[40941]: 1: dropping pkt to 15 (converging)
-[41042]: 1: dropping pkt to 15 (converging)
-[41042]: 1: dropping pkt to 15 (converging)
-[41083]: 1: dropping pkt to 12 (converging)
-[41083]: 1: dropping pkt to 12 (converging)
-[41142]: 1: dropping pkt to 15 (converging)
-[41142]: 1: dropping pkt to 15 (converging)
-[41242]: 1: dropping pkt to 15 (converging)
-[41242]: 1: dropping pkt to 15 (converging)
-[41284]: 1: dropping pkt to 12 (converging)
-[41284]: 1: dropping pkt to 12 (converging)
-[41342]: 1: dropping pkt to 15 (converging)
-[41342]: 1: dropping pkt to 15 (converging)
-[41442]: 1: dropping pkt to 15 (converging)
-[41442]: 1: dropping pkt to 15 (converging)
-[41483]: 1: dropping pkt to 12 (converging)
-[41483]: 1: dropping pkt to 12 (converging)
-[41542]: 1: dropping pkt to 15 (converging)
-[41542]: 1: dropping pkt to 15 (converging)
-[41641]: 1: dropping pkt to 15 (converging)
-[41641]: 1: dropping pkt to 15 (converging)
-[41683]: 1: dropping pkt to 12 (converging)
-[41683]: 1: dropping pkt to 12 (converging)
-[41742]: 1: dropping pkt to 15 (converging)
-[41742]: 1: dropping pkt to 15 (converging)
-[41841]: 1: dropping pkt to 15 (converging)
-[41841]: 1: dropping pkt to 15 (converging)
-[41884]: 1: dropping pkt to 12 (converging)
-[41884]: 1: dropping pkt to 12 (converging)
-[41942]: 1: dropping pkt to 15 (converging)
-[41942]: 1: dropping pkt to 15 (converging)
-[42042]: 1: dropping pkt to 15 (converging)
-[42042]: 1: dropping pkt to 15 (converging)
-[42083]: 1: dropping pkt to 12 (converging)
-[42083]: 1: dropping pkt to 12 (converging)
-[42141]: 1: dropping pkt to 15 (converging)
-[42141]: 1: dropping pkt to 15 (converging)
-[42241]: 1: dropping pkt to 15 (converging)
-[42241]: 1: dropping pkt to 15 (converging)
-[42283]: 1: dropping pkt to 12 (converging)
-[42283]: 1: dropping pkt to 12 (converging)
-[42341]: 1: dropping pkt to 15 (converging)
-[42341]: 1: dropping pkt to 15 (converging)
-[42441]: 1: dropping pkt to 15 (converging)
-[42441]: 1: dropping pkt to 15 (converging)
-[42483]: 1: dropping pkt to 12 (converging)
-[42483]: 1: dropping pkt to 12 (converging)
-[42541]: 1: dropping pkt to 15 (converging)
-[42541]: 1: dropping pkt to 15 (converging)
-[42641]: 1: dropping pkt to 15 (converging)
-[42641]: 1: dropping pkt to 15 (converging)
-[42683]: 1: dropping pkt to 12 (converging)
-[42683]: 1: dropping pkt to 12 (converging)
-[42741]: 1: dropping pkt to 15 (converging)
-[42741]: 1: dropping pkt to 15 (converging)
-[42841]: 1: dropping pkt to 15 (converging)
-[42841]: 1: dropping pkt to 15 (converging)
-[42883]: 1: dropping pkt to 12 (converging)
-[42883]: 1: dropping pkt to 12 (converging)
-[42941]: 1: dropping pkt to 15 (converging)
-[42941]: 1: dropping pkt to 15 (converging)
-[43041]: 1: dropping pkt to 15 (converging)
-[43041]: 1: dropping pkt to 15 (converging)
-[43083]: 1: dropping pkt to 12 (converging)
-[43083]: 1: dropping pkt to 12 (converging)
-[43141]: 1: dropping pkt to 15 (converging)
-[43141]: 1: dropping pkt to 15 (converging)
-[43241]: 1: dropping pkt to 15 (converging)
-[43241]: 1: dropping pkt to 15 (converging)
-[43283]: 1: dropping pkt to 12 (converging)
-[43283]: 1: dropping pkt to 12 (converging)
-[43341]: 1: dropping pkt to 15 (converging)
-[43341]: 1: dropping pkt to 15 (converging)
-[43441]: 1: dropping pkt to 15 (converging)
-[43441]: 1: dropping pkt to 15 (converging)
-[43483]: 1: dropping pkt to 12 (converging)
-[43483]: 1: dropping pkt to 12 (converging)
-[43541]: 1: dropping pkt to 15 (converging)
-[43541]: 1: dropping pkt to 15 (converging)
-[43641]: 1: dropping pkt to 15 (converging)
-[43641]: 1: dropping pkt to 15 (converging)
-[43684]: 1: dropping pkt to 12 (converging)
-[43684]: 1: dropping pkt to 12 (converging)
-[43742]: 1: dropping pkt to 15 (converging)
-[43742]: 1: dropping pkt to 15 (converging)
-[43841]: 1: dropping pkt to 15 (converging)
-[43841]: 1: dropping pkt to 15 (converging)
-[43882]: 1: dropping pkt to 12 (converging)
-[43882]: 1: dropping pkt to 12 (converging)
-[43941]: 1: dropping pkt to 15 (converging)
-[43941]: 1: dropping pkt to 15 (converging)
-[44041]: 1: dropping pkt to 15 (converging)
-[44041]: 1: dropping pkt to 15 (converging)
-[44084]: 1: dropping pkt to 12 (converging)
-[44084]: 1: dropping pkt to 12 (converging)
-[44142]: 1: dropping pkt to 15 (converging)
-[44142]: 1: dropping pkt to 15 (converging)
-[44242]: 1: dropping pkt to 15 (converging)
-[44242]: 1: dropping pkt to 15 (converging)
-[44284]: 1: dropping pkt to 12 (converging)
-[44284]: 1: dropping pkt to 12 (converging)
-[44342]: 1: dropping pkt to 15 (converging)
-[44342]: 1: dropping pkt to 15 (converging)
-[44441]: 1: dropping pkt to 15 (converging)
-[44441]: 1: dropping pkt to 15 (converging)
-[44483]: 1: dropping pkt to 12 (converging)
-[44483]: 1: dropping pkt to 12 (converging)
-[44541]: 1: dropping pkt to 15 (converging)
-[44541]: 1: dropping pkt to 15 (converging)
-[44641]: 1: dropping pkt to 15 (converging)
-[44641]: 1: dropping pkt to 15 (converging)
-[44683]: 1: dropping pkt to 12 (converging)
-[44683]: 1: dropping pkt to 12 (converging)
-[44742]: 1: dropping pkt to 15 (converging)
-[44742]: 1: dropping pkt to 15 (converging)
-[44842]: 1: dropping pkt to 15 (converging)
-[44842]: 1: dropping pkt to 15 (converging)
-[44884]: 1: dropping pkt to 12 (converging)
-[44884]: 1: dropping pkt to 12 (converging)
-[44942]: 1: dropping pkt to 15 (converging)
-[44942]: 1: dropping pkt to 15 (converging)
-[45042]: 1: dropping pkt to 15 (converging)
-[45042]: 1: dropping pkt to 15 (converging)
-[45083]: 1: dropping pkt to 12 (converging)
-[45083]: 1: dropping pkt to 12 (converging)
-[45142]: 1: dropping pkt to 15 (converging)
-[45142]: 1: dropping pkt to 15 (converging)
-[45242]: 1: dropping pkt to 15 (converging)
-[45242]: 1: dropping pkt to 15 (converging)
-[45284]: 1: dropping pkt to 12 (converging)
-[45284]: 1: dropping pkt to 12 (converging)
-[45342]: 1: dropping pkt to 15 (converging)
-[45342]: 1: dropping pkt to 15 (converging)
-[45441]: 1: dropping pkt to 15 (converging)
-[45441]: 1: dropping pkt to 15 (converging)
-[45483]: 1: dropping pkt to 12 (converging)
-[45483]: 1: dropping pkt to 12 (converging)
-[45542]: 1: dropping pkt to 15 (converging)
-[45542]: 1: dropping pkt to 15 (converging)
-[45641]: 1: dropping pkt to 15 (converging)
-[45641]: 1: dropping pkt to 15 (converging)
-[45683]: 1: dropping pkt to 12 (converging)
-[45683]: 1: dropping pkt to 12 (converging)
-[45742]: 1: dropping pkt to 15 (converging)
-[45742]: 1: dropping pkt to 15 (converging)
-[45841]: 1: dropping pkt to 15 (converging)
-[45841]: 1: dropping pkt to 15 (converging)
-[45883]: 1: dropping pkt to 12 (converging)
-[45883]: 1: dropping pkt to 12 (converging)
-[45941]: 1: dropping pkt to 15 (converging)
-[45941]: 1: dropping pkt to 15 (converging)
-[46042]: 1: dropping pkt to 15 (converging)
-[46042]: 1: dropping pkt to 15 (converging)
-[46084]: 1: dropping pkt to 12 (converging)
-[46084]: 1: dropping pkt to 12 (converging)
-[46142]: 1: dropping pkt to 15 (converging)
-[46142]: 1: dropping pkt to 15 (converging)
-[46242]: 1: dropping pkt to 15 (converging)
-[46242]: 1: dropping pkt to 15 (converging)
-[46283]: 1: dropping pkt to 12 (converging)
-[46283]: 1: dropping pkt to 12 (converging)
-[46341]: 1: dropping pkt to 15 (converging)
-[46341]: 1: dropping pkt to 15 (converging)
-[46441]: 1: dropping pkt to 15 (converging)
-[46441]: 1: dropping pkt to 15 (converging)
-[46483]: 1: dropping pkt to 12 (converging)
-[46483]: 1: dropping pkt to 12 (converging)
-[46541]: 1: dropping pkt to 15 (converging)
-[46541]: 1: dropping pkt to 15 (converging)
-[46642]: 1: dropping pkt to 15 (converging)
-[46642]: 1: dropping pkt to 15 (converging)
-[46683]: 1: dropping pkt to 12 (converging)
-[46683]: 1: dropping pkt to 12 (converging)
-[46741]: 1: dropping pkt to 15 (converging)
-[46741]: 1: dropping pkt to 15 (converging)
-[46841]: 1: dropping pkt to 15 (converging)
-[46841]: 1: dropping pkt to 15 (converging)
-[46883]: 1: dropping pkt to 12 (converging)
-[46883]: 1: dropping pkt to 12 (converging)
-[46941]: 1: dropping pkt to 15 (converging)
-[46941]: 1: dropping pkt to 15 (converging)
-[47041]: 1: dropping pkt to 15 (converging)
-[47041]: 1: dropping pkt to 15 (converging)
-[47083]: 1: dropping pkt to 12 (converging)
-[47083]: 1: dropping pkt to 12 (converging)
-[47142]: 1: dropping pkt to 15 (converging)
-[47142]: 1: dropping pkt to 15 (converging)
-[47241]: 1: dropping pkt to 15 (converging)
-[47241]: 1: dropping pkt to 15 (converging)
-[47283]: 1: dropping pkt to 12 (converging)
-[47283]: 1: dropping pkt to 12 (converging)
-[47342]: 1: dropping pkt to 15 (converging)
-[47342]: 1: dropping pkt to 15 (converging)
-[47441]: 1: dropping pkt to 15 (converging)
-[47441]: 1: dropping pkt to 15 (converging)
-[47482]: 1: dropping pkt to 12 (converging)
-[47482]: 1: dropping pkt to 12 (converging)
-[47541]: 1: dropping pkt to 15 (converging)
-[47541]: 1: dropping pkt to 15 (converging)
-[47641]: 1: dropping pkt to 15 (converging)
-[47641]: 1: dropping pkt to 15 (converging)
-[47683]: 1: dropping pkt to 12 (converging)
-[47683]: 1: dropping pkt to 12 (converging)
-[47741]: 1: dropping pkt to 15 (converging)
-[47741]: 1: dropping pkt to 15 (converging)
-[47841]: 1: dropping pkt to 15 (converging)
-[47841]: 1: dropping pkt to 15 (converging)
-[47883]: 1: dropping pkt to 12 (converging)
-[47883]: 1: dropping pkt to 12 (converging)
-[47941]: 1: dropping pkt to 15 (converging)
-[47941]: 1: dropping pkt to 15 (converging)
-[48041]: 1: dropping pkt to 15 (converging)
-[48041]: 1: dropping pkt to 15 (converging)
-[48083]: 1: dropping pkt to 12 (converging)
-[48083]: 1: dropping pkt to 12 (converging)
-[48141]: 1: dropping pkt to 15 (converging)
-[48141]: 1: dropping pkt to 15 (converging)
-[48241]: 1: dropping pkt to 15 (converging)
-[48241]: 1: dropping pkt to 15 (converging)
-[48283]: 1: dropping pkt to 12 (converging)
-[48283]: 1: dropping pkt to 12 (converging)
-[48341]: 1: dropping pkt to 15 (converging)
-[48341]: 1: dropping pkt to 15 (converging)
-[48441]: 1: dropping pkt to 15 (converging)
-[48441]: 1: dropping pkt to 15 (converging)
-[48484]: 1: dropping pkt to 12 (converging)
-[48484]: 1: dropping pkt to 12 (converging)
-[48542]: 1: dropping pkt to 15 (converging)
-[48542]: 1: dropping pkt to 15 (converging)
-[48642]: 1: dropping pkt to 15 (converging)
-[48642]: 1: dropping pkt to 15 (converging)
-[48683]: 1: dropping pkt to 12 (converging)
-[48683]: 1: dropping pkt to 12 (converging)
-[48742]: 1: dropping pkt to 15 (converging)
-[48742]: 1: dropping pkt to 15 (converging)
-[48842]: 1: dropping pkt to 15 (converging)
-[48842]: 1: dropping pkt to 15 (converging)
-[48884]: 1: dropping pkt to 12 (converging)
-[48884]: 1: dropping pkt to 12 (converging)
-[48942]: 1: dropping pkt to 15 (converging)
-[48942]: 1: dropping pkt to 15 (converging)
-[49042]: 1: dropping pkt to 15 (converging)
-[49042]: 1: dropping pkt to 15 (converging)
-[49084]: 1: dropping pkt to 12 (converging)
-[49084]: 1: dropping pkt to 12 (converging)
-[49142]: 1: dropping pkt to 15 (converging)
-[49142]: 1: dropping pkt to 15 (converging)
-[49241]: 1: dropping pkt to 15 (converging)
-[49241]: 1: dropping pkt to 15 (converging)
-[49282]: 1: dropping pkt to 12 (converging)
-[49282]: 1: dropping pkt to 12 (converging)
-[49341]: 1: dropping pkt to 15 (converging)
-[49341]: 1: dropping pkt to 15 (converging)
-[49441]: 1: dropping pkt to 15 (converging)
-[49441]: 1: dropping pkt to 15 (converging)
-[49484]: 1: dropping pkt to 12 (converging)
-[49484]: 1: dropping pkt to 12 (converging)
-[49541]: 1: dropping pkt to 15 (converging)
-[49541]: 1: dropping pkt to 15 (converging)
-[49642]: 1: dropping pkt to 15 (converging)
-[49642]: 1: dropping pkt to 15 (converging)
-[49684]: 1: dropping pkt to 12 (converging)
-[49684]: 1: dropping pkt to 12 (converging)
-[49742]: 1: dropping pkt to 15 (converging)
-[49742]: 1: dropping pkt to 15 (converging)
-[49842]: 1: dropping pkt to 15 (converging)
-[49842]: 1: dropping pkt to 15 (converging)
-[49883]: 1: dropping pkt to 12 (converging)
-[49883]: 1: dropping pkt to 12 (converging)
-[49942]: 1: dropping pkt to 15 (converging)
-[49942]: 1: dropping pkt to 15 (converging)
-[50042]: 1: dropping pkt to 15 (converging)
-[50042]: 1: dropping pkt to 15 (converging)
-[50084]: 1: dropping pkt to 12 (converging)
-[50084]: 1: dropping pkt to 12 (converging)
-[50142]: 1: dropping pkt to 15 (converging)
-[50142]: 1: dropping pkt to 15 (converging)
-[50242]: 1: dropping pkt to 15 (converging)
-[50242]: 1: dropping pkt to 15 (converging)
-[50284]: 1: dropping pkt to 12 (converging)
-[50284]: 1: dropping pkt to 12 (converging)
-[50341]: 1: dropping pkt to 15 (converging)
-[50341]: 1: dropping pkt to 15 (converging)
-[50441]: 1: dropping pkt to 15 (converging)
-[50441]: 1: dropping pkt to 15 (converging)
-[50482]: 1: dropping pkt to 12 (converging)
-[50482]: 1: dropping pkt to 12 (converging)
-[50541]: 1: dropping pkt to 15 (converging)
-[50541]: 1: dropping pkt to 15 (converging)
-[50641]: 1: dropping pkt to 15 (converging)
-[50641]: 1: dropping pkt to 15 (converging)
-[50684]: 1: dropping pkt to 12 (converging)
-[50684]: 1: dropping pkt to 12 (converging)
-[50742]: 1: dropping pkt to 15 (converging)
-[50742]: 1: dropping pkt to 15 (converging)
-[50842]: 1: dropping pkt to 15 (converging)
-[50842]: 1: dropping pkt to 15 (converging)
-[50884]: 1: dropping pkt to 12 (converging)
-[50884]: 1: dropping pkt to 12 (converging)
-[50942]: 1: dropping pkt to 15 (converging)
-[50942]: 1: dropping pkt to 15 (converging)
-[51042]: 1: dropping pkt to 15 (converging)
-[51042]: 1: dropping pkt to 15 (converging)
-[51082]: 1: dropping pkt to 12 (converging)
-[51082]: 1: dropping pkt to 12 (converging)
-[51142]: 1: dropping pkt to 15 (converging)
-[51142]: 1: dropping pkt to 15 (converging)
-[51242]: 1: dropping pkt to 15 (converging)
-[51242]: 1: dropping pkt to 15 (converging)
-[51284]: 1: dropping pkt to 12 (converging)
-[51284]: 1: dropping pkt to 12 (converging)
-[51341]: 1: dropping pkt to 15 (converging)
-[51341]: 1: dropping pkt to 15 (converging)
-[51441]: 1: dropping pkt to 15 (converging)
-[51441]: 1: dropping pkt to 15 (converging)
-[51484]: 1: dropping pkt to 12 (converging)
-[51484]: 1: dropping pkt to 12 (converging)
-[51541]: 1: dropping pkt to 15 (converging)
-[51541]: 1: dropping pkt to 15 (converging)
-[51641]: 1: dropping pkt to 15 (converging)
-[51641]: 1: dropping pkt to 15 (converging)
-[51682]: 1: dropping pkt to 12 (converging)
-[51682]: 1: dropping pkt to 12 (converging)
-[51741]: 1: dropping pkt to 15 (converging)
-[51741]: 1: dropping pkt to 15 (converging)
-[51841]: 1: dropping pkt to 15 (converging)
-[51841]: 1: dropping pkt to 15 (converging)
-[51884]: 1: dropping pkt to 12 (converging)
-[51884]: 1: dropping pkt to 12 (converging)
-[51941]: 1: dropping pkt to 15 (converging)
-[51941]: 1: dropping pkt to 15 (converging)
-[52041]: 1: dropping pkt to 15 (converging)
-[52041]: 1: dropping pkt to 15 (converging)
-[52084]: 1: dropping pkt to 12 (converging)
-[52084]: 1: dropping pkt to 12 (converging)
-[52141]: 1: dropping pkt to 15 (converging)
-[52141]: 1: dropping pkt to 15 (converging)
-[52241]: 1: dropping pkt to 15 (converging)
-[52241]: 1: dropping pkt to 15 (converging)
-[52282]: 1: dropping pkt to 12 (converging)
-[52282]: 1: dropping pkt to 12 (converging)
-[52341]: 1: dropping pkt to 15 (converging)
-[52341]: 1: dropping pkt to 15 (converging)
-[52441]: 1: dropping pkt to 15 (converging)
-[52441]: 1: dropping pkt to 15 (converging)
-[52484]: 1: dropping pkt to 12 (converging)
-[52484]: 1: dropping pkt to 12 (converging)
-[52542]: 1: dropping pkt to 15 (converging)
-[52542]: 1: dropping pkt to 15 (converging)
-[52641]: 1: dropping pkt to 15 (converging)
-[52641]: 1: dropping pkt to 15 (converging)
-[52684]: 1: dropping pkt to 12 (converging)
-[52684]: 1: dropping pkt to 12 (converging)
-[52742]: 1: dropping pkt to 15 (converging)
-[52742]: 1: dropping pkt to 15 (converging)
-[52841]: 1: dropping pkt to 15 (converging)
-[52841]: 1: dropping pkt to 15 (converging)
-[52882]: 1: dropping pkt to 12 (converging)
-[52882]: 1: dropping pkt to 12 (converging)
-[52941]: 1: dropping pkt to 15 (converging)
-[52941]: 1: dropping pkt to 15 (converging)
-[53041]: 1: dropping pkt to 15 (converging)
-[53041]: 1: dropping pkt to 15 (converging)
-[53084]: 1: dropping pkt to 12 (converging)
-[53084]: 1: dropping pkt to 12 (converging)
-[53141]: 1: dropping pkt to 15 (converging)
-[53141]: 1: dropping pkt to 15 (converging)
-[53241]: 1: dropping pkt to 15 (converging)
-[53241]: 1: dropping pkt to 15 (converging)
-[53284]: 1: dropping pkt to 12 (converging)
-[53284]: 1: dropping pkt to 12 (converging)
-[53341]: 1: dropping pkt to 15 (converging)
-[53341]: 1: dropping pkt to 15 (converging)
-[53441]: 1: dropping pkt to 15 (converging)
-[53441]: 1: dropping pkt to 15 (converging)
-[53482]: 1: dropping pkt to 12 (converging)
-[53482]: 1: dropping pkt to 12 (converging)
-[53541]: 1: dropping pkt to 15 (converging)
-[53541]: 1: dropping pkt to 15 (converging)
-[53641]: 1: dropping pkt to 15 (converging)
-[53641]: 1: dropping pkt to 15 (converging)
-[53684]: 1: dropping pkt to 12 (converging)
-[53684]: 1: dropping pkt to 12 (converging)
-[53742]: 1: dropping pkt to 15 (converging)
-[53742]: 1: dropping pkt to 15 (converging)
-[53842]: 1: dropping pkt to 15 (converging)
-[53842]: 1: dropping pkt to 15 (converging)
-[53884]: 1: dropping pkt to 12 (converging)
-[53884]: 1: dropping pkt to 12 (converging)
-[53942]: 1: dropping pkt to 15 (converging)
-[53942]: 1: dropping pkt to 15 (converging)
-[54042]: 1: dropping pkt to 15 (converging)
-[54042]: 1: dropping pkt to 15 (converging)
-[54083]: 1: dropping pkt to 12 (converging)
-[54083]: 1: dropping pkt to 12 (converging)
-[54142]: 1: dropping pkt to 15 (converging)
-[54142]: 1: dropping pkt to 15 (converging)
-[54242]: 1: dropping pkt to 15 (converging)
-[54242]: 1: dropping pkt to 15 (converging)
-[54284]: 1: dropping pkt to 12 (converging)
-[54284]: 1: dropping pkt to 12 (converging)
-[54342]: 1: dropping pkt to 15 (converging)
-[54342]: 1: dropping pkt to 15 (converging)
-[54442]: 1: dropping pkt to 15 (converging)
-[54442]: 1: dropping pkt to 15 (converging)
-[54484]: 1: dropping pkt to 12 (converging)
-[54484]: 1: dropping pkt to 12 (converging)
-[54542]: 1: dropping pkt to 15 (converging)
-[54542]: 1: dropping pkt to 15 (converging)
-[54642]: 1: dropping pkt to 15 (converging)
-[54642]: 1: dropping pkt to 15 (converging)
-[54683]: 1: dropping pkt to 12 (converging)
-[54683]: 1: dropping pkt to 12 (converging)
-[54742]: 1: dropping pkt to 15 (converging)
-[54742]: 1: dropping pkt to 15 (converging)
-[54842]: 1: dropping pkt to 15 (converging)
-[54842]: 1: dropping pkt to 15 (converging)
-[54884]: 1: dropping pkt to 12 (converging)
-[54884]: 1: dropping pkt to 12 (converging)
-[54942]: 1: dropping pkt to 15 (converging)
-[54942]: 1: dropping pkt to 15 (converging)
-[55041]: 1: dropping pkt to 15 (converging)
-[55041]: 1: dropping pkt to 15 (converging)
-[55083]: 1: dropping pkt to 12 (converging)
-[55083]: 1: dropping pkt to 12 (converging)
-[55141]: 1: dropping pkt to 15 (converging)
-[55141]: 1: dropping pkt to 15 (converging)
-[55241]: 1: dropping pkt to 15 (converging)
-[55241]: 1: dropping pkt to 15 (converging)
-[55283]: 1: dropping pkt to 12 (converging)
-[55283]: 1: dropping pkt to 12 (converging)
-[55342]: 1: dropping pkt to 15 (converging)
-[55342]: 1: dropping pkt to 15 (converging)
-[55442]: 1: dropping pkt to 15 (converging)
-[55442]: 1: dropping pkt to 15 (converging)
-[55483]: 1: dropping pkt to 12 (converging)
-[55483]: 1: dropping pkt to 12 (converging)
-[55542]: 1: dropping pkt to 15 (converging)
-[55542]: 1: dropping pkt to 15 (converging)
-[55642]: 1: dropping pkt to 15 (converging)
-[55642]: 1: dropping pkt to 15 (converging)
-[55684]: 1: dropping pkt to 12 (converging)
-[55684]: 1: dropping pkt to 12 (converging)
-[55742]: 1: dropping pkt to 15 (converging)
-[55742]: 1: dropping pkt to 15 (converging)
-[55842]: 1: dropping pkt to 15 (converging)
-[55842]: 1: dropping pkt to 15 (converging)
-[55883]: 1: dropping pkt to 12 (converging)
-[55883]: 1: dropping pkt to 12 (converging)
-[55941]: 1: dropping pkt to 15 (converging)
-[55941]: 1: dropping pkt to 15 (converging)
-[56042]: 1: dropping pkt to 15 (converging)
-[56042]: 1: dropping pkt to 15 (converging)
-[56083]: 1: dropping pkt to 12 (converging)
-[56083]: 1: dropping pkt to 12 (converging)
-[56142]: 1: dropping pkt to 15 (converging)
-[56142]: 1: dropping pkt to 15 (converging)
-[56242]: 1: dropping pkt to 15 (converging)
-[56242]: 1: dropping pkt to 15 (converging)
-[56284]: 1: dropping pkt to 12 (converging)
-[56284]: 1: dropping pkt to 12 (converging)
-[56342]: 1: dropping pkt to 15 (converging)
-[56342]: 1: dropping pkt to 15 (converging)
-[56442]: 1: dropping pkt to 15 (converging)
-[56442]: 1: dropping pkt to 15 (converging)
-[56483]: 1: dropping pkt to 12 (converging)
-[56483]: 1: dropping pkt to 12 (converging)
-[56542]: 1: dropping pkt to 15 (converging)
-[56542]: 1: dropping pkt to 15 (converging)
-[56642]: 1: dropping pkt to 15 (converging)
-[56642]: 1: dropping pkt to 15 (converging)
-[56683]: 1: dropping pkt to 12 (converging)
-[56683]: 1: dropping pkt to 12 (converging)
-[56742]: 1: dropping pkt to 15 (converging)
-[56742]: 1: dropping pkt to 15 (converging)
-[56842]: 1: dropping pkt to 15 (converging)
-[56842]: 1: dropping pkt to 15 (converging)
-[56884]: 1: dropping pkt to 12 (converging)
-[56884]: 1: dropping pkt to 12 (converging)
-[56942]: 1: dropping pkt to 15 (converging)
-[56942]: 1: dropping pkt to 15 (converging)
-[57042]: 1: dropping pkt to 15 (converging)
-[57042]: 1: dropping pkt to 15 (converging)
-[57083]: 1: dropping pkt to 12 (converging)
-[57083]: 1: dropping pkt to 12 (converging)
-[57142]: 1: dropping pkt to 15 (converging)
-[57142]: 1: dropping pkt to 15 (converging)
-[57241]: 1: dropping pkt to 15 (converging)
-[57241]: 1: dropping pkt to 15 (converging)
-[57283]: 1: dropping pkt to 12 (converging)
-[57283]: 1: dropping pkt to 12 (converging)
-[57341]: 1: dropping pkt to 15 (converging)
-[57341]: 1: dropping pkt to 15 (converging)
-[57442]: 1: dropping pkt to 15 (converging)
-[57442]: 1: dropping pkt to 15 (converging)
-[57484]: 1: dropping pkt to 12 (converging)
-[57484]: 1: dropping pkt to 12 (converging)
-[57541]: 1: dropping pkt to 15 (converging)
-[57541]: 1: dropping pkt to 15 (converging)
-[57642]: 1: dropping pkt to 15 (converging)
-[57642]: 1: dropping pkt to 15 (converging)
-[57683]: 1: dropping pkt to 12 (converging)
-[57683]: 1: dropping pkt to 12 (converging)
-[57741]: 1: dropping pkt to 15 (converging)
-[57741]: 1: dropping pkt to 15 (converging)
-[57842]: 1: dropping pkt to 15 (converging)
-[57842]: 1: dropping pkt to 15 (converging)
-[57883]: 1: dropping pkt to 12 (converging)
-[57883]: 1: dropping pkt to 12 (converging)
-[57942]: 1: dropping pkt to 15 (converging)
-[57942]: 1: dropping pkt to 15 (converging)
-[58042]: 1: dropping pkt to 15 (converging)
-[58042]: 1: dropping pkt to 15 (converging)
-[58084]: 1: dropping pkt to 12 (converging)
-[58084]: 1: dropping pkt to 12 (converging)
-[58142]: 1: dropping pkt to 15 (converging)
-[58142]: 1: dropping pkt to 15 (converging)
-[58241]: 1: dropping pkt to 15 (converging)
-[58241]: 1: dropping pkt to 15 (converging)
-[58282]: 1: dropping pkt to 12 (converging)
-[58282]: 1: dropping pkt to 12 (converging)
-[58341]: 1: dropping pkt to 15 (converging)
-[58341]: 1: dropping pkt to 15 (converging)
-[58441]: 1: dropping pkt to 15 (converging)
-[58441]: 1: dropping pkt to 15 (converging)
-[58483]: 1: dropping pkt to 12 (converging)
-[58483]: 1: dropping pkt to 12 (converging)
-[58541]: 1: dropping pkt to 15 (converging)
-[58541]: 1: dropping pkt to 15 (converging)
-[58641]: 1: dropping pkt to 15 (converging)
-[58641]: 1: dropping pkt to 15 (converging)
-[58684]: 1: dropping pkt to 12 (converging)
-[58684]: 1: dropping pkt to 12 (converging)
-[58742]: 1: dropping pkt to 15 (converging)
-[58742]: 1: dropping pkt to 15 (converging)
-[58842]: 1: dropping pkt to 15 (converging)
-[58842]: 1: dropping pkt to 15 (converging)
-[58883]: 1: dropping pkt to 12 (converging)
-[58883]: 1: dropping pkt to 12 (converging)
-[58942]: 1: dropping pkt to 15 (converging)
-[58942]: 1: dropping pkt to 15 (converging)
-[59042]: 1: dropping pkt to 15 (converging)
-[59042]: 1: dropping pkt to 15 (converging)
-[59084]: 1: dropping pkt to 12 (converging)
-[59084]: 1: dropping pkt to 12 (converging)
-[59142]: 1: dropping pkt to 15 (converging)
-[59142]: 1: dropping pkt to 15 (converging)
-[59242]: 1: dropping pkt to 15 (converging)
-[59242]: 1: dropping pkt to 15 (converging)
-[59284]: 1: dropping pkt to 12 (converging)
-[59284]: 1: dropping pkt to 12 (converging)
-[59342]: 1: dropping pkt to 15 (converging)
-[59342]: 1: dropping pkt to 15 (converging)
-[59441]: 1: dropping pkt to 15 (converging)
-[59441]: 1: dropping pkt to 15 (converging)
-[59483]: 1: dropping pkt to 12 (converging)
-[59483]: 1: dropping pkt to 12 (converging)
-[59541]: 1: dropping pkt to 15 (converging)
-[59541]: 1: dropping pkt to 15 (converging)
-[59641]: 1: dropping pkt to 15 (converging)
-[59641]: 1: dropping pkt to 15 (converging)
-[59683]: 1: dropping pkt to 12 (converging)
-[59683]: 1: dropping pkt to 12 (converging)
-[59742]: 1: dropping pkt to 15 (converging)
-[59742]: 1: dropping pkt to 15 (converging)
-[59841]: 1: dropping pkt to 15 (converging)
-[59841]: 1: dropping pkt to 15 (converging)
-[59883]: 1: dropping pkt to 12 (converging)
-[59883]: 1: dropping pkt to 12 (converging)
-[59942]: 1: dropping pkt to 15 (converging)
-[59942]: 1: dropping pkt to 15 (converging)
+[8381]: 3: got ACK from 12. RTT = 186
+[8389]: 0: got ACK from 15. RTT = 162
+[8462]: 3: got ACK from 12. RTT = 185
+[8661]: 3: got ACK from 12. RTT = 193
+[8780]: 3: got ACK from 12. RTT = 194
+[8780]: 0: got ACK from 15. RTT = 177
+[8970]: 0: got ACK from 15. RTT = 177
+[8980]: 3: got ACK from 12. RTT = 203
+[9067]: 3: got ACK from 12. RTT = 202
+[9241]: 3: got ACK from 12. RTT = 206
+[9243]: 0: got ACK from 15. RTT = 181
+[9348]: 3: got ACK from 12. RTT = 209
+[9458]: 3: got ACK from 12. RTT = 209
+[9513]: 0: got ACK from 15. RTT = 188
+[9598]: 3: got ACK from 12. RTT = 213
+[9697]: 3: got ACK from 12. RTT = 213
+[9785]: 0: got ACK from 15. RTT = 193
+[9880]: 3: got ACK from 12. RTT = 218
+[9951]: 3: got ACK from 12. RTT = 218
+[10056]: 0: got ACK from 15. RTT = 200
+[10141]: 3: got ACK from 12. RTT = 225
+[10326]: 0: got ACK from 15. RTT = 207
+[10380]: 3: got ACK from 12. RTT = 237
+[10451]: 3: got ACK from 12. RTT = 234
+[10557]: 0: got ACK from 15. RTT = 207
+[10561]: 3: got ACK from 12. RTT = 234
+[10681]: 3: got ACK from 12. RTT = 235
+[10787]: 0: got ACK from 15. RTT = 210
+[10791]: 3: got ACK from 12. RTT = 237
+[10949]: 3: got ACK from 12. RTT = 241
+[10979]: 0: got ACK from 15. RTT = 210
+[11000]: 11: port 0 failed; 50 ms blackout
+[11000]: 6: port 2 failed; 50 ms blackout
+[11000]: 7: port 0 failed; 50 ms blackout
+[11000]: 3: port 1 failed; 50 ms blackout
+[11000]: 7: port 2 failed; 50 ms blackout
+[11000]: 7: port 1 failed; 50 ms blackout
+[11077]: 3: got ACK from 12. RTT = 245
+[11241]: 3: got ACK from 12. RTT = 250
+[11341]: 3: got ACK from 12. RTT = 249
+[11369]: 0: got ACK from 15. RTT = 226
+[11441]: 3: got ACK from 12. RTT = 249
+[11550]: 3: got ACK from 12. RTT = 251
+[11560]: 0: got ACK from 15. RTT = 226
+[11671]: 3: got ACK from 12. RTT = 253
+[11871]: 0: got ACK from 15. RTT = 236
+[11872]: 3: got ACK from 12. RTT = 261
+[11953]: 3: got ACK from 12. RTT = 259
+[12061]: 0: got ACK from 15. RTT = 235
+[12071]: 3: got ACK from 12. RTT = 261
+[12241]: 3: got ACK from 12. RTT = 266
+[12353]: 3: got ACK from 12. RTT = 268
+[12372]: 0: got ACK from 15. RTT = 242
+[12541]: 3: got ACK from 12. RTT = 275
+[12571]: 3: got ACK from 12. RTT = 269
+[12682]: 0: got ACK from 15. RTT = 252
+[12741]: 3: got ACK from 12. RTT = 274
+[12841]: 3: got ACK from 12. RTT = 275
+[12958]: 3: got ACK from 12. RTT = 274
+[13079]: 3: got ACK from 12. RTT = 276
+[13159]: 3: got ACK from 12. RTT = 277
+[13280]: 3: got ACK from 12. RTT = 277
+[13360]: 3: got ACK from 12. RTT = 277
+[13479]: 3: got ACK from 12. RTT = 278
+[13641]: 3: got ACK from 12. RTT = 283
+[13680]: 3: got ACK from 12. RTT = 278
+[13841]: 3: got ACK from 12. RTT = 283
+[13941]: 3: got ACK from 12. RTT = 282
+[14044]: 3: got ACK from 12. RTT = 284
+[14141]: 3: got ACK from 12. RTT = 282
+[14245]: 3: got ACK from 12. RTT = 282
+[14366]: 3: got ACK from 12. RTT = 285
+[14447]: 3: got ACK from 12. RTT = 281
+[14568]: 3: got ACK from 12. RTT = 285
+[14741]: 3: got ACK from 12. RTT = 292
+[14841]: 3: got ACK from 12. RTT = 292
+[14941]: 3: got ACK from 12. RTT = 292
+[15041]: 3: got ACK from 12. RTT = 292
+[15141]: 3: got ACK from 12. RTT = 292
+[15171]: 3: got ACK from 12. RTT = 286
+[15341]: 3: got ACK from 12. RTT = 292
+[15441]: 3: got ACK from 12. RTT = 292
+[15471]: 3: got ACK from 12. RTT = 286
+[15641]: 3: got ACK from 12. RTT = 292
+[15671]: 3: got ACK from 12. RTT = 286
+[15841]: 3: got ACK from 12. RTT = 292
+[15941]: 3: got ACK from 12. RTT = 292
+[16041]: 3: got ACK from 12. RTT = 292
+[16141]: 3: got ACK from 12. RTT = 292
+[16241]: 3: got ACK from 12. RTT = 292
+[16271]: 3: got ACK from 12. RTT = 286
+[16441]: 3: got ACK from 12. RTT = 292
+[16541]: 3: got ACK from 12. RTT = 292
+[16641]: 3: got ACK from 12. RTT = 291
+[16741]: 3: got ACK from 12. RTT = 292
+[16771]: 3: got ACK from 12. RTT = 285
+[16941]: 3: got ACK from 12. RTT = 292
+[17041]: 3: got ACK from 12. RTT = 291
+[17141]: 3: got ACK from 12. RTT = 292
+[17241]: 3: got ACK from 12. RTT = 291
+[17341]: 3: got ACK from 12. RTT = 292
+[17441]: 3: got ACK from 12. RTT = 292
+[17543]: 3: got ACK from 12. RTT = 292
+[17641]: 3: got ACK from 12. RTT = 292
+[17741]: 3: got ACK from 12. RTT = 292
+[17841]: 3: got ACK from 12. RTT = 292
+[17871]: 3: got ACK from 12. RTT = 286
+[18041]: 3: got ACK from 12. RTT = 292
+[18141]: 3: got ACK from 12. RTT = 292
+[18241]: 3: got ACK from 12. RTT = 292
+[18341]: 3: got ACK from 12. RTT = 292
+[18371]: 3: got ACK from 12. RTT = 286
+[18547]: 3: got ACK from 12. RTT = 292
+[18641]: 3: got ACK from 12. RTT = 292
+[18741]: 3: got ACK from 12. RTT = 292
+[18841]: 3: got ACK from 12. RTT = 292
+[18941]: 3: got ACK from 12. RTT = 292
+[19041]: 3: got ACK from 12. RTT = 292
+[19241]: 3: got ACK from 12. RTT = 300
+[19271]: 3: got ACK from 12. RTT = 294
+[19441]: 3: got ACK from 12. RTT = 300
+[19471]: 3: got ACK from 12. RTT = 294
+[19554]: 3: got ACK from 12. RTT = 293
+[19641]: 3: got ACK from 12. RTT = 292
+[19741]: 3: got ACK from 12. RTT = 292
+[19841]: 3: got ACK from 12. RTT = 292
+[19941]: 3: got ACK from 12. RTT = 292
+[20041]: 3: got ACK from 12. RTT = 292
+[20141]: 3: got ACK from 12. RTT = 292
+[20241]: 3: got ACK from 12. RTT = 292
+[20341]: 3: got ACK from 12. RTT = 292
+[20441]: 3: got ACK from 12. RTT = 292
+[20541]: 3: got ACK from 12. RTT = 292
+[20641]: 3: got ACK from 12. RTT = 292
+[20841]: 3: got ACK from 12. RTT = 300
+[20871]: 3: got ACK from 12. RTT = 294
+[21041]: 3: got ACK from 12. RTT = 300
+[21071]: 3: got ACK from 12. RTT = 294
+[21143]: 3: got ACK from 12. RTT = 292
+[21241]: 3: got ACK from 12. RTT = 292
+[21341]: 3: got ACK from 12. RTT = 292
+[21443]: 3: got ACK from 12. RTT = 292
+[21541]: 3: got ACK from 12. RTT = 292
+[21644]: 3: got ACK from 12. RTT = 292
+[21741]: 3: got ACK from 12. RTT = 292
+[21845]: 3: got ACK from 12. RTT = 292
+[21941]: 3: got ACK from 12. RTT = 292
+[22045]: 3: got ACK from 12. RTT = 292
+[22167]: 3: got ACK from 12. RTT = 294
+[22247]: 3: got ACK from 12. RTT = 292
+[22441]: 3: got ACK from 12. RTT = 300
+[22471]: 3: got ACK from 12. RTT = 294
+[22641]: 3: got ACK from 12. RTT = 300
+[22671]: 3: got ACK from 12. RTT = 294
+[22841]: 3: got ACK from 12. RTT = 300
+[22871]: 3: got ACK from 12. RTT = 294
+[22943]: 3: got ACK from 12. RTT = 292
+[23050]: 3: got ACK from 12. RTT = 292
+[23141]: 3: got ACK from 12. RTT = 292
+[23251]: 3: got ACK from 12. RTT = 293
+[23341]: 3: got ACK from 12. RTT = 292
+[23452]: 3: got ACK from 12. RTT = 293
+[23541]: 3: got ACK from 12. RTT = 292
+[23653]: 3: got ACK from 12. RTT = 293
+[23774]: 3: got ACK from 12. RTT = 294
+[23855]: 3: got ACK from 12. RTT = 293
+[23941]: 3: got ACK from 12. RTT = 292
+[24055]: 3: got ACK from 12. RTT = 293
+[24241]: 3: got ACK from 12. RTT = 300
+[24271]: 3: got ACK from 12. RTT = 294
+[24441]: 3: got ACK from 12. RTT = 300
+[24471]: 3: got ACK from 12. RTT = 294
+[24542]: 3: got ACK from 12. RTT = 292
+[24658]: 3: got ACK from 12. RTT = 293
+[24741]: 3: got ACK from 12. RTT = 292
+[24859]: 3: got ACK from 12. RTT = 293
+[24941]: 3: got ACK from 12. RTT = 292
+[25060]: 3: got ACK from 12. RTT = 293
+[25141]: 3: got ACK from 12. RTT = 292
+[25262]: 3: got ACK from 12. RTT = 293
+[25441]: 3: got ACK from 12. RTT = 300
+[25471]: 3: got ACK from 12. RTT = 294
+[25542]: 3: got ACK from 12. RTT = 292
+[25664]: 3: got ACK from 12. RTT = 294
+[25841]: 3: got ACK from 12. RTT = 300
+[25871]: 3: got ACK from 12. RTT = 294
+[26041]: 3: got ACK from 12. RTT = 300
+[26141]: 3: got ACK from 12. RTT = 300
+[26171]: 3: got ACK from 12. RTT = 294
+[26341]: 3: got ACK from 12. RTT = 300
+[26371]: 3: got ACK from 12. RTT = 294
+[26541]: 3: got ACK from 12. RTT = 300
+[26571]: 3: got ACK from 12. RTT = 294
+[26667]: 3: got ACK from 12. RTT = 294
+[26747]: 3: got ACK from 12. RTT = 292
+[26870]: 3: got ACK from 12. RTT = 294
+[27041]: 3: got ACK from 12. RTT = 300
+[27141]: 3: got ACK from 12. RTT = 300
+[27241]: 3: got ACK from 12. RTT = 300
+[27272]: 3: got ACK from 12. RTT = 294
+[27351]: 3: got ACK from 12. RTT = 292
+[27473]: 3: got ACK from 12. RTT = 294
+[27641]: 3: got ACK from 12. RTT = 300
+[27674]: 3: got ACK from 12. RTT = 294
+[27754]: 3: got ACK from 12. RTT = 293
+[27874]: 3: got ACK from 12. RTT = 294
+[27955]: 3: got ACK from 12. RTT = 293
+[28141]: 3: got ACK from 12. RTT = 300
+[28171]: 3: got ACK from 12. RTT = 294
+[28277]: 3: got ACK from 12. RTT = 295
+[28357]: 3: got ACK from 12. RTT = 293
+[28477]: 3: got ACK from 12. RTT = 295
+[28641]: 3: got ACK from 12. RTT = 300
+[28741]: 3: got ACK from 12. RTT = 300
+[28841]: 3: got ACK from 12. RTT = 300
+[28878]: 3: got ACK from 12. RTT = 295
+[28960]: 3: got ACK from 12. RTT = 293
+[29080]: 3: got ACK from 12. RTT = 295
+[29243]: 3: got ACK from 12. RTT = 300
+[29281]: 3: got ACK from 12. RTT = 295
+[29362]: 3: got ACK from 12. RTT = 293
+[29442]: 3: got ACK from 12. RTT = 292
+[29562]: 3: got ACK from 12. RTT = 293
+[29741]: 3: got ACK from 12. RTT = 300
+[29771]: 3: got ACK from 12. RTT = 294
+[29941]: 3: got ACK from 12. RTT = 300
+[29971]: 3: got ACK from 12. RTT = 294
+[30141]: 3: got ACK from 12. RTT = 300
+[30171]: 3: got ACK from 12. RTT = 294
+[30341]: 3: got ACK from 12. RTT = 300
+[30371]: 3: got ACK from 12. RTT = 294
+[30541]: 3: got ACK from 12. RTT = 300
+[30571]: 3: got ACK from 12. RTT = 294
+[30741]: 3: got ACK from 12. RTT = 300
+[30851]: 3: got ACK from 12. RTT = 301
+[30941]: 3: got ACK from 12. RTT = 300
+[30971]: 3: got ACK from 12. RTT = 294
+[31141]: 3: got ACK from 12. RTT = 300
+[31241]: 3: got ACK from 12. RTT = 300
+[31341]: 3: got ACK from 12. RTT = 300
+[31441]: 3: got ACK from 12. RTT = 300
+[31541]: 3: got ACK from 12. RTT = 300
+[31641]: 3: got ACK from 12. RTT = 300
+[31741]: 3: got ACK from 12. RTT = 300
+[31841]: 3: got ACK from 12. RTT = 300
+[31941]: 3: got ACK from 12. RTT = 299
+[32041]: 3: got ACK from 12. RTT = 300
+[32141]: 3: got ACK from 12. RTT = 299
+[32258]: 3: got ACK from 12. RTT = 301
+[32341]: 3: got ACK from 12. RTT = 300
+[32441]: 3: got ACK from 12. RTT = 300
+[32541]: 3: got ACK from 12. RTT = 299
+[32641]: 3: got ACK from 12. RTT = 300
+[32741]: 3: got ACK from 12. RTT = 299
+[32841]: 3: got ACK from 12. RTT = 300
+[32941]: 3: got ACK from 12. RTT = 299
+[33041]: 3: got ACK from 12. RTT = 300
+[33141]: 3: got ACK from 12. RTT = 300
+[33241]: 3: got ACK from 12. RTT = 300
+[33343]: 3: got ACK from 12. RTT = 300
+[33441]: 3: got ACK from 12. RTT = 300
+[33544]: 3: got ACK from 12. RTT = 300
+[33663]: 3: got ACK from 12. RTT = 302
+[33745]: 3: got ACK from 12. RTT = 300
+[33865]: 3: got ACK from 12. RTT = 302
+[33945]: 3: got ACK from 12. RTT = 300
+[34065]: 3: got ACK from 12. RTT = 302
+[34146]: 3: got ACK from 12. RTT = 300
+[34268]: 3: got ACK from 12. RTT = 302
+[34347]: 3: got ACK from 12. RTT = 301
+[34467]: 3: got ACK from 12. RTT = 302
+[34547]: 3: got ACK from 12. RTT = 301
+[34669]: 3: got ACK from 12. RTT = 302
+[34749]: 3: got ACK from 12. RTT = 301
+[34841]: 3: got ACK from 12. RTT = 300
+[34951]: 3: got ACK from 12. RTT = 301
+[35041]: 3: got ACK from 12. RTT = 300
+[35141]: 3: got ACK from 12. RTT = 300
+[35273]: 3: got ACK from 12. RTT = 303
+[35353]: 3: got ACK from 12. RTT = 301
+[35441]: 3: got ACK from 12. RTT = 300
+[35554]: 3: got ACK from 12. RTT = 301
+[35674]: 3: got ACK from 12. RTT = 303
+[35755]: 3: got ACK from 12. RTT = 301
+[35841]: 3: got ACK from 12. RTT = 300
+[35941]: 3: got ACK from 12. RTT = 300
+[36076]: 3: got ACK from 12. RTT = 303
+[36156]: 3: got ACK from 12. RTT = 301
+[36277]: 3: got ACK from 12. RTT = 303
+[36357]: 3: got ACK from 12. RTT = 301
+[36441]: 3: got ACK from 12. RTT = 300
+[36559]: 3: got ACK from 12. RTT = 302
+[36679]: 3: got ACK from 12. RTT = 303
+[36758]: 3: got ACK from 12. RTT = 301
+[36879]: 3: got ACK from 12. RTT = 303
+[36960]: 3: got ACK from 12. RTT = 302
+[37081]: 3: got ACK from 12. RTT = 303
+[37162]: 3: got ACK from 12. RTT = 302
+[37341]: 3: got ACK from 12. RTT = 308
+[37371]: 3: got ACK from 12. RTT = 303
+[37541]: 3: got ACK from 12. RTT = 308
+[37571]: 3: got ACK from 12. RTT = 303
+[37741]: 3: got ACK from 12. RTT = 308
+[37771]: 3: got ACK from 12. RTT = 303
+[37844]: 3: got ACK from 12. RTT = 300
+[37941]: 3: got ACK from 12. RTT = 300
+[38045]: 3: got ACK from 12. RTT = 300
+[38167]: 3: got ACK from 12. RTT = 302
+[38341]: 3: got ACK from 12. RTT = 308
+[38371]: 3: got ACK from 12. RTT = 303
+[38541]: 3: got ACK from 12. RTT = 308
+[38571]: 3: got ACK from 12. RTT = 303
+[38741]: 3: got ACK from 12. RTT = 308
+[38771]: 3: got ACK from 12. RTT = 303
+[38941]: 3: got ACK from 12. RTT = 308
+[38971]: 3: got ACK from 12. RTT = 302
+[39141]: 3: got ACK from 12. RTT = 308
+[39171]: 3: got ACK from 12. RTT = 303
+[39341]: 3: got ACK from 12. RTT = 308
+[39371]: 3: got ACK from 12. RTT = 302
+[39541]: 3: got ACK from 12. RTT = 308
+[39571]: 3: got ACK from 12. RTT = 303
+[39741]: 3: got ACK from 12. RTT = 308
+[39775]: 3: got ACK from 12. RTT = 302
+[39941]: 3: got ACK from 12. RTT = 308
+[39971]: 3: got ACK from 12. RTT = 302
+[40141]: 3: got ACK from 12. RTT = 308
+[40171]: 3: got ACK from 12. RTT = 303
+[40341]: 3: got ACK from 12. RTT = 308
+[40377]: 3: got ACK from 12. RTT = 302
+[40541]: 3: got ACK from 12. RTT = 308
+[40571]: 3: got ACK from 12. RTT = 302
+[40741]: 3: got ACK from 12. RTT = 308
+[40771]: 3: got ACK from 12. RTT = 302
+[40941]: 3: got ACK from 12. RTT = 308
+[40980]: 3: got ACK from 12. RTT = 303
+[41141]: 3: got ACK from 12. RTT = 308
+[41171]: 3: got ACK from 12. RTT = 303
+[41341]: 3: got ACK from 12. RTT = 308
+[41441]: 3: got ACK from 12. RTT = 308
+[41541]: 3: got ACK from 12. RTT = 308
+[41571]: 3: got ACK from 12. RTT = 303
+[41741]: 3: got ACK from 12. RTT = 308
+[41771]: 3: got ACK from 12. RTT = 303
+[41941]: 3: got ACK from 12. RTT = 308
+[42041]: 3: got ACK from 12. RTT = 308
+[42141]: 3: got ACK from 12. RTT = 308
+[42171]: 3: got ACK from 12. RTT = 303
+[42341]: 3: got ACK from 12. RTT = 308
+[42441]: 3: got ACK from 12. RTT = 308
+[42541]: 3: got ACK from 12. RTT = 308
+[42641]: 3: got ACK from 12. RTT = 308
+[42741]: 3: got ACK from 12. RTT = 308
+[42771]: 3: got ACK from 12. RTT = 303
+[42941]: 3: got ACK from 12. RTT = 308
+[43041]: 3: got ACK from 12. RTT = 308
+[43141]: 3: got ACK from 12. RTT = 308
+[43241]: 3: got ACK from 12. RTT = 308
+[43341]: 3: got ACK from 12. RTT = 308
+[43371]: 3: got ACK from 12. RTT = 303
+[43541]: 3: got ACK from 12. RTT = 308
+[43641]: 3: got ACK from 12. RTT = 308
+[43741]: 3: got ACK from 12. RTT = 308
+[43841]: 3: got ACK from 12. RTT = 308
+[43941]: 3: got ACK from 12. RTT = 308
+[44041]: 3: got ACK from 12. RTT = 308
+[44141]: 3: got ACK from 12. RTT = 308
+[44241]: 3: got ACK from 12. RTT = 308
+[44341]: 3: got ACK from 12. RTT = 308
+[44441]: 3: got ACK from 12. RTT = 308
+[44541]: 3: got ACK from 12. RTT = 308
+[44641]: 3: got ACK from 12. RTT = 308
+[44741]: 3: got ACK from 12. RTT = 308
+[44841]: 3: got ACK from 12. RTT = 308
+[44941]: 3: got ACK from 12. RTT = 308
+[45041]: 3: got ACK from 12. RTT = 308
+[45141]: 3: got ACK from 12. RTT = 308
+[45241]: 3: got ACK from 12. RTT = 308
+[45341]: 3: got ACK from 12. RTT = 308
+[45441]: 3: got ACK from 12. RTT = 308
+[45541]: 3: got ACK from 12. RTT = 308
+[45641]: 3: got ACK from 12. RTT = 308
+[45741]: 3: got ACK from 12. RTT = 308
+[45841]: 3: got ACK from 12. RTT = 308
+[45941]: 3: got ACK from 12. RTT = 308
+[46041]: 3: got ACK from 12. RTT = 308
+[46141]: 3: got ACK from 12. RTT = 308
+[46241]: 3: got ACK from 12. RTT = 308
+[46341]: 3: got ACK from 12. RTT = 308
+[46441]: 3: got ACK from 12. RTT = 308
+[46541]: 3: got ACK from 12. RTT = 308
+[46641]: 3: got ACK from 12. RTT = 308
+[46741]: 3: got ACK from 12. RTT = 308
+[46841]: 3: got ACK from 12. RTT = 308
+[46941]: 3: got ACK from 12. RTT = 308
+[47041]: 3: got ACK from 12. RTT = 308
+[47141]: 3: got ACK from 12. RTT = 308
+[47241]: 3: got ACK from 12. RTT = 308
+[47341]: 3: got ACK from 12. RTT = 308
+[47441]: 3: got ACK from 12. RTT = 308
+[47541]: 3: got ACK from 12. RTT = 308
+[47641]: 3: got ACK from 12. RTT = 308
+[47741]: 3: got ACK from 12. RTT = 308
+[47841]: 3: got ACK from 12. RTT = 308
+[47941]: 3: got ACK from 12. RTT = 308
+[48041]: 3: got ACK from 12. RTT = 308
+[48141]: 3: got ACK from 12. RTT = 308
+[48241]: 3: got ACK from 12. RTT = 308
+[48341]: 3: got ACK from 12. RTT = 308
+[48441]: 3: got ACK from 12. RTT = 308
+[48541]: 3: got ACK from 12. RTT = 308
+[48641]: 3: got ACK from 12. RTT = 308
+[48741]: 3: got ACK from 12. RTT = 308
+[48841]: 3: got ACK from 12. RTT = 308
+[48941]: 3: got ACK from 12. RTT = 308
+[49041]: 3: got ACK from 12. RTT = 308
+[49142]: 3: got ACK from 12. RTT = 308
+[49241]: 3: got ACK from 12. RTT = 308
+[49343]: 3: got ACK from 12. RTT = 309
+[49441]: 3: got ACK from 12. RTT = 308
+[49543]: 3: got ACK from 12. RTT = 309
+[49641]: 3: got ACK from 12. RTT = 308
+[49745]: 3: got ACK from 12. RTT = 309
+[49841]: 3: got ACK from 12. RTT = 308
+[49945]: 3: got ACK from 12. RTT = 309
+[50041]: 3: got ACK from 12. RTT = 308
+[50147]: 3: got ACK from 12. RTT = 309
+[50241]: 3: got ACK from 12. RTT = 308
+[50347]: 3: got ACK from 12. RTT = 309
+[50441]: 3: got ACK from 12. RTT = 308
+[50549]: 3: got ACK from 12. RTT = 309
+[50641]: 3: got ACK from 12. RTT = 308
+[50748]: 3: got ACK from 12. RTT = 309
+[50841]: 3: got ACK from 12. RTT = 308
+[50949]: 3: got ACK from 12. RTT = 309
+[51041]: 3: got ACK from 12. RTT = 308
+[51152]: 3: got ACK from 12. RTT = 309
+[51241]: 3: got ACK from 12. RTT = 308
+[51353]: 3: got ACK from 12. RTT = 309
+[51441]: 3: got ACK from 12. RTT = 308
+[51554]: 3: got ACK from 12. RTT = 309
+[51641]: 3: got ACK from 12. RTT = 308
+[51755]: 3: got ACK from 12. RTT = 310
+[51841]: 3: got ACK from 12. RTT = 308
+[51955]: 3: got ACK from 12. RTT = 310
+[52041]: 3: got ACK from 12. RTT = 308
+[52157]: 3: got ACK from 12. RTT = 310
+[52241]: 3: got ACK from 12. RTT = 308
+[52357]: 3: got ACK from 12. RTT = 310
+[52441]: 3: got ACK from 12. RTT = 308
+[52559]: 3: got ACK from 12. RTT = 310
+[52641]: 3: got ACK from 12. RTT = 308
+[52758]: 3: got ACK from 12. RTT = 310
+[52841]: 3: got ACK from 12. RTT = 308
+[52960]: 3: got ACK from 12. RTT = 310
+[53041]: 3: got ACK from 12. RTT = 308
+[53162]: 3: got ACK from 12. RTT = 310
+[53341]: 3: got ACK from 12. RTT = 317
+[53371]: 3: got ACK from 12. RTT = 311
+[53541]: 3: got ACK from 12. RTT = 317
+[53571]: 3: got ACK from 12. RTT = 311
+[53644]: 3: got ACK from 12. RTT = 309
+[53764]: 3: got ACK from 12. RTT = 310
+[53844]: 3: got ACK from 12. RTT = 309
+[53965]: 3: got ACK from 12. RTT = 310
+[54045]: 3: got ACK from 12. RTT = 309
+[54166]: 3: got ACK from 12. RTT = 310
+[54341]: 3: got ACK from 12. RTT = 317
+[54371]: 3: got ACK from 12. RTT = 311
+[54447]: 3: got ACK from 12. RTT = 309
+[54569]: 3: got ACK from 12. RTT = 311
+[54741]: 3: got ACK from 12. RTT = 317
+[54771]: 3: got ACK from 12. RTT = 311
+[54850]: 3: got ACK from 12. RTT = 309
+[54971]: 3: got ACK from 12. RTT = 311
+[55051]: 3: got ACK from 12. RTT = 309
+[55171]: 3: got ACK from 12. RTT = 311
+[55252]: 3: got ACK from 12. RTT = 309
+[55373]: 3: got ACK from 12. RTT = 311
+[55453]: 3: got ACK from 12. RTT = 309
+[55541]: 3: got ACK from 12. RTT = 308
+[55641]: 3: got ACK from 12. RTT = 308
+[55775]: 3: got ACK from 12. RTT = 311
+[55855]: 3: got ACK from 12. RTT = 310
+[55975]: 3: got ACK from 12. RTT = 311
+[56055]: 3: got ACK from 12. RTT = 310
+[56176]: 3: got ACK from 12. RTT = 311
+[56257]: 3: got ACK from 12. RTT = 310
+[56377]: 3: got ACK from 12. RTT = 311
+[56458]: 3: got ACK from 12. RTT = 310
+[56578]: 3: got ACK from 12. RTT = 311
+[56658]: 3: got ACK from 12. RTT = 310
+[56741]: 3: got ACK from 12. RTT = 308
+[56860]: 3: got ACK from 12. RTT = 310
+[56980]: 3: got ACK from 12. RTT = 312
+[57060]: 3: got ACK from 12. RTT = 310
+[57141]: 3: got ACK from 12. RTT = 308
+[57241]: 3: got ACK from 12. RTT = 308
+[57441]: 3: got ACK from 12. RTT = 317
+[57471]: 3: got ACK from 12. RTT = 311
+[57641]: 3: got ACK from 12. RTT = 317
+[57671]: 3: got ACK from 12. RTT = 311
+[57841]: 3: got ACK from 12. RTT = 317
+[57941]: 3: got ACK from 12. RTT = 317
+[58041]: 3: got ACK from 12. RTT = 317
+[58071]: 3: got ACK from 12. RTT = 311
+[58241]: 3: got ACK from 12. RTT = 317
+[58271]: 3: got ACK from 12. RTT = 311
+[58441]: 3: got ACK from 12. RTT = 317
+[58471]: 3: got ACK from 12. RTT = 311
+[58641]: 3: got ACK from 12. RTT = 317
+[58671]: 3: got ACK from 12. RTT = 311
+[58841]: 3: got ACK from 12. RTT = 317
+[58871]: 3: got ACK from 12. RTT = 311
+[58950]: 3: got ACK from 12. RTT = 309
+[59071]: 3: got ACK from 12. RTT = 311
+[59241]: 3: got ACK from 12. RTT = 316
+[59341]: 3: got ACK from 12. RTT = 317
+[59441]: 3: got ACK from 12. RTT = 317
+[59541]: 3: got ACK from 12. RTT = 317
+[59641]: 3: got ACK from 12. RTT = 316
+[59741]: 3: got ACK from 12. RTT = 317
+[59841]: 3: got ACK from 12. RTT = 316
+[59874]: 3: got ACK from 12. RTT = 311
+[60041]: 3: got ACK from 12. RTT = 316
+[60071]: 3: got ACK from 12. RTT = 311
+[60156]: 3: got ACK from 12. RTT = 309
+[60276]: 3: got ACK from 12. RTT = 311
+[60441]: 3: got ACK from 12. RTT = 316
+[60471]: 3: got ACK from 12. RTT = 311
+[60641]: 3: got ACK from 12. RTT = 317
+[60671]: 3: got ACK from 12. RTT = 311
+[60841]: 3: got ACK from 12. RTT = 316
+[60879]: 3: got ACK from 12. RTT = 312
+[61000]: 3: LFA cutover complete, routes recomputed
+[61000]: 6: LFA cutover complete, routes recomputed
+[61000]: 7: LFA cutover complete, routes recomputed
+[61000]: 11: LFA cutover complete, routes recomputed
+[61041]: 3: got ACK from 12. RTT = 317
+[61081]: 3: got ACK from 12. RTT = 312
+[61241]: 3: got ACK from 12. RTT = 317
+[61341]: 3: got ACK from 12. RTT = 317
+[61441]: 3: got ACK from 12. RTT = 317
+[61542]: 3: got ACK from 12. RTT = 317
+[61641]: 3: got ACK from 12. RTT = 317
+[61741]: 3: got ACK from 12. RTT = 317
+[61841]: 3: got ACK from 12. RTT = 317
+[61871]: 3: got ACK from 12. RTT = 311
+[62041]: 3: got ACK from 12. RTT = 317
+[62071]: 3: got ACK from 12. RTT = 311
+[62181]: 3: got ACK from 12. RTT = 312
+[62341]: 3: got ACK from 12. RTT = 317
+[62380]: 3: got ACK from 12. RTT = 312
+[62541]: 3: got ACK from 12. RTT = 317
+[62641]: 3: got ACK from 12. RTT = 317
+[62747]: 3: got ACK from 12. RTT = 317
+[62848]: 3: got ACK from 12. RTT = 317
+[63050]: 3: got ACK from 12. RTT = 326
+[63107]: 0: got ACK from 15. RTT = 271
+[63141]: 3: got ACK from 12. RTT = 325
+[63249]: 3: got ACK from 12. RTT = 326
+[63367]: 3: got ACK from 12. RTT = 327
+[63376]: 0: got ACK from 15. RTT = 276
+[63448]: 3: got ACK from 12. RTT = 326
+[63569]: 3: got ACK from 12. RTT = 327
+[63648]: 0: got ACK from 15. RTT = 283
+[63741]: 3: got ACK from 12. RTT = 333
+[63860]: 3: got ACK from 12. RTT = 335
+[63899]: 3: got ACK from 12. RTT = 330
+[63917]: 0: got ACK from 15. RTT = 288
+[64041]: 3: got ACK from 12. RTT = 333
+[64109]: 0: got ACK from 15. RTT = 288
+[64167]: 3: got ACK from 12. RTT = 335
+[64341]: 3: got ACK from 12. RTT = 342
+[64378]: 0: got ACK from 15. RTT = 293
+[64400]: 3: got ACK from 12. RTT = 338
+[64553]: 3: got ACK from 12. RTT = 343
+[64650]: 0: got ACK from 15. RTT = 299
+[64672]: 3: got ACK from 12. RTT = 344
+[64769]: 3: got ACK from 12. RTT = 344
+[64921]: 0: got ACK from 15. RTT = 305
+[64941]: 3: got ACK from 12. RTT = 350
+[65056]: 3: got ACK from 12. RTT = 351
+[65141]: 3: got ACK from 12. RTT = 349
+[65151]: 0: got ACK from 15. RTT = 307
+[65341]: 3: got ACK from 12. RTT = 358
+[65382]: 0: got ACK from 15. RTT = 310
+[65441]: 3: got ACK from 12. RTT = 357
+[65541]: 3: got ACK from 12. RTT = 358
+[65641]: 3: got ACK from 12. RTT = 358
+[65654]: 0: got ACK from 15. RTT = 316
+[65760]: 3: got ACK from 12. RTT = 360
+[65941]: 3: got ACK from 12. RTT = 367
+[65965]: 0: got ACK from 15. RTT = 325
+[66052]: 3: got ACK from 12. RTT = 368
+[66172]: 3: got ACK from 12. RTT = 369
+[66252]: 3: got ACK from 12. RTT = 368
+[66277]: 0: got ACK from 15. RTT = 334
+[66441]: 3: got ACK from 12. RTT = 375
+[66541]: 3: got ACK from 12. RTT = 375
+[66546]: 0: got ACK from 15. RTT = 340
+[66741]: 3: got ACK from 12. RTT = 383
+[66776]: 0: got ACK from 15. RTT = 343
+[66841]: 3: got ACK from 12. RTT = 382
+[66981]: 3: got ACK from 12. RTT = 387
+[67087]: 0: got ACK from 15. RTT = 352
+[67141]: 3: got ACK from 12. RTT = 391
+[67199]: 0: got ACK from 15. RTT = 344
+[67241]: 3: got ACK from 12. RTT = 392
+[67374]: 3: got ACK from 12. RTT = 394
+[67541]: 3: got ACK from 12. RTT = 400
+[67590]: 0: got ACK from 15. RTT = 361
+[67655]: 3: got ACK from 12. RTT = 401
+[67774]: 3: got ACK from 12. RTT = 403
+[67855]: 3: got ACK from 12. RTT = 401
+[67862]: 0: got ACK from 15. RTT = 368
+[67974]: 3: got ACK from 12. RTT = 403
+[68133]: 0: got ACK from 15. RTT = 374
+[68141]: 3: got ACK from 12. RTT = 408
+[68341]: 3: got ACK from 12. RTT = 417
+[68444]: 0: got ACK from 15. RTT = 381
+[68455]: 3: got ACK from 12. RTT = 418
+[68541]: 3: got ACK from 12. RTT = 417
+[68675]: 0: got ACK from 15. RTT = 384
+[68741]: 3: got ACK from 12. RTT = 425
+[68777]: 3: got ACK from 12. RTT = 420
+[68866]: 0: got ACK from 15. RTT = 384
+[68977]: 3: got ACK from 12. RTT = 428
+[69136]: 0: got ACK from 15. RTT = 391
+[69141]: 3: got ACK from 12. RTT = 431
+[69176]: 3: got ACK from 12. RTT = 428
+[69441]: 3: got ACK from 12. RTT = 442
+[69448]: 0: got ACK from 15. RTT = 400
+[69471]: 3: got ACK from 12. RTT = 436
+[69558]: 0: got ACK from 15. RTT = 393
+[69581]: 3: got ACK from 12. RTT = 437
+[69741]: 3: got ACK from 12. RTT = 439
+[69909]: 0: got ACK from 15. RTT = 403
+[69941]: 3: got ACK from 12. RTT = 450
+[70041]: 3: got ACK from 12. RTT = 450
+[70141]: 3: got ACK from 12. RTT = 450
+[70259]: 0: got ACK from 15. RTT = 417
+[70341]: 3: got ACK from 12. RTT = 458
+[70441]: 3: got ACK from 12. RTT = 458
+[70449]: 0: got ACK from 15. RTT = 416
+[70541]: 3: got ACK from 12. RTT = 458
+[70662]: 3: got ACK from 12. RTT = 460
+[70721]: 0: got ACK from 15. RTT = 422
+[70780]: 3: got ACK from 12. RTT = 462
+[70941]: 3: got ACK from 12. RTT = 467
+[70952]: 0: got ACK from 15. RTT = 426
+[71041]: 3: got ACK from 12. RTT = 467
+[71182]: 0: got ACK from 15. RTT = 426
+[71241]: 3: got ACK from 12. RTT = 475
+[71349]: 3: got ACK from 12. RTT = 476
+[71374]: 0: got ACK from 15. RTT = 425
+[71462]: 3: got ACK from 12. RTT = 477
+[71641]: 3: got ACK from 12. RTT = 483
+[71726]: 0: got ACK from 15. RTT = 438
+[71754]: 3: got ACK from 12. RTT = 484
+[71862]: 3: got ACK from 12. RTT = 485
+[71995]: 0: got ACK from 15. RTT = 445
+[72065]: 3: got ACK from 12. RTT = 494
+[72144]: 3: got ACK from 12. RTT = 492
+[72187]: 0: got ACK from 15. RTT = 445
+[72264]: 3: got ACK from 12. RTT = 494
+[72441]: 3: got ACK from 12. RTT = 500
+[72497]: 0: got ACK from 15. RTT = 454
+[72545]: 3: got ACK from 12. RTT = 500
+[72664]: 3: got ACK from 12. RTT = 502
+[72841]: 3: got ACK from 12. RTT = 508
+[72848]: 0: got ACK from 15. RTT = 465
+[72941]: 3: got ACK from 12. RTT = 508
+[72999]: 0: got ACK from 15. RTT = 461
+[73041]: 3: got ACK from 12. RTT = 508
+[73146]: 3: got ACK from 12. RTT = 508
+[73309]: 0: got ACK from 15. RTT = 471
+[73362]: 3: got ACK from 12. RTT = 518
+[73466]: 3: got ACK from 12. RTT = 519
+[73501]: 0: got ACK from 15. RTT = 470
+[73641]: 3: got ACK from 12. RTT = 525
+[73741]: 3: got ACK from 12. RTT = 525
+[73852]: 0: got ACK from 15. RTT = 483
+[73941]: 3: got ACK from 12. RTT = 533
+[74041]: 3: got ACK from 12. RTT = 533
+[74082]: 0: got ACK from 15. RTT = 487
+[74163]: 3: got ACK from 12. RTT = 535
+[74244]: 3: got ACK from 12. RTT = 533
+[74312]: 0: got ACK from 15. RTT = 489
+[74441]: 3: got ACK from 12. RTT = 542
+[74542]: 0: got ACK from 15. RTT = 489
+[74548]: 3: got ACK from 12. RTT = 542
+[74668]: 3: got ACK from 12. RTT = 544
+[74772]: 0: got ACK from 15. RTT = 492
+[74841]: 3: got ACK from 12. RTT = 550
+[74948]: 3: got ACK from 12. RTT = 551
+[75044]: 0: got ACK from 15. RTT = 499
+[75074]: 3: got ACK from 12. RTT = 553
+[75241]: 3: got ACK from 12. RTT = 558
+[75355]: 0: got ACK from 15. RTT = 509
+[75441]: 3: got ACK from 12. RTT = 567
+[75471]: 3: got ACK from 12. RTT = 561
+[75585]: 0: got ACK from 15. RTT = 511
+[75589]: 3: got ACK from 12. RTT = 562
+[75741]: 3: got ACK from 12. RTT = 567
+[75857]: 0: got ACK from 15. RTT = 516
+[75941]: 3: got ACK from 12. RTT = 574
+[76041]: 3: got ACK from 12. RTT = 575
+[76128]: 0: got ACK from 15. RTT = 522
+[76141]: 3: got ACK from 12. RTT = 575
+[76242]: 3: got ACK from 12. RTT = 575
+[76398]: 0: got ACK from 15. RTT = 528
+[76461]: 3: got ACK from 12. RTT = 585
+[76553]: 3: got ACK from 12. RTT = 584
+[76670]: 0: got ACK from 15. RTT = 534
+[76672]: 3: got ACK from 12. RTT = 585
+[76841]: 3: got ACK from 12. RTT = 592
+[76942]: 0: got ACK from 15. RTT = 541
+[76953]: 3: got ACK from 12. RTT = 593
+[77078]: 3: got ACK from 12. RTT = 595
+[77173]: 0: got ACK from 15. RTT = 541
+[77241]: 3: got ACK from 12. RTT = 600
+[77356]: 3: got ACK from 12. RTT = 601
+[77444]: 0: got ACK from 15. RTT = 548
+[77474]: 3: got ACK from 12. RTT = 603
+[77641]: 3: got ACK from 12. RTT = 608
+[77675]: 0: got ACK from 15. RTT = 551
+[77741]: 3: got ACK from 12. RTT = 608
+[77866]: 0: got ACK from 15. RTT = 551
+[77941]: 3: got ACK from 12. RTT = 617
+[78042]: 3: got ACK from 12. RTT = 617
+[78135]: 0: got ACK from 15. RTT = 558
+[78141]: 3: got ACK from 12. RTT = 617
+[78273]: 3: got ACK from 12. RTT = 619
+[78441]: 3: got ACK from 12. RTT = 625
+[78446]: 0: got ACK from 15. RTT = 567
+[78555]: 3: got ACK from 12. RTT = 626
+[78641]: 3: got ACK from 12. RTT = 625
+[78715]: 0: got ACK from 15. RTT = 570
+[78841]: 3: got ACK from 12. RTT = 633
+[78907]: 0: got ACK from 15. RTT = 570
+[78942]: 3: got ACK from 12. RTT = 633
+[79074]: 3: got ACK from 12. RTT = 636
+[79137]: 0: got ACK from 15. RTT = 573
+[79241]: 3: got ACK from 12. RTT = 642
+[79360]: 3: got ACK from 12. RTT = 643
+[79447]: 0: got ACK from 15. RTT = 582
+[79478]: 3: got ACK from 12. RTT = 645
+[79597]: 3: got ACK from 12. RTT = 646
+[79750]: 3: got ACK from 12. RTT = 651
+[79758]: 0: got ACK from 15. RTT = 592
+[79868]: 3: got ACK from 12. RTT = 652
+[79949]: 0: got ACK from 15. RTT = 592
+[80061]: 3: got ACK from 12. RTT = 660
+[80141]: 3: got ACK from 12. RTT = 658
+[80180]: 0: got ACK from 15. RTT = 593
+[80281]: 3: got ACK from 12. RTT = 662
+[80446]: 3: got ACK from 12. RTT = 667
+[80531]: 0: got ACK from 15. RTT = 605
+[80641]: 3: got ACK from 12. RTT = 675
+[80671]: 3: got ACK from 12. RTT = 669
+[80723]: 0: got ACK from 15. RTT = 605
+[80780]: 3: got ACK from 12. RTT = 670
+[80941]: 3: got ACK from 12. RTT = 675
+[80993]: 0: got ACK from 15. RTT = 612
+[81079]: 3: got ACK from 12. RTT = 678
+[81242]: 3: got ACK from 12. RTT = 683
+[81265]: 0: got ACK from 15. RTT = 618
+[81362]: 3: got ACK from 12. RTT = 685
+[81481]: 3: got ACK from 12. RTT = 687
+[81495]: 0: got ACK from 15. RTT = 621
+[81642]: 3: got ACK from 12. RTT = 692
+[81741]: 3: got ACK from 12. RTT = 692
+[81847]: 0: got ACK from 15. RTT = 631
+[81941]: 3: got ACK from 12. RTT = 700
+[81998]: 0: got ACK from 15. RTT = 628
+[82042]: 3: got ACK from 12. RTT = 700
+[82141]: 3: got ACK from 12. RTT = 700
+[82270]: 0: got ACK from 15. RTT = 635
+[82341]: 3: got ACK from 12. RTT = 708
+[82451]: 3: got ACK from 12. RTT = 709
+[82500]: 0: got ACK from 15. RTT = 638
+[82541]: 3: got ACK from 12. RTT = 708
+[82766]: 3: got ACK from 12. RTT = 719
+[82884]: 3: got ACK from 12. RTT = 720
+[82890]: 0: got ACK from 15. RTT = 654
+[82965]: 3: got ACK from 12. RTT = 719
+[83120]: 0: got ACK from 15. RTT = 654
+[83141]: 3: got ACK from 12. RTT = 725
+[83171]: 3: got ACK from 12. RTT = 719
+[83272]: 0: got ACK from 15. RTT = 651
+[83341]: 3: got ACK from 12. RTT = 725
+[83541]: 3: got ACK from 12. RTT = 733
+[83580]: 0: got ACK from 15. RTT = 660
+[83642]: 3: got ACK from 12. RTT = 733
+[83741]: 3: got ACK from 12. RTT = 733
+[83892]: 0: got ACK from 15. RTT = 670
+[83941]: 3: got ACK from 12. RTT = 742
+[84051]: 3: got ACK from 12. RTT = 742
+[84122]: 0: got ACK from 15. RTT = 673
+[84166]: 3: got ACK from 12. RTT = 744
+[84286]: 3: got ACK from 12. RTT = 745
+[84352]: 0: got ACK from 15. RTT = 673
+[84441]: 3: got ACK from 12. RTT = 750
+[84556]: 3: got ACK from 12. RTT = 751
+[84664]: 0: got ACK from 15. RTT = 683
+[84741]: 3: got ACK from 12. RTT = 757
+[84771]: 3: got ACK from 12. RTT = 753
+[84895]: 0: got ACK from 15. RTT = 685
+[84941]: 3: got ACK from 12. RTT = 758
+[85045]: 0: got ACK from 15. RTT = 682
+[85141]: 3: got ACK from 12. RTT = 767
+[85242]: 3: got ACK from 12. RTT = 767
+[85369]: 3: got ACK from 12. RTT = 769
+[85476]: 0: got ACK from 15. RTT = 702
+[85541]: 3: got ACK from 12. RTT = 775
+[85586]: 0: got ACK from 15. RTT = 695
+[85642]: 3: got ACK from 12. RTT = 775
+[85741]: 3: got ACK from 12. RTT = 775
+[85896]: 0: got ACK from 15. RTT = 704
+[85941]: 3: got ACK from 12. RTT = 783
+[86058]: 3: got ACK from 12. RTT = 785
+[86167]: 0: got ACK from 15. RTT = 708
+[86169]: 3: got ACK from 12. RTT = 786
+[86372]: 3: got ACK from 12. RTT = 794
+[86398]: 0: got ACK from 15. RTT = 711
+[86490]: 3: got ACK from 12. RTT = 796
+[86573]: 3: got ACK from 12. RTT = 794
+[86669]: 0: got ACK from 15. RTT = 718
+[86692]: 3: got ACK from 12. RTT = 795
+[86845]: 3: got ACK from 12. RTT = 800
+[86938]: 0: got ACK from 15. RTT = 724
+[87041]: 3: got ACK from 12. RTT = 808
+[87129]: 0: got ACK from 15. RTT = 724
+[87141]: 3: got ACK from 12. RTT = 808
+[87253]: 3: got ACK from 12. RTT = 809
+[87359]: 0: got ACK from 15. RTT = 724
+[87373]: 3: got ACK from 12. RTT = 811
+[87541]: 3: got ACK from 12. RTT = 817
+[87641]: 3: got ACK from 12. RTT = 817
+[87772]: 3: got ACK from 12. RTT = 819
+[87789]: 0: got ACK from 15. RTT = 744
+[87940]: 0: got ACK from 15. RTT = 740
+[87941]: 3: got ACK from 12. RTT = 825
+[87974]: 3: got ACK from 12. RTT = 819
+[88132]: 0: got ACK from 15. RTT = 740
+[88141]: 3: got ACK from 12. RTT = 825
+[88241]: 3: got ACK from 12. RTT = 825
+[88441]: 3: got ACK from 12. RTT = 833
+[88484]: 0: got ACK from 15. RTT = 753
+[88541]: 3: got ACK from 12. RTT = 833
+[88655]: 3: got ACK from 12. RTT = 835
+[88715]: 0: got ACK from 15. RTT = 753
+[88855]: 3: got ACK from 12. RTT = 843
+[88945]: 0: got ACK from 15. RTT = 756
+[88975]: 3: got ACK from 12. RTT = 845
+[89056]: 3: got ACK from 12. RTT = 843
+[89256]: 0: got ACK from 15. RTT = 766
+[89257]: 3: got ACK from 12. RTT = 851
+[89376]: 3: got ACK from 12. RTT = 853
+[89455]: 3: got ACK from 12. RTT = 851
+[89527]: 0: got ACK from 15. RTT = 773
+[89575]: 3: got ACK from 12. RTT = 853
+[89741]: 3: got ACK from 12. RTT = 858
+[89757]: 0: got ACK from 15. RTT = 776
+[89941]: 3: got ACK from 12. RTT = 866
+[89987]: 0: got ACK from 15. RTT = 779
+[90061]: 3: got ACK from 12. RTT = 866
+[90178]: 3: got ACK from 12. RTT = 870
+[90338]: 0: got ACK from 15. RTT = 789
+[90341]: 3: got ACK from 12. RTT = 875
+[90441]: 3: got ACK from 12. RTT = 875
+[90541]: 3: got ACK from 12. RTT = 875
+[90568]: 0: got ACK from 15. RTT = 792
+[90668]: 3: got ACK from 12. RTT = 877
+[90798]: 0: got ACK from 15. RTT = 794
+[90841]: 3: got ACK from 12. RTT = 883
+[90941]: 3: got ACK from 12. RTT = 882
+[91070]: 0: got ACK from 15. RTT = 801
+[91141]: 3: got ACK from 12. RTT = 892
+[91259]: 3: got ACK from 12. RTT = 893
+[91261]: 0: got ACK from 15. RTT = 801
+[91341]: 3: got ACK from 12. RTT = 892
+[91541]: 3: got ACK from 12. RTT = 900
+[91570]: 0: got ACK from 15. RTT = 810
+[91641]: 3: got ACK from 12. RTT = 899
+[91742]: 3: got ACK from 12. RTT = 900
+[91842]: 0: got ACK from 15. RTT = 814
+[91942]: 3: got ACK from 12. RTT = 908
+[92041]: 3: got ACK from 12. RTT = 908
+[92072]: 0: got ACK from 15. RTT = 817
+[92241]: 3: got ACK from 12. RTT = 917
+[92271]: 3: got ACK from 12. RTT = 911
+[92341]: 0: got ACK from 15. RTT = 823
+[92441]: 3: got ACK from 12. RTT = 917
+[92532]: 0: got ACK from 15. RTT = 823
+[92545]: 3: got ACK from 12. RTT = 916
+[92749]: 3: got ACK from 12. RTT = 926
+[92841]: 3: got ACK from 12. RTT = 925
+[92923]: 0: got ACK from 15. RTT = 839
+[92953]: 3: got ACK from 12. RTT = 926
+[93115]: 0: got ACK from 15. RTT = 839
+[93141]: 3: got ACK from 12. RTT = 933
+[93241]: 3: got ACK from 12. RTT = 933
+[93345]: 0: got ACK from 15. RTT = 839
+[93441]: 3: got ACK from 12. RTT = 942
+[93541]: 3: got ACK from 12. RTT = 942
+[93576]: 0: got ACK from 15. RTT = 843
+[93641]: 3: got ACK from 12. RTT = 942
+[93841]: 3: got ACK from 12. RTT = 950
+[93847]: 0: got ACK from 15. RTT = 850
+[93900]: 3: got ACK from 12. RTT = 947
+[94053]: 3: got ACK from 12. RTT = 951
+[94157]: 0: got ACK from 15. RTT = 859
+[94172]: 3: got ACK from 12. RTT = 953
+[94291]: 3: got ACK from 12. RTT = 954
+[94388]: 0: got ACK from 15. RTT = 862
+[94443]: 3: got ACK from 12. RTT = 957
+[94641]: 3: got ACK from 12. RTT = 967
+[94699]: 0: got ACK from 15. RTT = 869
+[94754]: 3: got ACK from 12. RTT = 968
+[94841]: 3: got ACK from 12. RTT = 967
+[94931]: 0: got ACK from 15. RTT = 872
+[94941]: 3: got ACK from 12. RTT = 967
+[95065]: 3: got ACK from 12. RTT = 969
+[95161]: 0: got ACK from 15. RTT = 875
+[95267]: 3: got ACK from 12. RTT = 977
+[95387]: 3: got ACK from 12. RTT = 979
+[95392]: 0: got ACK from 15. RTT = 878
+[95578]: 3: got ACK from 12. RTT = 986
+[95659]: 3: got ACK from 12. RTT = 985
+[95663]: 0: got ACK from 15. RTT = 885
+[95750]: 3: got ACK from 12. RTT = 984
+[95868]: 3: got ACK from 12. RTT = 986
+[95974]: 0: got ACK from 15. RTT = 892
+[96041]: 3: got ACK from 12. RTT = 992
+[96241]: 3: got ACK from 12. RTT = 1000
+[96245]: 0: got ACK from 15. RTT = 897
+[96342]: 3: got ACK from 12. RTT = 999
+[96441]: 3: got ACK from 12. RTT = 1000
+[96475]: 0: got ACK from 15. RTT = 902
+[96553]: 3: got ACK from 12. RTT = 1001
+[96670]: 3: got ACK from 12. RTT = 1002
+[96745]: 0: got ACK from 15. RTT = 907
+[96872]: 3: got ACK from 12. RTT = 1011
+[96936]: 0: got ACK from 15. RTT = 907
+[96952]: 3: got ACK from 12. RTT = 1009
+[97141]: 3: got ACK from 12. RTT = 1017
+[97171]: 3: got ACK from 12. RTT = 1011
+[97280]: 3: got ACK from 12. RTT = 1012
+[97288]: 0: got ACK from 15. RTT = 918
+[97479]: 0: got ACK from 15. RTT = 918
+[97541]: 3: got ACK from 12. RTT = 1025
+[97641]: 3: got ACK from 12. RTT = 1025
+[97751]: 3: got ACK from 12. RTT = 1026
+[97789]: 0: got ACK from 15. RTT = 927
+[97872]: 3: got ACK from 12. RTT = 1028
+[97979]: 0: got ACK from 15. RTT = 927
+[98041]: 3: got ACK from 12. RTT = 1033
+[98151]: 3: got ACK from 12. RTT = 1034
+[98272]: 3: got ACK from 12. RTT = 1036
+[98292]: 0: got ACK from 15. RTT = 937
+[98473]: 3: got ACK from 12. RTT = 1044
+[98561]: 0: got ACK from 15. RTT = 940
+[98591]: 3: got ACK from 12. RTT = 1046
+[98674]: 3: got ACK from 12. RTT = 1044
+[98791]: 0: got ACK from 15. RTT = 943
+[98876]: 3: got ACK from 12. RTT = 1053
+[98956]: 3: got ACK from 12. RTT = 1051
+[99063]: 0: got ACK from 15. RTT = 949
+[99074]: 3: got ACK from 12. RTT = 1053
+[99193]: 3: got ACK from 12. RTT = 1053
+[99293]: 0: got ACK from 15. RTT = 953
+[99355]: 3: got ACK from 12. RTT = 1059
+[99475]: 3: got ACK from 12. RTT = 1059
+[99484]: 0: got ACK from 15. RTT = 953
+[99645]: 3: got ACK from 12. RTT = 1067
+[99795]: 0: got ACK from 15. RTT = 963
+[99841]: 3: got ACK from 12. RTT = 1075
+[99877]: 3: got ACK from 12. RTT = 1070

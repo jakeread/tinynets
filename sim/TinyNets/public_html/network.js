@@ -413,7 +413,6 @@ Network.prototype = {
 	},
 
 	log: function(str) {
-            console.log(str);
 		if (this.visualizer)
 			this.visualizer.log(str)
 		else

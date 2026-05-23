@@ -116,9 +116,8 @@ function disconnect(a, aPort, b, bPort, delay) {
             this.manager.disconnect(bPort);
         });
     });
-    // Mark topology so BFS after reconvergence excludes the dead link.
-    topology[a][aPort] = -1;
-    topology[b][bPort] = -1;
+    // manager.disconnect() marks topology[nodeId][port] = -1 at runtime;
+    // do NOT pre-mark here or the initial BFS tables will exclude the link.
 }
 
 // ------------------------------------------------------------------
@@ -141,16 +140,15 @@ if (SIM_STATEFUL === 'cross') {
     sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 0.1,  true);
 
 } else if (SIM_STATEFUL === 'fail') {
-    // Main path: corner 0 -> corner (ROWS*COLS-1), 10 kHz
-    sendPacket(0, ROWS*COLS-1, 1, 'Hi', 0.1, true);
-    // Cross-traffic: opposite diagonal, 5 kHz
-    sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 0.2, true);
+    // Main path: corner 0 -> corner (ROWS*COLS-1), 5 kHz (matches sim.js SIM=3)
+    sendPacket(0, ROWS*COLS-1, 1, 'Hi', 0.2, true);
+    // Cross-traffic: opposite diagonal, 10 kHz
+    sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 0.1, true);
 
-    // Disconnect one random interior node at 11 ms (same as sim.js)
-    var failNode;
-    do {
-        failNode = Math.floor(Math.random() * (topology.length - 2) + 1);
-    } while (failNode === ROWS-1 || failNode === ROWS*(COLS-1));
+    // Disconnect an interior node at 11 ms that lies on the primary BFS path
+    // from corner 0 to corner 15 (0→1→2→3→7→11→15), so the failure produces
+    // a visible blackout window in the 0→15 RTT time series.
+    var failNode = 7;
 
     for (let p = 0; p < topology[failNode].length; p++) {
         var nb = topology[failNode][p];
@@ -169,4 +167,6 @@ if (SIM_STATEFUL === 'cross') {
 for (let i = 0; i < initTopology.length; i++) {
     net.add(1, clients[i]);
 }
-net.run(syrup * 60);
+// For the failure scenario we need to run past the 50 ms LFA blackout window
+// (failure at 11 ms + 50 ms delay = 61 ms) to show reconvergence.
+net.run(SIM_STATEFUL === 'fail' ? syrup * 100 : syrup * 60);

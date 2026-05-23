@@ -1,27 +1,60 @@
 \section{Related Work}
-The body of related work in this field encompasses three main categories: convergence dynamics in networked systems, the design and function of various routing protocols, and the specific application and characteristics of Switched Ethernet.
-
-\subsection{Convergence Dynamics in Networked Systems}
-In the realm of networked systems, particularly during initialization or when undergoing topological alterations, nodes must acquire an understanding of the network graph, which can vary in its degree of completeness. Traditional routing protocols usually achieve this through one of two methods: either by having nodes disseminate their routing tables to others or by initiating a manual topology exploration using flood messages.
-
-A key aspect of the TinyNet protocol is its real-time adaptation to failure scenarios, its agility in rerouting paths in response to link or node failures. This subsection focuses on evaluating TinyNet's proficiency in rapidly reconstituting network connectivity in such situations.
-
-The term ``convergence'' in this context refers to restoring consistent topological knowledge among routers in the network. Within the TinyNet framework, convergence is characterized by the time lapse experienced when a node is eliminated from the network, followed by the ensuing processes of dynamic packet redistribution and rerouting. Note that convergence is slightly different for TinyNet since each node will not have a complete view of the network graph. However, convergence time from other routing protocols will serve as good benchmarks as convergence time measures the time it takes the network to operate normally in the event of a node failure or of node busyness.
-
-\subsection{Design and Function of State-of-the-Art Routing Protocols}
-We evaluate the failure response in three prominent protocols: OSPF \cite{ospf}, SPB \cite{spb}, and TRILL \cite{trill}. In these protocols, nodes require complete knowledge of the network graph to determine the shortest path for data transmission. Consequently, a single node failure can pause the entire network, as all nodes must update their network graph representation, leading to a significant reduction in message delivery time predictability. Generally, these protocols are associated with a standard convergence time of approximately 200 milliseconds \cite{eramo2008multi,farkas2009performance}.
-
-TinyNet introduces a more efficient approach for NCS. When a node fails, information about the compromised links and nodes is disseminated throughout the network in a way that maintains the network's current state and minimizes additional delays.
-
-Another critical factor in network resilience is the capacity of routing protocols to utilize multiple paths. OSPF, SPB, and TRILL each incorporate strategies to achieve this. TRILL employs Fabric Shortest Path First (FSPF) to identify alternative routes following topological changes, while OSPF and SPB can utilize equal-cost multipath (ECMP) routing to handle multiple paths of identical cost. However, these protocols typically enable dynamic pathfinding only under specific conditions.
-
-In contrast, TinyNet leverages a more straightforward path selection method, which significantly reduces computational overhead compared to stateful protocols. This is achieved by minimizing packet header sizes and avoiding complex computations, such as running Dijkstra's algorithm on the network graph. As a result, TinyNet is not only more adaptable but also more compatible across a diverse range of hardware environments.
-
-\subsection{Switched Ethernet}
-Switched Ethernet operates on the principle of creating a minimum spanning tree, leading to a scenario where nodes within the same layer are in competition for transmission time on the subsequent layer. Consequently, the time delay for message delivery tends to increase in proportion to both the likelihood of simultaneous transmissions by peer nodes and the total number of peers within that layer.
-
-A significant limitation of Switched Ethernet is its vulnerability to single points of failure. In situations where a link or switch fails, the network is compelled to reinitiate the spanning tree protocol algorithm, a process that can extend over several seconds \cite{krishnan2013performance}. Due to the hierarchical nature of Switched Ethernet's network graphs, a failure in a single link can render extensive network sections inaccessible.
-
-Moreover, Switched Ethernet lacks programmability. Its switches are essentially black-box integrated circuits, which restrict the ability of system designers to incorporate additional functionalities directly at the networking layer. This limitation is particularly relevant in NCS, where features such as message prioritization and load balancing are essential. Under Switched Ethernet, these capabilities cannot be integrated into the Layer 2 routing strategy and must instead be implemented at the application layer, leading to potential inefficiencies and complexities in system design.
-
-The IEEE 802.1 Time-Sensitive Networking (TSN) standards \cite{messenger2018tsn} represent a recent effort to add determinism to Ethernet by introducing mechanisms such as credit-based shaping, time-aware scheduling, and frame preemption. While TSN improves delivery determinism within a single network segment, it still relies on centralized network configuration and remains subject to spanning-tree constraints for fault tolerance. TinyNet complements this direction by addressing fault tolerance and multipath routing at the protocol level without requiring centralized management.
+\label{sec:related}
+ 
+TinyNet sits at the intersection of several mature research and engineering communities: deterministic industrial Ethernet, IP-layer fast reroute, congestion-aware multipath in datacenter fabrics, backpressure-based routing for multi-hop wireless networks, and mesh routing for constrained devices. We survey each in turn, identifying the specific gap that motivates a stateless,busyness-aware protocol for networked control.
+ 
+\subsection{Deterministic Industrial Ethernet}
+\label{sec:related:industrial}
+ 
+The dominant deployed alternatives to Switched Ethernet in NCS are the modified-Ethernet fieldbusses: EtherCAT, PROFINET~IRT, SERCOS~III, POWERLINK, and CC-Link~IE~TSN, together with the avionics-grade AFDX family. \cite{felser2005realtime,zunino2018industrial} EtherCAT, in particular, is widely used in industrial robotics and achieves sub-microsecond synchronization and cycle times below 100~$\mu$s by processing frames \emph{on the fly}: a single frame circulates around a logical ring, and each slave extracts and inserts its data as the frame passes through dedicated hardware. \cite{ethercat_ig,prytz2008performance} Reported jitter for ARM-based EtherCAT masters in robotic motion control is below 1~$\mu$s~\cite{ethercat_arm_robot}. AFDX, the deterministic Ethernet profile flying on the A350 and 787, provides bounded latency through statically allocated Virtual Links and dual redundant networks. \cite{afdx_nasa}
+ 
+These protocols achieve excellent determinism, but at a cost that TinyNet is explicitly designed to avoid. EtherCAT requires a master to own the cycle and constrains the topology to ring or line structures; AFDX statically provisions every Virtual Link offline, requires certified switch hardware, and uses redundancy rather than multipath (the two copies follow disjoint but fixed paths). Neither addresses the case of a richly meshed graph of peer endpoints discovering routes at runtime without a controller.
+ 
+The IEEE 802.1 Time-Sensitive Networking (TSN) family of standards augments standard switched Ethernet with deterministic mechanisms and is now widely deployed in industrial automation, automotive, and aerospace settings. \cite{tsn_survey_arxiv,tsn_ieee_tg} In particular, the 802.1Qcc enhancement defines fully centralized, fully distributed, and hybrid models for configuring TSN networks. \cite{nasrallah_qcc_arxiv}
+ 
+Two TSN features are directly comparable to TinyNet's claims and deserve closer attention than they have received in the NCS literature. First, FRER addresses fault tolerance by transmitting duplicated frames over a network, which may include disjoint paths, and eliminating duplicates at the receiver; this is a different point in the design space than TinyNet's reactive flooding, but it accomplishes a similar goal without paying the cost of post-failure reconvergence. Second, TAS (802.1Qbv) achieves bounded jitter by computing a global gate schedule offline, an approach whose schedulability problem is NP-complete and which has spawned a large literature on SMT-based and heuristic synthesis. \cite{craciunas2016combined,tsnsched,tsn_scheduling_survey} TAS provides excellent determinism for traffic whose timing is known at design time, but reconfiguring the schedule in response to runtime conditions remains costly, and the schedule itself is typically computed by a Centralized Network Configuration entity. TinyNet targets the complementary regime: irregular, topology-changing networks where offline scheduling is impractical and where the cost of a centralized configuration entity is unacceptable.
+ 
+\subsection{IP-Layer Fast Reroute}
+\label{sec:related:frr}
+ 
+The 200~ms reconvergence figure cited for OSPF and SPB \cite{ospf,spb} reflects the behavior of vanilla link-state protocols and was the relevant baseline at the time those measurements were taken. Modern IP networks largely avoid this latency through pre-computed local repair. Loop-Free Alternates (LFA~\cite{rfc5286}), Remote-LFA, and Topology-Independent LFA install a backup next-hop in the forwarding table at routing-protocol convergence time; when Bidirectional Forwarding Detection or a link-down signal triggers failover, the cutover is local and is typically completed in under 50ms \cite{cisco_lfa}. MPLS Fast Reroute provides comparable guarantees in MPLS-TE networks.
+ 
+These mechanisms reduce the gap between stateful and stateless recovery from two orders of magnitude to roughly one. They do not eliminate it: LFA computes alternates against a single failure assumption, coverage is topology-dependent (not every prefix admits a loop-free alternate), and configuration complexity grows with SRLG (shared risk link group) constraints. For NCS, where control loops may run at kilohertz rates and a 50~ms blackout still corresponds to tens or hundreds of missed deadlines, these improvements are valuable, but do not close the case.
+ 
+\subsection{Congestion-Aware Multipath in Datacenters}
+\label{sec:related:dcn}
+ 
+The datacenter networking community has produced a rich family of congestion-aware multipath schemes that are relevant to TinyNet's cost-function routing. ECMP~\cite{ecmp_rfc} splits traffic across equal-cost paths but is oblivious to congestion. CONGA~\cite{conga_sigcomm}, implemented in custom ASICs, uses leaf-switch state plus piggybacked feedback from remote leaves to make flowlet-level path decisions and reacts to congestion on the order of microseconds. Hula~\cite{hula_sosr} pushes this idea further by having each switch track only the best path to each destination through each neighbor, using probe packets in the data plane and running on programmable (P4) hardware. Other proposals like DRILL, LetFlow, Hedera, and CONGA-Flow trade off flow-completion time, asymmetry tolerance, and reordering sensitivity.
+ 
+TinyNet's cost function in equation (\ref{eq:cost}) is structurally similar to CONGA's path-utilization metric and to Hula's per-neighbor congestion field, but the design constraints differ in three ways. First, the granularity is per-packet rather than per-flowlet, because NCS messages are typically a single packet and the notion of a flow does not usefully apply. Second, the state at each node is reduced to a single byte per neighbor (transmit buffer depth), eliminating the per-destination tables that Jula and CONGA maintain. Third, TinyNet runs on microcontroller-grade endpoints rather than programmable switches, which forces the protocol logic into roughly a hundred lines of C rather than a P4 program. These constraints rule out direct adoption of CONGA or Hula in their published form, but the analogy clarifies that TinyNet inherits and specializes a well-established line of work.
+ 
+\subsection{Backpressure Routing}
+\label{sec:related:backpressure}
+ 
+The cost function used in TinyNet is, viewed from a different angle, a variant of backpressure routing. The original max-weight/differential-backlog algorithm of Tassiulas and Ephremides~\cite{tassiulas1992} routes packets in the direction of the steepest negative gradient of queue backlog and is throughput-optimal under broad stability conditions. Subsequent work by Neely et al.~\cite{neely2005power,neely_book} extended the framework to time-varying wireless channels and unified it with utility-optimal control. Practical realizations include BCP, the first deployed backpressure protocol for wireless sensor networks~\cite{bcp}, DiffQ for differential-backlog congestion control~\cite{diffq}, and a body of follow-up work on link-feature variants~\cite{bp_link_features}.
+ 
+TinyNet differs from canonical backpressure in two important ways. Pure backpressure requires a separate queue per destination at each node, which is impractical for a microcontroller serving dozens of endpoints; TinyNet collapses this to a single transmit buffer per link and a small LUT, trading off a guarantee of throughput optimality for memory efficiency. And TinyNet weights backlog against hop count via the tunable $\lambda$ parameter rather than acting on backlog alone, which avoids the well-known last-packet delay problem of pure backpressure under light loads. We position TinyNet as a backpressure-inspired heuristic engineered for the NCS operating point rather than as a throughput-optimal scheme.
+ 
+\subsection{Mesh Routing for Constrained Devices}
+\label{sec:related:mesh}
+ 
+The IETF's RPL~\cite{rfc6550} is the closest analog to TinyNet in the constrained-device space. RPL constructs a Destination-Oriented Directed Acyclic Graph (DODAG) rooted at a sink, with each node selecting a preferred parent according to a configurable Objective Function (typically Expected Transmission Count or hop count). Like TinyNet, RPL is designed for cheap nodes with limited memory and is robust to churn. Unlike TinyNet, RPL is optimized for low-power lossy links, assumes converge-cast traffic toward a root, and inherits some of the same single-tree pathologies as Spanning Tree once the DODAG is established. Reactive variants such as P2P-RPL~\cite{rfc6997} relax the converge-cast assumption but introduce on-demand route-discovery latency that NCS cannot tolerate. The mobile ad-hoc routing protocols AODV and DSR share the same trade-off: cheap to run, but with discovery latencies in the tens to hundreds of milliseconds on first contact.
+ 
+TinyNet's flood-on-LUT-miss behavior is reminiscent of AODV's route-request flooding and of RPL's DIO/DIS exchanges, but is specialized in two ways: floods carry payload (so the first packet to a new destination is not delayed by a separate discovery round), and floods are triggered by the absence of an LUT entry rather than by a periodic timer.
+ 
+\subsection{Position of TinyNet}
+\label{sec:related:position}
+ 
+Across these threads, TinyNet occupies a specific point:
+\begin{itemize}
+  \item \textbf{Compared to industrial Ethernet} (EtherCAT, PROFINET~IRT, AFDX, TSN): TinyNet sacrifices the sub-microsecond determinism and certifiability of scheduled approaches in exchange for the ability to operate on arbitrary mesh topologies without offline configuration or a centralized configuration entity.
+  \item \textbf{Compared to IP-FRR}: TinyNet's failure recovery is roughly an order of magnitude faster than LFA-based fast reroute, because the response is data-driven (next packet floods) rather than gated on backup-path pre-installation and BFD detection windows.
+  \item \textbf{Compared to CONGA/Hula}: TinyNet adopts the congestion-aware multipath philosophy but reduces per-node state to a single byte per neighbor and shifts the implementation target from programmable switch ASICs to commodity microcontrollers.
+  \item \textbf{Compared to backpressure}: TinyNet is a memory-frugal heuristic in the same family, with a hop-count bias to prevent backlog-driven detours under light load.
+  \item \textbf{Compared to RPL/AODV}: TinyNet trades the converge-cast assumption (RPL) and the separate discovery phase (AODV) for payload-carrying floods that amortize discovery into useful transmission.
+\end{itemize}
+ 
+This combination of properties---stateless, controller-free,
+multipath, busyness-aware, payload-carrying floods on
+discovery---does not appear together in any of the protocols above,
+and is what we evaluate in Section~\ref{sec:eval}.
