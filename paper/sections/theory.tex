@@ -1,16 +1,15 @@
 \section{Theory}
-The TinyNet protocol significantly reduces the need for administrative communication between nodes. Rather than exchanging detailed topological data, nodes simply send periodic heartbeats to their immediate neighbors and route packets to designated ports, rendering the protocol essentially stateless. This approach allows TinyNet to operate effectively in both standard and failure situations, adopting a distributed method where the responsibility of message transmission is shifted to neighboring nodes instead of relying on pre-defined routes. Such a mechanism not only enhances link utilization but also improves the overall effective throughput (goodput) compared to alternative protocols.
-
+The TinyNet protocol significantly reduces the need for administrative communication between nodes. Rather than exchanging detailed topological data, nodes simply send periodic heartbeats to their immediate neighbors and route packets to designated ports, rendering the protocol stateless with respect to global topology. This approach allows TinyNet to operate effectively in both standard and failure situations, adopting a distributed method where the responsibility of message transmission is shifted to neighboring nodes instead of relying on pre-defined routes.
 We design TinyNet with the following constraints:
 \begin{itemize}
 	\item \textbf{Endpoint Integration:} TinyNet is engineered for straightforward integration into robotic endpoints. Utilizing a UART link, a common peripheral in most microcontrollers, the protocol is encapsulated within a C library. This design ensures that it can be effortlessly incorporated into existing firmware setups.
-	\item \textbf{Open-Source Development:} We have developed TinyNet as an open-source initiative, enabling wide applicability in the development of Network Control Systems. By avoiding the creation of a proprietary standard, we envisage TinyNet being adopted in diverse hardware environments, thereby fostering various practical implementations.
+	\item \textbf{Open-Source Development:} We have developed TinyNet as an open-source initiative, enabling wide applicability in the development of Networked Control Systems. By avoiding the creation of a proprietary standard, we envisage TinyNet being adopted in diverse hardware environments, thereby fostering various practical implementations.
 	\item \textbf{Statelessness:} A core objective in TinyNet's development is to minimize the need for centralized state awareness in routing processes. This principle not only bolsters the network's overall resilience but also obviates the necessity for a central network controller or complex network configurations.
 	\item \textbf{Real-Time Multipath Capability:} A significant focus of TinyNet is to provide real-time multipath routing capabilities. This feature is crucial for efficient port-forwarding and adaptive network traffic management.
 	\item \textbf{Robustness:} A fundamental requirement of TinyNet is its consistent performance even in the face of link disruptions or router failures, ensuring reliability and continuity in network operations.
 \end{itemize}
 
-TinyNet's design philosophy emphasizes simplicity, adaptability, and resilience, making it an ideal solution for modern Networked Control Systems.
+TinyNet's design emphasizes simplicity, adaptability, and resilience.
 
 \subsection{The TinyNet Algorithm}
 Each node handles incoming packets as follows:
@@ -62,15 +61,17 @@ Each node handles incoming packets as follows:
 		\EndIf
 	\ElsIf {packet is ACK Flood}
 		\State remove packet dest. from LUT at that port if it exists
-		\If {I am destination}
-			\State process acknowledgement
-		\Else
-			\State increment hop count
-			\If {LUT has destination address}
-				\State change packet type to ACK
-				\State send packet to port which minimizes C
+		\If {I have not yet seen this flood}
+			\If {I am destination}
+				\State process acknowledgement
 			\Else
-				\State send packet to all other ports
+				\State increment hop count
+				\If {LUT has destination address}
+					\State change packet type to ACK
+					\State send packet to port which minimizes C
+				\Else
+					\State send packet to all other ports
+				\EndIf
 			\EndIf
 		\EndIf
 	\Else
@@ -83,7 +84,7 @@ The packet handling algorithm identifies whether the incoming packet is a standa
 
 \begin{table}[h]
 	\centering
-	\caption{TinyNet Packet Structure}
+	\caption{TinyNet Packet Structure.}
 	\label{tab:packet-structure}
 	\begin{tabular}{||c|c c c c c c||}
 		\hline
@@ -93,9 +94,10 @@ The packet handling algorithm identifies whether the incoming packet is a standa
 		ACK & 0xFD or 0xFC & Dest. & HC & Src. & -    & -    \\
 		HB  & Buffer Depth & -     & -  & -    & -    & -    \\
 		\hline
+		\multicolumn{7}{p{0.9\linewidth}}{\footnotesize\textit{Notes.} STD = standard packet; ACK = acknowledgement; HB = heartbeat (single-byte; all remaining fields absent). Dest.\ = destination ID; HC = hop count; Src.\ = source ID; $N$ = payload length in bytes; Msg.\ = message payload. Lowercase `b' = bits; uppercase `B' = bytes.}
 	\end{tabular}
 \end{table}
-where STD is standard packet, ACK is an acknowledgement, and HB is a heartbeat containing only a buffer depth between 0 and 251 so as to avoid ambiguity with the four other packet types. The first eight bits of the message designate the message type: 0xFF designates the packet as Standard, 0xFE as Standard Flood, 0xFD as ACK, and 0xFC as ACK Flood. In the top row, lowercase ``b'' stands for ``bits'' and uppercase ``B'' stands for ``bytes.'' ``Dest.,'' ``HC,'' ``Src.,'' ``$N$,'' and ``MSG'' are the destination ID, hop count, source ID, length of the message payload in bytes, and message payload, respectively.
+The first byte designates the message type: 0xFF = Standard, 0xFE = Standard Flood, 0xFD = ACK, 0xFC = ACK Flood. HB packets carry only a buffer depth in [0, 251] to avoid ambiguity with the four other packet types.
 
 \begin{figure}[t]
 \centering
@@ -164,7 +166,7 @@ where STD is standard packet, ACK is an acknowledgement, and HB is a heartbeat c
 \smallskip\\
 {\small (c) Flood on link failure}
 \end{minipage}
-\caption{TinyNet behaviors. \textbf{(a)} Each node periodically broadcasts its transmit buffer depth (BD) as a single-byte heartbeat to immediate neighbors only. \textbf{(b)} A node routes each packet to the port minimizing $C=\mathrm{HC}+\lambda\cdot\mathrm{BD}$; here the path via M ($C=4$) is selected over the congested path via N ($C=17$, with $\lambda=0.5$). \textbf{(c)} When the link S--M fails, heartbeats from M cease; S floods the next packet to all remaining ports. Node N, which has a valid LUT entry for destination D, converts the flood to a standard packet and forwards it normally.}
+\caption{TinyNet behaviors. \textbf{(a)} Each node periodically broadcasts its transmit buffer depth (BD) as a single-byte heartbeat to immediate neighbors only. \textbf{(b)} A node routes each packet to the port minimizing $C=\mathrm{HC}+\lambda\cdot\mathrm{BD}$ (equation~\ref{eq:cost}); here the path via M ($C=4$) is selected over the congested path via N ($C=17$, with $\lambda=0.5$). \textbf{(c)} When the link S--M fails, heartbeats from M cease; S floods the next packet to all remaining ports. Node N, which has a valid LUT entry for destination D, converts the flood to a standard packet and forwards it normally.}
 \label{fig:tinynets-behaviors}
 \end{figure}
 
@@ -178,31 +180,31 @@ where $\mathrm{D}_{\mathrm{rx}}$ and $\mathrm{D}_{\mathrm{tx}}$ denote the time 
 
 The reception time, $\mathrm{D}_{\mathrm{rx}}$, can be calculated as:
 \begin{equation}
-	\mathrm{D}_{\mathrm{rx}}=\mathrm{P}_\mathrm{l}\times \mathrm{D}_{\mathrm{byte}}+\mathrm{L}_\mathrm{tt}
+	\mathrm{D}_{\mathrm{rx}}=\mathrm{P}_\ell\times \mathrm{D}_{\mathrm{byte}}+\mathrm{L}_\mathrm{tt}
 	\label{eq:drx}
 \end{equation}
-where $\mathrm{P}_\mathrm{l}$ is the packet length in bytes, $\mathrm{D}_{\mathrm{byte}}$ is the processing time per byte in the UART buffer, and $\mathrm{L}_\mathrm{tt}$ is the link transmission time, defined by:
+where $\mathrm{P}_\ell$ is the packet length in bytes, $\mathrm{D}_{\mathrm{byte}}$ is the processing time per byte in the UART buffer, and $\mathrm{L}_\mathrm{tt}$ is the link transmission time, defined by:
 \begin{equation}
-	\mathrm{L}_\mathrm{tt}=\mathrm{P}_\mathrm{l}\times 10/\mathrm{L}_\mathrm{br}
+	\mathrm{L}_\mathrm{tt}=\mathrm{P}_\ell\times 10/\mathrm{L}_\mathrm{br}
 	\label{eq:ltt}
 \end{equation}
-Here, $\mathrm{L}_\mathrm{br}$ represents the link's bitrate. Notably, each byte transmitted over UART consists of eight message bits plus a start and a stop bit, making a total of ten bits. Typically, $\mathrm{D}_{\mathrm{rx}}$ is influenced predominantly by the bitrate.
+Here, $\mathrm{L}_\mathrm{br}$ represents the link's bitrate. Notably, each byte transmitted over UART consists of eight message bits plus a start and a stop bit, making a total of ten bits. Typically, $\mathrm{D}_{\mathrm{rx}}$ is influenced predominantly by the bitrate. Equation~(\ref{eq:drx}) assumes the interrupt service routine completes before the next byte arrives; this holds at the 3.125~Mbps operating point (300~MHz core, 8-bit UART) but may be violated at higher bitrates.
 
 Similarly, the transmission time, $\mathrm{D}_{\mathrm{tx}}$, is calculated by:
 \begin{equation}
-	\mathrm{D}_{\mathrm{tx}}=\mathrm{P}_\mathrm{l}\times (N\times \mathrm{D}_{\mathrm{byte}} + 10/\mathrm{L}_\mathrm{br})
+	\mathrm{D}_{\mathrm{tx}}=\mathrm{P}_\ell\times (K\times \mathrm{D}_{\mathrm{byte}} + 10/\mathrm{L}_\mathrm{br})
 	\label{eq:dtx}
 \end{equation}
-where $N$ is the count of ports used for sending the packet. It is important to note that $N$ does not amplify the bitrate term as transmissions through each port occur concurrently.
+where $K$ is the count of ports used for sending the packet. $K$ does not amplify the bitrate term because transmissions through each port occur concurrently.
 
-In scenarios where a node receives multiple packets faster than they can be processed, a queue forms, increasing both the queue depth and the latency between receiving and transmitting packets. Thus, it's crucial for nodes to signal other network components, using backpressure, about more efficient routing alternatives.
+In scenarios where a node receives multiple packets faster than they can be processed, a queue forms, increasing both the queue depth and the latency between receiving and transmitting packets. Thus, nodes must signal neighboring nodes, using backpressure, about more efficient routing alternatives.
 
 TinyNet employs periodic heartbeats for this backpressure mechanism. At set intervals, each node transmits a single byte representing its current transmit buffer occupancy to each immediate neighbor. Specifically, the buffer depth reported in a heartbeat is the number of bytes currently enqueued in the transmit buffer of the link connecting the sending node to the neighbor receiving that heartbeat. This information is not propagated further but is used locally to enhance the path cost function, integrating both the hop count (HC) and a ``busyness metric'' (BD):
 \begin{equation}
-	\mathrm{C}(\mathrm{HC},\mathrm{BD})=\mathrm{HC}+\lambda \mathrm{BD}
+	\mathrm{C}(\mathrm{HC},\mathrm{BD})=\mathrm{HC}+\lambda\cdot\mathrm{BD}
 	\label{eq:cost}
 \end{equation}
-where the hop count (HC) is derived from earlier packets received from the destination node on this port, while buffer depth (BD) information comes from the heartbeat. The parameter $\lambda$ is adjustable by the network designer and aids in balancing hop count and node congestion levels in routing decisions.
+where the hop count (HC) is derived from earlier packets received from the destination node on this port, while buffer depth (BD) information comes from the heartbeat. The parameter $\lambda \geq 0$ (in units of hops per byte of buffer depth) is adjustable by the network designer and balances hop count against node congestion in routing decisions.
 
 ACK packets are routed back to the original sender using the same cost-function routing as standard packets. When a node receives any packet (including the original request), it records the source address and the port on which the packet arrived in its LUT. This allows intermediate nodes to route ACK packets toward the original sender without flooding: each intermediate node simply looks up the sender's address in its LUT and forwards the ACK along the port minimizing $\mathrm{C}$.
 
