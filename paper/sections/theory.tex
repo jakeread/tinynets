@@ -9,8 +9,6 @@ We design TinyNet with the following constraints:
 	\item \textbf{Robustness:} A fundamental requirement of TinyNet is its consistent performance even in the face of link disruptions or router failures, ensuring reliability and continuity in network operations.
 \end{itemize}
 
-TinyNet's design emphasizes simplicity, adaptability, and resilience.
-
 \subsection{The TinyNet Algorithm}
 Each node handles incoming packets as follows:
 \begin{algorithmic}
@@ -166,7 +164,7 @@ The first byte designates the message type: 0xFF = Standard, 0xFE = Standard Flo
 \smallskip\\
 {\small (c) Flood on link failure}
 \end{minipage}
-\caption{TinyNet behaviors. \textbf{(a)} Each node periodically broadcasts its transmit buffer depth (BD) as a single-byte heartbeat to immediate neighbors only. \textbf{(b)} A node routes each packet to the port minimizing $C=\mathrm{HC}+\lambda\cdot\mathrm{BD}$ (equation~\ref{eq:cost}); here the path via M ($C=4$) is selected over the congested path via N ($C=17$, with $\lambda=0.5$). \textbf{(c)} When the link S--M fails, heartbeats from M cease; S floods the next packet to all remaining ports. Node N, which has a valid LUT entry for destination D, converts the flood to a standard packet and forwards it normally.}
+\caption{TinyNet behaviors. \textbf{(a)} Each node periodically broadcasts its transmit buffer depth (BD) as a single-byte heartbeat to immediate neighbors only. \textbf{(b)} A node routes each packet to the port minimizing $C=\mathrm{HC}+\lambda\cdot\mathrm{BD}$ (equation~\ref{eq:cost}); here the path via M ($C=4$) is selected over the congested path via N ($C=17$). \textbf{(c)} When the link S--M fails, heartbeats from M cease; S floods the next packet to all remaining ports. Node N, which has a valid LUT entry for destination D, converts the flood to a standard packet and forwards it normally.}
 \label{fig:tinynets-behaviors}
 \end{figure}
 
@@ -188,7 +186,7 @@ where $\mathrm{P}_\ell$ is the packet length in bytes, $\mathrm{D}_{\mathrm{byte
 	\mathrm{L}_\mathrm{tt}=\mathrm{P}_\ell\times 10/\mathrm{L}_\mathrm{br}
 	\label{eq:ltt}
 \end{equation}
-Here, $\mathrm{L}_\mathrm{br}$ represents the link's bitrate. Notably, each byte transmitted over UART consists of eight message bits plus a start and a stop bit, making a total of ten bits. Typically, $\mathrm{D}_{\mathrm{rx}}$ is influenced predominantly by the bitrate. Equation~(\ref{eq:drx}) assumes the interrupt service routine completes before the next byte arrives; this holds at the 3.125~Mbps operating point (300~MHz core, 8-bit UART) but may be violated at higher bitrates.
+where $\mathrm{L}_\mathrm{br}$ represents the link's bitrate. Notably, each byte transmitted over UART consists of eight message bits plus a start and a stop bit, making a total of ten bits. Typically, $\mathrm{D}_{\mathrm{rx}}$ is influenced predominantly by the bitrate. Equation~(\ref{eq:drx}) assumes the interrupt service routine completes before the next byte arrives; this holds at the 3.125~Mbps operating point (300~MHz core, 8-bit UART) but may be violated at higher bitrates.
 
 Similarly, the transmission time, $\mathrm{D}_{\mathrm{tx}}$, is calculated by:
 \begin{equation}
