@@ -323,3 +323,6 @@ paper/*.cls
 paper/*.dtx
 paper/*.ins
 paper/*.zip
+
+# lateflat output
+paper/submit/
