@@ -23,6 +23,15 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning}
 
+% IF ORCIDLINK CAUSES ERRORS, UNCOMMENT:
+%% sn-jnl.cls already \gdef's \orcidlogo (pointing at a nonexistent
+%% Orcidlogo.eps) and errors when orcidlink.sty tries to redefine it.
+%% Reset it to \relax first so orcidlink's own definition wins cleanly.
+% \makeatletter
+% \let\orcidlogo\relax
+% \makeatother
+\usepackage{orcidlink}
+
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
@@ -77,7 +86,7 @@
 %%             state={},
 %%             country={}}
 
-\author{Jake Robert Read\fnref{equalAuth}}
+\author{Jake Robert Read\fnref{equalAuth}\,\orcidlink{0000-0003-4422-5837}}
 % \ead{jake.read@cba.mit.edu}
 \affiliation{organization={The MIT Center for Bits and Atoms},
              addressline={Room E15-401, 20 Ames Street}, 
@@ -86,7 +95,7 @@
              state={MA},
              country={USA}}
 
-\author{Nicholas Stearns Selby\fnref{equalAuth}}
+\author{Nicholas Stearns Selby\fnref{equalAuth}\,\orcidlink{0000-0001-9476-4850}}
 \ead{nicholas.selby@renewvia.com}
 \affiliation{organization={Renewvia Solar Ethiopia PLC},
              addressline={Bole sub-city, Woreda 03, House No. 174/175, Saya Building, 5th Floor}, 
