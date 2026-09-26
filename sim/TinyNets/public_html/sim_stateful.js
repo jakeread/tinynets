@@ -60,13 +60,34 @@ for (let i = 0; i < initTopology.length; i++) {
     clients.push(c);
 }
 
+// Optional static routes (ROUTES=optimal). BFS breaks ties by port order,
+// which sends both diagonal flows and their ACKs through nodes 0-3 and
+// overloads them. 'optimal' pins the four cross-scenario legs to the
+// shortest-path assignment that minimises peak node utilisation
+// (found by exhaustive search over all shortest paths).
+var OPTIMAL_PATHS = [
+    [0, 1, 5, 9, 10, 14, 15],   // 0 -> 15
+    [15, 14, 10, 9, 8, 4, 0],   // 15 -> 0 (ACKs)
+    [3, 7, 6, 5, 4, 8, 12],     // 3 -> 12
+    [12, 13, 14, 15, 11, 7, 3]  // 12 -> 3 (ACKs)
+];
+var staticRoutes = initTopology.map(() => ({}));   // node -> {dest: port}
+if (process.env.ROUTES === 'optimal') {
+    OPTIMAL_PATHS.forEach(function(p) {
+        var dest = p[p.length - 1];
+        for (let h = 0; h < p.length - 1; h++) {
+            staticRoutes[p[h]][dest] = initTopology[p[h]].indexOf(p[h + 1]);
+        }
+    });
+}
+
 // Initialise each node: setup with full topology so BFS can run.
 for (let i = 0; i < initTopology.length; i++) {
     (function(i) {
         clients[i].init(function() {
             this.delay(startupDelay, function() {
                 // Pass nodeId and full topology for BFS pre-computation.
-                this.manager.setup(initTopology[i].length, i, topology);
+                this.manager.setup(initTopology[i].length, i, topology, staticRoutes[i]);
             });
             this.tick(syrup * dt, function() {
                 this.manager.checkBuffer();
@@ -135,9 +156,12 @@ sendPacket(ROWS*(COLS-1), ROWS-1,    1, 'Init', 0.1);
 // ------------------------------------------------------------------
 if (SIM_STATEFUL === 'cross') {
     // Main path: corner 0 -> corner (ROWS*COLS-1), 5 kHz
-    sendPacket(0,      ROWS*COLS-1,   1, 'Hi',    0.2,  true);
+    // Rates [kHz] overridable via MAIN_KHZ / CROSS_KHZ (defaults 5 / 10).
+    var MAIN_KHZ  = parseFloat(process.env.MAIN_KHZ  || '5');
+    var CROSS_KHZ = parseFloat(process.env.CROSS_KHZ || '10');
+    sendPacket(0,      ROWS*COLS-1,   1, 'Hi',    1 / MAIN_KHZ,  true);
     // Cross-traffic: corner (ROWS-1) -> corner (ROWS*(COLS-1)), 10 kHz
-    sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 0.1,  true);
+    sendPacket(ROWS-1, ROWS*(COLS-1), 1, 'Cross', 1 / CROSS_KHZ, true);
 
 } else if (SIM_STATEFUL === 'fail') {
     // Main path: corner 0 -> corner (ROWS*COLS-1), 5 kHz (matches sim.js SIM=3)
@@ -147,6 +171,8 @@ if (SIM_STATEFUL === 'cross') {
     // Disconnect an interior node at 11 ms that lies on the primary BFS path
     // from corner 0 to corner 15 (0→1→2→3→7→11→15), so the failure produces
     // a visible blackout window in the 0→15 RTT time series.
+    // Failure time [ms]; override with FAIL_MS=<ms> to sweep heartbeat phase.
+    var FAIL_MS = parseFloat(process.env.FAIL_MS || '11');
     var failNode = 7;
 
     for (let p = 0; p < topology[failNode].length; p++) {
@@ -154,7 +180,7 @@ if (SIM_STATEFUL === 'cross') {
         if (typeof nb === 'number' && nb >= 0 && topology[nb]) {
             var nbPort = topology[nb].indexOf(failNode);
             if (nbPort >= 0) {
-                disconnect(failNode, p, nb, nbPort, 11);
+                disconnect(failNode, p, nb, nbPort, FAIL_MS);
             }
         }
     }
@@ -168,4 +194,4 @@ for (let i = 0; i < initTopology.length; i++) {
 }
 // For the failure scenario we need to run past the 50 ms LFA blackout window
 // (failure at 11 ms + 50 ms delay = 61 ms) to show reconvergence.
-net.run(SIM_STATEFUL === 'fail' ? syrup * 100 : syrup * 60);
+net.run(syrup * parseFloat(process.argv[3] || (SIM_STATEFUL === 'fail' ? '100' : '60')));

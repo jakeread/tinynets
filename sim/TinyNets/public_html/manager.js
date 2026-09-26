@@ -3,9 +3,12 @@ function Manager(self) {
 	
 	const syrup = 1000;
 	
-	const D_PKT = .030*syrup;           //[ms] Packet Process Time
-	const D_BYTE = .00125*syrup;        //[ms] Read/Write Delay per Packet
-	const BITRATE = 20e3/syrup;         //[kHz] bitrate
+	// Timing overrides for Node runs: D_PKT_US (hardware-measured: 37),
+	// D_BYTE_US, BITRATE_MHZ. Defaults are unchanged for the browser build.
+	const env = typeof process !== 'undefined' ? process.env : {};
+	const D_PKT = (env.D_PKT_US ? env.D_PKT_US / 1e3 : .030) * syrup;              //[ms] Packet Process Time
+	const D_BYTE = (env.D_BYTE_US ? env.D_BYTE_US / 1e3 : .0015) * syrup;          //[ms] Read/Write Delay per Packet
+	const BITRATE = (env.BITRATE_MHZ ? env.BITRATE_MHZ * 1e3 : 20e3) / syrup;      //[kHz] bitrate
 	const D_HB_RX = 10/BITRATE*syrup;   //[ms] Delay required to process a received heartbeat
 	const D_HB_TX = .001*syrup;         //[ms] Delay required to transmit a heartbeat
 	const D_TAKEPULSE = .001*syrup;     //[ms] Delay required to take pulse per port
@@ -17,6 +20,9 @@ function Manager(self) {
 	const ACF = 255;                    // Flood ACK label
 	
 	const verbose = false;
+	// TRACE=1 appends send timestamps to delivery logs and logs flood-ACK
+	// deliveries, for per-packet loss accounting. Off by default.
+	const trace = typeof process !== 'undefined' && process.env.TRACE === '1';
 	
 	this.ports = [];
 	this.numports = 0;
@@ -159,6 +165,7 @@ function Manager(self) {
 		
 		if (packet.src === self.id && (packet.start===STD || packet.start===STF)) {
 			packet.data = self.now();
+			if (trace) self.log(`sent to ${packet.dest} (t0=${packet.data})`);
 		}
 		
 		if (port < this.numports && this.ports[port] >= 0) {
@@ -232,7 +239,7 @@ function Manager(self) {
 		} else if (packet.start === ACK) {                                      // Acknowledgement
 			self.setColor("red");
 			if (packet.dest === self.id) {                                      // If I am destination
-				self.log(`got ACK from ${packet.src}. RTT = ${Math.round((self.now()-packet.data)/2/this.getMinHopCountTo(packet.src))}`);
+				self.log(`got ACK from ${packet.src}. RTT = ${Math.round((self.now()-packet.data)/2/this.getMinHopCountTo(packet.src))}` + (trace ? ` (t0=${packet.data})` : ''));
 //                self.log(`got ACK from ${packet.src}. RTT = ${self.now()-packet.data}`);
 			} else {
 				const nextPort = this.getMinCostPort(packet.dest);                   // Pick the port to send to based off minimizing cost
@@ -309,13 +316,14 @@ function Manager(self) {
 				delete this.addr_table[packet.port].dests[packet.dest];         // ...if that node had known, it wouldn't have forwarded it as a flood.
 			if (packet.dest === self.id) {                                      // If I am destination
 				if (verbose) self.log(`got ACK from ${packet.src}`);
+				if (trace) self.log(`got flood ACK from ${packet.src} (t0=${packet.data})`);
 			} else {
 				const thisFlood = {                                             // Static information within packet for comparison
 					dest: packet.dest,
 					src: packet.src,
-					data: null
+					data: packet.data
 				};
-				if (this.seenFloods.includes(thisFlood))                        // If I have seen it before, don't forward
+				if (this.hasSeen(thisFlood))                                    // If I have seen it before, don't forward
 					return;
 				this.seenFloods.push(thisFlood);                                // Remember the packet
 				

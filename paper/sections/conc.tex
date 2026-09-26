@@ -9,4 +9,6 @@ The use of UART presents limitations in our project, specifically in capping the
 
 In addition to leveraging FPGAs for a stateless link layer, FPGAs can also be used for switching and port-forwarding, exploiting the simplicity of the TinyNet protocol for implementation in Verilog. This effort is expected to surpass the performance of Switched Ethernet while preserving the stateless, fault-tolerant, and adaptive qualities of TinyNet.
 
+\textcolor{red}{Our evaluation also identifies two limitations. First, TinyNet floods packets for which it has no route, so when failures partition the network, traffic addressed to an unreachable destination can congest the surviving paths; bounding floods, as the hop-count limit in our router firmware does, is a necessary refinement. Second, for periodic traffic known in advance, single-path routes planned for that traffic deliver lower jitter than TinyNet at the same capacity, so TinyNet is best suited to networks whose traffic or failures cannot be planned for.}
+
 Finally, the current routing protocol employs the cost function defined in equation (\ref{eq:cost}) for navigating around busy ports. We aim to explore machine learning techniques to refine this function, optimizing the routing process based on network topology and cost considerations, thereby enhancing overall network performance.

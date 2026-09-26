@@ -1,0 +1,3687 @@
+[958]: 12: got ACK from 3. RTT = 66
+[1037]: 15: got ACK from 0. RTT = 72
+[1081]: 0: got ACK from 15. RTT = 76
+[1098]: 3: got ACK from 12. RTT = 77
+[1155]: 15: got ACK from 0. RTT = 82
+[1199]: 12: got ACK from 3. RTT = 86
+[1267]: 3: got ACK from 12. RTT = 91
+[1274]: 15: got ACK from 0. RTT = 92
+[1332]: 0: got ACK from 15. RTT = 97
+[1376]: 3: got ACK from 12. RTT = 101
+[1390]: 0: got ACK from 15. RTT = 102
+[1392]: 12: got ACK from 3. RTT = 102
+[1485]: 3: got ACK from 12. RTT = 110
+[1499]: 0: got ACK from 15. RTT = 111
+[1516]: 12: got ACK from 3. RTT = 112
+[2065]: 3: got ACK from 12. RTT = 67
+[2125]: 0: got ACK from 15. RTT = 71
+[2293]: 0: got ACK from 15. RTT = 66
+[2295]: 3: got ACK from 12. RTT = 86
+[2474]: 3: got ACK from 12. RTT = 92
+[2552]: 0: got ACK from 15. RTT = 74
+[2583]: 3: got ACK from 12. RTT = 82
+[2692]: 3: got ACK from 12. RTT = 101
+[2861]: 3: got ACK from 12. RTT = 83
+[2970]: 3: got ACK from 12. RTT = 109
+[2977]: 0: got ACK from 15. RTT = 76
+[3081]: 3: got ACK from 12. RTT = 110
+[3088]: 0: got ACK from 15. RTT = 102
+[3190]: 3: got ACK from 12. RTT = 102
+[3299]: 3: got ACK from 12. RTT = 70
+[3468]: 3: got ACK from 12. RTT = 108
+[3577]: 3: got ACK from 12. RTT = 126
+[3686]: 3: got ACK from 12. RTT = 102
+[3701]: 0: got ACK from 15. RTT = 117
+[3750]: 0: got ACK from 15. RTT = 107
+[3795]: 3: got ACK from 12. RTT = 128
+[3918]: 0: got ACK from 15. RTT = 105
+[3964]: 3: got ACK from 12. RTT = 115
+[4077]: 3: got ACK from 12. RTT = 115
+[4186]: 3: got ACK from 12. RTT = 110
+[4277]: 0: got ACK from 15. RTT = 114
+[4295]: 3: got ACK from 12. RTT = 120
+[4464]: 3: got ACK from 12. RTT = 125
+[4508]: 0: got ACK from 15. RTT = 118
+[4557]: 0: got ACK from 15. RTT = 87
+[4661]: 3: got ACK from 12. RTT = 123
+[4736]: 0: got ACK from 15. RTT = 121
+[4770]: 3: got ACK from 12. RTT = 109
+[4879]: 3: got ACK from 12. RTT = 90
+[4988]: 3: got ACK from 12. RTT = 141
+[5099]: 3: got ACK from 12. RTT = 168
+[5278]: 3: got ACK from 12. RTT = 133
+[5387]: 3: got ACK from 12. RTT = 160
+[5496]: 3: got ACK from 12. RTT = 100
+[5665]: 3: got ACK from 12. RTT = 100
+[5774]: 3: got ACK from 12. RTT = 151
+[5883]: 3: got ACK from 12. RTT = 192
+[5941]: 0: got ACK from 15. RTT = 156
+[5990]: 0: got ACK from 15. RTT = 143
+[5992]: 3: got ACK from 12. RTT = 151
+[6165]: 3: got ACK from 12. RTT = 183
+[6274]: 3: got ACK from 12. RTT = 142
+[6283]: 0: got ACK from 15. RTT = 215
+[6332]: 0: got ACK from 15. RTT = 152
+[6381]: 0: got ACK from 15. RTT = 205
+[6383]: 3: got ACK from 12. RTT = 192
+[6490]: 0: got ACK from 15. RTT = 152
+[6492]: 3: got ACK from 12. RTT = 169
+[6539]: 0: got ACK from 15. RTT = 123
+[6588]: 0: got ACK from 15. RTT = 111
+[6661]: 3: got ACK from 12. RTT = 158
+[6770]: 3: got ACK from 12. RTT = 176
+[6784]: 0: got ACK from 15. RTT = 160
+[6879]: 3: got ACK from 12. RTT = 134
+[6988]: 3: got ACK from 12. RTT = 143
+[7063]: 0: got ACK from 15. RTT = 134
+[7099]: 3: got ACK from 12. RTT = 185
+[7328]: 0: got ACK from 15. RTT = 102
+[7387]: 3: got ACK from 12. RTT = 200
+[7566]: 0: got ACK from 15. RTT = 156
+[7675]: 3: got ACK from 12. RTT = 182
+[7784]: 3: got ACK from 12. RTT = 200
+[7893]: 3: got ACK from 12. RTT = 233
+[7925]: 0: got ACK from 15. RTT = 170
+[8066]: 3: got ACK from 12. RTT = 158
+[8261]: 0: got ACK from 15. RTT = 165
+[8473]: 3: got ACK from 12. RTT = 234
+[8761]: 3: got ACK from 12. RTT = 207
+[8788]: 0: got ACK from 15. RTT = 192
+[8897]: 0: got ACK from 15. RTT = 183
+[9067]: 0: got ACK from 15. RTT = 181
+[9172]: 3: got ACK from 12. RTT = 274
+[9281]: 3: got ACK from 12. RTT = 301
+[9390]: 3: got ACK from 12. RTT = 283
+[9396]: 0: got ACK from 15. RTT = 194
+[9499]: 3: got ACK from 12. RTT = 260
+[9668]: 3: got ACK from 12. RTT = 292
+[9777]: 3: got ACK from 12. RTT = 334
+[9886]: 3: got ACK from 12. RTT = 218
+[9904]: 0: got ACK from 15. RTT = 170
+[9995]: 3: got ACK from 12. RTT = 251
+[10065]: 0: got ACK from 15. RTT = 150
+[10168]: 3: got ACK from 12. RTT = 256
+[10277]: 3: got ACK from 12. RTT = 241
+[10386]: 3: got ACK from 12. RTT = 292
+[10474]: 0: got ACK from 15. RTT = 247
+[10495]: 3: got ACK from 12. RTT = 250
+[10523]: 0: got ACK from 15. RTT = 205
+[10572]: 0: got ACK from 15. RTT = 174
+[10664]: 3: got ACK from 12. RTT = 283
+[10740]: 0: got ACK from 15. RTT = 255
+[10773]: 3: got ACK from 12. RTT = 249
+[10789]: 0: got ACK from 15. RTT = 177
+[10882]: 3: got ACK from 12. RTT = 352
+[10957]: 0: got ACK from 15. RTT = 141
+[10991]: 3: got ACK from 12. RTT = 352
+[11068]: 0: got ACK from 15. RTT = 130
+[11162]: 3: got ACK from 12. RTT = 375
+[11176]: 0: got ACK from 15. RTT = 190
+[11271]: 3: got ACK from 12. RTT = 398
+[11344]: 0: got ACK from 15. RTT = 140
+[11380]: 3: got ACK from 12. RTT = 267
+[11461]: 0: got ACK from 15. RTT = 116
+[11489]: 3: got ACK from 12. RTT = 318
+[11556]: 0: got ACK from 15. RTT = 141
+[11598]: 3: got ACK from 12. RTT = 251
+[11717]: 0: got ACK from 15. RTT = 368
+[11767]: 3: got ACK from 12. RTT = 207
+[11876]: 3: got ACK from 12. RTT = 251
+[11959]: 0: got ACK from 15. RTT = 241
+[11985]: 3: got ACK from 12. RTT = 234
+[12098]: 3: got ACK from 12. RTT = 317
+[12502]: 0: got ACK from 15. RTT = 134
+[12565]: 3: got ACK from 12. RTT = 317
+[12674]: 3: got ACK from 12. RTT = 251
+[12783]: 3: got ACK from 12. RTT = 260
+[12792]: 0: got ACK from 15. RTT = 144
+[12892]: 3: got ACK from 12. RTT = 325
+[13063]: 3: got ACK from 12. RTT = 274
+[13142]: 0: got ACK from 15. RTT = 140
+[13172]: 3: got ACK from 12. RTT = 274
+[13281]: 3: got ACK from 12. RTT = 315
+[13312]: 0: got ACK from 15. RTT = 251
+[13390]: 3: got ACK from 12. RTT = 458
+[13480]: 0: got ACK from 15. RTT = 251
+[13499]: 3: got ACK from 12. RTT = 278
+[13588]: 0: got ACK from 15. RTT = 160
+[13787]: 3: got ACK from 12. RTT = 443
+[13896]: 3: got ACK from 12. RTT = 325
+[13924]: 0: got ACK from 15. RTT = 172
+[14112]: 0: got ACK from 15. RTT = 170
+[14188]: 3: got ACK from 12. RTT = 510
+[14297]: 3: got ACK from 12. RTT = 344
+[14466]: 3: got ACK from 12. RTT = 423
+[14473]: 0: got ACK from 15. RTT = 316
+[14522]: 0: got ACK from 15. RTT = 168
+[14575]: 3: got ACK from 12. RTT = 450
+[14684]: 3: got ACK from 12. RTT = 584
+[14751]: 0: got ACK from 15. RTT = 208
+[14793]: 3: got ACK from 12. RTT = 503
+[14962]: 3: got ACK from 12. RTT = 541
+[15073]: 3: got ACK from 12. RTT = 326
+[15101]: 0: got ACK from 15. RTT = 202
+[15182]: 3: got ACK from 12. RTT = 400
+[15291]: 3: got ACK from 12. RTT = 400
+[15328]: 0: got ACK from 15. RTT = 168
+[15377]: 0: got ACK from 15. RTT = 341
+[15400]: 3: got ACK from 12. RTT = 367
+[15569]: 3: got ACK from 12. RTT = 349
+[15664]: 0: got ACK from 15. RTT = 182
+[15678]: 3: got ACK from 12. RTT = 376
+[15772]: 0: got ACK from 15. RTT = 239
+[15787]: 3: got ACK from 12. RTT = 409
+[15881]: 0: got ACK from 15. RTT = 182
+[15896]: 3: got ACK from 12. RTT = 653
+[16069]: 3: got ACK from 12. RTT = 441
+[16080]: 0: got ACK from 15. RTT = 250
+[16178]: 3: got ACK from 12. RTT = 492
+[16287]: 3: got ACK from 12. RTT = 418
+[16317]: 0: got ACK from 15. RTT = 136
+[16396]: 3: got ACK from 12. RTT = 409
+[16559]: 0: got ACK from 15. RTT = 225
+[16565]: 3: got ACK from 12. RTT = 400
+[16674]: 3: got ACK from 12. RTT = 501
+[16727]: 0: got ACK from 15. RTT = 151
+[16783]: 3: got ACK from 12. RTT = 352
+[16892]: 3: got ACK from 12. RTT = 333
+[16895]: 0: got ACK from 15. RTT = 217
+[17063]: 3: got ACK from 12. RTT = 400
+[17065]: 0: got ACK from 15. RTT = 250
+[17172]: 3: got ACK from 12. RTT = 409
+[17173]: 0: got ACK from 15. RTT = 173
+[17281]: 3: got ACK from 12. RTT = 393
+[17341]: 0: got ACK from 15. RTT = 239
+[17390]: 3: got ACK from 12. RTT = 469
+[17499]: 3: got ACK from 12. RTT = 393
+[17668]: 3: got ACK from 12. RTT = 375
+[17777]: 3: got ACK from 12. RTT = 492
+[17886]: 3: got ACK from 12. RTT = 524
+[17904]: 0: got ACK from 15. RTT = 220
+[17995]: 3: got ACK from 12. RTT = 443
+[18168]: 3: got ACK from 12. RTT = 625
+[18277]: 3: got ACK from 12. RTT = 416
+[18386]: 3: got ACK from 12. RTT = 444
+[18495]: 3: got ACK from 12. RTT = 509
+[18664]: 3: got ACK from 12. RTT = 547
+[18773]: 3: got ACK from 12. RTT = 476
+[18882]: 3: got ACK from 12. RTT = 575
+[18991]: 3: got ACK from 12. RTT = 444
+[19155]: 0: got ACK from 15. RTT = 306
+[19162]: 3: got ACK from 12. RTT = 481
+[19264]: 0: got ACK from 15. RTT = 267
+[19271]: 3: got ACK from 12. RTT = 434
+[19372]: 0: got ACK from 15. RTT = 309
+[19380]: 3: got ACK from 12. RTT = 476
+[19481]: 0: got ACK from 15. RTT = 300
+[19489]: 3: got ACK from 12. RTT = 499
+[19589]: 0: got ACK from 15. RTT = 277
+[19598]: 3: got ACK from 12. RTT = 410
+[19698]: 0: got ACK from 15. RTT = 268
+[19767]: 3: got ACK from 12. RTT = 373
+[19866]: 0: got ACK from 15. RTT = 267
+[19876]: 3: got ACK from 12. RTT = 424
+[19915]: 0: got ACK from 15. RTT = 252
+[19985]: 3: got ACK from 12. RTT = 382
+[20087]: 0: got ACK from 15. RTT = 234
+[20098]: 3: got ACK from 12. RTT = 428
+[20136]: 0: got ACK from 15. RTT = 256
+[20185]: 0: got ACK from 15. RTT = 177
+[20267]: 3: got ACK from 12. RTT = 498
+[20294]: 0: got ACK from 15. RTT = 203
+[20376]: 3: got ACK from 12. RTT = 451
+[20485]: 3: got ACK from 12. RTT = 410
+[20523]: 0: got ACK from 15. RTT = 255
+[20594]: 3: got ACK from 12. RTT = 511
+[20763]: 3: got ACK from 12. RTT = 433
+[20872]: 3: got ACK from 12. RTT = 534
+[20981]: 3: got ACK from 12. RTT = 590
+[21092]: 3: got ACK from 12. RTT = 609
+[21261]: 3: got ACK from 12. RTT = 557
+[21294]: 0: got ACK from 15. RTT = 303
+[21370]: 3: got ACK from 12. RTT = 525
+[21462]: 0: got ACK from 15. RTT = 266
+[21479]: 3: got ACK from 12. RTT = 608
+[21511]: 0: got ACK from 15. RTT = 220
+[21560]: 0: got ACK from 15. RTT = 206
+[21588]: 3: got ACK from 12. RTT = 391
+[21669]: 0: got ACK from 15. RTT = 263
+[21697]: 3: got ACK from 12. RTT = 636
+[21718]: 0: got ACK from 15. RTT = 252
+[21866]: 3: got ACK from 12. RTT = 498
+[21975]: 3: got ACK from 12. RTT = 465
+[21982]: 0: got ACK from 15. RTT = 227
+[22088]: 3: got ACK from 12. RTT = 419
+[22173]: 0: got ACK from 15. RTT = 157
+[22197]: 3: got ACK from 12. RTT = 511
+[22343]: 0: got ACK from 15. RTT = 157
+[22366]: 3: got ACK from 12. RTT = 557
+[22475]: 3: got ACK from 12. RTT = 474
+[22511]: 0: got ACK from 15. RTT = 152
+[22560]: 0: got ACK from 15. RTT = 257
+[22584]: 3: got ACK from 12. RTT = 451
+[22669]: 0: got ACK from 15. RTT = 150
+[22693]: 3: got ACK from 12. RTT = 368
+[22862]: 3: got ACK from 12. RTT = 350
+[22971]: 3: got ACK from 12. RTT = 599
+[23082]: 3: got ACK from 12. RTT = 474
+[23122]: 0: got ACK from 15. RTT = 167
+[23191]: 3: got ACK from 12. RTT = 552
+[23361]: 3: got ACK from 12. RTT = 433
+[23470]: 3: got ACK from 12. RTT = 608
+[23579]: 3: got ACK from 12. RTT = 424
+[23688]: 3: got ACK from 12. RTT = 502
+[23768]: 0: got ACK from 15. RTT = 307
+[23797]: 3: got ACK from 12. RTT = 511
+[23966]: 3: got ACK from 12. RTT = 658
+[24079]: 3: got ACK from 12. RTT = 626
+[24181]: 0: got ACK from 15. RTT = 374
+[24188]: 3: got ACK from 12. RTT = 626
+[24290]: 0: got ACK from 15. RTT = 202
+[24297]: 3: got ACK from 12. RTT = 419
+[24398]: 0: got ACK from 15. RTT = 176
+[24466]: 3: got ACK from 12. RTT = 507
+[24507]: 0: got ACK from 15. RTT = 268
+[24556]: 0: got ACK from 15. RTT = 258
+[24575]: 3: got ACK from 12. RTT = 567
+[24684]: 3: got ACK from 12. RTT = 599
+[24724]: 0: got ACK from 15. RTT = 405
+[24793]: 3: got ACK from 12. RTT = 801
+[24951]: 0: got ACK from 15. RTT = 238
+[24962]: 3: got ACK from 12. RTT = 516
+[25073]: 3: got ACK from 12. RTT = 534
+[25121]: 0: got ACK from 15. RTT = 172
+[25170]: 0: got ACK from 15. RTT = 292
+[25182]: 3: got ACK from 12. RTT = 484
+[25291]: 3: got ACK from 12. RTT = 617
+[25461]: 3: got ACK from 12. RTT = 700
+[25516]: 0: got ACK from 15. RTT = 250
+[25570]: 3: got ACK from 12. RTT = 691
+[25679]: 3: got ACK from 12. RTT = 783
+[25745]: 0: got ACK from 15. RTT = 256
+[25788]: 3: got ACK from 12. RTT = 635
+[25897]: 3: got ACK from 12. RTT = 585
+[26070]: 3: got ACK from 12. RTT = 590
+[26075]: 0: got ACK from 15. RTT = 197
+[26179]: 3: got ACK from 12. RTT = 525
+[26261]: 0: got ACK from 15. RTT = 280
+[26288]: 3: got ACK from 12. RTT = 594
+[26397]: 3: got ACK from 12. RTT = 603
+[26566]: 3: got ACK from 12. RTT = 548
+[26675]: 3: got ACK from 12. RTT = 451
+[26784]: 3: got ACK from 12. RTT = 543
+[26800]: 0: got ACK from 15. RTT = 293
+[26893]: 3: got ACK from 12. RTT = 525
+[26909]: 0: got ACK from 15. RTT = 253
+[27064]: 3: got ACK from 12. RTT = 456
+[27081]: 0: got ACK from 15. RTT = 301
+[27173]: 3: got ACK from 12. RTT = 631
+[27191]: 0: got ACK from 15. RTT = 192
+[27282]: 3: got ACK from 12. RTT = 774
+[27300]: 0: got ACK from 15. RTT = 265
+[27349]: 0: got ACK from 15. RTT = 173
+[27391]: 3: got ACK from 12. RTT = 659
+[27398]: 0: got ACK from 15. RTT = 228
+[27500]: 3: got ACK from 12. RTT = 594
+[27507]: 0: got ACK from 15. RTT = 268
+[27556]: 0: got ACK from 15. RTT = 203
+[27665]: 0: got ACK from 15. RTT = 179
+[27669]: 3: got ACK from 12. RTT = 659
+[27778]: 3: got ACK from 12. RTT = 534
+[27861]: 0: got ACK from 15. RTT = 181
+[27887]: 3: got ACK from 12. RTT = 677
+[27996]: 3: got ACK from 12. RTT = 658
+[28120]: 0: got ACK from 15. RTT = 188
+[28169]: 3: got ACK from 12. RTT = 539
+[28278]: 3: got ACK from 12. RTT = 626
+[28305]: 0: got ACK from 15. RTT = 317
+[28387]: 3: got ACK from 12. RTT = 677
+[28496]: 3: got ACK from 12. RTT = 626
+[28665]: 3: got ACK from 12. RTT = 617
+[28774]: 3: got ACK from 12. RTT = 659
+[28787]: 0: got ACK from 15. RTT = 142
+[28883]: 3: got ACK from 12. RTT = 649
+[28896]: 0: got ACK from 15. RTT = 236
+[28992]: 3: got ACK from 12. RTT = 626
+[29125]: 0: got ACK from 15. RTT = 239
+[29163]: 3: got ACK from 12. RTT = 566
+[29272]: 3: got ACK from 12. RTT = 548
+[29381]: 3: got ACK from 12. RTT = 502
+[29490]: 3: got ACK from 12. RTT = 552
+[29532]: 0: got ACK from 15. RTT = 169
+[29599]: 3: got ACK from 12. RTT = 736
+[29763]: 0: got ACK from 15. RTT = 142
+[29768]: 3: got ACK from 12. RTT = 617
+[29872]: 0: got ACK from 15. RTT = 184
+[29877]: 3: got ACK from 12. RTT = 585
+[29921]: 0: got ACK from 15. RTT = 172
+[29986]: 3: got ACK from 12. RTT = 677
+[30095]: 0: got ACK from 15. RTT = 285
+[30099]: 3: got ACK from 12. RTT = 801
+[30144]: 0: got ACK from 15. RTT = 304
+[30268]: 3: got ACK from 12. RTT = 599
+[30314]: 0: got ACK from 15. RTT = 284
+[30377]: 3: got ACK from 12. RTT = 585
+[30486]: 3: got ACK from 12. RTT = 700
+[30595]: 3: got ACK from 12. RTT = 635
+[30764]: 3: got ACK from 12. RTT = 608
+[30861]: 0: got ACK from 15. RTT = 297
+[30873]: 3: got ACK from 12. RTT = 751
+[30982]: 3: got ACK from 12. RTT = 617
+[31093]: 3: got ACK from 12. RTT = 718
+[31262]: 3: got ACK from 12. RTT = 548
+[31371]: 3: got ACK from 12. RTT = 548
+[31480]: 3: got ACK from 12. RTT = 543
+[31589]: 3: got ACK from 12. RTT = 543
+[31698]: 3: got ACK from 12. RTT = 810
+[31867]: 3: got ACK from 12. RTT = 774
+[31922]: 0: got ACK from 15. RTT = 252
+[31971]: 0: got ACK from 15. RTT = 276
+[31976]: 3: got ACK from 12. RTT = 617
+[32084]: 0: got ACK from 15. RTT = 252
+[32089]: 3: got ACK from 12. RTT = 742
+[32133]: 0: got ACK from 15. RTT = 237
+[32198]: 3: got ACK from 12. RTT = 668
+[32301]: 0: got ACK from 15. RTT = 217
+[32350]: 0: got ACK from 15. RTT = 337
+[32367]: 3: got ACK from 12. RTT = 617
+[32476]: 3: got ACK from 12. RTT = 709
+[32518]: 0: got ACK from 15. RTT = 221
+[32567]: 0: got ACK from 15. RTT = 340
+[32585]: 3: got ACK from 12. RTT = 741
+[32676]: 0: got ACK from 15. RTT = 215
+[32694]: 3: got ACK from 12. RTT = 875
+[32725]: 0: got ACK from 15. RTT = 271
+[32774]: 0: got ACK from 15. RTT = 205
+[32863]: 3: got ACK from 12. RTT = 714
+[32883]: 0: got ACK from 15. RTT = 202
+[32972]: 3: got ACK from 12. RTT = 765
+[33083]: 3: got ACK from 12. RTT = 658
+[33192]: 3: got ACK from 12. RTT = 769
+[33361]: 3: got ACK from 12. RTT = 566
+[33470]: 3: got ACK from 12. RTT = 566
+[33579]: 3: got ACK from 12. RTT = 534
+[33688]: 0: got ACK from 15. RTT = 252
+[33688]: 3: got ACK from 12. RTT = 566
+[33797]: 3: got ACK from 12. RTT = 511
+[33966]: 3: got ACK from 12. RTT = 599
+[34079]: 3: got ACK from 12. RTT = 801
+[34188]: 3: got ACK from 12. RTT = 543
+[34297]: 3: got ACK from 12. RTT = 736
+[34322]: 0: got ACK from 15. RTT = 288
+[34466]: 3: got ACK from 12. RTT = 700
+[34575]: 3: got ACK from 12. RTT = 608
+[34684]: 3: got ACK from 12. RTT = 635
+[34776]: 0: got ACK from 15. RTT = 293
+[34793]: 3: got ACK from 12. RTT = 617
+[34962]: 3: got ACK from 12. RTT = 755
+[35073]: 3: got ACK from 12. RTT = 741
+[35081]: 0: got ACK from 15. RTT = 335
+[35139]: 0: got ACK from 15. RTT = 302
+[35182]: 3: got ACK from 12. RTT = 718
+[35291]: 3: got ACK from 12. RTT = 552
+[35400]: 3: got ACK from 12. RTT = 842
+[35504]: 0: got ACK from 15. RTT = 317
+[35569]: 3: got ACK from 12. RTT = 617
+[35678]: 3: got ACK from 12. RTT = 824
+[35787]: 3: got ACK from 12. RTT = 727
+[35896]: 3: got ACK from 12. RTT = 985
+[35923]: 0: got ACK from 15. RTT = 339
+[36069]: 3: got ACK from 12. RTT = 658
+[36178]: 3: got ACK from 12. RTT = 884
+[36287]: 3: got ACK from 12. RTT = 732
+[36336]: 0: got ACK from 15. RTT = 336
+[36385]: 0: got ACK from 15. RTT = 193
+[36396]: 3: got ACK from 12. RTT = 893
+[36494]: 0: got ACK from 15. RTT = 167
+[36565]: 3: got ACK from 12. RTT = 608
+[36582]: 0: got ACK from 15. RTT = 375
+[36674]: 3: got ACK from 12. RTT = 741
+[36691]: 0: got ACK from 15. RTT = 169
+[36759]: 0: got ACK from 15. RTT = 353
+[36783]: 3: got ACK from 12. RTT = 658
+[36868]: 0: got ACK from 15. RTT = 165
+[36892]: 3: got ACK from 12. RTT = 884
+[36917]: 0: got ACK from 15. RTT = 153
+[37063]: 0: got ACK from 15. RTT = 333
+[37063]: 3: got ACK from 12. RTT = 723
+[37120]: 0: got ACK from 15. RTT = 322
+[37172]: 3: got ACK from 12. RTT = 631
+[37179]: 0: got ACK from 15. RTT = 276
+[37281]: 3: got ACK from 12. RTT = 750
+[37288]: 0: got ACK from 15. RTT = 252
+[37390]: 3: got ACK from 12. RTT = 700
+[37499]: 3: got ACK from 12. RTT = 677
+[37517]: 0: got ACK from 15. RTT = 138
+[37566]: 0: got ACK from 15. RTT = 408
+[37668]: 3: got ACK from 12. RTT = 682
+[37777]: 3: got ACK from 12. RTT = 667
+[37886]: 3: got ACK from 12. RTT = 594
+[37914]: 0: got ACK from 15. RTT = 352
+[37963]: 0: got ACK from 15. RTT = 423
+[37995]: 3: got ACK from 12. RTT = 994
+[38135]: 0: got ACK from 15. RTT = 386
+[38168]: 3: got ACK from 12. RTT = 590
+[38184]: 0: got ACK from 15. RTT = 244
+[38277]: 3: got ACK from 12. RTT = 857
+[38352]: 0: got ACK from 15. RTT = 241
+[38386]: 3: got ACK from 12. RTT = 769
+[38495]: 3: got ACK from 12. RTT = 1169
+[38661]: 0: got ACK from 15. RTT = 133
+[38664]: 3: got ACK from 12. RTT = 1022
+[38773]: 3: got ACK from 12. RTT = 750
+[38796]: 0: got ACK from 15. RTT = 225
+[38882]: 3: got ACK from 12. RTT = 916
+[38977]: 0: got ACK from 15. RTT = 275
+[38991]: 3: got ACK from 12. RTT = 750
+[39088]: 0: got ACK from 15. RTT = 150
+[39162]: 3: got ACK from 12. RTT = 631
+[39271]: 3: got ACK from 12. RTT = 875
+[39378]: 0: got ACK from 15. RTT = 155
+[39380]: 3: got ACK from 12. RTT = 907
+[39487]: 0: got ACK from 15. RTT = 249
+[39489]: 3: got ACK from 12. RTT = 759
+[39597]: 0: got ACK from 15. RTT = 277
+[39598]: 3: got ACK from 12. RTT = 626
+[39767]: 3: got ACK from 12. RTT = 1192
+[39876]: 3: got ACK from 12. RTT = 682
+[39985]: 3: got ACK from 12. RTT = 792
+[40098]: 3: got ACK from 12. RTT = 626
+[40267]: 3: got ACK from 12. RTT = 672
+[40313]: 0: got ACK from 15. RTT = 220
+[40371]: 0: got ACK from 15. RTT = 143
+[40376]: 3: got ACK from 12. RTT = 875
+[40485]: 3: got ACK from 12. RTT = 851
+[40558]: 0: got ACK from 15. RTT = 207
+[40594]: 3: got ACK from 12. RTT = 953
+[40678]: 0: got ACK from 15. RTT = 199
+[40763]: 3: got ACK from 12. RTT = 741
+[40791]: 0: got ACK from 15. RTT = 240
+[40872]: 3: got ACK from 12. RTT = 884
+[40900]: 0: got ACK from 15. RTT = 351
+[40949]: 0: got ACK from 15. RTT = 340
+[40981]: 3: got ACK from 12. RTT = 810
+[40998]: 0: got ACK from 15. RTT = 211
+[41092]: 3: got ACK from 12. RTT = 819
+[41109]: 0: got ACK from 15. RTT = 149
+[41261]: 3: got ACK from 12. RTT = 930
+[41370]: 3: got ACK from 12. RTT = 866
+[41399]: 0: got ACK from 15. RTT = 208
+[41479]: 3: got ACK from 12. RTT = 907
+[41588]: 3: got ACK from 12. RTT = 851
+[41697]: 3: got ACK from 12. RTT = 911
+[41866]: 3: got ACK from 12. RTT = 916
+[41975]: 3: got ACK from 12. RTT = 875
+[42088]: 3: got ACK from 12. RTT = 1119
+[42197]: 3: got ACK from 12. RTT = 686
+[42366]: 3: got ACK from 12. RTT = 833
+[42475]: 3: got ACK from 12. RTT = 760
+[42584]: 3: got ACK from 12. RTT = 810
+[42683]: 0: got ACK from 15. RTT = 218
+[42693]: 3: got ACK from 12. RTT = 727
+[42862]: 3: got ACK from 12. RTT = 916
+[42919]: 0: got ACK from 15. RTT = 319
+[42971]: 3: got ACK from 12. RTT = 709
+[42979]: 0: got ACK from 15. RTT = 291
+[43082]: 3: got ACK from 12. RTT = 732
+[43090]: 0: got ACK from 15. RTT = 218
+[43139]: 0: got ACK from 15. RTT = 271
+[43191]: 3: got ACK from 12. RTT = 819
+[43300]: 3: got ACK from 12. RTT = 884
+[43307]: 0: got ACK from 15. RTT = 300
+[43356]: 0: got ACK from 15. RTT = 254
+[43469]: 3: got ACK from 12. RTT = 750
+[43513]: 0: got ACK from 15. RTT = 200
+[43578]: 3: got ACK from 12. RTT = 875
+[43681]: 0: got ACK from 15. RTT = 251
+[43687]: 3: got ACK from 12. RTT = 875
+[43791]: 0: got ACK from 15. RTT = 159
+[43796]: 3: got ACK from 12. RTT = 911
+[43965]: 3: got ACK from 12. RTT = 700
+[44078]: 3: got ACK from 12. RTT = 658
+[44084]: 0: got ACK from 15. RTT = 265
+[44187]: 3: got ACK from 12. RTT = 718
+[44194]: 0: got ACK from 15. RTT = 177
+[44296]: 3: got ACK from 12. RTT = 644
+[44303]: 0: got ACK from 15. RTT = 254
+[44352]: 0: got ACK from 15. RTT = 171
+[44465]: 3: got ACK from 12. RTT = 815
+[44574]: 3: got ACK from 12. RTT = 682
+[44583]: 0: got ACK from 15. RTT = 256
+[44683]: 3: got ACK from 12. RTT = 916
+[44753]: 0: got ACK from 15. RTT = 191
+[44792]: 3: got ACK from 12. RTT = 801
+[44923]: 0: got ACK from 15. RTT = 189
+[44961]: 3: got ACK from 12. RTT = 723
+[45072]: 3: got ACK from 12. RTT = 774
+[45181]: 3: got ACK from 12. RTT = 949
+[45277]: 0: got ACK from 15. RTT = 201
+[45290]: 3: got ACK from 12. RTT = 925
+[45399]: 3: got ACK from 12. RTT = 985
+[45568]: 3: got ACK from 12. RTT = 750
+[45677]: 3: got ACK from 12. RTT = 1017
+[45755]: 0: got ACK from 15. RTT = 173
+[45786]: 3: got ACK from 12. RTT = 934
+[45895]: 3: got ACK from 12. RTT = 911
+[46068]: 3: got ACK from 12. RTT = 1091
+[46177]: 3: got ACK from 12. RTT = 667
+[46187]: 0: got ACK from 15. RTT = 374
+[46286]: 3: got ACK from 12. RTT = 958
+[46395]: 3: got ACK from 12. RTT = 718
+[46537]: 0: got ACK from 15. RTT = 256
+[46564]: 3: got ACK from 12. RTT = 875
+[46673]: 3: got ACK from 12. RTT = 1050
+[46782]: 3: got ACK from 12. RTT = 801
+[46887]: 0: got ACK from 15. RTT = 298
+[46891]: 3: got ACK from 12. RTT = 801
+[46936]: 0: got ACK from 15. RTT = 321
+[47063]: 3: got ACK from 12. RTT = 981
+[47167]: 0: got ACK from 15. RTT = 239
+[47172]: 3: got ACK from 12. RTT = 940
+[47281]: 3: got ACK from 12. RTT = 990
+[47390]: 3: got ACK from 12. RTT = 792
+[47499]: 3: got ACK from 12. RTT = 870
+[47668]: 3: got ACK from 12. RTT = 1275
+[47697]: 0: got ACK from 15. RTT = 301
+[47746]: 0: got ACK from 15. RTT = 321
+[47777]: 3: got ACK from 12. RTT = 976
+[47795]: 0: got ACK from 15. RTT = 161
+[47886]: 3: got ACK from 12. RTT = 866
+[47995]: 3: got ACK from 12. RTT = 801
+[48168]: 3: got ACK from 12. RTT = 1091
+[48261]: 0: got ACK from 15. RTT = 317
+[48277]: 3: got ACK from 12. RTT = 935
+[48353]: 0: got ACK from 15. RTT = 272
+[48386]: 3: got ACK from 12. RTT = 1368
+[48495]: 3: got ACK from 12. RTT = 1128
+[48532]: 0: got ACK from 15. RTT = 186
+[48581]: 0: got ACK from 15. RTT = 175
+[48664]: 3: got ACK from 12. RTT = 916
+[48690]: 0: got ACK from 15. RTT = 284
+[48773]: 3: got ACK from 12. RTT = 1358
+[48798]: 0: got ACK from 15. RTT = 342
+[48882]: 3: got ACK from 12. RTT = 1100
+[48991]: 3: got ACK from 12. RTT = 833
+[49087]: 0: got ACK from 15. RTT = 302
+[49136]: 0: got ACK from 15. RTT = 203
+[49162]: 3: got ACK from 12. RTT = 833
+[49271]: 3: got ACK from 12. RTT = 925
+[49304]: 0: got ACK from 15. RTT = 370
+[49353]: 0: got ACK from 15. RTT = 308
+[49380]: 3: got ACK from 12. RTT = 824
+[49489]: 3: got ACK from 12. RTT = 1068
+[49598]: 3: got ACK from 12. RTT = 994
+[49712]: 0: got ACK from 15. RTT = 304
+[49761]: 0: got ACK from 15. RTT = 221
+[49767]: 3: got ACK from 12. RTT = 824
+[49876]: 3: got ACK from 12. RTT = 857
+[49931]: 0: got ACK from 15. RTT = 156
+[49985]: 3: got ACK from 12. RTT = 810
+[50098]: 3: got ACK from 12. RTT = 1110
+[50105]: 0: got ACK from 15. RTT = 236
+[50154]: 0: got ACK from 15. RTT = 272
+[50263]: 0: got ACK from 15. RTT = 214
+[50267]: 3: got ACK from 12. RTT = 815
+[50373]: 0: got ACK from 15. RTT = 176
+[50376]: 3: got ACK from 12. RTT = 1124
+[50482]: 0: got ACK from 15. RTT = 247
+[50485]: 3: got ACK from 12. RTT = 875
+[50594]: 3: got ACK from 12. RTT = 902
+[50763]: 3: got ACK from 12. RTT = 1064
+[50872]: 3: got ACK from 12. RTT = 898
+[50981]: 3: got ACK from 12. RTT = 893
+[50988]: 0: got ACK from 15. RTT = 173
+[51092]: 3: got ACK from 12. RTT = 944
+[51261]: 3: got ACK from 12. RTT = 907
+[51370]: 3: got ACK from 12. RTT = 1165
+[51472]: 0: got ACK from 15. RTT = 199
+[51479]: 3: got ACK from 12. RTT = 907
+[51588]: 3: got ACK from 12. RTT = 1091
+[51697]: 3: got ACK from 12. RTT = 870
+[51733]: 0: got ACK from 15. RTT = 168
+[51782]: 0: got ACK from 15. RTT = 323
+[51866]: 3: got ACK from 12. RTT = 1091
+[51975]: 3: got ACK from 12. RTT = 1109
+[52077]: 0: got ACK from 15. RTT = 231
+[52088]: 3: got ACK from 12. RTT = 1101
+[52193]: 0: got ACK from 15. RTT = 311
+[52197]: 3: got ACK from 12. RTT = 953
+[52366]: 3: got ACK from 12. RTT = 1082
+[52475]: 3: got ACK from 12. RTT = 1109
+[52541]: 0: got ACK from 15. RTT = 321
+[52584]: 3: got ACK from 12. RTT = 944
+[52590]: 0: got ACK from 15. RTT = 261
+[52693]: 3: got ACK from 12. RTT = 916
+[52862]: 3: got ACK from 12. RTT = 1133
+[52940]: 0: got ACK from 15. RTT = 205
+[52971]: 3: got ACK from 12. RTT = 967
+[52989]: 0: got ACK from 15. RTT = 240
+[53082]: 3: got ACK from 12. RTT = 1202
+[53100]: 0: got ACK from 15. RTT = 236
+[53191]: 3: got ACK from 12. RTT = 1243
+[53361]: 3: got ACK from 12. RTT = 1032
+[53369]: 0: got ACK from 15. RTT = 158
+[53470]: 3: got ACK from 12. RTT = 967
+[53579]: 3: got ACK from 12. RTT = 958
+[53668]: 0: got ACK from 15. RTT = 251
+[53688]: 3: got ACK from 12. RTT = 1050
+[53797]: 3: got ACK from 12. RTT = 944
+[53861]: 0: got ACK from 15. RTT = 230
+[53910]: 0: got ACK from 15. RTT = 254
+[53964]: 0: got ACK from 15. RTT = 341
+[53966]: 3: got ACK from 12. RTT = 1008
+[54079]: 3: got ACK from 12. RTT = 990
+[54188]: 3: got ACK from 12. RTT = 916
+[54269]: 0: got ACK from 15. RTT = 214
+[54297]: 3: got ACK from 12. RTT = 1128
+[54466]: 3: got ACK from 12. RTT = 949
+[54575]: 3: got ACK from 12. RTT = 1017
+[54684]: 3: got ACK from 12. RTT = 949
+[54793]: 3: got ACK from 12. RTT = 1110
+[54861]: 0: got ACK from 15. RTT = 298
+[54962]: 3: got ACK from 12. RTT = 1082
+[55073]: 3: got ACK from 12. RTT = 1183
+[55182]: 3: got ACK from 12. RTT = 1050
+[55291]: 3: got ACK from 12. RTT = 833
+[55400]: 3: got ACK from 12. RTT = 861
+[55522]: 0: got ACK from 15. RTT = 287
+[55569]: 3: got ACK from 12. RTT = 1165
+[55678]: 3: got ACK from 12. RTT = 925
+[55787]: 3: got ACK from 12. RTT = 884
+[55799]: 0: got ACK from 15. RTT = 291
+[55896]: 3: got ACK from 12. RTT = 1100
+[55908]: 0: got ACK from 15. RTT = 267
+[56069]: 3: got ACK from 12. RTT = 889
+[56082]: 0: got ACK from 15. RTT = 267
+[56178]: 3: got ACK from 12. RTT = 1151
+[56192]: 0: got ACK from 15. RTT = 358
+[56287]: 3: got ACK from 12. RTT = 1068
+[56301]: 0: got ACK from 15. RTT = 318
+[56396]: 3: got ACK from 12. RTT = 902
+[56565]: 3: got ACK from 12. RTT = 1091
+[56674]: 3: got ACK from 12. RTT = 999
+[56686]: 0: got ACK from 15. RTT = 299
+[56783]: 3: got ACK from 12. RTT = 935
+[56861]: 0: got ACK from 15. RTT = 146
+[56892]: 3: got ACK from 12. RTT = 1068
+[57063]: 3: got ACK from 12. RTT = 940
+[57146]: 0: got ACK from 15. RTT = 274
+[57172]: 3: got ACK from 12. RTT = 1018
+[57281]: 3: got ACK from 12. RTT = 1041
+[57390]: 3: got ACK from 12. RTT = 1142
+[57499]: 3: got ACK from 12. RTT = 1220
+[57668]: 3: got ACK from 12. RTT = 967
+[57680]: 0: got ACK from 15. RTT = 364
+[57729]: 0: got ACK from 15. RTT = 206
+[57777]: 3: got ACK from 12. RTT = 1183
+[57886]: 3: got ACK from 12. RTT = 934
+[57960]: 0: got ACK from 15. RTT = 358
+[57995]: 3: got ACK from 12. RTT = 1261
+[58073]: 0: got ACK from 15. RTT = 318
+[58122]: 0: got ACK from 15. RTT = 337
+[58168]: 3: got ACK from 12. RTT = 1023
+[58171]: 0: got ACK from 15. RTT = 293
+[58277]: 3: got ACK from 12. RTT = 1174
+[58280]: 0: got ACK from 15. RTT = 285
+[58329]: 0: got ACK from 15. RTT = 322
+[58378]: 0: got ACK from 15. RTT = 408
+[58386]: 3: got ACK from 12. RTT = 1008
+[58487]: 0: got ACK from 15. RTT = 252
+[58495]: 3: got ACK from 12. RTT = 1128
+[58536]: 0: got ACK from 15. RTT = 240
+[58664]: 3: got ACK from 12. RTT = 1239
+[58773]: 3: got ACK from 12. RTT = 1032
+[58882]: 3: got ACK from 12. RTT = 976
+[58944]: 0: got ACK from 15. RTT = 206
+[58991]: 3: got ACK from 12. RTT = 967
+[59162]: 3: got ACK from 12. RTT = 1050
+[59271]: 3: got ACK from 12. RTT = 1059
+[59380]: 3: got ACK from 12. RTT = 1243
+[59489]: 3: got ACK from 12. RTT = 1151
+[59598]: 3: got ACK from 12. RTT = 994
+[59733]: 0: got ACK from 15. RTT = 286
+[59767]: 3: got ACK from 12. RTT = 1133
+[59876]: 3: got ACK from 12. RTT = 1409
+[59962]: 0: got ACK from 15. RTT = 338
+[59985]: 3: got ACK from 12. RTT = 1017
+[60098]: 3: got ACK from 12. RTT = 1110
+[60197]: 0: got ACK from 15. RTT = 278
+[60267]: 3: got ACK from 12. RTT = 1359
+[60306]: 0: got ACK from 15. RTT = 254
+[60355]: 0: got ACK from 15. RTT = 356
+[60376]: 3: got ACK from 12. RTT = 1124
+[60464]: 0: got ACK from 15. RTT = 283
+[60485]: 3: got ACK from 12. RTT = 1026
+[60513]: 0: got ACK from 15. RTT = 251
+[60562]: 0: got ACK from 15. RTT = 323
+[60594]: 3: got ACK from 12. RTT = 1344
+[60671]: 0: got ACK from 15. RTT = 231
+[60720]: 0: got ACK from 15. RTT = 221
+[60763]: 3: got ACK from 12. RTT = 1050
+[60872]: 3: got ACK from 12. RTT = 1114
+[60890]: 0: got ACK from 15. RTT = 218
+[60981]: 3: got ACK from 12. RTT = 1026
+[61092]: 3: got ACK from 12. RTT = 1427
+[61184]: 0: got ACK from 15. RTT = 292
+[61261]: 3: got ACK from 12. RTT = 1073
+[61370]: 3: got ACK from 12. RTT = 1124
+[61475]: 0: got ACK from 15. RTT = 180
+[61479]: 3: got ACK from 12. RTT = 1183
+[61524]: 0: got ACK from 15. RTT = 239
+[61573]: 0: got ACK from 15. RTT = 257
+[61588]: 3: got ACK from 12. RTT = 1160
+[61697]: 3: got ACK from 12. RTT = 1045
+[61743]: 0: got ACK from 15. RTT = 223
+[61866]: 3: got ACK from 12. RTT = 1156
+[61929]: 0: got ACK from 15. RTT = 256
+[61975]: 3: got ACK from 12. RTT = 1326
+[62088]: 3: got ACK from 12. RTT = 1110
+[62197]: 3: got ACK from 12. RTT = 1110
+[62332]: 0: got ACK from 15. RTT = 202
+[62366]: 3: got ACK from 12. RTT = 1100
+[62381]: 0: got ACK from 15. RTT = 241
+[62475]: 3: got ACK from 12. RTT = 1100
+[62584]: 3: got ACK from 12. RTT = 1091
+[62693]: 3: got ACK from 12. RTT = 1183
+[62788]: 0: got ACK from 15. RTT = 226
+[62862]: 3: got ACK from 12. RTT = 1105
+[62956]: 0: got ACK from 15. RTT = 208
+[62971]: 3: got ACK from 12. RTT = 1165
+[63082]: 3: got ACK from 12. RTT = 1059
+[63191]: 3: got ACK from 12. RTT = 1059
+[63306]: 0: got ACK from 15. RTT = 168
+[63361]: 3: got ACK from 12. RTT = 1064
+[63470]: 3: got ACK from 12. RTT = 1017
+[63531]: 0: got ACK from 15. RTT = 238
+[63579]: 3: got ACK from 12. RTT = 1376
+[63580]: 0: got ACK from 15. RTT = 326
+[63688]: 3: got ACK from 12. RTT = 1192
+[63712]: 0: got ACK from 15. RTT = 186
+[63771]: 0: got ACK from 15. RTT = 240
+[63797]: 3: got ACK from 12. RTT = 1142
+[63880]: 0: got ACK from 15. RTT = 230
+[63929]: 0: got ACK from 15. RTT = 302
+[63966]: 3: got ACK from 12. RTT = 1307
+[63978]: 0: got ACK from 15. RTT = 142
+[64079]: 3: got ACK from 12. RTT = 1151
+[64188]: 3: got ACK from 12. RTT = 1294
+[64297]: 3: got ACK from 12. RTT = 1436
+[64466]: 3: WARNING: BUFFER VERY FULL
+[64466]: 3: got ACK from 12. RTT = 1100
+[64513]: 0: got ACK from 15. RTT = 217
+[64577]: 3: WARNING: BUFFER VERY FULL
+[64577]: 3: got ACK from 12. RTT = 1216
+[64686]: 3: WARNING: BUFFER VERY FULL
+[64686]: 3: got ACK from 12. RTT = 1160
+[64795]: 3: WARNING: BUFFER VERY FULL
+[64795]: 3: got ACK from 12. RTT = 1036
+[64797]: 0: got ACK from 15. RTT = 260
+[64964]: 3: WARNING: BUFFER VERY FULL
+[64964]: 3: got ACK from 12. RTT = 1225
+[64965]: 0: got ACK from 15. RTT = 172
+[65075]: 3: WARNING: BUFFER VERY FULL
+[65075]: 3: got ACK from 12. RTT = 1193
+[65184]: 3: WARNING: BUFFER VERY FULL
+[65184]: 3: got ACK from 12. RTT = 1027
+[65194]: 0: got ACK from 15. RTT = 225
+[65293]: 3: WARNING: BUFFER VERY FULL
+[65293]: 3: got ACK from 12. RTT = 1160
+[65362]: 0: got ACK from 15. RTT = 225
+[65462]: 3: WARNING: BUFFER VERY FULL
+[65462]: 3: got ACK from 12. RTT = 1133
+[65471]: 0: got ACK from 15. RTT = 280
+[65520]: 0: got ACK from 15. RTT = 119
+[65571]: 3: WARNING: BUFFER VERY FULL
+[65571]: 3: got ACK from 12. RTT = 1165
+[65680]: 3: WARNING: BUFFER VERY FULL
+[65680]: 3: got ACK from 12. RTT = 1326
+[65789]: 3: WARNING: BUFFER VERY FULL
+[65789]: 3: got ACK from 12. RTT = 1068
+[65898]: 3: WARNING: BUFFER VERY FULL
+[65898]: 3: got ACK from 12. RTT = 1252
+[66071]: 3: WARNING: BUFFER VERY FULL
+[66071]: 3: got ACK from 12. RTT = 1198
+[66122]: 0: got ACK from 15. RTT = 255
+[66180]: 3: WARNING: BUFFER VERY FULL
+[66180]: 3: got ACK from 12. RTT = 1225
+[66289]: 3: WARNING: BUFFER VERY FULL
+[66289]: 3: got ACK from 12. RTT = 1092
+[66398]: 3: WARNING: BUFFER VERY FULL
+[66398]: 3: got ACK from 12. RTT = 1386
+[66502]: 0: got ACK from 15. RTT = 253
+[66551]: 0: got ACK from 15. RTT = 158
+[66567]: 3: WARNING: BUFFER VERY FULL
+[66567]: 3: got ACK from 12. RTT = 1216
+[66600]: 0: got ACK from 15. RTT = 243
+[66676]: 3: WARNING: BUFFER VERY FULL
+[66676]: 3: got ACK from 12. RTT = 1110
+[66785]: 3: WARNING: BUFFER VERY FULL
+[66785]: 3: got ACK from 12. RTT = 1317
+[66889]: 0: got ACK from 15. RTT = 299
+[66894]: 3: WARNING: BUFFER VERY FULL
+[66894]: 3: got ACK from 12. RTT = 1128
+[66938]: 0: got ACK from 15. RTT = 136
+[67065]: 3: WARNING: BUFFER VERY FULL
+[67065]: 3: got ACK from 12. RTT = 1073
+[67174]: 3: WARNING: BUFFER VERY FULL
+[67174]: 3: got ACK from 12. RTT = 1907
+[67283]: 3: WARNING: BUFFER VERY FULL
+[67283]: 3: got ACK from 12. RTT = 1068
+[67392]: 3: WARNING: BUFFER VERY FULL
+[67392]: 3: got ACK from 12. RTT = 1243
+[67529]: 0: got ACK from 15. RTT = 304
+[67561]: 3: WARNING: BUFFER VERY FULL
+[67561]: 3: got ACK from 12. RTT = 1372
+[67578]: 0: got ACK from 15. RTT = 276
+[67670]: 3: WARNING: BUFFER VERY FULL
+[67670]: 3: got ACK from 12. RTT = 1073
+[67687]: 0: got ACK from 15. RTT = 232
+[67779]: 3: WARNING: BUFFER VERY FULL
+[67779]: 3: got ACK from 12. RTT = 1192
+[67888]: 3: WARNING: BUFFER VERY FULL
+[67888]: 3: got ACK from 12. RTT = 1501
+[67894]: 0: got ACK from 15. RTT = 186
+[67997]: 3: WARNING: BUFFER VERY FULL
+[67997]: 3: got ACK from 12. RTT = 1086
+[68065]: 0: got ACK from 15. RTT = 296
+[68170]: 3: WARNING: BUFFER VERY FULL
+[68170]: 3: got ACK from 12. RTT = 1142
+[68175]: 0: got ACK from 15. RTT = 225
+[68279]: 3: WARNING: BUFFER VERY FULL
+[68279]: 3: got ACK from 12. RTT = 1225
+[68284]: 0: got ACK from 15. RTT = 169
+[68388]: 3: WARNING: BUFFER VERY FULL
+[68388]: 3: got ACK from 12. RTT = 1192
+[68394]: 0: got ACK from 15. RTT = 140
+[68497]: 3: WARNING: BUFFER VERY FULL
+[68497]: 3: got ACK from 12. RTT = 1160
+[68503]: 0: got ACK from 15. RTT = 286
+[68552]: 0: got ACK from 15. RTT = 139
+[68661]: 0: got ACK from 15. RTT = 180
+[68666]: 3: WARNING: BUFFER VERY FULL
+[68666]: 3: got ACK from 12. RTT = 1142
+[68710]: 0: got ACK from 15. RTT = 237
+[68759]: 0: got ACK from 15. RTT = 138
+[68775]: 3: WARNING: BUFFER VERY FULL
+[68775]: 3: got ACK from 12. RTT = 1174
+[68868]: 0: got ACK from 15. RTT = 234
+[68884]: 3: WARNING: BUFFER VERY FULL
+[68884]: 3: got ACK from 12. RTT = 1142
+[68917]: 0: got ACK from 15. RTT = 136
+[68993]: 3: WARNING: BUFFER VERY FULL
+[68993]: 3: got ACK from 12. RTT = 1142
+[69164]: 3: WARNING: BUFFER VERY FULL
+[69164]: 3: got ACK from 12. RTT = 1147
+[69273]: 3: WARNING: BUFFER VERY FULL
+[69273]: 3: got ACK from 12. RTT = 1432
+[69382]: 3: WARNING: BUFFER VERY FULL
+[69382]: 3: got ACK from 12. RTT = 1285
+[69491]: 3: WARNING: BUFFER VERY FULL
+[69491]: 3: got ACK from 12. RTT = 1441
+[69600]: 3: WARNING: BUFFER VERY FULL
+[69600]: 3: got ACK from 12. RTT = 1395
+[69769]: 3: WARNING: BUFFER VERY FULL
+[69769]: 3: got ACK from 12. RTT = 1225
+[69878]: 3: WARNING: BUFFER VERY FULL
+[69878]: 3: got ACK from 12. RTT = 1432
+[69987]: 3: WARNING: BUFFER VERY FULL
+[69987]: 3: got ACK from 12. RTT = 1409
+[70100]: 3: WARNING: BUFFER VERY FULL
+[70100]: 3: got ACK from 12. RTT = 1317
+[70143]: 0: got ACK from 15. RTT = 205
+[70269]: 3: WARNING: BUFFER VERY FULL
+[70269]: 3: got ACK from 12. RTT = 1133
+[70283]: 0: got ACK from 15. RTT = 148
+[70378]: 3: WARNING: BUFFER VERY FULL
+[70378]: 3: got ACK from 12. RTT = 1183
+[70393]: 0: got ACK from 15. RTT = 244
+[70487]: 3: WARNING: BUFFER VERY FULL
+[70487]: 3: got ACK from 12. RTT = 1552
+[70502]: 0: got ACK from 15. RTT = 185
+[70551]: 0: got ACK from 15. RTT = 224
+[70596]: 3: WARNING: BUFFER VERY FULL
+[70596]: 3: got ACK from 12. RTT = 1128
+[70719]: 0: got ACK from 15. RTT = 221
+[70765]: 3: WARNING: BUFFER VERY FULL
+[70765]: 3: got ACK from 12. RTT = 1533
+[70874]: 3: WARNING: BUFFER VERY FULL
+[70874]: 3: got ACK from 12. RTT = 1275
+[70946]: 0: got ACK from 15. RTT = 190
+[70983]: 3: WARNING: BUFFER VERY FULL
+[70983]: 3: got ACK from 12. RTT = 1418
+[71094]: 3: WARNING: BUFFER VERY FULL
+[71094]: 3: got ACK from 12. RTT = 1193
+[71263]: 3: WARNING: BUFFER VERY FULL
+[71263]: 3: got ACK from 12. RTT = 1248
+[71372]: 3: WARNING: BUFFER VERY FULL
+[71372]: 3: got ACK from 12. RTT = 1299
+[71481]: 3: WARNING: BUFFER VERY FULL
+[71481]: 3: got ACK from 12. RTT = 1192
+[71590]: 3: WARNING: BUFFER VERY FULL
+[71590]: 3: got ACK from 12. RTT = 1183
+[71590]: 0: got ACK from 15. RTT = 227
+[71699]: 3: WARNING: BUFFER VERY FULL
+[71699]: 3: got ACK from 12. RTT = 1335
+[71758]: 0: got ACK from 15. RTT = 141
+[71868]: 3: WARNING: BUFFER VERY FULL
+[71868]: 3: got ACK from 12. RTT = 1197
+[71926]: 0: got ACK from 15. RTT = 172
+[71977]: 3: WARNING: BUFFER VERY FULL
+[71977]: 3: got ACK from 12. RTT = 1257
+[72090]: 3: WARNING: BUFFER VERY FULL
+[72090]: 3: got ACK from 12. RTT = 1252
+[72199]: 3: WARNING: BUFFER VERY FULL
+[72199]: 3: got ACK from 12. RTT = 1359
+[72368]: 3: WARNING: BUFFER VERY FULL
+[72368]: 3: got ACK from 12. RTT = 1225
+[72396]: 0: got ACK from 15. RTT = 227
+[72477]: 3: WARNING: BUFFER VERY FULL
+[72477]: 3: got ACK from 12. RTT = 1658
+[72566]: 0: got ACK from 15. RTT = 192
+[72586]: 3: WARNING: BUFFER VERY FULL
+[72586]: 3: got ACK from 12. RTT = 1376
+[72675]: 0: got ACK from 15. RTT = 281
+[72695]: 3: WARNING: BUFFER VERY FULL
+[72695]: 3: got ACK from 12. RTT = 1252
+[72724]: 0: got ACK from 15. RTT = 305
+[72773]: 0: got ACK from 15. RTT = 171
+[72864]: 3: WARNING: BUFFER VERY FULL
+[72864]: 3: got ACK from 12. RTT = 1372
+[72943]: 0: got ACK from 15. RTT = 203
+[72973]: 3: WARNING: BUFFER VERY FULL
+[72973]: 3: got ACK from 12. RTT = 1234
+[72992]: 0: got ACK from 15. RTT = 292
+[73084]: 3: WARNING: BUFFER VERY FULL
+[73084]: 3: got ACK from 12. RTT = 1377
+[73164]: 0: got ACK from 15. RTT = 190
+[73193]: 3: WARNING: BUFFER VERY FULL
+[73193]: 3: got ACK from 12. RTT = 1285
+[73334]: 0: got ACK from 15. RTT = 185
+[73362]: 3: WARNING: BUFFER VERY FULL
+[73362]: 3: got ACK from 12. RTT = 1400
+[73383]: 0: got ACK from 15. RTT = 174
+[73471]: 3: WARNING: BUFFER VERY FULL
+[73471]: 3: got ACK from 12. RTT = 1492
+[73580]: 3: WARNING: BUFFER VERY FULL
+[73580]: 3: got ACK from 12. RTT = 1284
+[73689]: 3: WARNING: BUFFER VERY FULL
+[73689]: 3: got ACK from 12. RTT = 1658
+[73798]: 3: WARNING: BUFFER VERY FULL
+[73798]: 3: got ACK from 12. RTT = 1376
+[73967]: 3: WARNING: BUFFER VERY FULL
+[73967]: 3: got ACK from 12. RTT = 1156
+[74080]: 3: WARNING: BUFFER VERY FULL
+[74080]: 3: got ACK from 12. RTT = 1285
+[74189]: 3: WARNING: BUFFER VERY FULL
+[74189]: 3: got ACK from 12. RTT = 1216
+[74192]: 0: got ACK from 15. RTT = 227
+[74298]: 3: WARNING: BUFFER VERY FULL
+[74298]: 3: got ACK from 12. RTT = 1261
+[74467]: 3: WARNING: BUFFER VERY FULL
+[74467]: 3: got ACK from 12. RTT = 1266
+[74481]: 0: got ACK from 15. RTT = 232
+[74576]: 3: WARNING: BUFFER VERY FULL
+[74576]: 3: got ACK from 12. RTT = 1741
+[74591]: 0: got ACK from 15. RTT = 174
+[74685]: 3: WARNING: BUFFER VERY FULL
+[74685]: 3: got ACK from 12. RTT = 1335
+[74700]: 0: got ACK from 15. RTT = 202
+[74794]: 3: WARNING: BUFFER VERY FULL
+[74794]: 3: got ACK from 12. RTT = 1335
+[74929]: 0: got ACK from 15. RTT = 152
+[74963]: 3: WARNING: BUFFER VERY FULL
+[74963]: 3: got ACK from 12. RTT = 1423
+[74978]: 0: got ACK from 15. RTT = 240
+[75074]: 3: WARNING: BUFFER VERY FULL
+[75074]: 3: got ACK from 12. RTT = 1308
+[75089]: 0: got ACK from 15. RTT = 269
+[75183]: 3: WARNING: BUFFER VERY FULL
+[75183]: 3: got ACK from 12. RTT = 1243
+[75197]: 0: got ACK from 15. RTT = 160
+[75292]: 3: WARNING: BUFFER VERY FULL
+[75292]: 3: got ACK from 12. RTT = 1368
+[75461]: 3: WARNING: BUFFER VERY FULL
+[75461]: 3: got ACK from 12. RTT = 1331
+[75486]: 0: got ACK from 15. RTT = 234
+[75535]: 0: got ACK from 15. RTT = 170
+[75570]: 3: WARNING: BUFFER VERY FULL
+[75570]: 3: got ACK from 12. RTT = 1382
+[75584]: 0: got ACK from 15. RTT = 225
+[75679]: 3: WARNING: BUFFER VERY FULL
+[75679]: 3: got ACK from 12. RTT = 1284
+[75693]: 0: got ACK from 15. RTT = 101
+[75788]: 3: WARNING: BUFFER VERY FULL
+[75788]: 3: got ACK from 12. RTT = 1643
+[75861]: 0: got ACK from 15. RTT = 183
+[75897]: 3: WARNING: BUFFER VERY FULL
+[75897]: 3: got ACK from 12. RTT = 1234
+[76070]: 3: WARNING: BUFFER VERY FULL
+[76070]: 3: got ACK from 12. RTT = 1506
+[76179]: 3: WARNING: BUFFER VERY FULL
+[76179]: 3: got ACK from 12. RTT = 1492
+[76288]: 3: WARNING: BUFFER VERY FULL
+[76288]: 3: got ACK from 12. RTT = 1326
+[76322]: 0: got ACK from 15. RTT = 135
+[76371]: 0: got ACK from 15. RTT = 209
+[76397]: 3: WARNING: BUFFER VERY FULL
+[76397]: 3: got ACK from 12. RTT = 1386
+[76541]: 0: got ACK from 15. RTT = 121
+[76566]: 3: WARNING: BUFFER VERY FULL
+[76566]: 3: got ACK from 12. RTT = 1340
+[76590]: 0: got ACK from 15. RTT = 191
+[76675]: 3: WARNING: BUFFER VERY FULL
+[76675]: 3: got ACK from 12. RTT = 1400
+[76784]: 3: WARNING: BUFFER VERY FULL
+[76784]: 3: got ACK from 12. RTT = 1469
+[76893]: 3: WARNING: BUFFER VERY FULL
+[76893]: 3: got ACK from 12. RTT = 1533
+[77064]: 3: WARNING: BUFFER VERY FULL
+[77064]: 3: got ACK from 12. RTT = 1358
+[77173]: 3: WARNING: BUFFER VERY FULL
+[77173]: 3: got ACK from 12. RTT = 1566
+[77177]: 0: got ACK from 15. RTT = 259
+[77282]: 3: WARNING: BUFFER VERY FULL
+[77282]: 3: got ACK from 12. RTT = 1377
+[77391]: 3: WARNING: BUFFER VERY FULL
+[77391]: 3: got ACK from 12. RTT = 1344
+[77500]: 3: WARNING: BUFFER VERY FULL
+[77500]: 3: got ACK from 12. RTT = 1478
+[77503]: 0: got ACK from 15. RTT = 120
+[77669]: 3: WARNING: BUFFER VERY FULL
+[77669]: 3: got ACK from 12. RTT = 1367
+[77778]: 3: WARNING: BUFFER VERY FULL
+[77778]: 3: got ACK from 12. RTT = 1326
+[77861]: 0: got ACK from 15. RTT = 115
+[77887]: 3: WARNING: BUFFER VERY FULL
+[77887]: 3: got ACK from 12. RTT = 1409
+[77996]: 3: WARNING: BUFFER VERY FULL
+[77996]: 3: got ACK from 12. RTT = 1335
+[78117]: 0: got ACK from 15. RTT = 271
+[78169]: 3: WARNING: BUFFER VERY FULL
+[78169]: 3: got ACK from 12. RTT = 1317
+[78175]: 0: got ACK from 15. RTT = 239
+[78278]: 3: WARNING: BUFFER VERY FULL
+[78278]: 3: got ACK from 12. RTT = 1382
+[78345]: 0: got ACK from 15. RTT = 122
+[78387]: 3: WARNING: BUFFER VERY FULL
+[78387]: 3: got ACK from 12. RTT = 1335
+[78496]: 3: WARNING: BUFFER VERY FULL
+[78496]: 3: got ACK from 12. RTT = 1386
+[78522]: 0: got ACK from 15. RTT = 253
+[78665]: 3: WARNING: BUFFER VERY FULL
+[78665]: 3: got ACK from 12. RTT = 1275
+[78774]: 3: WARNING: BUFFER VERY FULL
+[78774]: 3: got ACK from 12. RTT = 1391
+[78883]: 3: WARNING: BUFFER VERY FULL
+[78883]: 3: got ACK from 12. RTT = 1358
+[78904]: 0: got ACK from 15. RTT = 220
+[78964]: 0: got ACK from 15. RTT = 273
+[78992]: 3: WARNING: BUFFER VERY FULL
+[78992]: 3: got ACK from 12. RTT = 1584
+[79163]: 3: WARNING: BUFFER VERY FULL
+[79163]: 3: got ACK from 12. RTT = 1483
+[79182]: 0: got ACK from 15. RTT = 277
+[79272]: 3: WARNING: BUFFER VERY FULL
+[79272]: 3: got ACK from 12. RTT = 1533
+[79381]: 3: WARNING: BUFFER VERY FULL
+[79381]: 3: got ACK from 12. RTT = 1409
+[79490]: 3: WARNING: BUFFER VERY FULL
+[79490]: 3: got ACK from 12. RTT = 1358
+[79599]: 3: WARNING: BUFFER VERY FULL
+[79599]: 3: got ACK from 12. RTT = 1584
+[79663]: 0: got ACK from 15. RTT = 247
+[79768]: 3: WARNING: BUFFER VERY FULL
+[79768]: 3: got ACK from 12. RTT = 1464
+[79771]: 0: got ACK from 15. RTT = 221
+[79877]: 3: WARNING: BUFFER VERY FULL
+[79877]: 3: got ACK from 12. RTT = 1524
+[79941]: 0: got ACK from 15. RTT = 152
+[79986]: 3: WARNING: BUFFER VERY FULL
+[79986]: 3: got ACK from 12. RTT = 1441
+[80099]: 3: WARNING: BUFFER VERY FULL
+[80099]: 3: got ACK from 12. RTT = 1418
+[80176]: 0: got ACK from 15. RTT = 158
+[80268]: 3: WARNING: BUFFER VERY FULL
+[80268]: 3: got ACK from 12. RTT = 1373
+[80377]: 3: WARNING: BUFFER VERY FULL
+[80377]: 3: got ACK from 12. RTT = 1575
+[80486]: 3: WARNING: BUFFER VERY FULL
+[80486]: 3: got ACK from 12. RTT = 1460
+[80526]: 0: got ACK from 15. RTT = 270
+[80575]: 0: got ACK from 15. RTT = 160
+[80595]: 3: WARNING: BUFFER VERY FULL
+[80595]: 3: got ACK from 12. RTT = 1436
+[80764]: 3: WARNING: BUFFER VERY FULL
+[80764]: 3: got ACK from 12. RTT = 1441
+[80873]: 3: WARNING: BUFFER VERY FULL
+[80873]: 3: got ACK from 12. RTT = 1409
+[80982]: 3: WARNING: BUFFER VERY FULL
+[80982]: 3: got ACK from 12. RTT = 1418
+[81093]: 3: WARNING: BUFFER VERY FULL
+[81093]: 3: got ACK from 12. RTT = 1519
+[81105]: 0: got ACK from 15. RTT = 300
+[81262]: 3: WARNING: BUFFER VERY FULL
+[81262]: 3: got ACK from 12. RTT = 1381
+[81371]: 3: WARNING: BUFFER VERY FULL
+[81371]: 3: got ACK from 12. RTT = 1381
+[81480]: 3: WARNING: BUFFER VERY FULL
+[81480]: 3: got ACK from 12. RTT = 1418
+[81512]: 0: got ACK from 15. RTT = 320
+[81589]: 3: WARNING: BUFFER VERY FULL
+[81589]: 3: got ACK from 12. RTT = 1501
+[81680]: 0: got ACK from 15. RTT = 318
+[81698]: 3: WARNING: BUFFER VERY FULL
+[81698]: 3: got ACK from 12. RTT = 1367
+[81729]: 0: got ACK from 15. RTT = 203
+[81778]: 0: got ACK from 15. RTT = 191
+[81867]: 3: WARNING: BUFFER VERY FULL
+[81867]: 3: got ACK from 12. RTT = 1482
+[81976]: 3: WARNING: BUFFER VERY FULL
+[81976]: 3: got ACK from 12. RTT = 1459
+[82073]: 0: got ACK from 15. RTT = 134
+[82089]: 3: WARNING: BUFFER VERY FULL
+[82089]: 3: got ACK from 12. RTT = 1386
+[82122]: 0: got ACK from 15. RTT = 153
+[82198]: 3: WARNING: BUFFER VERY FULL
+[82198]: 3: got ACK from 12. RTT = 1492
+[82199]: 0: got ACK from 15. RTT = 211
+[82367]: 3: WARNING: BUFFER VERY FULL
+[82367]: 3: got ACK from 12. RTT = 1450
+[82367]: 0: got ACK from 15. RTT = 140
+[82476]: 0: got ACK from 15. RTT = 335
+[82476]: 3: WARNING: BUFFER VERY FULL
+[82476]: 3: got ACK from 12. RTT = 1566
+[82525]: 0: got ACK from 15. RTT = 220
+[82585]: 3: WARNING: BUFFER VERY FULL
+[82585]: 3: got ACK from 12. RTT = 1468
+[82693]: 0: got ACK from 15. RTT = 316
+[82694]: 3: WARNING: BUFFER VERY FULL
+[82694]: 3: got ACK from 12. RTT = 1468
+[82742]: 0: got ACK from 15. RTT = 157
+[82796]: 0: got ACK from 15. RTT = 223
+[82863]: 3: WARNING: BUFFER VERY FULL
+[82863]: 3: got ACK from 12. RTT = 1524
+[82972]: 3: WARNING: BUFFER VERY FULL
+[82972]: 3: got ACK from 12. RTT = 1676
+[83063]: 0: got ACK from 15. RTT = 332
+[83083]: 3: WARNING: BUFFER VERY FULL
+[83083]: 3: got ACK from 12. RTT = 1575
+[83192]: 3: WARNING: BUFFER VERY FULL
+[83192]: 3: got ACK from 12. RTT = 1478
+[83361]: 3: WARNING: BUFFER VERY FULL
+[83361]: 3: got ACK from 12. RTT = 1414
+[83470]: 3: WARNING: BUFFER VERY FULL
+[83470]: 3: got ACK from 12. RTT = 1492
+[83579]: 3: WARNING: BUFFER VERY FULL
+[83579]: 3: got ACK from 12. RTT = 1450
+[83688]: 3: WARNING: BUFFER VERY FULL
+[83688]: 3: got ACK from 12. RTT = 1418
+[83797]: 3: WARNING: BUFFER VERY FULL
+[83797]: 3: got ACK from 12. RTT = 1510
+[83900]: 0: got ACK from 15. RTT = 185
+[83966]: 3: WARNING: BUFFER VERY FULL
+[83966]: 3: got ACK from 12. RTT = 1432
+[84079]: 3: WARNING: BUFFER VERY FULL
+[84079]: 3: got ACK from 12. RTT = 1501
+[84188]: 3: WARNING: BUFFER VERY FULL
+[84188]: 3: got ACK from 12. RTT = 1468
+[84297]: 3: WARNING: BUFFER VERY FULL
+[84297]: 3: got ACK from 12. RTT = 1436
+[84466]: 3: WARNING: BUFFER VERY FULL
+[84466]: 3: got ACK from 12. RTT = 1515
+[84491]: 0: got ACK from 15. RTT = 282
+[84540]: 0: got ACK from 15. RTT = 172
+[84575]: 3: WARNING: BUFFER VERY FULL
+[84575]: 3: got ACK from 12. RTT = 1441
+[84593]: 0: got ACK from 15. RTT = 277
+[84684]: 3: WARNING: BUFFER VERY FULL
+[84684]: 3: got ACK from 12. RTT = 1459
+[84702]: 0: got ACK from 15. RTT = 119
+[84751]: 0: got ACK from 15. RTT = 154
+[84793]: 3: WARNING: BUFFER VERY FULL
+[84793]: 3: got ACK from 12. RTT = 1519
+[84962]: 3: WARNING: BUFFER VERY FULL
+[84962]: 3: got ACK from 12. RTT = 1648
+[84983]: 0: got ACK from 15. RTT = 223
+[85073]: 3: WARNING: BUFFER VERY FULL
+[85073]: 3: got ACK from 12. RTT = 1473
+[85094]: 0: got ACK from 15. RTT = 200
+[85182]: 3: WARNING: BUFFER VERY FULL
+[85182]: 3: got ACK from 12. RTT = 1607
+[85261]: 0: got ACK from 15. RTT = 150
+[85291]: 3: WARNING: BUFFER VERY FULL
+[85291]: 3: got ACK from 12. RTT = 1468
+[85400]: 3: WARNING: BUFFER VERY FULL
+[85400]: 3: got ACK from 12. RTT = 1611
+[85569]: 3: WARNING: BUFFER VERY FULL
+[85569]: 3: got ACK from 12. RTT = 1648
+[85574]: 0: got ACK from 15. RTT = 159
+[85678]: 3: WARNING: BUFFER VERY FULL
+[85678]: 3: got ACK from 12. RTT = 1510
+[85683]: 0: got ACK from 15. RTT = 218
+[85787]: 3: WARNING: BUFFER VERY FULL
+[85787]: 3: got ACK from 12. RTT = 1560
+[85896]: 3: WARNING: BUFFER VERY FULL
+[85896]: 3: got ACK from 12. RTT = 1436
+[85914]: 0: got ACK from 15. RTT = 336
+[86065]: 0: got ACK from 15. RTT = 379
+[86069]: 3: WARNING: BUFFER VERY FULL
+[86069]: 3: got ACK from 12. RTT = 1483
+[86178]: 3: WARNING: BUFFER VERY FULL
+[86178]: 3: got ACK from 12. RTT = 1459
+[86287]: 3: WARNING: BUFFER VERY FULL
+[86287]: 3: got ACK from 12. RTT = 1409
+[86321]: 0: got ACK from 15. RTT = 354
+[86396]: 3: WARNING: BUFFER VERY FULL
+[86396]: 3: got ACK from 12. RTT = 1533
+[86503]: 0: got ACK from 15. RTT = 183
+[86565]: 3: WARNING: BUFFER VERY FULL
+[86565]: 3: got ACK from 12. RTT = 1483
+[86674]: 3: WARNING: BUFFER VERY FULL
+[86674]: 3: got ACK from 12. RTT = 1648
+[86722]: 0: got ACK from 15. RTT = 186
+[86783]: 3: WARNING: BUFFER VERY FULL
+[86783]: 3: got ACK from 12. RTT = 1492
+[86892]: 3: WARNING: BUFFER VERY FULL
+[86892]: 3: got ACK from 12. RTT = 1450
+[87063]: 3: WARNING: BUFFER VERY FULL
+[87063]: 3: got ACK from 12. RTT = 1506
+[87172]: 3: WARNING: BUFFER VERY FULL
+[87172]: 3: got ACK from 12. RTT = 1464
+[87199]: 0: got ACK from 15. RTT = 195
+[87281]: 3: WARNING: BUFFER VERY FULL
+[87281]: 3: got ACK from 12. RTT = 1625
+[87390]: 3: WARNING: BUFFER VERY FULL
+[87390]: 3: got ACK from 12. RTT = 1427
+[87488]: 0: got ACK from 15. RTT = 232
+[87499]: 3: WARNING: BUFFER VERY FULL
+[87499]: 3: got ACK from 12. RTT = 1662
+[87668]: 3: WARNING: BUFFER VERY FULL
+[87668]: 3: got ACK from 12. RTT = 1492
+[87717]: 0: got ACK from 15. RTT = 304
+[87777]: 3: WARNING: BUFFER VERY FULL
+[87777]: 3: got ACK from 12. RTT = 1657
+[87886]: 3: WARNING: BUFFER VERY FULL
+[87886]: 3: got ACK from 12. RTT = 1510
+[87887]: 0: got ACK from 15. RTT = 219
+[87995]: 3: WARNING: BUFFER VERY FULL
+[87995]: 3: got ACK from 12. RTT = 1501
+[87995]: 0: got ACK from 15. RTT = 207
+[88108]: 0: got ACK from 15. RTT = 351
+[88168]: 3: WARNING: BUFFER VERY FULL
+[88168]: 3: got ACK from 12. RTT = 1492
+[88277]: 3: WARNING: BUFFER VERY FULL
+[88277]: 3: got ACK from 12. RTT = 1492
+[88335]: 0: got ACK from 15. RTT = 221
+[88384]: 0: got ACK from 15. RTT = 174
+[88386]: 3: WARNING: BUFFER VERY FULL
+[88386]: 3: got ACK from 12. RTT = 1593
+[88493]: 0: got ACK from 15. RTT = 215
+[88495]: 3: WARNING: BUFFER VERY FULL
+[88495]: 3: got ACK from 12. RTT = 1492
+[88542]: 0: got ACK from 15. RTT = 287
+[88664]: 3: WARNING: BUFFER VERY FULL
+[88664]: 3: got ACK from 12. RTT = 1708
+[88741]: 0: got ACK from 15. RTT = 223
+[88773]: 3: WARNING: BUFFER VERY FULL
+[88773]: 3: got ACK from 12. RTT = 1524
+[88882]: 3: WARNING: BUFFER VERY FULL
+[88882]: 3: got ACK from 12. RTT = 1643
+[88923]: 0: got ACK from 15. RTT = 202
+[88991]: 3: WARNING: BUFFER VERY FULL
+[88991]: 3: got ACK from 12. RTT = 1735
+[89162]: 3: WARNING: BUFFER VERY FULL
+[89162]: 3: got ACK from 12. RTT = 1506
+[89271]: 3: WARNING: BUFFER VERY FULL
+[89271]: 3: got ACK from 12. RTT = 1676
+[89350]: 0: got ACK from 15. RTT = 224
+[89380]: 3: WARNING: BUFFER VERY FULL
+[89380]: 3: got ACK from 12. RTT = 1542
+[89489]: 3: WARNING: BUFFER VERY FULL
+[89489]: 3: got ACK from 12. RTT = 1519
+[89598]: 3: WARNING: BUFFER VERY FULL
+[89598]: 3: got ACK from 12. RTT = 1528
+[89700]: 0: got ACK from 15. RTT = 234
+[89767]: 3: WARNING: BUFFER VERY FULL
+[89767]: 3: got ACK from 12. RTT = 1639
+[89876]: 3: WARNING: BUFFER VERY FULL
+[89876]: 3: got ACK from 12. RTT = 1667
+[89985]: 3: WARNING: BUFFER VERY FULL
+[89985]: 3: got ACK from 12. RTT = 1584
+[90098]: 3: WARNING: BUFFER VERY FULL
+[90098]: 3: got ACK from 12. RTT = 1809
+[90267]: 3: WARNING: BUFFER VERY FULL
+[90267]: 3: got ACK from 12. RTT = 1515
+[90293]: 0: got ACK from 15. RTT = 168
+[90376]: 3: WARNING: BUFFER VERY FULL
+[90376]: 3: got ACK from 12. RTT = 1823
+[90485]: 3: WARNING: BUFFER VERY FULL
+[90485]: 3: got ACK from 12. RTT = 1643
+[90522]: 0: got ACK from 15. RTT = 201
+[90571]: 0: got ACK from 15. RTT = 292
+[90594]: 3: WARNING: BUFFER VERY FULL
+[90594]: 3: got ACK from 12. RTT = 1533
+[90739]: 0: got ACK from 15. RTT = 121
+[90763]: 3: WARNING: BUFFER VERY FULL
+[90763]: 3: got ACK from 12. RTT = 1533
+[90788]: 0: got ACK from 15. RTT = 144
+[90872]: 3: WARNING: BUFFER VERY FULL
+[90872]: 3: got ACK from 12. RTT = 1459
+[90958]: 0: got ACK from 15. RTT = 289
+[90981]: 3: WARNING: BUFFER VERY FULL
+[90981]: 3: got ACK from 12. RTT = 1634
+[91069]: 0: got ACK from 15. RTT = 279
+[91092]: 3: WARNING: BUFFER VERY FULL
+[91092]: 3: got ACK from 12. RTT = 1593
+[91118]: 0: got ACK from 15. RTT = 219
+[91167]: 0: got ACK from 15. RTT = 322
+[91261]: 3: WARNING: BUFFER VERY FULL
+[91261]: 3: got ACK from 12. RTT = 1524
+[91370]: 3: WARNING: BUFFER VERY FULL
+[91370]: 3: got ACK from 12. RTT = 1574
+[91394]: 0: got ACK from 15. RTT = 292
+[91479]: 3: WARNING: BUFFER VERY FULL
+[91479]: 3: got ACK from 12. RTT = 1551
+[91588]: 3: WARNING: BUFFER VERY FULL
+[91588]: 3: got ACK from 12. RTT = 1519
+[91697]: 3: WARNING: BUFFER VERY FULL
+[91697]: 3: got ACK from 12. RTT = 1510
+[91796]: 0: got ACK from 15. RTT = 175
+[91866]: 3: WARNING: BUFFER VERY FULL
+[91866]: 3: got ACK from 12. RTT = 1699
+[91975]: 3: WARNING: BUFFER VERY FULL
+[91975]: 3: got ACK from 12. RTT = 1676
+[92088]: 3: WARNING: BUFFER VERY FULL
+[92088]: 3: got ACK from 12. RTT = 1584
+[92099]: 0: got ACK from 15. RTT = 270
+[92148]: 0: got ACK from 15. RTT = 190
+[92197]: 3: WARNING: BUFFER VERY FULL
+[92197]: 3: got ACK from 12. RTT = 1418
+[92366]: 3: WARNING: BUFFER VERY FULL
+[92366]: 3: got ACK from 12. RTT = 1441
+[92462]: 0: got ACK from 15. RTT = 245
+[92475]: 3: WARNING: BUFFER VERY FULL
+[92475]: 3: got ACK from 12. RTT = 1483
+[92521]: 0: got ACK from 15. RTT = 186
+[92584]: 3: WARNING: BUFFER VERY FULL
+[92584]: 3: got ACK from 12. RTT = 1551
+[92693]: 3: WARNING: BUFFER VERY FULL
+[92693]: 3: got ACK from 12. RTT = 1533
+[92697]: 0: got ACK from 15. RTT = 215
+[92746]: 0: got ACK from 15. RTT = 190
+[92861]: 0: got ACK from 15. RTT = 350
+[92862]: 3: WARNING: BUFFER VERY FULL
+[92862]: 3: got ACK from 12. RTT = 1423
+[92910]: 0: got ACK from 15. RTT = 168
+[92959]: 0: got ACK from 15. RTT = 190
+[92971]: 3: WARNING: BUFFER VERY FULL
+[92971]: 3: got ACK from 12. RTT = 1473
+[93082]: 3: WARNING: BUFFER VERY FULL
+[93082]: 3: got ACK from 12. RTT = 1607
+[93191]: 3: WARNING: BUFFER VERY FULL
+[93191]: 3: got ACK from 12. RTT = 1441
+[93361]: 3: WARNING: BUFFER VERY FULL
+[93361]: 3: got ACK from 12. RTT = 1575
+[93470]: 3: WARNING: BUFFER VERY FULL
+[93470]: 3: got ACK from 12. RTT = 1441
+[93493]: 0: got ACK from 15. RTT = 202
+[93579]: 3: WARNING: BUFFER VERY FULL
+[93579]: 3: got ACK from 12. RTT = 1832
+[93662]: 0: got ACK from 15. RTT = 199
+[93688]: 3: WARNING: BUFFER VERY FULL
+[93688]: 3: got ACK from 12. RTT = 1468
+[93797]: 3: WARNING: BUFFER VERY FULL
+[93797]: 3: got ACK from 12. RTT = 1842
+[93966]: 3: WARNING: BUFFER VERY FULL
+[93966]: 3: got ACK from 12. RTT = 1491
+[94079]: 3: WARNING: BUFFER VERY FULL
+[94079]: 3: got ACK from 12. RTT = 1791
+[94097]: 0: got ACK from 15. RTT = 216
+[94188]: 3: WARNING: BUFFER VERY FULL
+[94188]: 3: got ACK from 12. RTT = 1750
+[94297]: 3: WARNING: BUFFER VERY FULL
+[94297]: 3: got ACK from 12. RTT = 1827
+[94385]: 0: got ACK from 15. RTT = 207
+[94466]: 3: WARNING: BUFFER VERY FULL
+[94466]: 3: got ACK from 12. RTT = 1800
+[94504]: 0: got ACK from 15. RTT = 187
+[94575]: 3: WARNING: BUFFER VERY FULL
+[94575]: 3: got ACK from 12. RTT = 1648
+[94684]: 3: WARNING: BUFFER VERY FULL
+[94684]: 3: got ACK from 12. RTT = 1533
+[94793]: 3: WARNING: BUFFER VERY FULL
+[94793]: 3: got ACK from 12. RTT = 1533
+[94861]: 0: got ACK from 15. RTT = 230
+[94962]: 3: WARNING: BUFFER VERY FULL
+[94962]: 3: got ACK from 12. RTT = 1625
+[95073]: 3: WARNING: BUFFER VERY FULL
+[95073]: 3: got ACK from 12. RTT = 1542
+[95182]: 3: WARNING: BUFFER VERY FULL
+[95182]: 3: got ACK from 12. RTT = 1874
+[95291]: 3: WARNING: BUFFER VERY FULL
+[95291]: 3: got ACK from 12. RTT = 1726
+[95400]: 3: WARNING: BUFFER VERY FULL
+[95400]: 3: got ACK from 12. RTT = 2053
+[95502]: 0: got ACK from 15. RTT = 253
+[95569]: 3: WARNING: BUFFER VERY FULL
+[95569]: 3: got ACK from 12. RTT = 1842
+[95672]: 0: got ACK from 15. RTT = 217
+[95678]: 3: WARNING: BUFFER VERY FULL
+[95678]: 3: got ACK from 12. RTT = 1584
+[95721]: 0: got ACK from 15. RTT = 186
+[95787]: 3: WARNING: BUFFER VERY FULL
+[95787]: 3: got ACK from 12. RTT = 1993
+[95896]: 3: WARNING: BUFFER VERY FULL
+[95896]: 3: got ACK from 12. RTT = 1560
+[96069]: 3: WARNING: BUFFER VERY FULL
+[96069]: 3: got ACK from 12. RTT = 1584
+[96075]: 0: got ACK from 15. RTT = 368
+[96124]: 0: got ACK from 15. RTT = 205
+[96173]: 0: got ACK from 15. RTT = 159
+[96178]: 3: WARNING: BUFFER VERY FULL
+[96178]: 3: got ACK from 12. RTT = 1726
+[96282]: 0: got ACK from 15. RTT = 252
+[96287]: 3: WARNING: BUFFER VERY FULL
+[96287]: 3: got ACK from 12. RTT = 1883
+[96390]: 0: got ACK from 15. RTT = 294
+[96396]: 3: WARNING: BUFFER VERY FULL
+[96396]: 3: got ACK from 12. RTT = 1561
+[96499]: 0: got ACK from 15. RTT = 215
+[96548]: 0: got ACK from 15. RTT = 141
+[96565]: 3: WARNING: BUFFER VERY FULL
+[96565]: 3: got ACK from 12. RTT = 1648
+[96597]: 0: got ACK from 15. RTT = 208
+[96674]: 3: WARNING: BUFFER VERY FULL
+[96674]: 3: got ACK from 12. RTT = 1634
+[96706]: 0: got ACK from 15. RTT = 334
+[96783]: 3: WARNING: BUFFER VERY FULL
+[96783]: 3: got ACK from 12. RTT = 1593
+[96892]: 3: WARNING: BUFFER VERY FULL
+[96892]: 3: got ACK from 12. RTT = 1694
+[96962]: 0: got ACK from 15. RTT = 206
+[97063]: 3: WARNING: BUFFER VERY FULL
+[97063]: 3: got ACK from 12. RTT = 1547
+[97153]: 0: got ACK from 15. RTT = 208
+[97172]: 3: WARNING: BUFFER VERY FULL
+[97172]: 3: got ACK from 12. RTT = 1791
+[97281]: 3: WARNING: BUFFER VERY FULL
+[97281]: 3: got ACK from 12. RTT = 1501
+[97390]: 3: WARNING: BUFFER VERY FULL
+[97390]: 3: got ACK from 12. RTT = 1560
+[97499]: 3: WARNING: BUFFER VERY FULL
+[97499]: 3: got ACK from 12. RTT = 1961
+[97668]: 3: WARNING: BUFFER VERY FULL
+[97668]: 3: got ACK from 12. RTT = 1681
+[97696]: 0: got ACK from 15. RTT = 219
+[97777]: 3: WARNING: BUFFER VERY FULL
+[97777]: 3: got ACK from 12. RTT = 1975
+[97789]: 0: got ACK from 15. RTT = 211
+[97886]: 3: WARNING: BUFFER VERY FULL
+[97886]: 3: got ACK from 12. RTT = 1542
+[97995]: 3: WARNING: BUFFER VERY FULL
+[97995]: 3: got ACK from 12. RTT = 1919
+[98168]: 3: WARNING: BUFFER VERY FULL
+[98168]: 3: got ACK from 12. RTT = 1667
+[98277]: 3: WARNING: BUFFER VERY FULL
+[98277]: 3: got ACK from 12. RTT = 1634
+[98321]: 0: got ACK from 15. RTT = 187
+[98386]: 3: WARNING: BUFFER VERY FULL
+[98386]: 3: got ACK from 12. RTT = 1717
+[98495]: 3: WARNING: BUFFER VERY FULL
+[98495]: 3: got ACK from 12. RTT = 2026
+[98548]: 0: got ACK from 15. RTT = 254
+[98597]: 0: got ACK from 15. RTT = 244
+[98664]: 3: WARNING: BUFFER VERY FULL
+[98664]: 3: got ACK from 12. RTT = 1814
+[98743]: 0: got ACK from 15. RTT = 205
+[98773]: 3: WARNING: BUFFER VERY FULL
+[98773]: 3: got ACK from 12. RTT = 1791
+[98882]: 3: WARNING: BUFFER VERY FULL
+[98882]: 3: got ACK from 12. RTT = 1616
+[98985]: 0: got ACK from 15. RTT = 207
+[98991]: 3: WARNING: BUFFER VERY FULL
+[98991]: 3: got ACK from 12. RTT = 2002
+[99162]: 3: WARNING: BUFFER VERY FULL
+[99162]: 3: got ACK from 12. RTT = 2058
+[99172]: 0: got ACK from 15. RTT = 175
+[99271]: 3: WARNING: BUFFER VERY FULL
+[99271]: 3: got ACK from 12. RTT = 1823
+[99353]: 0: got ACK from 15. RTT = 221
+[99380]: 3: WARNING: BUFFER VERY FULL
+[99380]: 3: got ACK from 12. RTT = 1749
+[99471]: 0: got ACK from 15. RTT = 218
+[99489]: 3: WARNING: BUFFER VERY FULL
+[99489]: 3: got ACK from 12. RTT = 1658
+[99598]: 3: WARNING: BUFFER VERY FULL
+[99598]: 3: got ACK from 12. RTT = 1777
+[99713]: 0: got ACK from 15. RTT = 319
+[99767]: 3: WARNING: BUFFER VERY FULL
+[99767]: 3: got ACK from 12. RTT = 1717
+[99876]: 3: WARNING: BUFFER VERY FULL
+[99876]: 3: got ACK from 12. RTT = 2026
+[99891]: 0: got ACK from 15. RTT = 136
+[99985]: 3: WARNING: BUFFER VERY FULL
+[99985]: 3: got ACK from 12. RTT = 1842
+[100065]: 0: got ACK from 15. RTT = 234
+[100098]: 3: WARNING: BUFFER VERY FULL
+[100098]: 3: got ACK from 12. RTT = 1827
+[100173]: 0: got ACK from 15. RTT = 190
+[100267]: 3: WARNING: BUFFER VERY FULL
+[100267]: 3: got ACK from 12. RTT = 1708
+[100287]: 0: got ACK from 15. RTT = 150
+[100376]: 3: WARNING: BUFFER VERY FULL
+[100376]: 3: got ACK from 12. RTT = 1865
+[100465]: 0: got ACK from 15. RTT = 246
+[100485]: 3: WARNING: BUFFER VERY FULL
+[100485]: 3: got ACK from 12. RTT = 1777
+[100524]: 0: got ACK from 15. RTT = 236
+[100573]: 0: got ACK from 15. RTT = 208
+[100594]: 3: WARNING: BUFFER VERY FULL
+[100594]: 3: got ACK from 12. RTT = 1736
+[100682]: 0: got ACK from 15. RTT = 152
+[100731]: 0: got ACK from 15. RTT = 169
+[100763]: 3: WARNING: BUFFER VERY FULL
+[100763]: 3: got ACK from 12. RTT = 1722
+[100872]: 3: WARNING: BUFFER VERY FULL
+[100872]: 3: got ACK from 12. RTT = 1708
+[100981]: 3: WARNING: BUFFER VERY FULL
+[100981]: 3: got ACK from 12. RTT = 1750
+[101092]: 3: WARNING: BUFFER VERY FULL
+[101092]: 3: got ACK from 12. RTT = 1575
+[101261]: 3: WARNING: BUFFER VERY FULL
+[101261]: 3: got ACK from 12. RTT = 1630
+[101370]: 3: WARNING: BUFFER VERY FULL
+[101370]: 3: got ACK from 12. RTT = 1865
+[101479]: 3: WARNING: BUFFER VERY FULL
+[101479]: 3: got ACK from 12. RTT = 1768
+[101588]: 3: WARNING: BUFFER VERY FULL
+[101588]: 3: got ACK from 12. RTT = 1809
+[101697]: 3: WARNING: BUFFER VERY FULL
+[101697]: 3: got ACK from 12. RTT = 1910
+[101866]: 3: WARNING: BUFFER VERY FULL
+[101866]: 3: got ACK from 12. RTT = 1667
+[101975]: 3: WARNING: BUFFER VERY FULL
+[101975]: 3: got ACK from 12. RTT = 1809
+[102088]: 3: WARNING: BUFFER VERY FULL
+[102088]: 3: got ACK from 12. RTT = 1759
+[102197]: 3: WARNING: BUFFER VERY FULL
+[102197]: 3: got ACK from 12. RTT = 1685
+[102339]: 0: got ACK from 15. RTT = 219
+[102366]: 3: WARNING: BUFFER VERY FULL
+[102366]: 3: got ACK from 12. RTT = 1823
+[102388]: 0: got ACK from 15. RTT = 274
+[102475]: 3: WARNING: BUFFER VERY FULL
+[102475]: 3: got ACK from 12. RTT = 1823
+[102584]: 3: WARNING: BUFFER VERY FULL
+[102584]: 3: got ACK from 12. RTT = 1818
+[102693]: 3: WARNING: BUFFER VERY FULL
+[102693]: 3: got ACK from 12. RTT = 1759
+[102736]: 0: got ACK from 15. RTT = 223
+[102785]: 0: got ACK from 15. RTT = 194
+[102862]: 3: WARNING: BUFFER VERY FULL
+[102862]: 3: got ACK from 12. RTT = 1998
+[102894]: 0: got ACK from 15. RTT = 301
+[102943]: 0: got ACK from 15. RTT = 222
+[102971]: 3: WARNING: BUFFER VERY FULL
+[102971]: 3: got ACK from 12. RTT = 1851
+[103082]: 3: WARNING: BUFFER VERY FULL
+[103082]: 3: got ACK from 12. RTT = 1726
+[103115]: 0: got ACK from 15. RTT = 203
+[103164]: 0: got ACK from 15. RTT = 192
+[103191]: 3: WARNING: BUFFER VERY FULL
+[103191]: 3: got ACK from 12. RTT = 1827
+[103300]: 3: WARNING: BUFFER VERY FULL
+[103300]: 3: got ACK from 12. RTT = 1786
+[103395]: 0: got ACK from 15. RTT = 292
+[103469]: 3: WARNING: BUFFER VERY FULL
+[103469]: 3: got ACK from 12. RTT = 1740
+[103578]: 3: WARNING: BUFFER VERY FULL
+[103578]: 3: got ACK from 12. RTT = 1768
+[103682]: 0: got ACK from 15. RTT = 352
+[103687]: 3: WARNING: BUFFER VERY FULL
+[103687]: 3: got ACK from 12. RTT = 1883
+[103796]: 3: WARNING: BUFFER VERY FULL
+[103796]: 3: got ACK from 12. RTT = 1777
+[103936]: 0: got ACK from 15. RTT = 168
+[103965]: 3: WARNING: BUFFER VERY FULL
+[103965]: 3: got ACK from 12. RTT = 1924
+[104078]: 3: WARNING: BUFFER VERY FULL
+[104078]: 3: got ACK from 12. RTT = 1726
+[104187]: 3: WARNING: BUFFER VERY FULL
+[104187]: 3: got ACK from 12. RTT = 1777
+[104270]: 0: got ACK from 15. RTT = 267
+[104296]: 3: WARNING: BUFFER VERY FULL
+[104296]: 3: got ACK from 12. RTT = 1768
+[104378]: 0: got ACK from 15. RTT = 240
+[104465]: 3: WARNING: BUFFER VERY FULL
+[104465]: 3: got ACK from 12. RTT = 1791
+[104548]: 0: got ACK from 15. RTT = 204
+[104574]: 3: WARNING: BUFFER VERY FULL
+[104574]: 3: got ACK from 12. RTT = 1731
+[104597]: 0: got ACK from 15. RTT = 175
+[104683]: 3: WARNING: BUFFER VERY FULL
+[104683]: 3: got ACK from 12. RTT = 1952
+[104706]: 0: got ACK from 15. RTT = 287
+[104792]: 3: WARNING: BUFFER VERY FULL
+[104792]: 3: got ACK from 12. RTT = 1800
+[104876]: 0: got ACK from 15. RTT = 147
+[104925]: 0: got ACK from 15. RTT = 271
+[104961]: 3: WARNING: BUFFER VERY FULL
+[104961]: 3: got ACK from 12. RTT = 1791
+[105072]: 3: WARNING: BUFFER VERY FULL
+[105072]: 3: got ACK from 12. RTT = 1975
+[105097]: 0: got ACK from 15. RTT = 235
+[105181]: 3: WARNING: BUFFER VERY FULL
+[105181]: 3: got ACK from 12. RTT = 1800
+[105290]: 3: WARNING: BUFFER VERY FULL
+[105290]: 3: got ACK from 12. RTT = 1883
+[105399]: 3: WARNING: BUFFER VERY FULL
+[105399]: 3: got ACK from 12. RTT = 1777
+[105520]: 0: got ACK from 15. RTT = 187
+[105568]: 3: WARNING: BUFFER VERY FULL
+[105568]: 3: got ACK from 12. RTT = 1823
+[105661]: 0: got ACK from 15. RTT = 146
+[105677]: 3: WARNING: BUFFER VERY FULL
+[105677]: 3: got ACK from 12. RTT = 1901
+[105786]: 3: WARNING: BUFFER VERY FULL
+[105786]: 3: got ACK from 12. RTT = 1818
+[105895]: 3: WARNING: BUFFER VERY FULL
+[105895]: 3: got ACK from 12. RTT = 1809
+[106068]: 3: WARNING: BUFFER VERY FULL
+[106068]: 3: got ACK from 12. RTT = 1791
+[106098]: 0: got ACK from 15. RTT = 201
+[106177]: 3: WARNING: BUFFER VERY FULL
+[106177]: 3: got ACK from 12. RTT = 1750
+[106286]: 3: WARNING: BUFFER VERY FULL
+[106286]: 3: got ACK from 12. RTT = 2016
+[106395]: 3: WARNING: BUFFER VERY FULL
+[106395]: 3: got ACK from 12. RTT = 1809
+[106564]: 3: WARNING: BUFFER VERY FULL
+[106564]: 3: got ACK from 12. RTT = 1883
+[106673]: 3: WARNING: BUFFER VERY FULL
+[106673]: 3: got ACK from 12. RTT = 2099
+[106746]: 0: got ACK from 15. RTT = 223
+[106782]: 3: WARNING: BUFFER VERY FULL
+[106782]: 3: got ACK from 12. RTT = 1759
+[106795]: 0: got ACK from 15. RTT = 343
+[106891]: 3: WARNING: BUFFER VERY FULL
+[106891]: 3: got ACK from 12. RTT = 1800
+[106965]: 0: got ACK from 15. RTT = 174
+[107000]: 3: WARNING: BUFFER VERY FULL
+[107000]: 3: got ACK from 12. RTT = 1970
+[107137]: 0: got ACK from 15. RTT = 203
+[107171]: 3: WARNING: BUFFER VERY FULL
+[107171]: 3: got ACK from 12. RTT = 1865
+[107280]: 3: WARNING: BUFFER VERY FULL
+[107280]: 3: got ACK from 12. RTT = 1860
+[107317]: 0: got ACK from 15. RTT = 138
+[107389]: 3: WARNING: BUFFER VERY FULL
+[107389]: 3: got ACK from 12. RTT = 1924
+[107498]: 3: WARNING: BUFFER VERY FULL
+[107498]: 3: got ACK from 12. RTT = 1842
+[107544]: 0: got ACK from 15. RTT = 337
+[107593]: 0: got ACK from 15. RTT = 277
+[107667]: 3: WARNING: BUFFER VERY FULL
+[107667]: 3: got ACK from 12. RTT = 1933
+[107702]: 0: got ACK from 15. RTT = 401
+[107751]: 0: got ACK from 15. RTT = 221
+[107776]: 3: WARNING: BUFFER VERY FULL
+[107776]: 3: got ACK from 12. RTT = 1740
+[107861]: 0: got ACK from 15. RTT = 216
+[107885]: 3: WARNING: BUFFER VERY FULL
+[107885]: 3: got ACK from 12. RTT = 1842
+[107977]: 0: got ACK from 15. RTT = 157
+[107994]: 3: WARNING: BUFFER VERY FULL
+[107994]: 3: got ACK from 12. RTT = 1910
+[108090]: 0: got ACK from 15. RTT = 219
+[108167]: 3: WARNING: BUFFER VERY FULL
+[108167]: 3: got ACK from 12. RTT = 1800
+[108261]: 0: got ACK from 15. RTT = 166
+[108276]: 3: WARNING: BUFFER VERY FULL
+[108276]: 3: got ACK from 12. RTT = 1800
+[108385]: 3: WARNING: BUFFER VERY FULL
+[108385]: 3: got ACK from 12. RTT = 1842
+[108492]: 0: got ACK from 15. RTT = 150
+[108494]: 3: WARNING: BUFFER VERY FULL
+[108494]: 3: got ACK from 12. RTT = 1910
+[108662]: 0: got ACK from 15. RTT = 348
+[108663]: 3: WARNING: BUFFER VERY FULL
+[108663]: 3: got ACK from 12. RTT = 1823
+[108772]: 3: WARNING: BUFFER VERY FULL
+[108772]: 3: got ACK from 12. RTT = 1851
+[108772]: 0: got ACK from 15. RTT = 243
+[108881]: 3: WARNING: BUFFER VERY FULL
+[108881]: 3: got ACK from 12. RTT = 2035
+[108990]: 3: WARNING: BUFFER VERY FULL
+[108990]: 3: got ACK from 12. RTT = 1883
+[109161]: 3: WARNING: BUFFER VERY FULL
+[109161]: 3: got ACK from 12. RTT = 1842
+[109270]: 3: WARNING: BUFFER VERY FULL
+[109270]: 3: got ACK from 12. RTT = 2026
+[109379]: 3: WARNING: BUFFER VERY FULL
+[109379]: 3: got ACK from 12. RTT = 1768
+[109488]: 3: WARNING: BUFFER VERY FULL
+[109488]: 3: got ACK from 12. RTT = 1759
+[109597]: 3: WARNING: BUFFER VERY FULL
+[109597]: 3: got ACK from 12. RTT = 1975
+[109668]: 0: got ACK from 15. RTT = 117
+[109766]: 3: WARNING: BUFFER VERY FULL
+[109766]: 3: got ACK from 12. RTT = 2016
+[109875]: 3: WARNING: BUFFER VERY FULL
+[109875]: 3: got ACK from 12. RTT = 1901
+[109906]: 0: got ACK from 15. RTT = 118
+[109955]: 0: got ACK from 15. RTT = 220
+[109984]: 3: WARNING: BUFFER VERY FULL
+[109984]: 3: got ACK from 12. RTT = 1901
+[110097]: 3: WARNING: BUFFER VERY FULL
+[110097]: 3: got ACK from 12. RTT = 2002
+[110129]: 0: got ACK from 15. RTT = 254
+[110178]: 0: got ACK from 15. RTT = 206
+[110266]: 3: WARNING: BUFFER VERY FULL
+[110266]: 3: got ACK from 12. RTT = 2007
+[110375]: 3: WARNING: BUFFER VERY FULL
+[110375]: 3: got ACK from 12. RTT = 1823
+[110397]: 0: got ACK from 15. RTT = 145
+[110484]: 3: WARNING: BUFFER VERY FULL
+[110484]: 3: got ACK from 12. RTT = 2035
+[110506]: 0: got ACK from 15. RTT = 300
+[110593]: 3: WARNING: BUFFER VERY FULL
+[110593]: 3: got ACK from 12. RTT = 1925
+[110674]: 0: got ACK from 15. RTT = 266
+[110723]: 0: got ACK from 15. RTT = 239
+[110762]: 3: WARNING: BUFFER VERY FULL
+[110762]: 3: got ACK from 12. RTT = 1842
+[110871]: 3: WARNING: BUFFER VERY FULL
+[110871]: 3: got ACK from 12. RTT = 1966
+[110891]: 0: got ACK from 15. RTT = 233
+[110980]: 3: WARNING: BUFFER VERY FULL
+[110980]: 3: got ACK from 12. RTT = 1943
+[111091]: 3: WARNING: BUFFER VERY FULL
+[111091]: 3: got ACK from 12. RTT = 1869
+[111120]: 0: got ACK from 15. RTT = 151
+[111169]: 0: got ACK from 15. RTT = 389
+[111261]: 3: WARNING: BUFFER VERY FULL
+[111261]: 3: got ACK from 12. RTT = 1814
+[111370]: 3: WARNING: BUFFER VERY FULL
+[111370]: 3: got ACK from 12. RTT = 1759
+[111479]: 3: WARNING: BUFFER VERY FULL
+[111479]: 3: got ACK from 12. RTT = 1823
+[111588]: 3: WARNING: BUFFER VERY FULL
+[111588]: 3: got ACK from 12. RTT = 1818
+[111697]: 0: got ACK from 15. RTT = 184
+[111697]: 3: WARNING: BUFFER VERY FULL
+[111697]: 3: got ACK from 12. RTT = 1786
+[111866]: 3: WARNING: BUFFER VERY FULL
+[111866]: 3: got ACK from 12. RTT = 1966
+[111924]: 0: got ACK from 15. RTT = 254
+[111975]: 3: WARNING: BUFFER VERY FULL
+[111975]: 3: got ACK from 12. RTT = 2049
+[112088]: 3: WARNING: BUFFER VERY FULL
+[112088]: 3: got ACK from 12. RTT = 1800
+[112197]: 3: WARNING: BUFFER VERY FULL
+[112197]: 3: got ACK from 12. RTT = 1842
+[112266]: 0: got ACK from 15. RTT = 267
+[112315]: 0: got ACK from 15. RTT = 221
+[112364]: 0: got ACK from 15. RTT = 141
+[112366]: 3: WARNING: BUFFER VERY FULL
+[112366]: 3: got ACK from 12. RTT = 1934
+[112475]: 3: WARNING: BUFFER VERY FULL
+[112475]: 3: got ACK from 12. RTT = 1943
+[112519]: 0: got ACK from 15. RTT = 218
+[112584]: 3: WARNING: BUFFER VERY FULL
+[112584]: 3: got ACK from 12. RTT = 2035
+[112693]: 3: WARNING: BUFFER VERY FULL
+[112693]: 3: got ACK from 12. RTT = 2085
+[112862]: 3: WARNING: BUFFER VERY FULL
+[112862]: 3: got ACK from 12. RTT = 1966
+[112971]: 3: WARNING: BUFFER VERY FULL
+[112971]: 3: got ACK from 12. RTT = 2090
+[113082]: 3: WARNING: BUFFER VERY FULL
+[113082]: 3: got ACK from 12. RTT = 2017
+[113181]: 0: got ACK from 15. RTT = 223
+[113191]: 3: WARNING: BUFFER VERY FULL
+[113191]: 3: got ACK from 12. RTT = 1869
+[113290]: 0: got ACK from 15. RTT = 269
+[113300]: 3: WARNING: BUFFER VERY FULL
+[113300]: 3: got ACK from 12. RTT = 2127
+[113469]: 3: WARNING: BUFFER VERY FULL
+[113469]: 3: got ACK from 12. RTT = 2058
+[113519]: 0: got ACK from 15. RTT = 269
+[113568]: 0: got ACK from 15. RTT = 204
+[113578]: 3: WARNING: BUFFER VERY FULL
+[113578]: 3: got ACK from 12. RTT = 2132
+[113677]: 0: got ACK from 15. RTT = 232
+[113687]: 3: WARNING: BUFFER VERY FULL
+[113687]: 3: got ACK from 12. RTT = 2058
+[113726]: 0: got ACK from 15. RTT = 184
+[113775]: 0: got ACK from 15. RTT = 208
+[113796]: 3: WARNING: BUFFER VERY FULL
+[113796]: 3: got ACK from 12. RTT = 2035
+[113945]: 0: got ACK from 15. RTT = 173
+[113965]: 3: WARNING: BUFFER VERY FULL
+[113965]: 3: got ACK from 12. RTT = 1948
+[113994]: 0: got ACK from 15. RTT = 191
+[114078]: 3: WARNING: BUFFER VERY FULL
+[114078]: 3: got ACK from 12. RTT = 1975
+[114187]: 3: WARNING: BUFFER VERY FULL
+[114187]: 3: got ACK from 12. RTT = 2026
+[114296]: 3: WARNING: BUFFER VERY FULL
+[114296]: 3: got ACK from 12. RTT = 1952
+[114465]: 3: WARNING: BUFFER VERY FULL
+[114465]: 3: got ACK from 12. RTT = 2040
+[114574]: 3: WARNING: BUFFER VERY FULL
+[114574]: 3: got ACK from 12. RTT = 1916
+[114683]: 3: WARNING: BUFFER VERY FULL
+[114683]: 3: got ACK from 12. RTT = 1966
+[114792]: 3: WARNING: BUFFER VERY FULL
+[114792]: 3: got ACK from 12. RTT = 1984
+[114961]: 3: WARNING: BUFFER VERY FULL
+[114961]: 3: got ACK from 12. RTT = 1883
+[115072]: 3: WARNING: BUFFER VERY FULL
+[115072]: 3: got ACK from 12. RTT = 1934
+[115181]: 3: WARNING: BUFFER VERY FULL
+[115181]: 3: got ACK from 12. RTT = 1892
+[115261]: 0: got ACK from 15. RTT = 217
+[115290]: 3: WARNING: BUFFER VERY FULL
+[115290]: 3: got ACK from 12. RTT = 2002
+[115310]: 0: got ACK from 15. RTT = 236
+[115359]: 0: got ACK from 15. RTT = 275
+[115399]: 3: WARNING: BUFFER VERY FULL
+[115399]: 3: got ACK from 12. RTT = 1919
+[115568]: 3: WARNING: BUFFER VERY FULL
+[115568]: 3: got ACK from 12. RTT = 1975
+[115677]: 3: WARNING: BUFFER VERY FULL
+[115677]: 3: got ACK from 12. RTT = 2159
+[115707]: 0: got ACK from 15. RTT = 287
+[115786]: 3: WARNING: BUFFER VERY FULL
+[115786]: 3: got ACK from 12. RTT = 2026
+[115895]: 3: WARNING: BUFFER VERY FULL
+[115895]: 3: got ACK from 12. RTT = 1901
+[115936]: 0: got ACK from 15. RTT = 235
+[116068]: 3: WARNING: BUFFER VERY FULL
+[116068]: 3: got ACK from 12. RTT = 1856
+[116177]: 3: WARNING: BUFFER VERY FULL
+[116177]: 3: got ACK from 12. RTT = 1916
+[116261]: 0: got ACK from 15. RTT = 283
+[116286]: 3: WARNING: BUFFER VERY FULL
+[116286]: 3: got ACK from 12. RTT = 2127
+[116395]: 3: WARNING: BUFFER VERY FULL
+[116395]: 3: got ACK from 12. RTT = 1869
+[116561]: 0: got ACK from 15. RTT = 273
+[116564]: 3: WARNING: BUFFER VERY FULL
+[116564]: 3: got ACK from 12. RTT = 1934
+[116673]: 3: WARNING: BUFFER VERY FULL
+[116673]: 3: got ACK from 12. RTT = 2118
+[116684]: 0: got ACK from 15. RTT = 185
+[116744]: 0: got ACK from 15. RTT = 205
+[116782]: 3: WARNING: BUFFER VERY FULL
+[116782]: 3: got ACK from 12. RTT = 1925
+[116891]: 3: WARNING: BUFFER VERY FULL
+[116891]: 3: got ACK from 12. RTT = 2026
+[116923]: 0: got ACK from 15. RTT = 184
+[117000]: 3: WARNING: BUFFER VERY FULL
+[117000]: 3: got ACK from 12. RTT = 2067
+[117105]: 0: got ACK from 15. RTT = 299
+[117171]: 3: WARNING: BUFFER VERY FULL
+[117171]: 3: got ACK from 12. RTT = 1874
+[117280]: 3: WARNING: BUFFER VERY FULL
+[117280]: 3: got ACK from 12. RTT = 2035
+[117284]: 0: got ACK from 15. RTT = 202
+[117343]: 0: got ACK from 15. RTT = 174
+[117389]: 3: WARNING: BUFFER VERY FULL
+[117389]: 3: got ACK from 12. RTT = 1933
+[117461]: 0: got ACK from 15. RTT = 298
+[117498]: 3: WARNING: BUFFER VERY FULL
+[117498]: 3: got ACK from 12. RTT = 2053
+[117661]: 0: got ACK from 15. RTT = 296
+[117667]: 3: WARNING: BUFFER VERY FULL
+[117667]: 3: got ACK from 12. RTT = 1948
+[117710]: 0: got ACK from 15. RTT = 153
+[117776]: 3: WARNING: BUFFER VERY FULL
+[117776]: 3: got ACK from 12. RTT = 1984
+[117880]: 0: got ACK from 15. RTT = 350
+[117885]: 3: WARNING: BUFFER VERY FULL
+[117885]: 3: got ACK from 12. RTT = 2210
+[117994]: 3: WARNING: BUFFER VERY FULL
+[117994]: 3: got ACK from 12. RTT = 2191
+[118167]: 3: WARNING: BUFFER VERY FULL
+[118167]: 3: got ACK from 12. RTT = 2007
+[118276]: 3: WARNING: BUFFER VERY FULL
+[118276]: 3: got ACK from 12. RTT = 1943
+[118385]: 3: WARNING: BUFFER VERY FULL
+[118385]: 3: got ACK from 12. RTT = 1892
+[118494]: 3: WARNING: BUFFER VERY FULL
+[118494]: 3: got ACK from 12. RTT = 1842
+[118500]: 0: got ACK from 15. RTT = 285
+[118663]: 3: WARNING: BUFFER VERY FULL
+[118663]: 3: got ACK from 12. RTT = 1842
+[118668]: 0: got ACK from 15. RTT = 217
+[118772]: 3: WARNING: BUFFER VERY FULL
+[118772]: 3: got ACK from 12. RTT = 2224
+[118881]: 3: WARNING: BUFFER VERY FULL
+[118881]: 3: got ACK from 12. RTT = 1984
+[118990]: 3: WARNING: BUFFER VERY FULL
+[118990]: 3: got ACK from 12. RTT = 1934
+[119136]: 0: got ACK from 15. RTT = 306
+[119161]: 3: WARNING: BUFFER VERY FULL
+[119161]: 3: got ACK from 12. RTT = 2206
+[119185]: 0: got ACK from 15. RTT = 194
+[119270]: 3: WARNING: BUFFER VERY FULL
+[119270]: 3: got ACK from 12. RTT = 2141
+[119379]: 3: WARNING: BUFFER VERY FULL
+[119379]: 3: got ACK from 12. RTT = 2049
+[119488]: 3: WARNING: BUFFER VERY FULL
+[119488]: 3: got ACK from 12. RTT = 1993
+[119594]: 0: got ACK from 15. RTT = 244
+[119597]: 3: WARNING: BUFFER VERY FULL
+[119597]: 3: got ACK from 12. RTT = 2035
+[119766]: 3: WARNING: BUFFER VERY FULL
+[119766]: 3: got ACK from 12. RTT = 1933
+[119875]: 3: WARNING: BUFFER VERY FULL
+[119875]: 3: got ACK from 12. RTT = 2076
+[119984]: 3: WARNING: BUFFER VERY FULL
+[119984]: 3: got ACK from 12. RTT = 2334
+[120097]: 3: WARNING: BUFFER VERY FULL
+[120097]: 3: got ACK from 12. RTT = 2017
+[120110]: 0: got ACK from 15. RTT = 321
+[120266]: 3: WARNING: BUFFER VERY FULL
+[120266]: 3: got ACK from 12. RTT = 2150
+[120375]: 3: WARNING: BUFFER VERY FULL
+[120375]: 3: got ACK from 12. RTT = 2081
+[120484]: 3: WARNING: BUFFER VERY FULL
+[120484]: 3: got ACK from 12. RTT = 1984
+[120522]: 0: got ACK from 15. RTT = 169
+[120593]: 3: WARNING: BUFFER VERY FULL
+[120593]: 3: got ACK from 12. RTT = 2302
+[120716]: 0: got ACK from 15. RTT = 221
+[120762]: 3: WARNING: BUFFER VERY FULL
+[120762]: 3: got ACK from 12. RTT = 2191
+[120861]: 0: got ACK from 15. RTT = 149
+[120871]: 3: WARNING: BUFFER VERY FULL
+[120871]: 3: got ACK from 12. RTT = 2058
+[120917]: 0: got ACK from 15. RTT = 187
+[120966]: 0: got ACK from 15. RTT = 372
+[120980]: 3: WARNING: BUFFER VERY FULL
+[120980]: 3: got ACK from 12. RTT = 2302
+[121091]: 3: WARNING: BUFFER VERY FULL
+[121091]: 3: got ACK from 12. RTT = 2210
+[121139]: 0: got ACK from 15. RTT = 272
+[121199]: 0: got ACK from 15. RTT = 458
+[121200]: 3: WARNING: BUFFER VERY FULL
+[121200]: 3: got ACK from 12. RTT = 1919
+[121369]: 0: got ACK from 15. RTT = 326
+[121369]: 3: WARNING: BUFFER VERY FULL
+[121369]: 3: got ACK from 12. RTT = 1933
+[121478]: 3: WARNING: BUFFER VERY FULL
+[121478]: 3: got ACK from 12. RTT = 1984
+[121478]: 0: got ACK from 15. RTT = 365
+[121527]: 0: got ACK from 15. RTT = 272
+[121587]: 3: WARNING: BUFFER VERY FULL
+[121587]: 3: got ACK from 12. RTT = 1984
+[121696]: 3: WARNING: BUFFER VERY FULL
+[121696]: 3: got ACK from 12. RTT = 2067
+[121697]: 0: got ACK from 15. RTT = 234
+[121865]: 3: WARNING: BUFFER VERY FULL
+[121865]: 3: got ACK from 12. RTT = 1948
+[121867]: 0: got ACK from 15. RTT = 180
+[121974]: 3: WARNING: BUFFER VERY FULL
+[121974]: 3: got ACK from 12. RTT = 2099
+[121977]: 0: got ACK from 15. RTT = 176
+[122087]: 3: WARNING: BUFFER VERY FULL
+[122087]: 3: got ACK from 12. RTT = 2049
+[122090]: 0: got ACK from 15. RTT = 169
+[122196]: 3: WARNING: BUFFER VERY FULL
+[122196]: 3: got ACK from 12. RTT = 1851
+[122322]: 0: got ACK from 15. RTT = 420
+[122365]: 3: WARNING: BUFFER VERY FULL
+[122365]: 3: got ACK from 12. RTT = 2173
+[122474]: 3: WARNING: BUFFER VERY FULL
+[122474]: 3: got ACK from 12. RTT = 1984
+[122583]: 3: WARNING: BUFFER VERY FULL
+[122583]: 3: got ACK from 12. RTT = 2109
+[122692]: 3: WARNING: BUFFER VERY FULL
+[122692]: 3: got ACK from 12. RTT = 2219
+[122861]: 3: WARNING: BUFFER VERY FULL
+[122861]: 3: got ACK from 12. RTT = 2007
+[122970]: 3: WARNING: BUFFER VERY FULL
+[122970]: 3: got ACK from 12. RTT = 2159
+[123081]: 3: WARNING: BUFFER VERY FULL
+[123081]: 3: got ACK from 12. RTT = 1993
+[123088]: 0: got ACK from 15. RTT = 452
+[123190]: 3: WARNING: BUFFER VERY FULL
+[123190]: 3: got ACK from 12. RTT = 2325
+[123299]: 3: WARNING: BUFFER VERY FULL
+[123299]: 3: got ACK from 12. RTT = 1919
+[123468]: 3: WARNING: BUFFER VERY FULL
+[123468]: 3: got ACK from 12. RTT = 2191
+[123577]: 3: WARNING: BUFFER VERY FULL
+[123577]: 3: got ACK from 12. RTT = 2141
+[123684]: 0: got ACK from 15. RTT = 284
+[123686]: 3: WARNING: BUFFER VERY FULL
+[123686]: 3: got ACK from 12. RTT = 1966
+[123741]: 0: got ACK from 15. RTT = 371
+[123795]: 3: WARNING: BUFFER VERY FULL
+[123795]: 3: got ACK from 12. RTT = 2311
+[123922]: 0: got ACK from 15. RTT = 269
+[123964]: 3: WARNING: BUFFER VERY FULL
+[123964]: 3: got ACK from 12. RTT = 1948
+[124077]: 3: WARNING: BUFFER VERY FULL
+[124077]: 3: got ACK from 12. RTT = 2026
+[124186]: 3: WARNING: BUFFER VERY FULL
+[124186]: 3: got ACK from 12. RTT = 2058
+[124295]: 3: WARNING: BUFFER VERY FULL
+[124295]: 3: got ACK from 12. RTT = 2085
+[124367]: 0: got ACK from 15. RTT = 326
+[124464]: 3: WARNING: BUFFER VERY FULL
+[124464]: 3: got ACK from 12. RTT = 2256
+[124573]: 3: WARNING: BUFFER VERY FULL
+[124573]: 3: got ACK from 12. RTT = 2007
+[124670]: 0: got ACK from 15. RTT = 266
+[124682]: 3: WARNING: BUFFER VERY FULL
+[124682]: 3: got ACK from 12. RTT = 2168
+[124780]: 0: got ACK from 15. RTT = 442
+[124791]: 3: WARNING: BUFFER VERY FULL
+[124791]: 3: got ACK from 12. RTT = 2233
+[124889]: 0: got ACK from 15. RTT = 336
+[124900]: 3: WARNING: BUFFER VERY FULL
+[124900]: 3: got ACK from 12. RTT = 2168
+[125071]: 3: WARNING: BUFFER VERY FULL
+[125071]: 3: got ACK from 12. RTT = 2224
+[125180]: 3: WARNING: BUFFER VERY FULL
+[125180]: 3: got ACK from 12. RTT = 2150
+[125289]: 3: WARNING: BUFFER VERY FULL
+[125289]: 3: got ACK from 12. RTT = 2044
+[125298]: 0: got ACK from 15. RTT = 352
+[125347]: 0: got ACK from 15. RTT = 290
+[125396]: 0: got ACK from 15. RTT = 276
+[125398]: 3: WARNING: BUFFER VERY FULL
+[125398]: 3: got ACK from 12. RTT = 2201
+[125567]: 3: WARNING: BUFFER VERY FULL
+[125567]: 3: got ACK from 12. RTT = 2375
+[125676]: 3: WARNING: BUFFER VERY FULL
+[125676]: 3: got ACK from 12. RTT = 1957
+[125742]: 0: got ACK from 15. RTT = 370
+[125785]: 3: WARNING: BUFFER VERY FULL
+[125785]: 3: got ACK from 12. RTT = 1993
+[125791]: 0: got ACK from 15. RTT = 294
+[125894]: 3: WARNING: BUFFER VERY FULL
+[125894]: 3: got ACK from 12. RTT = 2301
+[125900]: 0: got ACK from 15. RTT = 270
+[125949]: 0: got ACK from 15. RTT = 291
+[125998]: 0: got ACK from 15. RTT = 224
+[126067]: 3: WARNING: BUFFER VERY FULL
+[126067]: 3: got ACK from 12. RTT = 2242
+[126111]: 0: got ACK from 15. RTT = 217
+[126160]: 0: got ACK from 15. RTT = 271
+[126176]: 3: WARNING: BUFFER VERY FULL
+[126176]: 3: got ACK from 12. RTT = 1975
+[126285]: 3: WARNING: BUFFER VERY FULL
+[126285]: 3: got ACK from 12. RTT = 2127
+[126394]: 3: WARNING: BUFFER VERY FULL
+[126394]: 3: got ACK from 12. RTT = 2094
+[126508]: 0: got ACK from 15. RTT = 401
+[126563]: 3: WARNING: BUFFER VERY FULL
+[126563]: 3: got ACK from 12. RTT = 1998
+[126672]: 3: WARNING: BUFFER VERY FULL
+[126672]: 3: got ACK from 12. RTT = 2417
+[126678]: 0: got ACK from 15. RTT = 167
+[126781]: 3: WARNING: BUFFER VERY FULL
+[126781]: 3: got ACK from 12. RTT = 2076
+[126890]: 3: WARNING: BUFFER VERY FULL
+[126890]: 3: got ACK from 12. RTT = 2118
+[126907]: 0: got ACK from 15. RTT = 254
+[126999]: 3: WARNING: BUFFER VERY FULL
+[126999]: 3: got ACK from 12. RTT = 2118
+[127079]: 0: got ACK from 15. RTT = 251
+[127170]: 3: WARNING: BUFFER VERY FULL
+[127170]: 3: got ACK from 12. RTT = 2067
+[127187]: 0: got ACK from 15. RTT = 292
+[127279]: 3: WARNING: BUFFER VERY FULL
+[127279]: 3: got ACK from 12. RTT = 2201
+[127355]: 0: got ACK from 15. RTT = 356
+[127388]: 3: WARNING: BUFFER VERY FULL
+[127388]: 3: got ACK from 12. RTT = 2026
+[127497]: 3: WARNING: BUFFER VERY FULL
+[127497]: 3: got ACK from 12. RTT = 2269
+[127666]: 3: WARNING: BUFFER VERY FULL
+[127666]: 3: got ACK from 12. RTT = 1998
+[127775]: 3: WARNING: BUFFER VERY FULL
+[127775]: 3: got ACK from 12. RTT = 2200
+[127884]: 3: WARNING: BUFFER VERY FULL
+[127884]: 3: got ACK from 12. RTT = 2233
+[127993]: 3: WARNING: BUFFER VERY FULL
+[127993]: 3: got ACK from 12. RTT = 2228
+[128166]: 3: WARNING: BUFFER VERY FULL
+[128166]: 3: got ACK from 12. RTT = 2381
+[128275]: 0: got ACK from 15. RTT = 317
+[128275]: 3: WARNING: BUFFER VERY FULL
+[128275]: 3: got ACK from 12. RTT = 2325
+[128384]: 3: WARNING: BUFFER VERY FULL
+[128384]: 3: got ACK from 12. RTT = 2127
+[128493]: 3: WARNING: BUFFER VERY FULL
+[128493]: 3: got ACK from 12. RTT = 2233
+[128517]: 0: got ACK from 15. RTT = 302
+[128662]: 3: WARNING: BUFFER VERY FULL
+[128662]: 3: got ACK from 12. RTT = 2058
+[128687]: 0: got ACK from 15. RTT = 365
+[128771]: 3: WARNING: BUFFER VERY FULL
+[128771]: 3: got ACK from 12. RTT = 2417
+[128880]: 3: WARNING: BUFFER VERY FULL
+[128880]: 3: got ACK from 12. RTT = 2951
+[128916]: 0: got ACK from 15. RTT = 201
+[128989]: 3: WARNING: BUFFER VERY FULL
+[128989]: 3: got ACK from 12. RTT = 2099
+[129161]: 3: WARNING: BUFFER VERY FULL
+[129161]: 3: got ACK from 12. RTT = 2256
+[129270]: 3: WARNING: BUFFER VERY FULL
+[129270]: 3: got ACK from 12. RTT = 2357
+[129329]: 0: got ACK from 15. RTT = 255
+[129378]: 0: got ACK from 15. RTT = 225
+[129379]: 3: WARNING: BUFFER VERY FULL
+[129379]: 3: got ACK from 12. RTT = 2284
+[129487]: 0: got ACK from 15. RTT = 364
+[129488]: 3: WARNING: BUFFER VERY FULL
+[129488]: 3: got ACK from 12. RTT = 2827
+[129597]: 3: WARNING: BUFFER VERY FULL
+[129597]: 3: got ACK from 12. RTT = 2118
+[129766]: 3: WARNING: BUFFER VERY FULL
+[129766]: 3: got ACK from 12. RTT = 2256
+[129875]: 3: WARNING: BUFFER VERY FULL
+[129875]: 3: got ACK from 12. RTT = 2500
+[129984]: 3: WARNING: BUFFER VERY FULL
+[129984]: 3: got ACK from 12. RTT = 2141
+[130065]: 0: got ACK from 15. RTT = 263
+[130097]: 3: WARNING: BUFFER VERY FULL
+[130097]: 3: got ACK from 12. RTT = 2168
+[130261]: 0: got ACK from 15. RTT = 414
+[130266]: 3: WARNING: BUFFER VERY FULL
+[130266]: 3: got ACK from 12. RTT = 2233
+[130310]: 0: got ACK from 15. RTT = 269
+[130375]: 3: WARNING: BUFFER VERY FULL
+[130375]: 3: got ACK from 12. RTT = 2141
+[130480]: 0: got ACK from 15. RTT = 184
+[130484]: 3: WARNING: BUFFER VERY FULL
+[130484]: 3: got ACK from 12. RTT = 2251
+[130593]: 3: WARNING: BUFFER VERY FULL
+[130593]: 3: got ACK from 12. RTT = 2118
+[130762]: 3: WARNING: BUFFER VERY FULL
+[130762]: 3: got ACK from 12. RTT = 2191
+[130871]: 3: WARNING: BUFFER VERY FULL
+[130871]: 3: got ACK from 12. RTT = 2242
+[130950]: 0: got ACK from 15. RTT = 305
+[130980]: 3: WARNING: BUFFER VERY FULL
+[130980]: 3: got ACK from 12. RTT = 2334
+[131091]: 3: WARNING: BUFFER VERY FULL
+[131091]: 3: got ACK from 12. RTT = 2141
+[131181]: 0: got ACK from 15. RTT = 293
+[131261]: 3: WARNING: BUFFER VERY FULL
+[131261]: 3: got ACK from 12. RTT = 2141
+[131290]: 0: got ACK from 15. RTT = 319
+[131370]: 3: WARNING: BUFFER VERY FULL
+[131370]: 3: got ACK from 12. RTT = 2348
+[131479]: 3: WARNING: BUFFER VERY FULL
+[131479]: 3: got ACK from 12. RTT = 2159
+[131581]: 0: got ACK from 15. RTT = 473
+[131588]: 3: WARNING: BUFFER VERY FULL
+[131588]: 3: got ACK from 12. RTT = 2210
+[131690]: 0: got ACK from 15. RTT = 515
+[131697]: 3: WARNING: BUFFER VERY FULL
+[131697]: 3: got ACK from 12. RTT = 2366
+[131739]: 0: got ACK from 15. RTT = 254
+[131788]: 0: got ACK from 15. RTT = 273
+[131866]: 3: WARNING: BUFFER VERY FULL
+[131866]: 3: got ACK from 12. RTT = 2141
+[131897]: 0: got ACK from 15. RTT = 518
+[131975]: 3: WARNING: BUFFER VERY FULL
+[131975]: 3: got ACK from 12. RTT = 2265
+[131994]: 0: got ACK from 15. RTT = 344
+[132088]: 3: WARNING: BUFFER VERY FULL
+[132088]: 3: got ACK from 12. RTT = 2127
+[132107]: 0: got ACK from 15. RTT = 500
+[132156]: 0: got ACK from 15. RTT = 341
+[132197]: 3: WARNING: BUFFER VERY FULL
+[132197]: 3: got ACK from 12. RTT = 2136
+[132326]: 0: got ACK from 15. RTT = 222
+[132366]: 3: WARNING: BUFFER VERY FULL
+[132366]: 3: got ACK from 12. RTT = 2132
+[132461]: 0: got ACK from 15. RTT = 281
+[132475]: 3: WARNING: BUFFER VERY FULL
+[132475]: 3: got ACK from 12. RTT = 2109
+[132584]: 3: WARNING: BUFFER VERY FULL
+[132584]: 3: got ACK from 12. RTT = 2302
+[132693]: 3: WARNING: BUFFER VERY FULL
+[132693]: 3: got ACK from 12. RTT = 2343
+[132862]: 3: WARNING: BUFFER VERY FULL
+[132862]: 3: got ACK from 12. RTT = 2141
+[132922]: 0: got ACK from 15. RTT = 222
+[132971]: 3: WARNING: BUFFER VERY FULL
+[132971]: 3: got ACK from 12. RTT = 2334
+[132971]: 0: got ACK from 15. RTT = 208
+[133082]: 3: WARNING: BUFFER VERY FULL
+[133082]: 3: got ACK from 12. RTT = 2118
+[133143]: 0: got ACK from 15. RTT = 203
+[133191]: 3: WARNING: BUFFER VERY FULL
+[133191]: 3: got ACK from 12. RTT = 2233
+[133300]: 3: WARNING: BUFFER VERY FULL
+[133300]: 3: got ACK from 12. RTT = 2578
+[133311]: 0: got ACK from 15. RTT = 337
+[133360]: 0: got ACK from 15. RTT = 292
+[133469]: 3: WARNING: BUFFER VERY FULL
+[133469]: 3: got ACK from 12. RTT = 2150
+[133528]: 0: got ACK from 15. RTT = 289
+[133578]: 3: WARNING: BUFFER VERY FULL
+[133578]: 3: got ACK from 12. RTT = 2118
+[133687]: 3: WARNING: BUFFER VERY FULL
+[133687]: 3: got ACK from 12. RTT = 2509
+[133696]: 0: got ACK from 15. RTT = 398
+[133745]: 0: got ACK from 15. RTT = 355
+[133796]: 3: WARNING: BUFFER VERY FULL
+[133796]: 3: got ACK from 12. RTT = 2210
+[133965]: 3: WARNING: BUFFER VERY FULL
+[133965]: 3: got ACK from 12. RTT = 2325
+[134078]: 3: WARNING: BUFFER VERY FULL
+[134078]: 3: got ACK from 12. RTT = 2334
+[134095]: 0: got ACK from 15. RTT = 234
+[134144]: 0: got ACK from 15. RTT = 224
+[134187]: 3: WARNING: BUFFER VERY FULL
+[134187]: 3: got ACK from 12. RTT = 2367
+[134296]: 3: WARNING: BUFFER VERY FULL
+[134296]: 3: got ACK from 12. RTT = 2210
+[134322]: 0: got ACK from 15. RTT = 185
+[134465]: 3: WARNING: BUFFER VERY FULL
+[134465]: 3: got ACK from 12. RTT = 2381
+[134574]: 3: WARNING: BUFFER VERY FULL
+[134574]: 3: got ACK from 12. RTT = 2201
+[134683]: 3: WARNING: BUFFER VERY FULL
+[134683]: 3: got ACK from 12. RTT = 2417
+[134702]: 0: got ACK from 15. RTT = 318
+[134792]: 3: WARNING: BUFFER VERY FULL
+[134792]: 3: got ACK from 12. RTT = 2661
+[134961]: 3: WARNING: BUFFER VERY FULL
+[134961]: 3: got ACK from 12. RTT = 2390
+[135072]: 3: WARNING: BUFFER VERY FULL
+[135072]: 3: got ACK from 12. RTT = 2339
+[135172]: 0: got ACK from 15. RTT = 290
+[135181]: 3: WARNING: BUFFER VERY FULL
+[135181]: 3: got ACK from 12. RTT = 2210
+[135290]: 3: WARNING: BUFFER VERY FULL
+[135290]: 3: got ACK from 12. RTT = 2316
+[135340]: 0: got ACK from 15. RTT = 287
+[135389]: 0: got ACK from 15. RTT = 141
+[135399]: 3: WARNING: BUFFER VERY FULL
+[135399]: 3: got ACK from 12. RTT = 2177
+[135498]: 0: got ACK from 15. RTT = 253
+[135547]: 0: got ACK from 15. RTT = 121
+[135568]: 3: WARNING: BUFFER VERY FULL
+[135568]: 3: got ACK from 12. RTT = 2256
+[135661]: 0: got ACK from 15. RTT = 215
+[135677]: 3: WARNING: BUFFER VERY FULL
+[135677]: 3: got ACK from 12. RTT = 2399
+[135710]: 0: got ACK from 15. RTT = 237
+[135759]: 0: got ACK from 15. RTT = 154
+[135786]: 3: WARNING: BUFFER VERY FULL
+[135786]: 3: got ACK from 12. RTT = 2260
+[135874]: 0: got ACK from 15. RTT = 396
+[135895]: 3: WARNING: BUFFER VERY FULL
+[135895]: 3: got ACK from 12. RTT = 2334
+[135993]: 0: got ACK from 15. RTT = 278
+[136068]: 3: WARNING: BUFFER VERY FULL
+[136068]: 3: got ACK from 12. RTT = 2390
+[136106]: 0: got ACK from 15. RTT = 154
+[136177]: 3: WARNING: BUFFER VERY FULL
+[136177]: 3: got ACK from 12. RTT = 2275
+[136286]: 3: WARNING: BUFFER VERY FULL
+[136286]: 3: got ACK from 12. RTT = 2583
+[136395]: 3: WARNING: BUFFER VERY FULL
+[136395]: 3: got ACK from 12. RTT = 2270
+[136515]: 0: got ACK from 15. RTT = 354
+[136564]: 3: WARNING: BUFFER VERY FULL
+[136564]: 3: got ACK from 12. RTT = 2316
+[136673]: 3: WARNING: BUFFER VERY FULL
+[136673]: 3: got ACK from 12. RTT = 2366
+[136782]: 3: WARNING: BUFFER VERY FULL
+[136782]: 3: got ACK from 12. RTT = 2284
+[136891]: 3: WARNING: BUFFER VERY FULL
+[136891]: 3: got ACK from 12. RTT = 2518
+[136981]: 0: got ACK from 15. RTT = 210
+[137000]: 3: WARNING: BUFFER VERY FULL
+[137000]: 3: got ACK from 12. RTT = 2334
+[137171]: 3: WARNING: BUFFER VERY FULL
+[137171]: 3: got ACK from 12. RTT = 2431
+[137280]: 3: WARNING: BUFFER VERY FULL
+[137280]: 3: got ACK from 12. RTT = 2343
+[137331]: 0: got ACK from 15. RTT = 185
+[137380]: 0: got ACK from 15. RTT = 157
+[137389]: 3: WARNING: BUFFER VERY FULL
+[137389]: 3: got ACK from 12. RTT = 2274
+[137489]: 0: got ACK from 15. RTT = 184
+[137498]: 3: WARNING: BUFFER VERY FULL
+[137498]: 3: got ACK from 12. RTT = 2334
+[137599]: 0: got ACK from 15. RTT = 227
+[137667]: 3: WARNING: BUFFER VERY FULL
+[137667]: 3: got ACK from 12. RTT = 2307
+[137708]: 0: got ACK from 15. RTT = 366
+[137757]: 0: got ACK from 15. RTT = 357
+[137776]: 3: WARNING: BUFFER VERY FULL
+[137776]: 3: got ACK from 12. RTT = 2251
+[137885]: 3: WARNING: BUFFER VERY FULL
+[137885]: 3: got ACK from 12. RTT = 2219
+[137927]: 0: got ACK from 15. RTT = 269
+[137976]: 0: got ACK from 15. RTT = 193
+[137994]: 3: WARNING: BUFFER VERY FULL
+[137994]: 3: got ACK from 12. RTT = 2228
+[138167]: 3: WARNING: BUFFER VERY FULL
+[138167]: 3: got ACK from 12. RTT = 2224
+[138276]: 3: WARNING: BUFFER VERY FULL
+[138276]: 3: got ACK from 12. RTT = 2818
+[138385]: 3: WARNING: BUFFER VERY FULL
+[138385]: 3: got ACK from 12. RTT = 2284
+[138494]: 3: WARNING: BUFFER VERY FULL
+[138494]: 3: got ACK from 12. RTT = 2408
+[138661]: 0: got ACK from 15. RTT = 116
+[138663]: 3: WARNING: BUFFER VERY FULL
+[138663]: 3: got ACK from 12. RTT = 2357
+[138772]: 3: WARNING: BUFFER VERY FULL
+[138772]: 3: got ACK from 12. RTT = 2334
+[138881]: 3: WARNING: BUFFER VERY FULL
+[138881]: 3: got ACK from 12. RTT = 2426
+[138990]: 3: WARNING: BUFFER VERY FULL
+[138990]: 3: got ACK from 12. RTT = 2366
+[139063]: 0: got ACK from 15. RTT = 131
+[139161]: 3: WARNING: BUFFER VERY FULL
+[139161]: 3: got ACK from 12. RTT = 2450
+[139270]: 3: WARNING: BUFFER VERY FULL
+[139270]: 3: got ACK from 12. RTT = 2399
+[139322]: 0: got ACK from 15. RTT = 268
+[139379]: 3: WARNING: BUFFER VERY FULL
+[139379]: 3: got ACK from 12. RTT = 2426
+[139488]: 3: WARNING: BUFFER VERY FULL
+[139488]: 3: got ACK from 12. RTT = 2325
+[139511]: 0: got ACK from 15. RTT = 304
+[139560]: 0: got ACK from 15. RTT = 123
+[139597]: 3: WARNING: BUFFER VERY FULL
+[139597]: 3: got ACK from 12. RTT = 2219
+[139766]: 3: WARNING: BUFFER VERY FULL
+[139766]: 3: got ACK from 12. RTT = 2215
+[139875]: 3: WARNING: BUFFER VERY FULL
+[139875]: 3: got ACK from 12. RTT = 2334
+[139922]: 0: got ACK from 15. RTT = 304
+[139984]: 3: WARNING: BUFFER VERY FULL
+[139984]: 3: got ACK from 12. RTT = 2242
+[140097]: 3: WARNING: BUFFER VERY FULL
+[140097]: 3: got ACK from 12. RTT = 2367
+[140186]: 0: got ACK from 15. RTT = 292
+[140266]: 3: WARNING: BUFFER VERY FULL
+[140266]: 3: got ACK from 12. RTT = 2307
+[140354]: 0: got ACK from 15. RTT = 221
+[140375]: 3: WARNING: BUFFER VERY FULL
+[140375]: 3: got ACK from 12. RTT = 2417
+[140484]: 3: WARNING: BUFFER VERY FULL
+[140484]: 3: got ACK from 12. RTT = 2357
+[140593]: 3: WARNING: BUFFER VERY FULL
+[140593]: 3: got ACK from 12. RTT = 2477
+[140743]: 0: got ACK from 15. RTT = 204
+[140762]: 3: WARNING: BUFFER VERY FULL
+[140762]: 3: got ACK from 12. RTT = 2390
+[140861]: 0: got ACK from 15. RTT = 362
+[140871]: 3: WARNING: BUFFER VERY FULL
+[140871]: 3: got ACK from 12. RTT = 2482
+[140980]: 3: WARNING: BUFFER VERY FULL
+[140980]: 3: got ACK from 12. RTT = 2426
+[141091]: 3: WARNING: BUFFER VERY FULL
+[141091]: 3: got ACK from 12. RTT = 2726
+[141200]: 3: WARNING: BUFFER VERY FULL
+[141200]: 3: got ACK from 12. RTT = 2578
+[141322]: 0: got ACK from 15. RTT = 288
+[141369]: 3: WARNING: BUFFER VERY FULL
+[141369]: 3: got ACK from 12. RTT = 2339
+[141478]: 3: WARNING: BUFFER VERY FULL
+[141478]: 3: got ACK from 12. RTT = 2634
+[141492]: 0: got ACK from 15. RTT = 253
+[141587]: 3: WARNING: BUFFER VERY FULL
+[141587]: 3: got ACK from 12. RTT = 2408
+[141696]: 3: WARNING: BUFFER VERY FULL
+[141696]: 3: got ACK from 12. RTT = 2444
+[141723]: 0: got ACK from 15. RTT = 236
+[141865]: 3: WARNING: BUFFER VERY FULL
+[141865]: 3: got ACK from 12. RTT = 2449
+[141941]: 0: got ACK from 15. RTT = 423
+[141974]: 3: WARNING: BUFFER VERY FULL
+[141974]: 3: got ACK from 12. RTT = 2375
+[141999]: 0: got ACK from 15. RTT = 409
+[142087]: 3: WARNING: BUFFER VERY FULL
+[142087]: 3: got ACK from 12. RTT = 2233
+[142196]: 3: WARNING: BUFFER VERY FULL
+[142196]: 3: got ACK from 12. RTT = 2284
+[142261]: 0: got ACK from 15. RTT = 300
+[142365]: 3: WARNING: BUFFER VERY FULL
+[142365]: 3: got ACK from 12. RTT = 2247
+[142474]: 3: WARNING: BUFFER VERY FULL
+[142474]: 3: got ACK from 12. RTT = 2242
+[142522]: 0: got ACK from 15. RTT = 251
+[142571]: 0: got ACK from 15. RTT = 242
+[142583]: 3: WARNING: BUFFER VERY FULL
+[142583]: 3: got ACK from 12. RTT = 2408
+[142680]: 0: got ACK from 15. RTT = 301
+[142692]: 3: WARNING: BUFFER VERY FULL
+[142692]: 3: got ACK from 12. RTT = 2302
+[142729]: 0: got ACK from 15. RTT = 239
+[142861]: 3: WARNING: BUFFER VERY FULL
+[142861]: 3: got ACK from 12. RTT = 2348
+[142861]: 0: got ACK from 15. RTT = 300
+[142968]: 0: got ACK from 15. RTT = 209
+[142970]: 3: WARNING: BUFFER VERY FULL
+[142970]: 3: got ACK from 12. RTT = 2284
+[143081]: 3: WARNING: BUFFER VERY FULL
+[143081]: 3: got ACK from 12. RTT = 2408
+[143152]: 0: got ACK from 15. RTT = 174
+[143190]: 3: WARNING: BUFFER VERY FULL
+[143190]: 3: got ACK from 12. RTT = 2450
+[143261]: 0: got ACK from 15. RTT = 247
+[143299]: 3: WARNING: BUFFER VERY FULL
+[143299]: 3: got ACK from 12. RTT = 2477
+[143371]: 0: got ACK from 15. RTT = 142
+[143468]: 3: WARNING: BUFFER VERY FULL
+[143468]: 3: got ACK from 12. RTT = 2459
+[143577]: 3: WARNING: BUFFER VERY FULL
+[143577]: 3: got ACK from 12. RTT = 2560
+[143598]: 0: got ACK from 15. RTT = 228
+[143686]: 3: WARNING: BUFFER VERY FULL
+[143686]: 3: got ACK from 12. RTT = 2467
+[143713]: 0: got ACK from 15. RTT = 253
+[143795]: 3: WARNING: BUFFER VERY FULL
+[143795]: 3: got ACK from 12. RTT = 2578
+[143922]: 0: got ACK from 15. RTT = 321
+[143964]: 3: WARNING: BUFFER VERY FULL
+[143964]: 3: got ACK from 12. RTT = 2399
+[144077]: 3: WARNING: BUFFER VERY FULL
+[144077]: 3: got ACK from 12. RTT = 2316
+[144186]: 3: WARNING: BUFFER VERY FULL
+[144186]: 3: got ACK from 12. RTT = 2367
+[144295]: 3: WARNING: BUFFER VERY FULL
+[144295]: 3: got ACK from 12. RTT = 2260
+[144367]: 0: got ACK from 15. RTT = 259
+[144464]: 3: WARNING: BUFFER VERY FULL
+[144464]: 3: got ACK from 12. RTT = 2316
+[144573]: 3: WARNING: BUFFER VERY FULL
+[144573]: 3: got ACK from 12. RTT = 2274
+[144682]: 3: WARNING: BUFFER VERY FULL
+[144682]: 3: got ACK from 12. RTT = 2325
+[144715]: 0: got ACK from 15. RTT = 269
+[144791]: 3: WARNING: BUFFER VERY FULL
+[144791]: 3: got ACK from 12. RTT = 2408
+[144900]: 3: WARNING: BUFFER VERY FULL
+[144900]: 3: got ACK from 12. RTT = 2293
+[144944]: 0: got ACK from 15. RTT = 257
+[145071]: 3: WARNING: BUFFER VERY FULL
+[145071]: 3: got ACK from 12. RTT = 2348
+[145130]: 0: got ACK from 15. RTT = 156
+[145180]: 3: WARNING: BUFFER VERY FULL
+[145180]: 3: got ACK from 12. RTT = 2348
+[145261]: 0: got ACK from 15. RTT = 215
+[145289]: 3: WARNING: BUFFER VERY FULL
+[145289]: 3: got ACK from 12. RTT = 2569
+[145371]: 0: got ACK from 15. RTT = 191
+[145398]: 3: WARNING: BUFFER VERY FULL
+[145398]: 3: got ACK from 12. RTT = 2435
+[145480]: 0: got ACK from 15. RTT = 218
+[145529]: 0: got ACK from 15. RTT = 272
+[145567]: 3: WARNING: BUFFER VERY FULL
+[145567]: 3: got ACK from 12. RTT = 2431
+[145676]: 3: WARNING: BUFFER VERY FULL
+[145676]: 3: got ACK from 12. RTT = 2348
+[145699]: 0: got ACK from 15. RTT = 299
+[145748]: 0: got ACK from 15. RTT = 189
+[145785]: 3: WARNING: BUFFER VERY FULL
+[145785]: 3: got ACK from 12. RTT = 2476
+[145797]: 0: got ACK from 15. RTT = 278
+[145894]: 3: WARNING: BUFFER VERY FULL
+[145894]: 3: got ACK from 12. RTT = 2444
+[146067]: 3: WARNING: BUFFER VERY FULL
+[146067]: 3: got ACK from 12. RTT = 2717
+[146176]: 3: WARNING: BUFFER VERY FULL
+[146176]: 3: got ACK from 12. RTT = 2334
+[146285]: 3: WARNING: BUFFER VERY FULL
+[146285]: 3: got ACK from 12. RTT = 2334
+[146394]: 3: WARNING: BUFFER VERY FULL
+[146394]: 3: got ACK from 12. RTT = 2652
+[146563]: 3: WARNING: BUFFER VERY FULL
+[146563]: 3: got ACK from 12. RTT = 2408
+[146574]: 0: got ACK from 15. RTT = 239
+[146672]: 3: WARNING: BUFFER VERY FULL
+[146672]: 3: got ACK from 12. RTT = 2417
+[146781]: 3: WARNING: BUFFER VERY FULL
+[146781]: 3: got ACK from 12. RTT = 2652
+[146890]: 3: WARNING: BUFFER VERY FULL
+[146890]: 3: got ACK from 12. RTT = 2352
+[146990]: 0: got ACK from 15. RTT = 261
+[146999]: 3: WARNING: BUFFER VERY FULL
+[146999]: 3: got ACK from 12. RTT = 2610
+[147170]: 3: WARNING: BUFFER VERY FULL
+[147170]: 3: got ACK from 12. RTT = 2450
+[147279]: 3: WARNING: BUFFER VERY FULL
+[147279]: 3: got ACK from 12. RTT = 2749
+[147322]: 0: got ACK from 15. RTT = 237
+[147388]: 3: WARNING: BUFFER VERY FULL
+[147388]: 3: got ACK from 12. RTT = 2744
+[147497]: 3: WARNING: BUFFER VERY FULL
+[147497]: 3: got ACK from 12. RTT = 2711
+[147581]: 0: got ACK from 15. RTT = 293
+[147666]: 3: WARNING: BUFFER VERY FULL
+[147666]: 3: got ACK from 12. RTT = 2592
+[147775]: 3: WARNING: BUFFER VERY FULL
+[147775]: 3: got ACK from 12. RTT = 2357
+[147884]: 3: WARNING: BUFFER VERY FULL
+[147884]: 3: got ACK from 12. RTT = 2274
+[147993]: 3: WARNING: BUFFER VERY FULL
+[147993]: 3: got ACK from 12. RTT = 2366
+[148166]: 3: WARNING: BUFFER VERY FULL
+[148166]: 3: got ACK from 12. RTT = 2325
+[148275]: 3: WARNING: BUFFER VERY FULL
+[148275]: 3: got ACK from 12. RTT = 2367
+[148384]: 3: WARNING: BUFFER VERY FULL
+[148384]: 3: got ACK from 12. RTT = 2251
+[148493]: 3: WARNING: BUFFER VERY FULL
+[148493]: 3: got ACK from 12. RTT = 2435
+[148538]: 0: got ACK from 15. RTT = 205
+[148662]: 3: WARNING: BUFFER VERY FULL
+[148662]: 3: got ACK from 12. RTT = 2408
+[148769]: 0: got ACK from 15. RTT = 208
+[148771]: 3: WARNING: BUFFER VERY FULL
+[148771]: 3: got ACK from 12. RTT = 2565
+[148878]: 0: got ACK from 15. RTT = 248
+[148880]: 3: WARNING: BUFFER VERY FULL
+[148880]: 3: got ACK from 12. RTT = 2316
+[148927]: 0: got ACK from 15. RTT = 385
+[148976]: 0: got ACK from 15. RTT = 341
+[148989]: 3: WARNING: BUFFER VERY FULL
+[148989]: 3: got ACK from 12. RTT = 2417
+[149087]: 0: got ACK from 15. RTT = 301
+[149100]: 3: WARNING: BUFFER VERY FULL
+[149100]: 3: got ACK from 12. RTT = 2518
+[149261]: 0: got ACK from 15. RTT = 379
+[149269]: 3: WARNING: BUFFER VERY FULL
+[149269]: 3: got ACK from 12. RTT = 2367
+[149310]: 0: got ACK from 15. RTT = 350
+[149378]: 3: WARNING: BUFFER VERY FULL
+[149378]: 3: got ACK from 12. RTT = 2601
+[149480]: 0: got ACK from 15. RTT = 247
+[149487]: 3: WARNING: BUFFER VERY FULL
+[149487]: 3: got ACK from 12. RTT = 2785
+[149530]: 0: got ACK from 15. RTT = 356
+[149588]: 0: got ACK from 15. RTT = 324
+[149596]: 3: WARNING: BUFFER VERY FULL
+[149596]: 3: got ACK from 12. RTT = 2366
+[149765]: 3: WARNING: BUFFER VERY FULL
+[149765]: 3: got ACK from 12. RTT = 2417
+[149874]: 3: WARNING: BUFFER VERY FULL
+[149874]: 3: got ACK from 12. RTT = 3158
+[149983]: 3: WARNING: BUFFER VERY FULL
+[149983]: 3: got ACK from 12. RTT = 2624
+[150096]: 3: WARNING: BUFFER VERY FULL
+[150096]: 3: got ACK from 12. RTT = 2477
+[150265]: 3: WARNING: BUFFER VERY FULL
+[150265]: 3: got ACK from 12. RTT = 2574
+[150374]: 3: WARNING: BUFFER VERY FULL
+[150374]: 3: got ACK from 12. RTT = 2601
+[150378]: 0: got ACK from 15. RTT = 224
+[150483]: 3: WARNING: BUFFER VERY FULL
+[150483]: 3: got ACK from 12. RTT = 2643
+[150546]: 0: got ACK from 15. RTT = 257
+[150592]: 3: WARNING: BUFFER VERY FULL
+[150592]: 3: got ACK from 12. RTT = 2468
+[150595]: 0: got ACK from 15. RTT = 291
+[150761]: 3: WARNING: BUFFER VERY FULL
+[150761]: 3: got ACK from 12. RTT = 2449
+[150870]: 3: WARNING: BUFFER VERY FULL
+[150870]: 3: got ACK from 12. RTT = 2375
+[150979]: 3: WARNING: BUFFER VERY FULL
+[150979]: 3: got ACK from 12. RTT = 2375
+[151090]: 3: WARNING: BUFFER VERY FULL
+[151090]: 3: got ACK from 12. RTT = 2325
+[151199]: 3: WARNING: BUFFER VERY FULL
+[151199]: 3: got ACK from 12. RTT = 2445
+[151368]: 3: WARNING: BUFFER VERY FULL
+[151368]: 3: got ACK from 12. RTT = 2339
+[151477]: 3: WARNING: BUFFER VERY FULL
+[151477]: 3: got ACK from 12. RTT = 2615
+[151486]: 0: got ACK from 15. RTT = 400
+[151586]: 3: WARNING: BUFFER VERY FULL
+[151586]: 3: got ACK from 12. RTT = 2468
+[151594]: 0: got ACK from 15. RTT = 361
+[151695]: 3: WARNING: BUFFER VERY FULL
+[151695]: 3: got ACK from 12. RTT = 2352
+[151864]: 3: WARNING: BUFFER VERY FULL
+[151864]: 3: got ACK from 12. RTT = 2500
+[151973]: 3: WARNING: BUFFER VERY FULL
+[151973]: 3: got ACK from 12. RTT = 2426
+[152086]: 3: WARNING: BUFFER VERY FULL
+[152086]: 3: got ACK from 12. RTT = 2385
+[152195]: 3: WARNING: BUFFER VERY FULL
+[152195]: 3: got ACK from 12. RTT = 2753
+[152364]: 3: WARNING: BUFFER VERY FULL
+[152364]: 3: got ACK from 12. RTT = 2500
+[152365]: 0: got ACK from 15. RTT = 459
+[152473]: 3: WARNING: BUFFER VERY FULL
+[152473]: 3: got ACK from 12. RTT = 3342
+[152474]: 0: got ACK from 15. RTT = 348
+[152582]: 3: WARNING: BUFFER VERY FULL
+[152582]: 3: got ACK from 12. RTT = 2477
+[152691]: 3: WARNING: BUFFER VERY FULL
+[152691]: 3: got ACK from 12. RTT = 2901
+[152703]: 0: got ACK from 15. RTT = 352
+[152752]: 0: got ACK from 15. RTT = 407
+[152800]: 3: WARNING: BUFFER VERY FULL
+[152800]: 3: got ACK from 12. RTT = 2509
+[152861]: 0: got ACK from 15. RTT = 346
+[152910]: 0: got ACK from 15. RTT = 400
+[152969]: 3: WARNING: BUFFER VERY FULL
+[152969]: 3: got ACK from 12. RTT = 2500
+[153080]: 3: WARNING: BUFFER VERY FULL
+[153080]: 3: got ACK from 12. RTT = 2992
+[153189]: 3: WARNING: BUFFER VERY FULL
+[153189]: 3: got ACK from 12. RTT = 2634
+[153298]: 3: WARNING: BUFFER VERY FULL
+[153298]: 3: got ACK from 12. RTT = 2394
+[153319]: 0: got ACK from 15. RTT = 236
+[153467]: 3: WARNING: BUFFER VERY FULL
+[153467]: 3: got ACK from 12. RTT = 2399
+[153576]: 3: WARNING: BUFFER VERY FULL
+[153576]: 3: got ACK from 12. RTT = 2399
+[153685]: 3: WARNING: BUFFER VERY FULL
+[153685]: 3: got ACK from 12. RTT = 2767
+[153794]: 3: WARNING: BUFFER VERY FULL
+[153794]: 3: got ACK from 12. RTT = 2486
+[153963]: 3: WARNING: BUFFER VERY FULL
+[153963]: 3: got ACK from 12. RTT = 2491
+[154076]: 3: WARNING: BUFFER VERY FULL
+[154076]: 3: got ACK from 12. RTT = 2468
+[154185]: 3: WARNING: BUFFER VERY FULL
+[154185]: 3: got ACK from 12. RTT = 2440
+[154294]: 3: WARNING: BUFFER VERY FULL
+[154294]: 3: got ACK from 12. RTT = 2992
+[154388]: 0: got ACK from 15. RTT = 360
+[154463]: 3: WARNING: BUFFER VERY FULL
+[154463]: 3: got ACK from 12. RTT = 2408
+[154572]: 3: WARNING: BUFFER VERY FULL
+[154572]: 3: got ACK from 12. RTT = 2758
+[154681]: 3: WARNING: BUFFER VERY FULL
+[154681]: 3: got ACK from 12. RTT = 2468
+[154790]: 3: WARNING: BUFFER VERY FULL
+[154790]: 3: got ACK from 12. RTT = 2836
+[154861]: 0: got ACK from 15. RTT = 281
+[154899]: 3: WARNING: BUFFER VERY FULL
+[154899]: 3: got ACK from 12. RTT = 2652
+[155070]: 3: WARNING: BUFFER VERY FULL
+[155070]: 3: got ACK from 12. RTT = 2781
+[155081]: 0: got ACK from 15. RTT = 397
+[155177]: 0: got ACK from 15. RTT = 239
+[155179]: 3: WARNING: BUFFER VERY FULL
+[155179]: 3: got ACK from 12. RTT = 3435
+[155286]: 0: got ACK from 15. RTT = 299
+[155288]: 3: WARNING: BUFFER VERY FULL
+[155288]: 3: got ACK from 12. RTT = 2450
+[155396]: 0: got ACK from 15. RTT = 293
+[155397]: 3: WARNING: BUFFER VERY FULL
+[155397]: 3: got ACK from 12. RTT = 2592
+[155505]: 0: got ACK from 15. RTT = 468
+[155554]: 0: got ACK from 15. RTT = 506
+[155566]: 3: WARNING: BUFFER VERY FULL
+[155566]: 3: got ACK from 12. RTT = 2666
+[155675]: 3: WARNING: BUFFER VERY FULL
+[155675]: 3: got ACK from 12. RTT = 2624
+[155724]: 0: got ACK from 15. RTT = 200
+[155773]: 0: got ACK from 15. RTT = 275
+[155784]: 3: WARNING: BUFFER VERY FULL
+[155784]: 3: got ACK from 12. RTT = 2767
+[155893]: 3: WARNING: BUFFER VERY FULL
+[155893]: 3: got ACK from 12. RTT = 2684
+[155943]: 0: got ACK from 15. RTT = 323
+[155992]: 0: got ACK from 15. RTT = 525
+[156066]: 3: WARNING: BUFFER VERY FULL
+[156066]: 3: got ACK from 12. RTT = 2583
+[156105]: 0: got ACK from 15. RTT = 450
+[156154]: 0: got ACK from 15. RTT = 222
+[156175]: 3: WARNING: BUFFER VERY FULL
+[156175]: 3: got ACK from 12. RTT = 2583
+[156284]: 3: WARNING: BUFFER VERY FULL
+[156284]: 3: got ACK from 12. RTT = 2468
+[156385]: 0: got ACK from 15. RTT = 176
+[156393]: 3: WARNING: BUFFER VERY FULL
+[156393]: 3: got ACK from 12. RTT = 2569
+[156562]: 3: WARNING: BUFFER VERY FULL
+[156562]: 3: got ACK from 12. RTT = 2574
+[156671]: 3: WARNING: BUFFER VERY FULL
+[156671]: 3: got ACK from 12. RTT = 2574
+[156780]: 3: WARNING: BUFFER VERY FULL
+[156780]: 3: got ACK from 12. RTT = 3043
+[156889]: 3: WARNING: BUFFER VERY FULL
+[156889]: 3: got ACK from 12. RTT = 2509
+[156998]: 3: WARNING: BUFFER VERY FULL
+[156998]: 3: got ACK from 12. RTT = 2900
+[157169]: 3: WARNING: BUFFER VERY FULL
+[157169]: 3: got ACK from 12. RTT = 2657
+[157278]: 3: WARNING: BUFFER VERY FULL
+[157278]: 3: got ACK from 12. RTT = 2601
+[157336]: 0: got ACK from 15. RTT = 306
+[157385]: 0: got ACK from 15. RTT = 507
+[157387]: 3: WARNING: BUFFER VERY FULL
+[157387]: 3: got ACK from 12. RTT = 2744
+[157496]: 3: WARNING: BUFFER VERY FULL
+[157496]: 3: got ACK from 12. RTT = 2675
+[157665]: 3: WARNING: BUFFER VERY FULL
+[157665]: 3: got ACK from 12. RTT = 2556
+[157774]: 3: WARNING: BUFFER VERY FULL
+[157774]: 3: got ACK from 12. RTT = 2974
+[157883]: 3: WARNING: BUFFER VERY FULL
+[157883]: 3: got ACK from 12. RTT = 2491
+[157915]: 0: got ACK from 15. RTT = 753
+[157992]: 3: WARNING: BUFFER VERY FULL
+[157992]: 3: got ACK from 12. RTT = 2619
+[158165]: 3: WARNING: BUFFER VERY FULL
+[158165]: 3: got ACK from 12. RTT = 2634
+[158274]: 3: WARNING: BUFFER VERY FULL
+[158274]: 3: got ACK from 12. RTT = 2509
+[158315]: 0: got ACK from 15. RTT = 769
+[158383]: 3: WARNING: BUFFER VERY FULL
+[158383]: 3: got ACK from 12. RTT = 3283
+[158492]: 3: WARNING: BUFFER VERY FULL
+[158492]: 3: got ACK from 12. RTT = 3319
+[158544]: 0: got ACK from 15. RTT = 337
+[158661]: 3: WARNING: BUFFER VERY FULL
+[158661]: 3: got ACK from 12. RTT = 2624
+[158770]: 3: WARNING: BUFFER VERY FULL
+[158770]: 3: got ACK from 12. RTT = 2698
+[158879]: 3: WARNING: BUFFER VERY FULL
+[158879]: 3: got ACK from 12. RTT = 2666
+[158988]: 3: WARNING: BUFFER VERY FULL
+[158988]: 3: got ACK from 12. RTT = 2633
+[159099]: 3: WARNING: BUFFER VERY FULL
+[159099]: 3: got ACK from 12. RTT = 2753
+[159141]: 0: got ACK from 15. RTT = 436
+[159268]: 3: WARNING: BUFFER VERY FULL
+[159268]: 3: got ACK from 12. RTT = 2624
+[159377]: 3: WARNING: BUFFER VERY FULL
+[159377]: 3: got ACK from 12. RTT = 2951
+[159486]: 3: WARNING: BUFFER VERY FULL
+[159486]: 3: got ACK from 12. RTT = 2634
+[159595]: 3: WARNING: BUFFER VERY FULL
+[159595]: 3: got ACK from 12. RTT = 2592
+[159736]: 0: got ACK from 15. RTT = 303
+[159764]: 3: WARNING: BUFFER VERY FULL
+[159764]: 3: got ACK from 12. RTT = 3333
+[159873]: 3: WARNING: BUFFER VERY FULL
+[159873]: 3: got ACK from 12. RTT = 2808
+[159967]: 0: got ACK from 15. RTT = 442
+[159982]: 3: WARNING: BUFFER VERY FULL
+[159982]: 3: got ACK from 12. RTT = 2601
+[160095]: 3: WARNING: BUFFER VERY FULL
+[160095]: 3: got ACK from 12. RTT = 3025
+[160141]: 0: got ACK from 15. RTT = 323
+[160190]: 0: got ACK from 15. RTT = 390
+[160264]: 3: WARNING: BUFFER VERY FULL
+[160264]: 3: got ACK from 12. RTT = 2832
+[160360]: 0: got ACK from 15. RTT = 391
+[160373]: 3: WARNING: BUFFER VERY FULL
+[160373]: 3: got ACK from 12. RTT = 2767
+[160482]: 3: WARNING: BUFFER VERY FULL
+[160482]: 3: got ACK from 12. RTT = 2684
+[160530]: 0: got ACK from 15. RTT = 804
+[160579]: 0: got ACK from 15. RTT = 541
+[160591]: 3: WARNING: BUFFER VERY FULL
+[160591]: 3: got ACK from 12. RTT = 2601
+[160700]: 3: WARNING: BUFFER VERY FULL
+[160700]: 3: got ACK from 12. RTT = 2767
+[160869]: 3: WARNING: BUFFER VERY FULL
+[160869]: 3: got ACK from 12. RTT = 2642
+[160978]: 3: WARNING: BUFFER VERY FULL
+[160978]: 3: got ACK from 12. RTT = 2776
+[160992]: 0: got ACK from 15. RTT = 827
+[161089]: 3: WARNING: BUFFER VERY FULL
+[161089]: 3: got ACK from 12. RTT = 2818
+[161109]: 6: WARNING: BUFFER VERY FULL
+[161164]: 0: got ACK from 15. RTT = 992
+[161174]: 6: WARNING: BUFFER VERY FULL
+[161198]: 3: WARNING: BUFFER VERY FULL
+[161198]: 3: got ACK from 12. RTT = 2735
+[161233]: 6: WARNING: BUFFER VERY FULL
+[161292]: 6: WARNING: BUFFER VERY FULL
+[161351]: 6: WARNING: BUFFER VERY FULL
+[161367]: 3: WARNING: BUFFER VERY FULL
+[161367]: 3: got ACK from 12. RTT = 2767
+[161410]: 6: WARNING: BUFFER VERY FULL
+[161469]: 6: WARNING: BUFFER VERY FULL
+[161476]: 3: WARNING: BUFFER VERY FULL
+[161476]: 3: got ACK from 12. RTT = 2684
+[161530]: 6: WARNING: BUFFER VERY FULL
+[161585]: 3: WARNING: BUFFER VERY FULL
+[161585]: 3: got ACK from 12. RTT = 2702
+[161589]: 6: WARNING: BUFFER VERY FULL
+[161648]: 6: WARNING: BUFFER VERY FULL
+[161694]: 3: WARNING: BUFFER VERY FULL
+[161694]: 3: got ACK from 12. RTT = 2661
+[161696]: 0: got ACK from 15. RTT = 368
+[161707]: 6: WARNING: BUFFER VERY FULL
+[161766]: 6: WARNING: BUFFER VERY FULL
+[161827]: 6: WARNING: BUFFER VERY FULL
+[161863]: 3: WARNING: BUFFER VERY FULL
+[161863]: 3: got ACK from 12. RTT = 2592
+[161886]: 6: WARNING: BUFFER VERY FULL
+[161945]: 6: WARNING: BUFFER VERY FULL
+[161972]: 3: WARNING: BUFFER VERY FULL
+[161972]: 3: got ACK from 12. RTT = 2592
+[162012]: 6: WARNING: BUFFER VERY FULL
+[162071]: 6: WARNING: BUFFER VERY FULL
+[162085]: 3: WARNING: BUFFER VERY FULL
+[162085]: 3: got ACK from 12. RTT = 2560
+[162130]: 6: WARNING: BUFFER VERY FULL
+[162189]: 6: WARNING: BUFFER VERY FULL
+[162194]: 3: WARNING: BUFFER VERY FULL
+[162194]: 3: got ACK from 12. RTT = 2578
+[162248]: 6: WARNING: BUFFER VERY FULL
+[162307]: 6: WARNING: BUFFER VERY FULL
+[162363]: 3: WARNING: BUFFER VERY FULL
+[162363]: 3: got ACK from 12. RTT = 2523
+[162366]: 6: WARNING: BUFFER VERY FULL
+[162425]: 6: WARNING: BUFFER VERY FULL
+[162472]: 3: WARNING: BUFFER VERY FULL
+[162472]: 3: got ACK from 12. RTT = 2523
+[162484]: 6: WARNING: BUFFER VERY FULL
+[162543]: 6: WARNING: BUFFER VERY FULL
+[162547]: 0: got ACK from 15. RTT = 820
+[162581]: 3: WARNING: BUFFER VERY FULL
+[162581]: 3: got ACK from 12. RTT = 2758
+[162602]: 6: WARNING: BUFFER VERY FULL
+[162661]: 6: WARNING: BUFFER VERY FULL
+[162690]: 3: WARNING: BUFFER VERY FULL
+[162690]: 3: got ACK from 12. RTT = 2527
+[162717]: 0: got ACK from 15. RTT = 435
+[162720]: 6: WARNING: BUFFER VERY FULL
+[162779]: 6: WARNING: BUFFER VERY FULL
+[162799]: 3: WARNING: BUFFER VERY FULL
+[162799]: 3: got ACK from 12. RTT = 2928
+[162838]: 6: WARNING: BUFFER VERY FULL
+[162897]: 6: WARNING: BUFFER VERY FULL
+[162948]: 0: got ACK from 15. RTT = 589
+[162956]: 6: WARNING: BUFFER VERY FULL
+[162968]: 3: WARNING: BUFFER VERY FULL
+[162968]: 3: got ACK from 12. RTT = 2859
+[163019]: 6: WARNING: BUFFER VERY FULL
+[163078]: 6: WARNING: BUFFER VERY FULL
+[163079]: 3: WARNING: BUFFER VERY FULL
+[163079]: 3: got ACK from 12. RTT = 2601
+[163137]: 6: WARNING: BUFFER VERY FULL
+[163181]: 0: got ACK from 15. RTT = 557
+[163188]: 3: WARNING: BUFFER VERY FULL
+[163188]: 3: got ACK from 12. RTT = 2527
+[163196]: 6: WARNING: BUFFER VERY FULL
+[163255]: 6: WARNING: BUFFER VERY FULL
+[163297]: 3: WARNING: BUFFER VERY FULL
+[163297]: 3: got ACK from 12. RTT = 2776
+[163314]: 6: WARNING: BUFFER VERY FULL
+[163373]: 6: WARNING: BUFFER VERY FULL
+[163432]: 6: WARNING: BUFFER VERY FULL
+[163466]: 3: WARNING: BUFFER VERY FULL
+[163466]: 3: got ACK from 12. RTT = 2758
+[163472]: 0: got ACK from 15. RTT = 567
+[163491]: 6: WARNING: BUFFER VERY FULL
+[163550]: 6: WARNING: BUFFER VERY FULL
+[163575]: 3: WARNING: BUFFER VERY FULL
+[163575]: 3: got ACK from 12. RTT = 2749
+[163609]: 6: WARNING: BUFFER VERY FULL
+[163668]: 6: WARNING: BUFFER VERY FULL
+[163684]: 3: WARNING: BUFFER VERY FULL
+[163684]: 3: got ACK from 12. RTT = 2500
+[163727]: 6: WARNING: BUFFER VERY FULL
+[163764]: 0: got ACK from 15. RTT = 571
+[163786]: 6: WARNING: BUFFER VERY FULL
+[163793]: 3: WARNING: BUFFER VERY FULL
+[163793]: 3: got ACK from 12. RTT = 2693
+[163845]: 6: WARNING: BUFFER VERY FULL
+[163904]: 6: WARNING: BUFFER VERY FULL
+[163962]: 3: WARNING: BUFFER VERY FULL
+[163962]: 3: got ACK from 12. RTT = 2822
+[163963]: 6: WARNING: BUFFER VERY FULL
+[164030]: 6: WARNING: BUFFER VERY FULL
+[164075]: 3: WARNING: BUFFER VERY FULL
+[164075]: 3: got ACK from 12. RTT = 2601
+[164089]: 6: WARNING: BUFFER VERY FULL
+[164148]: 6: WARNING: BUFFER VERY FULL
+[164184]: 3: WARNING: BUFFER VERY FULL
+[164184]: 3: got ACK from 12. RTT = 2868
+[164207]: 6: WARNING: BUFFER VERY FULL
+[164266]: 6: WARNING: BUFFER VERY FULL
+[164293]: 3: WARNING: BUFFER VERY FULL
+[164293]: 3: got ACK from 12. RTT = 2661
+[164325]: 6: WARNING: BUFFER VERY FULL
+[164384]: 6: WARNING: BUFFER VERY FULL
+[164443]: 6: WARNING: BUFFER VERY FULL
+[164462]: 3: WARNING: BUFFER VERY FULL
+[164462]: 3: got ACK from 12. RTT = 2615
+[164502]: 6: WARNING: BUFFER VERY FULL
+[164561]: 6: WARNING: BUFFER VERY FULL
+[164571]: 3: WARNING: BUFFER VERY FULL
+[164571]: 3: got ACK from 12. RTT = 2859
+[164622]: 6: WARNING: BUFFER VERY FULL
+[164680]: 3: WARNING: BUFFER VERY FULL
+[164680]: 3: got ACK from 12. RTT = 2983
+[164681]: 6: WARNING: BUFFER VERY FULL
+[164740]: 6: WARNING: BUFFER VERY FULL
+[164789]: 3: WARNING: BUFFER VERY FULL
+[164789]: 3: got ACK from 12. RTT = 2633
+[164799]: 6: WARNING: BUFFER VERY FULL
+[164858]: 6: WARNING: BUFFER VERY FULL
+[164898]: 3: WARNING: BUFFER VERY FULL
+[164898]: 3: got ACK from 12. RTT = 2803
+[164917]: 6: WARNING: BUFFER VERY FULL
+[164976]: 6: WARNING: BUFFER VERY FULL
+[165039]: 6: WARNING: BUFFER VERY FULL
+[165069]: 3: WARNING: BUFFER VERY FULL
+[165069]: 3: got ACK from 12. RTT = 2882
+[165098]: 6: WARNING: BUFFER VERY FULL
+[165159]: 6: WARNING: BUFFER VERY FULL
+[165178]: 3: WARNING: BUFFER VERY FULL
+[165178]: 3: got ACK from 12. RTT = 3043
+[165218]: 6: WARNING: BUFFER VERY FULL
+[165277]: 6: WARNING: BUFFER VERY FULL
+[165287]: 3: WARNING: BUFFER VERY FULL
+[165287]: 3: got ACK from 12. RTT = 2716
+[165336]: 6: WARNING: BUFFER VERY FULL
+[165396]: 3: WARNING: BUFFER VERY FULL
+[165396]: 3: got ACK from 12. RTT = 2960
+[165397]: 6: WARNING: BUFFER VERY FULL
+[165456]: 6: WARNING: BUFFER VERY FULL
+[165461]: 0: got ACK from 15. RTT = 383
+[165510]: 0: got ACK from 15. RTT = 1054
+[165515]: 6: WARNING: BUFFER VERY FULL
+[165565]: 3: WARNING: BUFFER VERY FULL
+[165565]: 3: got ACK from 12. RTT = 2758
+[165574]: 6: WARNING: BUFFER VERY FULL
+[165633]: 6: WARNING: BUFFER VERY FULL
+[165674]: 3: WARNING: BUFFER VERY FULL
+[165674]: 3: got ACK from 12. RTT = 2909
+[165692]: 6: WARNING: BUFFER VERY FULL
+[165751]: 6: WARNING: BUFFER VERY FULL
+[165783]: 3: WARNING: BUFFER VERY FULL
+[165783]: 3: got ACK from 12. RTT = 3066
+[165810]: 6: WARNING: BUFFER VERY FULL
+[165869]: 6: WARNING: BUFFER VERY FULL
+[165892]: 3: WARNING: BUFFER VERY FULL
+[165892]: 3: got ACK from 12. RTT = 2633
+[165917]: 0: got ACK from 15. RTT = 551
+[165928]: 6: WARNING: BUFFER VERY FULL
+[165966]: 0: got ACK from 15. RTT = 925
+[165987]: 6: WARNING: BUFFER VERY FULL
+[166054]: 6: WARNING: BUFFER VERY FULL
+[166065]: 3: WARNING: BUFFER VERY FULL
+[166065]: 3: got ACK from 12. RTT = 2983
+[166113]: 6: WARNING: BUFFER VERY FULL
+[166172]: 6: WARNING: BUFFER VERY FULL
+[166174]: 3: WARNING: BUFFER VERY FULL
+[166174]: 3: got ACK from 12. RTT = 2882
+[166199]: 0: got ACK from 15. RTT = 524
+[166231]: 6: WARNING: BUFFER VERY FULL
+[166283]: 3: WARNING: BUFFER VERY FULL
+[166283]: 3: got ACK from 12. RTT = 2776
+[166290]: 6: WARNING: BUFFER VERY FULL
+[166308]: 0: got ACK from 15. RTT = 602
+[166349]: 6: WARNING: BUFFER VERY FULL
+[166392]: 3: WARNING: BUFFER VERY FULL
+[166392]: 3: got ACK from 12. RTT = 3066
+[166408]: 6: WARNING: BUFFER VERY FULL
+[166467]: 6: WARNING: BUFFER VERY FULL
+[166526]: 6: WARNING: BUFFER VERY FULL
+[166561]: 3: WARNING: BUFFER VERY FULL
+[166561]: 3: got ACK from 12. RTT = 2965
+[166585]: 6: WARNING: BUFFER VERY FULL
+[166600]: 0: got ACK from 15. RTT = 792
+[166644]: 6: WARNING: BUFFER VERY FULL
+[166670]: 3: WARNING: BUFFER VERY FULL
+[166670]: 3: got ACK from 12. RTT = 2841
+[166703]: 6: WARNING: BUFFER VERY FULL
+[166762]: 6: WARNING: BUFFER VERY FULL
+[166779]: 3: WARNING: BUFFER VERY FULL
+[166779]: 3: got ACK from 12. RTT = 2776
+[166821]: 6: WARNING: BUFFER VERY FULL
+[166880]: 6: WARNING: BUFFER VERY FULL
+[166888]: 3: WARNING: BUFFER VERY FULL
+[166888]: 3: got ACK from 12. RTT = 2702
+[166939]: 6: WARNING: BUFFER VERY FULL
+[166997]: 3: WARNING: BUFFER VERY FULL
+[166997]: 3: got ACK from 12. RTT = 2992
+[166998]: 6: WARNING: BUFFER VERY FULL
+[167099]: 0: got ACK from 15. RTT = 619
+[167120]: 6: WARNING: BUFFER VERY FULL
+[167168]: 3: WARNING: BUFFER VERY FULL
+[167168]: 3: got ACK from 12. RTT = 2767
+[167179]: 6: WARNING: BUFFER VERY FULL
+[167238]: 6: WARNING: BUFFER VERY FULL
+[167277]: 3: WARNING: BUFFER VERY FULL
+[167277]: 3: got ACK from 12. RTT = 2734
+[167297]: 6: WARNING: BUFFER VERY FULL
+[167356]: 6: WARNING: BUFFER VERY FULL
+[167386]: 3: WARNING: BUFFER VERY FULL
+[167386]: 3: got ACK from 12. RTT = 2974
+[167415]: 6: WARNING: BUFFER VERY FULL
+[167474]: 6: WARNING: BUFFER VERY FULL
+[167495]: 3: WARNING: BUFFER VERY FULL
+[167495]: 3: got ACK from 12. RTT = 2785
+[167524]: 0: got ACK from 15. RTT = 588
+[167533]: 6: WARNING: BUFFER VERY FULL
+[167573]: 0: got ACK from 15. RTT = 1209
+[167592]: 6: WARNING: BUFFER VERY FULL
+[167651]: 6: WARNING: BUFFER VERY FULL
+[167664]: 3: WARNING: BUFFER VERY FULL
+[167664]: 3: got ACK from 12. RTT = 2716
+[167682]: 0: got ACK from 15. RTT = 834
+[167710]: 6: WARNING: BUFFER VERY FULL
+[167769]: 6: WARNING: BUFFER VERY FULL
+[167773]: 3: WARNING: BUFFER VERY FULL
+[167773]: 3: got ACK from 12. RTT = 2716
+[167828]: 6: WARNING: BUFFER VERY FULL
+[167882]: 3: WARNING: BUFFER VERY FULL
+[167882]: 3: got ACK from 12. RTT = 2743
+[167887]: 6: WARNING: BUFFER VERY FULL
+[167946]: 6: WARNING: BUFFER VERY FULL
+[167991]: 3: WARNING: BUFFER VERY FULL
+[167991]: 3: got ACK from 12. RTT = 2767
+[168013]: 6: WARNING: BUFFER VERY FULL
+[168072]: 6: WARNING: BUFFER VERY FULL
+[168095]: 0: got ACK from 15. RTT = 1067
+[168131]: 6: WARNING: BUFFER VERY FULL
+[168164]: 3: WARNING: BUFFER VERY FULL
+[168164]: 3: got ACK from 12. RTT = 2647
+[168190]: 6: WARNING: BUFFER VERY FULL
+[168249]: 6: WARNING: BUFFER VERY FULL
+[168273]: 3: WARNING: BUFFER VERY FULL
+[168273]: 3: got ACK from 12. RTT = 2799
+[168308]: 6: WARNING: BUFFER VERY FULL
+[168367]: 6: WARNING: BUFFER VERY FULL
+[168382]: 3: WARNING: BUFFER VERY FULL
+[168382]: 3: got ACK from 12. RTT = 2642
+[168383]: 0: got ACK from 15. RTT = 325
+[168426]: 6: WARNING: BUFFER VERY FULL
+[168485]: 6: WARNING: BUFFER VERY FULL
+[168491]: 3: WARNING: BUFFER VERY FULL
+[168491]: 3: got ACK from 12. RTT = 3043
+[168544]: 6: WARNING: BUFFER VERY FULL
+[168551]: 0: got ACK from 15. RTT = 324
+[168600]: 3: WARNING: BUFFER VERY FULL
+[168600]: 3: got ACK from 12. RTT = 2735
+[168600]: 0: got ACK from 15. RTT = 843
+[168603]: 6: WARNING: BUFFER VERY FULL
+[168662]: 6: WARNING: BUFFER VERY FULL
+[168709]: 0: got ACK from 15. RTT = 833
+[168721]: 6: WARNING: BUFFER VERY FULL
+[168758]: 0: got ACK from 15. RTT = 891
+[168769]: 3: WARNING: BUFFER VERY FULL
+[168769]: 3: got ACK from 12. RTT = 2933
+[168780]: 6: WARNING: BUFFER VERY FULL
+[168839]: 6: WARNING: BUFFER VERY FULL
+[168867]: 0: got ACK from 15. RTT = 334
+[168878]: 3: WARNING: BUFFER VERY FULL
+[168878]: 3: got ACK from 12. RTT = 2799
+[168898]: 6: WARNING: BUFFER VERY FULL
+[168916]: 0: got ACK from 15. RTT = 883
+[168957]: 6: WARNING: BUFFER VERY FULL
+[168987]: 3: WARNING: BUFFER VERY FULL
+[168987]: 3: got ACK from 12. RTT = 2960
+[169020]: 6: WARNING: BUFFER VERY FULL
+[169079]: 6: WARNING: BUFFER VERY FULL
+[169098]: 3: WARNING: BUFFER VERY FULL
+[169098]: 3: got ACK from 12. RTT = 2794
+[169138]: 6: WARNING: BUFFER VERY FULL
+[169141]: 0: got ACK from 15. RTT = 670
+[169197]: 6: WARNING: BUFFER VERY FULL
+[169256]: 6: WARNING: BUFFER VERY FULL
+[169267]: 3: WARNING: BUFFER VERY FULL
+[169267]: 3: got ACK from 12. RTT = 2707
+[169315]: 6: WARNING: BUFFER VERY FULL
+[169374]: 6: WARNING: BUFFER VERY FULL
+[169376]: 3: WARNING: BUFFER VERY FULL
+[169376]: 3: got ACK from 12. RTT = 2965
+[169433]: 6: WARNING: BUFFER VERY FULL
+[169485]: 3: WARNING: BUFFER VERY FULL
+[169485]: 3: got ACK from 12. RTT = 2743
+[169491]: 0: got ACK from 15. RTT = 584
+[169492]: 6: WARNING: BUFFER VERY FULL
+[169551]: 6: WARNING: BUFFER VERY FULL
+[169594]: 3: WARNING: BUFFER VERY FULL
+[169594]: 3: got ACK from 12. RTT = 2826
+[169610]: 6: WARNING: BUFFER VERY FULL
+[169669]: 6: WARNING: BUFFER VERY FULL
+[169728]: 6: WARNING: BUFFER VERY FULL
+[169763]: 3: WARNING: BUFFER VERY FULL
+[169763]: 3: got ACK from 12. RTT = 2716
+[169787]: 6: WARNING: BUFFER VERY FULL
+[169846]: 6: WARNING: BUFFER VERY FULL
+[169872]: 3: WARNING: BUFFER VERY FULL
+[169872]: 3: got ACK from 12. RTT = 2799
+[169905]: 6: WARNING: BUFFER VERY FULL
+[169964]: 6: WARNING: BUFFER VERY FULL
+[169981]: 3: WARNING: BUFFER VERY FULL
+[169981]: 3: got ACK from 12. RTT = 2918
+[170094]: 3: WARNING: BUFFER VERY FULL
+[170094]: 3: got ACK from 12. RTT = 2960
+[170263]: 3: WARNING: BUFFER VERY FULL
+[170263]: 3: got ACK from 12. RTT = 3080
+[170372]: 3: WARNING: BUFFER VERY FULL
+[170372]: 3: got ACK from 12. RTT = 2642
+[170481]: 3: WARNING: BUFFER VERY FULL
+[170481]: 3: got ACK from 12. RTT = 3025
+[170590]: 3: WARNING: BUFFER VERY FULL
+[170590]: 3: got ACK from 12. RTT = 2799
+[170699]: 3: WARNING: BUFFER VERY FULL
+[170699]: 3: got ACK from 12. RTT = 2744
+[170868]: 3: WARNING: BUFFER VERY FULL
+[170868]: 3: got ACK from 12. RTT = 2956
+[170977]: 3: WARNING: BUFFER VERY FULL
+[170977]: 3: got ACK from 12. RTT = 2675
+[170981]: 6: WARNING: BUFFER VERY FULL
+[171044]: 6: WARNING: BUFFER VERY FULL
+[171088]: 3: WARNING: BUFFER VERY FULL
+[171088]: 3: got ACK from 12. RTT = 3269
+[171105]: 6: WARNING: BUFFER VERY FULL
+[171164]: 6: WARNING: BUFFER VERY FULL
+[171197]: 3: WARNING: BUFFER VERY FULL
+[171197]: 3: got ACK from 12. RTT = 2927
+[171223]: 6: WARNING: BUFFER VERY FULL
+[171282]: 6: WARNING: BUFFER VERY FULL
+[171341]: 6: WARNING: BUFFER VERY FULL
+[171366]: 3: WARNING: BUFFER VERY FULL
+[171366]: 3: got ACK from 12. RTT = 2822
+[171400]: 6: WARNING: BUFFER VERY FULL
+[171459]: 6: WARNING: BUFFER VERY FULL
+[171475]: 3: WARNING: BUFFER VERY FULL
+[171475]: 3: got ACK from 12. RTT = 3126
+[171518]: 6: WARNING: BUFFER VERY FULL
+[171533]: 0: got ACK from 15. RTT = 1003
+[171577]: 6: WARNING: BUFFER VERY FULL
+[171582]: 0: got ACK from 15. RTT = 1377
+[171584]: 3: WARNING: BUFFER VERY FULL
+[171584]: 3: got ACK from 12. RTT = 2960
+[171636]: 6: WARNING: BUFFER VERY FULL
+[171693]: 3: WARNING: BUFFER VERY FULL
+[171693]: 3: got ACK from 12. RTT = 2859
+[171695]: 6: WARNING: BUFFER VERY FULL
+[171754]: 6: WARNING: BUFFER VERY FULL
+[171813]: 6: WARNING: BUFFER VERY FULL
+[171862]: 3: WARNING: BUFFER VERY FULL
+[171862]: 3: got ACK from 12. RTT = 3025
+[171872]: 6: WARNING: BUFFER VERY FULL
+[171931]: 6: WARNING: BUFFER VERY FULL
+[171971]: 3: WARNING: BUFFER VERY FULL
+[171971]: 3: got ACK from 12. RTT = 2776
+[171990]: 6: WARNING: BUFFER VERY FULL
+[172057]: 6: WARNING: BUFFER VERY FULL
+[172084]: 3: WARNING: BUFFER VERY FULL
+[172084]: 3: got ACK from 12. RTT = 2776
+[172116]: 6: WARNING: BUFFER VERY FULL
+[172175]: 6: WARNING: BUFFER VERY FULL
+[172193]: 3: WARNING: BUFFER VERY FULL
+[172193]: 3: got ACK from 12. RTT = 3001
+[172234]: 6: WARNING: BUFFER VERY FULL
+[172293]: 6: WARNING: BUFFER VERY FULL
+[172352]: 6: WARNING: BUFFER VERY FULL
+[172362]: 3: WARNING: BUFFER VERY FULL
+[172362]: 3: got ACK from 12. RTT = 2983
+[172398]: 0: got ACK from 15. RTT = 675
+[172411]: 6: WARNING: BUFFER VERY FULL
+[172470]: 6: WARNING: BUFFER VERY FULL
+[172471]: 3: WARNING: BUFFER VERY FULL
+[172471]: 3: got ACK from 12. RTT = 2942
+[172529]: 6: WARNING: BUFFER VERY FULL
+[172580]: 3: WARNING: BUFFER VERY FULL
+[172580]: 3: got ACK from 12. RTT = 3057
+[172588]: 6: WARNING: BUFFER VERY FULL
+[172647]: 6: WARNING: BUFFER VERY FULL
+[172689]: 3: WARNING: BUFFER VERY FULL
+[172689]: 3: got ACK from 12. RTT = 2983
+[172706]: 6: WARNING: BUFFER VERY FULL
+[172765]: 6: WARNING: BUFFER VERY FULL
+[172798]: 3: WARNING: BUFFER VERY FULL
+[172798]: 3: got ACK from 12. RTT = 2803
+[172824]: 6: WARNING: BUFFER VERY FULL
+[172871]: 0: got ACK from 15. RTT = 1165
+[172883]: 6: WARNING: BUFFER VERY FULL
+[172942]: 6: WARNING: BUFFER VERY FULL
+[172967]: 3: WARNING: BUFFER VERY FULL
+[172967]: 3: got ACK from 12. RTT = 2942
+[173005]: 6: WARNING: BUFFER VERY FULL
+[173064]: 6: WARNING: BUFFER VERY FULL
+[173078]: 3: WARNING: BUFFER VERY FULL
+[173078]: 3: got ACK from 12. RTT = 2909
+[173123]: 6: WARNING: BUFFER VERY FULL
+[173182]: 6: WARNING: BUFFER VERY FULL
+[173187]: 3: WARNING: BUFFER VERY FULL
+[173187]: 3: got ACK from 12. RTT = 2918
+[173241]: 6: WARNING: BUFFER VERY FULL
+[173296]: 3: WARNING: BUFFER VERY FULL
+[173296]: 3: got ACK from 12. RTT = 2817
+[173302]: 6: WARNING: BUFFER VERY FULL
+[173361]: 6: WARNING: BUFFER VERY FULL
+[173420]: 6: WARNING: BUFFER VERY FULL
+[173465]: 3: WARNING: BUFFER VERY FULL
+[173465]: 3: got ACK from 12. RTT = 3015
+[173479]: 6: WARNING: BUFFER VERY FULL
+[173538]: 6: WARNING: BUFFER VERY FULL
+[173574]: 3: WARNING: BUFFER VERY FULL
+[173574]: 3: got ACK from 12. RTT = 2831
+[173599]: 6: WARNING: BUFFER VERY FULL
+[173658]: 6: WARNING: BUFFER VERY FULL
+[173683]: 3: WARNING: BUFFER VERY FULL
+[173683]: 3: got ACK from 12. RTT = 2942
+[173792]: 3: WARNING: BUFFER VERY FULL
+[173792]: 3: got ACK from 12. RTT = 2992
+[173961]: 3: WARNING: BUFFER VERY FULL
+[173961]: 3: got ACK from 12. RTT = 2974
+[174074]: 3: WARNING: BUFFER VERY FULL
+[174074]: 3: got ACK from 12. RTT = 3007
+[174183]: 3: WARNING: BUFFER VERY FULL
+[174183]: 3: got ACK from 12. RTT = 2974
+[174292]: 3: WARNING: BUFFER VERY FULL
+[174292]: 3: got ACK from 12. RTT = 2942
+[174461]: 3: WARNING: BUFFER VERY FULL
+[174461]: 3: got ACK from 12. RTT = 2822
+[174565]: 0: got ACK from 15. RTT = 674
+[174570]: 3: WARNING: BUFFER VERY FULL
+[174570]: 3: got ACK from 12. RTT = 3075
+[174679]: 3: WARNING: BUFFER VERY FULL
+[174679]: 3: got ACK from 12. RTT = 2868
+[174788]: 3: WARNING: BUFFER VERY FULL
+[174788]: 3: got ACK from 12. RTT = 2919
+[174897]: 3: WARNING: BUFFER VERY FULL
+[174897]: 3: got ACK from 12. RTT = 2928
+[174964]: 6: WARNING: BUFFER VERY FULL
+[175027]: 6: WARNING: BUFFER VERY FULL
+[175068]: 3: WARNING: BUFFER VERY FULL
+[175068]: 3: got ACK from 12. RTT = 2933
+[175086]: 6: WARNING: BUFFER VERY FULL
+[175099]: 0: got ACK from 15. RTT = 1233
+[175145]: 6: WARNING: BUFFER VERY FULL
+[175177]: 3: WARNING: BUFFER VERY FULL
+[175177]: 3: got ACK from 12. RTT = 2841
+[175204]: 6: WARNING: BUFFER VERY FULL
+[175263]: 6: WARNING: BUFFER VERY FULL
+[175286]: 3: WARNING: BUFFER VERY FULL
+[175286]: 3: got ACK from 12. RTT = 2909
+[175322]: 6: WARNING: BUFFER VERY FULL
+[175381]: 6: WARNING: BUFFER VERY FULL
+[175389]: 0: got ACK from 15. RTT = 1090
+[175395]: 3: WARNING: BUFFER VERY FULL
+[175395]: 3: got ACK from 12. RTT = 2909
+[175440]: 6: WARNING: BUFFER VERY FULL
+[175499]: 6: WARNING: BUFFER VERY FULL
+[175557]: 0: got ACK from 15. RTT = 953
+[175558]: 6: WARNING: BUFFER VERY FULL
+[175564]: 3: WARNING: BUFFER VERY FULL
+[175564]: 3: got ACK from 12. RTT = 2831
+[175617]: 6: WARNING: BUFFER VERY FULL
+[175666]: 0: got ACK from 15. RTT = 1133
+[175673]: 3: WARNING: BUFFER VERY FULL
+[175673]: 3: got ACK from 12. RTT = 3034
+[175676]: 6: WARNING: BUFFER VERY FULL
+[175715]: 0: got ACK from 15. RTT = 987
+[175735]: 6: WARNING: BUFFER VERY FULL
+[175764]: 0: got ACK from 15. RTT = 1208
+[175782]: 3: WARNING: BUFFER VERY FULL
+[175782]: 3: got ACK from 12. RTT = 2799
+[175794]: 6: WARNING: BUFFER VERY FULL
+[175873]: 0: got ACK from 15. RTT = 1063
+[175891]: 3: WARNING: BUFFER VERY FULL
+[175891]: 3: got ACK from 12. RTT = 2836
+[175912]: 6: WARNING: BUFFER VERY FULL
+[175922]: 0: got ACK from 15. RTT = 652
+[175971]: 6: WARNING: BUFFER VERY FULL
+[175971]: 0: got ACK from 15. RTT = 691
+[176000]: 3: WARNING: BUFFER VERY FULL
+[176000]: 3: got ACK from 12. RTT = 2927
+[176038]: 6: WARNING: BUFFER VERY FULL
+[176084]: 0: got ACK from 15. RTT = 1514
+[176097]: 6: WARNING: BUFFER VERY FULL
+[176133]: 0: got ACK from 15. RTT = 1203
+[176156]: 6: WARNING: BUFFER VERY FULL
+[176173]: 3: WARNING: BUFFER VERY FULL
+[176173]: 3: got ACK from 12. RTT = 2841
+[176215]: 6: WARNING: BUFFER VERY FULL
+[176274]: 6: WARNING: BUFFER VERY FULL
+[176282]: 3: WARNING: BUFFER VERY FULL
+[176282]: 3: got ACK from 12. RTT = 3015
+[176333]: 6: WARNING: BUFFER VERY FULL
+[176391]: 3: WARNING: BUFFER VERY FULL
+[176391]: 3: got ACK from 12. RTT = 2919
+[176392]: 6: WARNING: BUFFER VERY FULL
+[176451]: 6: WARNING: BUFFER VERY FULL
+[176500]: 3: WARNING: BUFFER VERY FULL
+[176510]: 6: WARNING: BUFFER VERY FULL
+[176569]: 6: WARNING: BUFFER VERY FULL
+[176628]: 6: WARNING: BUFFER VERY FULL
+[176679]: 3: WARNING: BUFFER VERY FULL
+[176679]: 3: got ACK from 12. RTT = 3108
+[176687]: 6: WARNING: BUFFER VERY FULL
+[176746]: 6: WARNING: BUFFER VERY FULL
+[176788]: 3: got ACK from 12. RTT = 2860
+[176805]: 6: WARNING: BUFFER VERY FULL
+[176864]: 6: WARNING: BUFFER VERY FULL
+[176897]: 3: got ACK from 12. RTT = 2993
+[176923]: 6: WARNING: BUFFER VERY FULL
+[176982]: 6: WARNING: BUFFER VERY FULL
+[177045]: 6: WARNING: BUFFER VERY FULL
+[177068]: 3: got ACK from 12. RTT = 2934
+[177094]: 0: got ACK from 15. RTT = 803
+[177104]: 6: WARNING: BUFFER VERY FULL
+[177163]: 6: WARNING: BUFFER VERY FULL
+[177177]: 3: got ACK from 12. RTT = 2934
+[177222]: 6: WARNING: BUFFER VERY FULL
+[177281]: 6: WARNING: BUFFER VERY FULL
+[177286]: 3: WARNING: BUFFER VERY FULL
+[177286]: 3: got ACK from 12. RTT = 2892
+[177340]: 6: WARNING: BUFFER VERY FULL
+[177386]: 0: got ACK from 15. RTT = 673
+[177395]: 3: WARNING: BUFFER VERY FULL
+[177399]: 6: WARNING: BUFFER VERY FULL
+[177458]: 6: WARNING: BUFFER VERY FULL
+[177517]: 6: WARNING: BUFFER VERY FULL
+[177574]: 3: WARNING: BUFFER VERY FULL
+[177576]: 6: WARNING: BUFFER VERY FULL
+[177683]: 3: WARNING: BUFFER VERY FULL
+[177792]: 3: WARNING: BUFFER VERY FULL
+[177792]: 3: got ACK from 12. RTT = 3049
+[177799]: 0: got ACK from 15. RTT = 1357
+[177961]: 3: WARNING: BUFFER VERY FULL
+[177961]: 3: got ACK from 12. RTT = 1715
+[177969]: 0: got ACK from 15. RTT = 1271
+[178074]: 3: WARNING: BUFFER VERY FULL
+[178074]: 3: got ACK from 12. RTT = 2658
+[178143]: 0: got ACK from 15. RTT = 823
+[178183]: 3: WARNING: BUFFER VERY FULL
+[178183]: 3: got ACK from 12. RTT = 1576
+[178292]: 3: WARNING: BUFFER VERY FULL
+[178292]: 3: got ACK from 12. RTT = 1677
+[178461]: 3: WARNING: BUFFER VERY FULL
+[178461]: 3: got ACK from 12. RTT = 1964
+[178495]: 0: got ACK from 15. RTT = 1016
+[178570]: 3: WARNING: BUFFER VERY FULL
+[178570]: 3: got ACK from 12. RTT = 1807
+[178679]: 3: WARNING: BUFFER VERY FULL
+[178679]: 3: got ACK from 12. RTT = 2101
+[178788]: 3: WARNING: BUFFER VERY FULL
+[178788]: 3: got ACK from 12. RTT = 2299
+[178897]: 3: WARNING: BUFFER VERY FULL
+[178897]: 3: got ACK from 12. RTT = 2952
+[178908]: 0: got ACK from 15. RTT = 868
+[179068]: 3: WARNING: BUFFER VERY FULL
+[179068]: 3: got ACK from 12. RTT = 2092
+[179177]: 3: WARNING: BUFFER VERY FULL
+[179177]: 3: got ACK from 12. RTT = 2492
+[179286]: 3: WARNING: BUFFER VERY FULL
+[179286]: 3: got ACK from 12. RTT = 2851
+[179384]: 0: got ACK from 15. RTT = 860
+[179395]: 3: WARNING: BUFFER VERY FULL
+[179395]: 3: got ACK from 12. RTT = 1784
+[179564]: 3: WARNING: BUFFER VERY FULL
+[179564]: 3: got ACK from 12. RTT = 2658
+[179673]: 3: WARNING: BUFFER VERY FULL
+[179673]: 3: got ACK from 12. RTT = 2815
+[179736]: 0: got ACK from 15. RTT = 919
+[179782]: 3: WARNING: BUFFER VERY FULL
+[179782]: 3: got ACK from 12. RTT = 1917
+[179891]: 3: WARNING: BUFFER VERY FULL
+[179891]: 3: got ACK from 12. RTT = 1769
+[179893]: 6: WARNING: BUFFER VERY FULL
+[179952]: 6: WARNING: BUFFER VERY FULL
+[180000]: 3: WARNING: BUFFER VERY FULL
+[180000]: 3: got ACK from 12. RTT = 3136
+[180019]: 6: WARNING: BUFFER VERY FULL
+[180078]: 6: WARNING: BUFFER VERY FULL
+[180137]: 6: WARNING: BUFFER VERY FULL
+[180173]: 3: WARNING: BUFFER VERY FULL
+[180173]: 3: got ACK from 12. RTT = 2483
+[180196]: 6: WARNING: BUFFER VERY FULL
+[180282]: 3: WARNING: BUFFER VERY FULL
+[180282]: 3: got ACK from 12. RTT = 2875
+[180333]: 0: got ACK from 15. RTT = 1386
+[180391]: 3: WARNING: BUFFER VERY FULL
+[180391]: 3: got ACK from 12. RTT = 2299
+[180503]: 0: got ACK from 15. RTT = 1419
+[180561]: 3: WARNING: BUFFER VERY FULL
+[180561]: 3: got ACK from 12. RTT = 1733
+[180670]: 3: WARNING: BUFFER VERY FULL
+[180670]: 3: got ACK from 12. RTT = 2599
+[180673]: 0: got ACK from 15. RTT = 883
+[180779]: 3: WARNING: BUFFER VERY FULL
+[180904]: 0: got ACK from 15. RTT = 1170
+[180953]: 0: got ACK from 15. RTT = 1689
+[180961]: 3: WARNING: BUFFER VERY FULL
+[180961]: 3: got ACK from 12. RTT = 2908
+[181072]: 3: WARNING: BUFFER VERY FULL
+[181072]: 3: got ACK from 12. RTT = 2434
+[181181]: 3: WARNING: BUFFER VERY FULL
+[181181]: 3: got ACK from 12. RTT = 2351
+[181186]: 0: got ACK from 15. RTT = 860
+[181290]: 3: WARNING: BUFFER VERY FULL
+[181290]: 3: got ACK from 12. RTT = 2144
+[181399]: 3: WARNING: BUFFER VERY FULL
+[181538]: 0: got ACK from 15. RTT = 1206
+[181580]: 3: WARNING: BUFFER VERY FULL
+[181580]: 3: got ACK from 12. RTT = 1993
+[181689]: 3: WARNING: BUFFER VERY FULL
+[181689]: 3: got ACK from 12. RTT = 2034
+[181769]: 0: got ACK from 15. RTT = 1540
+[181798]: 3: WARNING: BUFFER VERY FULL
+[181878]: 0: got ACK from 15. RTT = 1216
+[181927]: 0: got ACK from 15. RTT = 1672
+[181976]: 0: got ACK from 15. RTT = 1272
+[181979]: 3: WARNING: BUFFER VERY FULL
+[181979]: 3: got ACK from 12. RTT = 2482
+[182092]: 3: WARNING: BUFFER VERY FULL
+[182092]: 3: got ACK from 12. RTT = 3136
+[182150]: 0: got ACK from 15. RTT = 1187
+[182199]: 0: got ACK from 15. RTT = 1843
+[182261]: 3: WARNING: BUFFER VERY FULL
+[182261]: 3: got ACK from 12. RTT = 2924
+[182369]: 0: got ACK from 15. RTT = 757
+[182370]: 3: WARNING: BUFFER VERY FULL
+[182370]: 3: got ACK from 12. RTT = 2234
+[182479]: 3: WARNING: BUFFER VERY FULL
+[182479]: 3: got ACK from 12. RTT = 1948
+[182588]: 3: WARNING: BUFFER VERY FULL
+[182721]: 0: got ACK from 15. RTT = 1069
+[182769]: 3: WARNING: BUFFER VERY FULL
+[182769]: 3: got ACK from 12. RTT = 2433
+[182878]: 3: got ACK from 12. RTT = 3266
+[182987]: 3: got ACK from 12. RTT = 2676
+[183098]: 3: got ACK from 12. RTT = 3059
+[183267]: 3: got ACK from 12. RTT = 1881
+[183376]: 3: got ACK from 12. RTT = 1926
+[183379]: 0: got ACK from 15. RTT = 1442
+[183485]: 3: got ACK from 12. RTT = 1959
+[183594]: 3: got ACK from 12. RTT = 2492
+[183651]: 6: WARNING: BUFFER VERY FULL
+[183710]: 6: WARNING: BUFFER VERY FULL
+[183731]: 0: got ACK from 15. RTT = 905
+[183763]: 3: got ACK from 12. RTT = 2216
+[183769]: 6: WARNING: BUFFER VERY FULL
+[183828]: 6: WARNING: BUFFER VERY FULL
+[183872]: 3: got ACK from 12. RTT = 3381
+[183887]: 6: WARNING: BUFFER VERY FULL
+[183946]: 6: WARNING: BUFFER VERY FULL
+[183962]: 0: got ACK from 15. RTT = 774
+[183981]: 3: got ACK from 12. RTT = 2851
+[184013]: 6: WARNING: BUFFER VERY FULL
+[184087]: 6: WARNING: BUFFER VERY FULL
+[184094]: 3: got ACK from 12. RTT = 1917
+[184146]: 6: WARNING: BUFFER VERY FULL
+[184195]: 0: got ACK from 15. RTT = 1075
+[184205]: 6: WARNING: BUFFER VERY FULL
+[184263]: 3: got ACK from 12. RTT = 2382
+[184264]: 6: WARNING: BUFFER VERY FULL
+[184365]: 0: got ACK from 15. RTT = 908
+[184372]: 3: got ACK from 12. RTT = 2590
+[184481]: 3: got ACK from 12. RTT = 1843
+[184590]: 3: got ACK from 12. RTT = 3035
+[184592]: 0: got ACK from 15. RTT = 1310
+[184699]: 3: got ACK from 12. RTT = 3219
+[184701]: 0: got ACK from 15. RTT = 1268
+[184750]: 0: got ACK from 15. RTT = 1822
+[184868]: 3: got ACK from 12. RTT = 2391
+[184977]: 3: WARNING: BUFFER VERY FULL
+[184977]: 3: got ACK from 12. RTT = 3399
+[184981]: 0: got ACK from 15. RTT = 1126
+[185088]: 3: WARNING: BUFFER VERY FULL
+[185088]: 3: got ACK from 12. RTT = 3533
+[185197]: 3: got ACK from 12. RTT = 1834
+[185366]: 3: got ACK from 12. RTT = 2240
+[185390]: 0: got ACK from 15. RTT = 1261
+[185475]: 3: got ACK from 12. RTT = 3142
+[185584]: 3: got ACK from 12. RTT = 1968
+[185693]: 3: got ACK from 12. RTT = 2069
+[185862]: 3: got ACK from 12. RTT = 2240
+[185971]: 3: got ACK from 12. RTT = 1701
+[186084]: 3: got ACK from 12. RTT = 3160
+[186193]: 3: got ACK from 12. RTT = 2433
+[186335]: 0: got ACK from 15. RTT = 1103
+[186362]: 3: got ACK from 12. RTT = 3547
+[186471]: 3: got ACK from 12. RTT = 2658
+[186505]: 0: got ACK from 15. RTT = 1334
+[186675]: 0: got ACK from 15. RTT = 1181
+[186761]: 3: got ACK from 12. RTT = 2024
+[186785]: 0: got ACK from 15. RTT = 1023
+[186870]: 3: got ACK from 12. RTT = 2623
+[186894]: 0: got ACK from 15. RTT = 1748
+[186979]: 3: got ACK from 12. RTT = 1775
+[187066]: 0: got ACK from 15. RTT = 1098
+[187090]: 3: got ACK from 12. RTT = 2544
+[187115]: 0: got ACK from 15. RTT = 1450
+[187164]: 0: got ACK from 15. RTT = 1373
+[187199]: 3: got ACK from 12. RTT = 2760
+[187368]: 3: got ACK from 12. RTT = 2867
+[187477]: 3: got ACK from 12. RTT = 2866
+[187586]: 3: got ACK from 12. RTT = 1959
+[187695]: 3: got ACK from 12. RTT = 2360
+[187696]: 0: got ACK from 15. RTT = 1285
+[187864]: 3: got ACK from 12. RTT = 3032
+[187973]: 3: got ACK from 12. RTT = 3101
+[188086]: 3: got ACK from 12. RTT = 2093
+[188105]: 0: got ACK from 15. RTT = 1002
+[188195]: 3: got ACK from 12. RTT = 2360
+[188364]: 3: got ACK from 12. RTT = 3447
+[188393]: 0: got ACK from 15. RTT = 1440
+[188473]: 3: got ACK from 12. RTT = 2991
+[188582]: 3: got ACK from 12. RTT = 3175
+[188691]: 3: got ACK from 12. RTT = 2010
+[188745]: 0: got ACK from 15. RTT = 1222
+[188800]: 3: got ACK from 12. RTT = 3401
+[188969]: 3: got ACK from 12. RTT = 3557
+[189080]: 3: got ACK from 12. RTT = 3709
+[189189]: 3: got ACK from 12. RTT = 2710
+[189298]: 3: got ACK from 12. RTT = 3502
+[189332]: 0: got ACK from 15. RTT = 1055
+[189381]: 0: got ACK from 15. RTT = 1010
+[189467]: 3: got ACK from 12. RTT = 3290
+[189576]: 3: got ACK from 12. RTT = 2107
+[189685]: 3: got ACK from 12. RTT = 2710
+[189794]: 3: got ACK from 12. RTT = 2452
+[189963]: 3: got ACK from 12. RTT = 1950
+[190076]: 3: got ACK from 12. RTT = 4050
+[190101]: 0: got ACK from 15. RTT = 1320
+[190185]: 3: got ACK from 12. RTT = 3566
+[190294]: 3: got ACK from 12. RTT = 3000
+[190332]: 0: got ACK from 15. RTT = 1154
+[190463]: 3: got ACK from 12. RTT = 2866
+[190572]: 3: got ACK from 12. RTT = 1757
+[190681]: 3: got ACK from 12. RTT = 2051
+[190790]: 3: got ACK from 12. RTT = 3235
+[190899]: 3: got ACK from 12. RTT = 3778
+[191070]: 3: got ACK from 12. RTT = 2448
+[191107]: 0: got ACK from 15. RTT = 1301
+[191179]: 3: got ACK from 12. RTT = 3700
+[191288]: 3: got ACK from 12. RTT = 2908
+[191397]: 3: got ACK from 12. RTT = 2926
+[191566]: 3: got ACK from 12. RTT = 3332
+[191675]: 3: got ACK from 12. RTT = 1775
+[191755]: 0: got ACK from 15. RTT = 2173
+[191784]: 3: got ACK from 12. RTT = 2567
+[191893]: 3: got ACK from 12. RTT = 2475
+[192187]: 3: got ACK from 12. RTT = 3977
+[192296]: 3: got ACK from 12. RTT = 2403
+[192354]: 0: got ACK from 15. RTT = 1037
+[192465]: 3: got ACK from 12. RTT = 2200
+[192524]: 0: got ACK from 15. RTT = 1036
+[192574]: 3: got ACK from 12. RTT = 3692
+[192683]: 3: got ACK from 12. RTT = 2417
+[192694]: 0: got ACK from 15. RTT = 1149
+[192792]: 3: got ACK from 12. RTT = 1960
+[192925]: 0: got ACK from 15. RTT = 1251
+[192961]: 3: got ACK from 12. RTT = 3158
+[192974]: 0: got ACK from 15. RTT = 1476
+[193072]: 3: got ACK from 12. RTT = 4092
+[193085]: 0: got ACK from 15. RTT = 1333
+[193181]: 3: got ACK from 12. RTT = 3576
+[193195]: 0: got ACK from 15. RTT = 1357
+[193290]: 3: got ACK from 12. RTT = 3401
+[193580]: 3: got ACK from 12. RTT = 3624
+[193729]: 0: got ACK from 15. RTT = 970
+[193778]: 0: got ACK from 15. RTT = 2360
+[193868]: 3: got ACK from 12. RTT = 2267
+[193887]: 0: got ACK from 15. RTT = 2384
+[193977]: 3: got ACK from 12. RTT = 2083
+[194090]: 3: got ACK from 12. RTT = 2644
+[194380]: 3: got ACK from 12. RTT = 4059
+[194489]: 3: got ACK from 12. RTT = 2525
+[194547]: 0: got ACK from 15. RTT = 1289
+[194596]: 0: got ACK from 15. RTT = 1878
+[194598]: 3: got ACK from 12. RTT = 3842
+[194705]: 0: got ACK from 15. RTT = 1534
+[194767]: 3: got ACK from 12. RTT = 3842
+[194873]: 0: got ACK from 15. RTT = 1448
+[194876]: 3: got ACK from 12. RTT = 2282
+[194981]: 0: got ACK from 15. RTT = 1941
+[194985]: 3: got ACK from 12. RTT = 3768
+[195096]: 3: got ACK from 12. RTT = 1835
+[195386]: 3: got ACK from 12. RTT = 3977
+[195495]: 3: got ACK from 12. RTT = 2467
+[195664]: 3: got ACK from 12. RTT = 1799
+[195894]: 3: got ACK from 12. RTT = 3936
+[195987]: 0: got ACK from 15. RTT = 2577
+[196067]: 3: got ACK from 12. RTT = 2473
+[196159]: 0: got ACK from 15. RTT = 1540
+[196176]: 3: got ACK from 12. RTT = 3209
+[196285]: 3: got ACK from 12. RTT = 4452
+[196394]: 3: got ACK from 12. RTT = 2703
+[196682]: 3: got ACK from 12. RTT = 2133
+[196791]: 3: got ACK from 12. RTT = 3675
+[196928]: 0: got ACK from 15. RTT = 1935
+[197083]: 3: got ACK from 12. RTT = 2401
+[197192]: 3: got ACK from 12. RTT = 1959
+[197361]: 3: got ACK from 12. RTT = 3091
+[197470]: 3: got ACK from 12. RTT = 2217
+[197579]: 3: got ACK from 12. RTT = 3082
+[197586]: 0: got ACK from 15. RTT = 1809
+[197688]: 3: got ACK from 12. RTT = 3101
+[197756]: 0: got ACK from 15. RTT = 1457
+[197926]: 0: got ACK from 15. RTT = 1302
+[197975]: 0: got ACK from 15. RTT = 1271
+[197976]: 3: got ACK from 12. RTT = 4207
+[198088]: 0: got ACK from 15. RTT = 1266
+[198089]: 3: got ACK from 12. RTT = 2292
+[198198]: 3: got ACK from 12. RTT = 4653
+[198319]: 0: got ACK from 15. RTT = 1588
+[198367]: 3: got ACK from 12. RTT = 3024
+[198476]: 3: got ACK from 12. RTT = 3341
+[198489]: 0: got ACK from 15. RTT = 2150
+[198538]: 0: got ACK from 15. RTT = 1953
+[198585]: 3: got ACK from 12. RTT = 4644
+[198694]: 3: got ACK from 12. RTT = 2761
+[198708]: 0: got ACK from 15. RTT = 1601
+[198863]: 3: got ACK from 12. RTT = 4474
+[198972]: 3: got ACK from 12. RTT = 3392
+[199083]: 3: got ACK from 12. RTT = 1909
+[199119]: 0: got ACK from 15. RTT = 1437
+[199192]: 3: got ACK from 12. RTT = 3944
+[199361]: 3: got ACK from 12. RTT = 2024
+[199470]: 3: got ACK from 12. RTT = 3065
+[199579]: 3: got ACK from 12. RTT = 2660
+[199688]: 3: got ACK from 12. RTT = 3033
+[199797]: 3: got ACK from 12. RTT = 2061
+[199966]: 3: got ACK from 12. RTT = 2365

@@ -142,13 +142,15 @@ sendPacket(0, ROWS*COLS-1, 1, 'Hi', 0.2, true);   // 5 kHz, matches sim.js prima
 // Failure: disconnect node 7 at 11 ms
 // Node 7 lies on the BFS shortest path 0->1->2->3->7->11->15.
 // ------------------------------------------------------------------
+// Failure time [ms]; override with FAIL_MS=<ms> to sweep heartbeat phase.
+var FAIL_MS = parseFloat(process.env.FAIL_MS || '11');
 var failNode = 7;
 for (let p = 0; p < topology[failNode].length; p++) {
     var nb = topology[failNode][p];
     if (typeof nb === 'number' && nb >= 0 && topology[nb]) {
         var nbPort = topology[nb].indexOf(failNode);
         if (nbPort >= 0) {
-            disconnect(failNode, p, nb, nbPort, 11);
+            disconnect(failNode, p, nb, nbPort, FAIL_MS);
         }
     }
 }

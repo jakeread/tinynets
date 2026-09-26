@@ -13,19 +13,18 @@ const bitrateScale = parseFloat(process.argv[4] || '1.0');
 
 // ── Patch manager source with scaled constants ────────────────────────────────
 // Base values from hardware: D_process = 37 µs (measured, used in paper figures),
-// D_byte = 1.25 µs, L_br = 20 MHz.
+// D_byte = 1.5 µs, L_br = 20 MHz.
 const BASE_DPKT    = 0.037;
-const BASE_DBYTE   = 0.00125;
+const BASE_DBYTE   = 0.0015;
 const BASE_BITRATE = 20e3;
 
+process.env.D_PKT_US    = String(BASE_DPKT    * dpktScale    * 1e3);
+process.env.D_BYTE_US   = String(BASE_DBYTE   * dbyteScale   * 1e3);
+process.env.BITRATE_MHZ = String(BASE_BITRATE * bitrateScale / 1e3);
 let managerSrc = fs.readFileSync(path.join(__dirname, 'manager.js'), 'utf8');
-managerSrc = managerSrc
-    .replace('const D_PKT = .030*syrup',    `const D_PKT = ${BASE_DPKT    * dpktScale}*syrup`)
-    .replace('const D_BYTE = .00125*syrup', `const D_BYTE = ${BASE_DBYTE  * dbyteScale}*syrup`)
-    .replace('const BITRATE = 20e3/syrup',  `const BITRATE = ${BASE_BITRATE * bitrateScale}/syrup`);
 
 // Evaluate manager source in global context so Manager() is available to network.js
-const ctx = Object.assign({}, global, { module: { exports: {} }, require, __dirname, __filename });
+const ctx = Object.assign({}, global, { module: { exports: {} }, require, process, __dirname, __filename });
 vm.createContext(ctx);
 vm.runInContext(managerSrc, ctx);
 const Manager = ctx.Manager;

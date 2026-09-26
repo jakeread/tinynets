@@ -42,27 +42,27 @@ We facilitate message transmission diagonally across the grid and record the rou
 \subsection{Simulation Sensitivity Analysis}
 \label{sec:sensitivity}
 
-To bound the effect of hardware timing uncertainty on the reported variance results, we conducted a one-at-a-time sensitivity analysis, independently perturbing each of the three calibrated parameters---$\mathrm{D}_{\mathrm{process}}$, $\mathrm{D}_{\mathrm{byte}}$, and $\mathrm{L}_{\mathrm{br}}$---by $\pm30\%$ from their hardware-measured values and re-running the 10-kHz cross-traffic scenario on the 4$\times$4 grid.
+To bound the effect of hardware timing uncertainty on the reported variance results, we conducted a one-at-a-time sensitivity analysis, independently perturbing each of the three calibrated parameters---$\mathrm{D}_{\mathrm{process}}$, $\mathrm{D}_{\mathrm{byte}}$, and $\mathrm{L}_{\mathrm{br}}$---by $\pm30\%$ from their hardware-measured values and re-running the 10-kHz cross-traffic scenario on the 4$\times$4 grid. \textcolor{red}{Each configuration uses the same steady-state method as the grid evaluation of Fig.~\ref{fig:hists-cross}.}
 
 \begin{table}[h]
 	\centering
-	\caption{Sensitivity of per-hop RTT mean and standard deviation to $\pm30\%$ perturbation of hardware timing parameters. Baseline: $\mathrm{D}_{\mathrm{process}} = 37\,\mu\mathrm{s}$, $\mathrm{D}_{\mathrm{byte}} = 1.25\,\mu\mathrm{s}$, $\mathrm{L}_{\mathrm{br}} = 20\,\mathrm{MHz}$.}
+	\caption{Sensitivity of per-hop RTT mean and standard deviation to $\pm30\%$ perturbation of hardware timing parameters. Baseline: $\mathrm{D}_{\mathrm{process}} = 37\,\mu\mathrm{s}$, \textcolor{red}{$\mathrm{D}_{\mathrm{byte}} = 1.5\,\mu\mathrm{s}$}, $\mathrm{L}_{\mathrm{br}} = 20\,\mathrm{MHz}$. \textcolor{red}{Statistics are taken in steady state ($t \geq 50\,\mathrm{ms}$ of a 200~ms simulation). ``Unstable'': RTT grows without bound.}}
 	\label{tab:sensitivity}
 	\begin{tabular}{||l|r|r||}
 		\hline
 		Configuration & Mean ($\mu$s) & $\sigma$ ($\mu$s) \\\hline\hline
-		Baseline & 188 & 87 \\
-		$\mathrm{D}_{\mathrm{process}} -30\%$ & 53 & 20 \\
-		$\mathrm{D}_{\mathrm{process}} +30\%$ & 887 & 392 \\
-		$\mathrm{D}_{\mathrm{byte}} -30\%$ & 138 & 56 \\
-		$\mathrm{D}_{\mathrm{byte}} +30\%$ & 253 & 98 \\
-		$\mathrm{L}_{\mathrm{br}} -30\%$ & 228 & 90 \\
-		$\mathrm{L}_{\mathrm{br}} +30\%$ & 217 & 96 \\
+		Baseline & \textcolor{red}{104} & \textcolor{red}{25} \\
+		$\mathrm{D}_{\mathrm{process}} -30\%$ & \textcolor{red}{55} & \textcolor{red}{7} \\
+		$\mathrm{D}_{\mathrm{process}} +30\%$ & \multicolumn{2}{c||}{\textcolor{red}{unstable}} \\
+		$\mathrm{D}_{\mathrm{byte}} -30\%$ & \textcolor{red}{133} & \textcolor{red}{34} \\
+		$\mathrm{D}_{\mathrm{byte}} +30\%$ & \textcolor{red}{126} & \textcolor{red}{27} \\
+		$\mathrm{L}_{\mathrm{br}} -30\%$ & \textcolor{red}{140} & \textcolor{red}{41} \\
+		$\mathrm{L}_{\mathrm{br}} +30\%$ & \textcolor{red}{105} & \textcolor{red}{25} \\
 		\hline
 	\end{tabular}
 \end{table}
 
-Bitrate uncertainty has the least influence: a $\pm30\%$ change in $\mathrm{L}_{\mathrm{br}}$ produces at most an 11\% change in $\sigma$. Per-byte interrupt time has moderate influence ($\sigma$ changes $-36\%$ to $+13\%$). Processing delay has the strongest influence: a $+30\%$ perturbation drives the network toward saturation at this traffic level, indicating operation near the processing-capacity boundary.
+\textcolor{red}{Bitrate and per-byte interrupt time have a substantial but non-monotonic influence: a $\pm30\%$ change in $\mathrm{L}_{\mathrm{br}}$ changes $\sigma$ by $-1\%$ to $+66\%$, and a $\pm30\%$ change in $\mathrm{D}_{\mathrm{byte}}$ by $+9\%$ to $+38\%$. The non-monotonic response reflects TinyNet's load-dependent path choices, which change as timing shifts. Processing delay has the strongest influence: a $-30\%$ perturbation reduces $\sigma$ by 72\%, and a $+30\%$ perturbation pushes the network past its capacity at this traffic level, so that queues grow without bound. The 10~kHz scenario therefore operates close to the processing-capacity boundary (see also Section~\ref{sec:capacity}).}
 
 $\mathrm{D}_{\mathrm{process}}$ is validated by two independent methods: direct logic-analyzer measurement ($37\,\mu\mathrm{s}$) and analytical derivation from the MCU's interrupt service routine (450~cycles $\div$ 300~MHz per-byte, with the forwarding path executing a deterministic instruction sequence). The 1.2\% RTT match at the hardware calibration point confirms this value, bounding the practical uncertainty in $\mathrm{D}_{\mathrm{process}}$ to well under 30\%. The parameters for which the analysis shows benign sensitivity, $\mathrm{D}_{\mathrm{byte}}$ and $\mathrm{L}_{\mathrm{br}}$, are less tightly constrained by independent measurement but do not materially affect the reported results within their plausible uncertainty ranges.
 
@@ -73,62 +73,128 @@ A crucial measure of TinyNet's effectiveness is communication time determinism, 
 \begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/pdf_grid_cross.png}
-    \caption{Per-packet RTT histograms ($x$-axis in $\mu$s) in a 4$\times$4 grid, simulated over 30~ms. Main flow: 5~kHz from node~0 to node~15. Cross-traffic on the opposite diagonal (node~3 to node~12) at 5~kHz (top), 10~kHz (middle), and 13~kHz (bottom). Standard deviations: $\sigma = 4$, 85, and $140\,\mu\mathrm{s}$, respectively.}
+    \caption{\textcolor{red}{Per-hop RTT histograms ($x$-axis in $\mu$s) in a 4$\times$4 grid in steady state ($t \geq 50\,\mathrm{ms}$ of a 200~ms simulation). Main flow: 5~kHz from node~0 to node~15. Cross-traffic on the opposite diagonal (node~3 to node~12) at 5~kHz (top) and 10~kHz (bottom). At 13~kHz cross-traffic the network exceeds its capacity and RTT grows without bound, so no steady-state distribution exists (Section~\ref{sec:capacity}).}}
     \label{fig:hists-cross}
 \end{figure}
-We begin by simulating a 4-by-4 grid of nodes, with each node having a packet delay time of $37 \mu \mathrm{s}$ (the hardware-measured $\mathrm{D}_{\mathrm{process}}$) and each link operating at a bitrate of 20 MHz. We transmit crucial messages diagonally across the grid at 5 kHz for 30 ms. Simultaneously, we model varying levels of cross-traffic on the opposite diagonal: 5 kHz, 10 kHz, and 13 kHz in separate simulations. The resulting histograms of per-packet round trip times are shown in Fig.~\ref{fig:hists-cross}, with standard deviations of $4 \mu \mathrm{s}$, $85 \mu \mathrm{s}$, and $140 \mu \mathrm{s}$ for each traffic scenario, respectively.
+We begin by simulating a 4-by-4 grid of nodes, with each node having a packet delay time of $37 \mu \mathrm{s}$ (the hardware-measured $\mathrm{D}_{\mathrm{process}}$) and each link operating at a bitrate of 20 MHz. \textcolor{red}{We transmit crucial messages diagonally across the grid at 5 kHz while cross-traffic runs on the opposite diagonal at 5, 10, or 13 kHz in separate simulations. Each simulation runs for 200~ms after a warm-up exchange, and all statistics are taken from $t \geq 50\,\mathrm{ms}$ so that they describe steady-state behavior rather than the start-up transient. The resulting per-hop RTT histograms are shown in Fig.~\ref{fig:hists-cross}. With 5~kHz cross-traffic, the mean per-hop RTT is $60\,\mu\mathrm{s}$ with $\sigma = 7\,\mu\mathrm{s}$; with 10~kHz cross-traffic, the mean is $104\,\mu\mathrm{s}$ with $\sigma = 25\,\mu\mathrm{s}$. With 13~kHz cross-traffic, queues grow throughout the simulation, the mean RTT roughly triples between the first and last 50~ms of the analysis window, and no stable distribution exists.}
 
 \subsubsection{Evaluation in a Simulated Airplane Wing Network}
 \begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/pdf_RTT.png}
-    \caption{Per-hop RTT histograms ($x$-axis in $\mu$s) in a simulated airplane wing topology: one master node, three controllers, 24 motors, and 24 encoders, simulated over 30~ms. Standard deviations: master--encoder queries $\sigma = 15\,\mu\mathrm{s}$, controller--motor loops $\sigma = 45\,\mu\mathrm{s}$, motor--encoder loops $\sigma = 7\,\mu\mathrm{s}$.}
+    \caption{\textcolor{red}{Per-hop RTT histograms ($x$-axis in $\mu$s) in a simulated airplane wing topology (one master node, three controllers, eight motors, and eight encoders) in steady state ($t \geq 50\,\mathrm{ms}$ of a 200~ms simulation), with traffic at 20\% of the nominal rates: master--encoder queries (left), controller--motor loops (center), and motor--encoder loops (right).}}
     \label{fig:hists-airplane}
 \end{figure}
-In addition, we assess determinism within a simulated airplane wing network, structured into four layers: a single master node on top, three controllers in the second layer, each connected to eight motors in the third layer, and each motor linked to two neighboring motors and an encoder in the fourth layer. Under the same hardware parameters as the grid, the motors maintain a 2.5-kHz control loop with their encoders, the controllers manage a 1-kHz loop with each motor, and the master node queries each encoder at 500 Hz. This simulation, conducted over 30 ms, reveals per-hop round trip times as illustrated in Fig.~\ref{fig:hists-airplane}, with a standard deviation of $15 \mu \mathrm{s}$ for master-encoder queries, $45 \mu \mathrm{s}$ for controller-motor loops, and $7 \mu \mathrm{s}$ for motor-encoder loops.
+In addition, we assess determinism within a simulated airplane wing network, structured into four layers: a single master node on top, three controllers in the second layer, \textcolor{red}{each connected to the master and to all eight motors} in the third layer, and each motor linked to \textcolor{red}{its neighboring motors} and an encoder in the fourth layer. \textcolor{red}{The nominal traffic has each motor running a 2.5~kHz control loop with its encoder, each controller running a 1~kHz loop with every motor, and the master querying each encoder at 500~Hz. Under the same hardware parameters as the grid, this nominal traffic exceeds the network's capacity: the controllers, which carry every controller--motor loop and all master traffic, overflow their buffers, and at the nominal rates fewer than 5\% of controller--motor packets are delivered. Scaling all rates together, the network is stable up to about 30\% of the nominal rates and saturates above that. We therefore evaluate it at 20\% of the nominal rates (500~Hz motor--encoder, 200~Hz controller--motor, and 100~Hz master--encoder), where it is stable with margin and delivers every packet. Using the steady-state method of the grid evaluation, the per-hop RTTs in Fig.~\ref{fig:hists-airplane} have a standard deviation of $29\,\mu\mathrm{s}$ for master--encoder queries, $66\,\mu\mathrm{s}$ for controller--motor loops, and under $1\,\mu\mathrm{s}$ for motor--encoder loops. Supporting the nominal rates would require either faster nodes or a topology that spreads controller traffic across more links.}
 
 These results highlight two key outcomes:
 \begin{itemize}
-    \item \textbf{Impact of Network Traffic on Determinism:} An increase in network traffic tends to reduce network determinism. As the number of packets traversing the network grows, so does the buffer depth at individual nodes, leading to increased message latency and variability in latency. This relationship is compounded by path length: networks with more routing hops expose each packet to more opportunities for queuing, so determinism degrades faster per unit of added traffic in larger networks. This is consistent with the airplane wing results, where the short motor-encoder paths (few hops) achieve $\sigma = 7\,\mu\mathrm{s}$ while the longer master-encoder paths (many hops) exhibit $\sigma = 15\,\mu\mathrm{s}$ under similar per-link traffic loads.
-    \item \textbf{TinyNet's Adaptability:} Despite the challenges of heavy cross-traffic, TinyNet maintains a high level of message determinism. Its dynamic adaptation to changing traffic conditions across different network areas effectively distributes the load among numerous nodes. This approach not only reduces message delivery time but also helps in consistently maintaining low latency levels.
+    \item \textbf{Impact of Network Traffic on Determinism:} An increase in network traffic tends to reduce network determinism. As the number of packets traversing the network grows, so does the buffer depth at individual nodes, leading to increased message latency and variability in latency. This relationship is compounded by path length: networks with more routing hops expose each packet to more opportunities for queuing, so determinism degrades faster per unit of added traffic in larger networks. \textcolor{red}{This is consistent with the airplane wing results, where the single-hop motor--encoder loops achieve $\sigma < 1\,\mu\mathrm{s}$ while the multi-hop master--encoder and controller--motor paths, which cross the heavily loaded controllers, exhibit $\sigma = 29$ and $66\,\mu\mathrm{s}$.}
+    \item \textbf{TinyNet's Adaptability:} \textcolor{red}{Up to its capacity, TinyNet keeps per-hop RTT bounded under cross-traffic by distributing load across paths; beyond it, as with 13~kHz cross-traffic in the grid, queues grow without bound. Section~\ref{sec:capacity} places this limit relative to single-path routing.}
 \end{itemize}
+
+{\color{red}
+\subsection{Stateful Routing Baseline}
+\label{sec:comparison}
+}
+To directly address the question of how TinyNet compares against stateful routing, we implemented a shortest-path baseline in our JavaScript simulator. The baseline pre-computes BFS shortest paths at startup and routes each packet along the single lowest-hop-count path, with no multipath. \textcolor{red}{Where several shortest paths exist, BFS takes the first in port order, which does not consider the traffic. We therefore also evaluate the baseline with \emph{planned routes}: for the traffic pattern of Section~\ref{sec:capacity}, we searched every combination of shortest paths for the four flow legs (two data flows and their acknowledgements) and selected the one that minimizes the peak processing load on any node. Planned routes represent a stateful network engineered in advance for known traffic.} \textcolor{red}{All comparisons use the same topology, traffic, timing parameters, and failure schedules for both protocols.}
+
+\textcolor{red}{Failure handling in the baseline models Loop-Free Alternate (LFA) fast reroute~\cite{rfc5286,cisco_lfa} with Bidirectional Forwarding Detection (BFD)~\cite{rfc5880}. BFD detection time is the negotiated transmit interval multiplied by the detect multiplier, and vendor-documented lower limits on both vary widely. The most aggressive configuration we found documented is hardware-offloaded BFD at a 3.3\,ms interval with a multiplier of 3 ($\approx\!10\,\mathrm{ms}$ detection), for which the vendor states a total convergence of under 50\,ms~\cite{cisco_ncs4200_bfd}. More common limits are far longer: a 50\,ms minimum interval with a minimum multiplier of 3~\cite{arista_bfd}, or recommended minimums of 100--300\,ms with a multiplier of 3~\cite{juniper_bfd}.} \textcolor{red}{We use two failure models. The \emph{cutover-window} model (Section~\ref{sec:robustness:single}) drops all packets on the failed path for a window $T_{\mathrm{LFA}}$ and then resumes on recomputed shortest paths, as if an alternate always existed. The \emph{coverage-aware} model (Section~\ref{sec:robustness:multi}) is more realistic: until BFD detects the failure 10\,ms after it occurs, neighbors keep forwarding into the dead links; at detection, each neighbor of a failed node switches affected destinations to an RFC~5286 alternate computed on the pre-failure topology (node-protecting where one exists, otherwise link-protecting), or drops them if no alternate exists; and all nodes recompute routes on the post-failure topology after an IGP reconvergence time of 200\,ms, the OSPF reconvergence figure cited in Section~\ref{sec:related:frr}. A 64-hop time-to-live discards packets caught in transient loops.} We compare against LFA rather than RPL because LFA represents the fastest-recovering class of stateful protocols in production use; RPL's DODAG repair mechanism targets energy-constrained wireless links and operates on a fundamentally different latency regime not directly applicable to UART-connected NCS (see Section~\ref{sec:related:mesh}).
+
+{\color{red}
+\subsection{Traffic Capacity}
+\label{sec:capacity}
+\begin{figure*}[th]
+    \centering
+    \includegraphics[width=\textwidth]{figures/comparison_capacity.png}
+    \caption{Delivery ratio (left) and mean per-hop RTT (right, log scale) on the 4$\times$4 grid versus offered load, as a multiple of a 5~kHz main flow (node~0 to node~15) plus 10~kHz cross-traffic (node~3 to node~12): TinyNet (blue circles), single-path routing with the default BFS tie-break (orange squares), and single-path routing with routes planned for this traffic (aqua triangles). Each point is a 200~ms simulation; statistics use $t \geq 50\,\mathrm{ms}$.}
+    \label{fig:comparison-capacity}
+\end{figure*}
+}
+\textcolor{red}{A comparison of RTT variability between protocols is meaningful only at loads where both are stable. We therefore compare capacity: the highest offered load at which a configuration delivers at least 99\% of packets and its mean RTT drifts by less than 20\% between the first and last 50~ms of the analysis window. Fig.~\ref{fig:comparison-capacity} shows delivery ratio and mean per-hop RTT as the load is scaled from 0.5 to 1.3 times the 5\,kHz plus 10\,kHz traffic of Fig.~\ref{fig:hists-cross}.}
+
+\textcolor{red}{Single-path routing with the default tie-break is stable only up to 0.6 times this load. BFS sends both flows and their acknowledgements through the same column of nodes, overloading them; at 1.0 times the load, the baseline delivers 47\% of packets with a mean per-hop RTT of 3.6\,ms. By an analytic estimate of per-node processing load, 79\% of all combinations of shortest paths for this traffic overload at least one node, so this outcome is typical of single-path routing that does not account for the traffic. TinyNet is stable up to 1.15 times the load, about 1.9 times the capacity of the default single-path baseline, without any knowledge of the traffic. Single-path routing with planned routes is stable up to 1.0 times the load, comparable to TinyNet; we do not claim a difference between the two, because in both cases the busiest node is a flow endpoint, which no routing choice can relieve, and the remaining gap is within what small differences between the two simulator implementations could produce.}
+
+\textcolor{red}{Below saturation, planned single-path routes deliver lower and more consistent per-hop RTT than TinyNet (e.g., $50 \pm 0\,\mu\mathrm{s}$ versus $104 \pm 25\,\mu\mathrm{s}$ at 1.0 times the load), because periodic traffic on non-conflicting paths never queues, while TinyNet's cost function spreads packets over paths of varying length and occupancy. TinyNet's advantage is therefore not lower jitter than a network engineered for known traffic. It is that TinyNet reaches the capacity of such a network without planning, whereas single-path routing that is not planned for the traffic usually collapses well below it.}
 
 \subsection{Robustness to Node Failure}
 \label{sec:robustness}
-\begin{figure}[th]
-    \centering
-    \includegraphics[width=\linewidth]{figures/node_failure_recovery.png}
-    \caption{Per-packet RTT ($y$-axis in $\mu$s, $x$-axis in ms over 0--30~ms window) in the 4$\times$4 grid before and after random interior node removal at $t=11\,\mathrm{ms}$. Colors denote failure count: 1~node (blue), 2~nodes (orange), 3~nodes (green), 4~nodes (red). Recovery times (RTT returning to within $2\times$ pre-failure mean): 1.3~ms, 1.9~ms, and 3.9~ms for 1, 2, and 3 node failures, respectively. Four-node removal (25\%) did not converge within the simulation window.}
-    \label{fig:failure}
-\end{figure}
-Robustness to node failure is the second crucial dimension of TinyNet's performance, focusing on the network's ability to rapidly respond to and recover from node failures. For assessing this essential aspect, we conducted simulations on a 4-by-4 grid of nodes, using the same hardware parameters as in our message determinism evaluation. In these simulations, corner nodes sent messages diagonally across the grid at frequencies of 10 kHz and 5 kHz. At 11 milliseconds into the simulation, we randomly disconnected one, two, three, or four nodes simultaneously (chosen uniformly at random from the interior nodes of the grid), then observed and recorded the subsequent message delay times. Each failure-count condition was repeated across multiple independent trials with different randomly selected node sets, and the reported recovery times represent the average across those trials. Recovery is defined as the point at which the per-packet delay returns to within $2\times$ of its pre-failure mean. The findings, depicted in Fig.~\ref{fig:failure}, show per-packet delay over time with the failure event at $t = 11\,\mathrm{ms}$. After a single node failure, the network recovered in 1.3 ms; after two failures, in 1.9 ms; and after three failures, in 3.9 ms.
-
-Key observations from these results include:
-\begin{itemize}
-    \item \textbf{Rapid Recovery from Failures:} TinyNet recovers from node failures within 1.3--3.9~ms. Even with approximately 19\% of the network (3 of 16 nodes) failing simultaneously, TinyNet maintains round trip times effectively. By contrast, the stateful LFA baseline drops approximately 250 packets during the 50~ms BFD cutover window before routing resumes (see Section~\ref{sec:comparison}).
-    \item \textbf{Impact of Multiple Node Failures:} The loss of a single node does not significantly affect long-term communication. However, multiple node failures can adversely affect both message latency and network determinism. This outcome is predictable as TinyNet's load-balancing capabilities are most effective when there are sufficient alternative nodes for message rerouting.
-    \item \textbf{Capacity for Message Maintenance in Failures:} TinyNet sustains message transmission even under substantial network failures. In contrast to spanning-tree protocols, which lose connectivity to entire sub-trees on a single node failure~\cite{spb}, TinyNet reroutes around failed nodes by flooding. However, recovery did not converge within the simulation window at a 25\% failure rate (4 of 16 nodes simultaneously), indicating that sufficient path redundancy is a prerequisite for TinyNet's rerouting to succeed.
-\end{itemize}
-
-\subsection{Comparison Against a Stateful Routing Baseline}
-\label{sec:comparison}
-\begin{figure}[th]
-    \centering
-    \includegraphics[width=\linewidth]{figures/comparison_cross.png}
-    \caption{Per-hop RTT histograms ($x$-axis in $\mu$s) under 10~kHz cross-traffic on the 4$\times$4 grid: TinyNet (left, $\sigma = 85\,\mu\mathrm{s}$) versus stateful shortest-path baseline (right, $\sigma = 139\,\mu\mathrm{s}$), a 39\% reduction in variability.}
-    \label{fig:comparison-cross}
-\end{figure}
+{\color{red}
+\subsubsection{Single Failure and Failure Detection}
+\label{sec:robustness:single}
+}
 \begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/comparison_failure.png}
-    \caption{Cumulative packets delivered ($y$-axis, 0--30~ms window on $x$-axis) following a single interior node failure at $t=11\,\mathrm{ms}$: TinyNet (blue) versus LFA-style stateful baseline (red). Both lines overlap before the failure. TinyNet misses fewer than 20 packets and recovers in $\approx\!3\,\mathrm{ms}$; the baseline's 50~ms flat segment (packets dropped during BFD detection and LFA cutover) represents $\approx\!250$ undelivered packets.}
+    \caption{\textcolor{red}{Cumulative packets delivered ($y$-axis; $x$-axis in ms) for a 5~kHz corner-to-corner flow following a single interior node failure at $t=11.0\,\mathrm{ms}$: TinyNet (blue) versus the cutover-window LFA baseline with $T_{\mathrm{LFA}}$ = 3, 10, and 50~ms (red, light to dark). All lines overlap before the failure. The failure time was chosen so that TinyNet's blackout (3.7~ms) is closest to its mean over 20 failure times. TinyNet's curve nearly coincides with that of the hypothetical 3~ms LFA. See Table~\ref{tab:lfa-sweep}.}}
     \label{fig:comparison-failure}
 \end{figure}
+\textcolor{red}{We first isolate the effect of failure detection with the cutover-window model, a single failure of node~7 (on the baseline's shortest path), and a 5\,kHz corner-to-corner flow with no cross-traffic. We evaluate four values of $T_{\mathrm{LFA}}$: (i) 10\,ms, the detection time alone of the fastest documented BFD configuration, which ignores switchover time and is thus a best case for LFA; (ii) 50\,ms, the vendor-stated convergence bound for that configuration; (iii) 150\,ms, the detection time of the 50\,ms~$\times$~3 minimum configuration; and (iv) a hypothetical 3\,ms, below any documented BFD configuration, chosen to match the detection budget of TinyNet's own heartbeat mechanism (1\,ms heartbeat period, 2\,ms liveness check). In this scenario RFC~5286 provides a node-protecting alternate on both the forward and return paths, so the model's assumption that an alternate exists holds.}
 
-To directly address the question of how TinyNet compares against stateful routing, we implemented a shortest-path baseline in our JavaScript simulator. The baseline pre-computes BFS shortest paths at startup and routes each packet along the single lowest-hop-count path, with no multipath. On link failure, it drops all packets destined for affected nodes for 50\,ms, the typical BFD detection plus LFA switchover window \cite{rfc5286,cisco_lfa} and the current best-case for stateful IP Fast Reroute (see Section~\ref{sec:related:frr}), before recomputing routes. We compare against LFA rather than RPL because LFA represents the fastest-recovering class of stateful protocols in production use; RPL's DODAG repair mechanism targets energy-constrained wireless links and operates on a fundamentally different latency regime not directly applicable to UART-connected NCS (see Section~\ref{sec:related:mesh}).
+\textcolor{red}{Because TinyNet detects failures with a periodic liveness check, its blackout depends on when the failure occurs relative to that check. We therefore repeated the TinyNet run with the failure injected at 20 times spaced 0.1\,ms apart across one 2\,ms check period. Table~\ref{tab:lfa-sweep} reports the blackout and the number of packets lost. TinyNet's blackout averaged 3.7\,ms (range 2.7--4.7\,ms), with an average of 14 packets lost (range 10--19). Against the best-case documented LFA configuration ($T_{\mathrm{LFA}} = 10\,\mathrm{ms}$), TinyNet's blackout is about one third as long and it loses between a third and a quarter as many packets; against the vendor-stated convergence bound (50\,ms), it loses about one eighteenth as many.}
 
-\subsubsection{RTT Determinism Under Cross-Traffic}
-Fig.~\ref{fig:comparison-cross} shows per-hop RTT histograms under 10 kHz cross-traffic for both protocols on the same 4-by-4 grid. TinyNet achieves a standard deviation of $85\,\mu\mathrm{s}$, compared to $139\,\mu\mathrm{s}$ for the stateful baseline, a $39\%$ reduction in variability. The improvement stems from TinyNet's cost function actively redistributing packets across multiple paths in response to buffer occupancy, whereas the stateful baseline funnels all traffic through a single fixed path, allowing congestion to build without relief.
+{\color{red}
+\begin{table}[th]
+    \centering
+    \caption{Single-node-failure blackout (longest post-failure gap between deliveries) and packets lost for the 5\,kHz corner-to-corner flow. A packet is lost if its acknowledgement never returns. TinyNet values are the mean (range) over 20 failure times spanning one liveness-check period. LFA blackouts do not depend on failure time in the cutover-window model and exceed $T_{\mathrm{LFA}}$ by the 0.4\,ms in-flight time of the lost packets.}
+    \label{tab:lfa-sweep}
+    \begin{tabular}{lrr}
+        \hline
+        Protocol & Blackout (ms) & Packets lost \\
+        \hline
+        TinyNet & 3.7 (2.7--4.7) & 14 (10--19) \\
+        LFA, $T_{\mathrm{LFA}} = 3$\,ms (hypothetical) & 3.4 & 14 \\
+        LFA, $T_{\mathrm{LFA}} = 10$\,ms (3.3\,ms $\times$ 3 BFD) & 10.4 & 49 \\
+        LFA, $T_{\mathrm{LFA}} = 50$\,ms (stated convergence) & 50.4 & 249 \\
+        LFA, $T_{\mathrm{LFA}} = 150$\,ms (50\,ms $\times$ 3 BFD) & 150.4 & 749 \\
+        \hline
+    \end{tabular}
+\end{table}
+}
 
-\subsubsection{Failure Recovery}
-Fig.~\ref{fig:comparison-failure} shows cumulative packets delivered following a single node failure at $t=11\,\mathrm{ms}$. Before the failure, both protocols deliver at the same rate; the lines overlap. After the failure, TinyNet recovers in approximately 3\,ms as packets immediately flood to alternate paths, missing fewer than 20 packets in total. (The 1.3\,ms single-failure figure reported in Section~\ref{sec:robustness} is measured by a different metric: per-packet RTT returning to within $2\times$ of its pre-failure mean under dual diagonal traffic at 10\,kHz plus 5\,kHz; the 3\,ms figure here is read from the cumulative delivery curve under 5\,kHz single-diagonal traffic and therefore reflects a different saturation point.) The stateful baseline's cumulative count is flat for 50\,ms, the LFA detection and cutover window \cite{rfc5286,cisco_lfa}, before routing resumes. This 50\,ms flat segment is the expected, designed behavior of LFA: during BFD timeout, packets destined for the failed path are dropped, and the baseline does not resume delivery until the cutover completes. This flat segment represents approximately 250 undelivered packets. This more-than-order-of-magnitude difference in recovery time (3\,ms vs.\ 50\,ms) reflects the fundamental asymmetry between TinyNet's data-driven reroute and LFA's pre-computed backup activation: TinyNet's first post-failure packet triggers flooding immediately, while LFA must wait for BFD to time out before switching to its pre-installed alternate.
+\textcolor{red}{The hypothetical 3\,ms configuration shows where this advantage comes from. When LFA is given the same detection budget as TinyNet, its blackout and packet loss match TinyNet's average. For a single failure, then, TinyNet's recovery time is set by its link-local detection latency, not by any inherent speed advantage of flooding over pre-computed alternates. TinyNet's practical advantage is that its heartbeat runs on every link at a rate that BFD implementations do not document, and that it needs no per-destination state, no pre-computed alternates, and no alternate coverage.}
+
+{\color{red}
+\subsubsection{Multiple Simultaneous Failures}
+\label{sec:robustness:multi}
+\begin{figure}[th]
+    \centering
+    \includegraphics[width=\linewidth]{figures/failure_multi.png}
+    \caption{Packets lost per flow (plus one, log scale) after 1--4 simultaneous random node failures on the 4$\times$4 grid with a 3~kHz main flow and 6~kHz cross-traffic: TinyNet (blue circles) versus the coverage-aware LFA baseline with 10~ms BFD detection and 200~ms IGP reconvergence (orange squares). Each point is one flow in one of 30 trials per failure count; bars mark medians. Flows whose endpoints are disconnected by the failures are excluded.}
+    \label{fig:failure-multi}
+\end{figure}
+}
+\textcolor{red}{To evaluate recovery from multiple failures without relying on an assumed alternate, we compared TinyNet with the coverage-aware LFA baseline in an experiment whose design and analysis were fixed before it was run. Both flows run at 0.6 times the load of Section~\ref{sec:capacity} (3\,kHz main flow, 6\,kHz cross-traffic), the highest load in that sweep at which every configuration is stable before any failure, so that failure recovery is not confounded with overload. For each of $k = 1, 2, 3, 4$ simultaneous failures, we ran 30 trials, each failing $k$ nodes drawn uniformly without replacement from the 12 nodes that are not flow endpoints, at a time drawn uniformly across one 2\,ms liveness-check period. Both protocols saw identical trials. A packet counts as lost if no acknowledgement for it returns by any path. A flow whose endpoints are disconnected by the failures is excluded for both protocols (9 of 60 flows for $k = 3$ and 18 of 60 for $k = 4$), and a flow counts as recovered if at least 95\% of the packets it sends in the last 50\,ms of the run are delivered. Fig.~\ref{fig:failure-multi} and Table~\ref{tab:failure-multi} summarize the results.}
+
+{\color{red}
+\begin{table}[th]
+    \centering
+    \caption{Packets lost and blackout per flow after $k$ simultaneous node failures: median [interquartile range], and the number of flows that did not recover, for TinyNet and the coverage-aware LFA baseline (10\,ms BFD detection, 200\,ms IGP reconvergence). Flows: 60 for $k \le 2$, 51 for $k = 3$, 42 for $k = 4$.}
+    \label{tab:failure-multi}
+    \begin{tabular}{llrrr}
+        \hline
+        $k$ & Protocol & Packets lost & Blackout (ms) & Not recovered \\
+        \hline
+        1 & TinyNet & 3 [0--8] & 1.2 [0.5--2.7] & 0 \\
+          & LFA     & 0 [0--599] & 0.5 [0.3--200.3] & 0 \\
+        2 & TinyNet & 9 [0--17] & 3.3 [0.6--4.3] & 0 \\
+          & LFA     & 598 [22--1197] & 200.3 [7.8--200.5] & 0 \\
+        3 & TinyNet & 10 [3--15] & 3.4 [1.9--4.4] & 0 \\
+          & LFA     & 599 [29--1197] & 200.3 [10.3--200.6] & 0 \\
+        4 & TinyNet & 13 [7--21] & 3.9 [3.2--5.4] & 1 \\
+          & LFA     & 599 [30--1197] & 200.4 [10.8--200.6] & 0 \\
+        \hline
+    \end{tabular}
+\end{table}
+}
+
+\textcolor{red}{With a single failure, LFA often loses nothing: when the failed node is off a flow's path, or an RFC~5286 alternate covers it, delivery continues. In 18 of the 60 single-failure flows, however, no usable alternate existed, and the flow was dark until IGP reconvergence, losing up to 1{,}199 packets; TinyNet lost at most 19 packets in any single-failure flow. With two or more failures, the median LFA flow waits for reconvergence (about 600 packets lost for the 3\,kHz flow and 1{,}200 for the 6\,kHz flow), whereas TinyNet's median loss stays between 9 and 13 packets with a median blackout of 3--4\,ms. Comparing the same flow in the same trial, TinyNet lost fewer packets than LFA in 47\%, 75\%, 76\%, and 88\% of flows for $k = 1$ to 4, and more packets in 10\%, 7\%, 2\%, and 7\%. The LFA baseline's losses scale with the assumed 200\,ms reconvergence time; a faster-converging IGP would shrink, but not remove, this gap.}
+
+\textcolor{red}{TinyNet failed to recover in 1 of the 213 flows, with four failures. In that trial, the failures isolated the destination of the other flow, whose source continued to send. Because TinyNet floods packets for which it has no route, these packets repeatedly flooded the surviving network, filled buffers, and degraded the flow that remained deliverable. LFA does not show this behavior because it discards packets it cannot route. Bounding such floods, for example with the hop-count limit used in our router firmware, is a necessary refinement. In preparing these results we also found and corrected a defect in our simulator's handling of flooded acknowledgements, which were never deduplicated and could circulate until buffers overflowed; before the correction, TinyNet failed to recover in 11 of the 213 flows. All TinyNet results in this paper use the corrected simulator.}
+
+Key observations from these results include:
+\begin{itemize}
+    \item \textbf{Rapid Recovery from Failures:} \textcolor{red}{After one to four simultaneous node failures, TinyNet's median blackout is 1.2--3.9\,ms and its median loss is at most 13 packets per flow, with no knowledge of the topology and no pre-computed alternates.}
+    \item \textbf{Impact of Multiple Node Failures:} \textcolor{red}{Loss and blackout grow only modestly with the number of failures, whereas an LFA network typically waits for full reconvergence once more than one node fails.}
+    \item \textbf{Capacity for Message Maintenance in Failures:} TinyNet sustains message transmission even under substantial network failures. In contrast to spanning-tree protocols, which lose connectivity to entire sub-trees on a single node failure~\cite{spb}, TinyNet reroutes around failed nodes by flooding. \textcolor{red}{The same flooding is a liability when failures partition the network: packets for an unreachable destination can congest the surviving network, which caused the one non-recovery in our experiment.}
+\end{itemize}

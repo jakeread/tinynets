@@ -33,11 +33,20 @@ function ManagerStateful(self) {
 
     const syrup = 1000;
 
-    const D_PKT           = .030  * syrup;   // packet processing time (sim units)
-    const D_BYTE          = .00125 * syrup;  // per-byte interrupt overhead (sim units)
+    // Packet processing time (sim units). Override with D_PKT_US=<µs> (hardware-measured: 37).
+    const D_PKT           = (process.env.D_PKT_US ? process.env.D_PKT_US / 1e3 : .030) * syrup;
+    const D_BYTE          = .0015  * syrup;  // per-byte interrupt overhead (sim units)
     const BITRATE         = 20e3  / syrup;   // link bitrate
     const PKT_HEADER      = 5;               // bytes of fixed header
-    const LFA_DETECTION_DELAY = 50;          // [ms] BFD detection + LFA cutover
+    // [ms] BFD detection + LFA cutover. Override with LFA_MS=<ms> to sweep.
+    const LFA_DETECTION_DELAY = parseFloat(process.env.LFA_MS || '50');
+    // LFA_MODE=realistic: routes are left untouched until detection
+    // (LFA_MS after the failure), then repaired only where RFC 5286 provides
+    // an alternate. Full reconvergence happens when the driver calls
+    // reconverge(). Default 'blackout' keeps the idealised model above.
+    const REALISTIC = process.env.LFA_MODE === 'realistic';
+    const TTL       = 64;   // realistic mode only: discards transient loops
+    const TRACE     = process.env.TRACE === '1';
 
     const STD = 252;
     const ACK = 253;
@@ -62,13 +71,68 @@ function ManagerStateful(self) {
     // -------------------------------------------------------------------------
     // Initialisation
 
-    this.setup = function(numports, nodeId, topology) {
-        this.numports  = numports;
-        this.nodeId    = nodeId;
-        this.topology  = topology;
-        this.ports     = new Array(numports).fill(-1);
-        this.portAlive = new Array(numports).fill(true);
+    this.setup = function(numports, nodeId, topology, staticRoutes) {
+        this.numports     = numports;
+        this.nodeId       = nodeId;
+        this.topology     = topology;
+        this.staticRoutes = staticRoutes || {};   // dest -> port, overrides BFS
+        this.ports        = new Array(numports).fill(-1);
+        this.portAlive    = new Array(numports).fill(true);
         this.computeRoutingTable();
+        if (REALISTIC) this.computeLfaTable();
+    };
+
+    // Hop distances between all node pairs on the current topology.
+    this.allPairsDistances = function() {
+        var n = this.topology.length, dist = [];
+        for (var s = 0; s < n; s++) {
+            var d = new Array(n).fill(Infinity), queue = [s];
+            d[s] = 0;
+            while (queue.length > 0) {
+                var u = queue.shift();
+                for (var j = 0; j < this.topology[u].length; j++) {
+                    var v = this.topology[u][j];
+                    if (typeof v !== 'number' || v < 0 || d[v] !== Infinity) continue;
+                    d[v] = d[u] + 1;
+                    queue.push(v);
+                }
+            }
+            dist.push(d);
+        }
+        return dist;
+    };
+
+    // RFC 5286 alternates, computed once on the pre-failure topology.
+    // For each destination, prefer a node-protecting LFA, else a
+    // link-protecting one (loop-free condition only), else none.
+    this.computeLfaTable = function() {
+        var dist = this.allPairsDistances(), S = this.nodeId;
+        var nbrs = this.topology[S];
+        this.lfaTable = {};   // dest -> alternate port
+        for (var dest in this.routingTable) {
+            var d = parseInt(dest), E = nbrs[this.routingTable[dest]];
+            if (d === E) continue;   // next hop is the destination itself
+            var best = null;
+            for (var q = 0; q < nbrs.length; q++) {
+                var N = nbrs[q];
+                if (N === E || typeof N !== 'number' || N < 0) continue;
+                if (!(dist[N][d] < dist[N][S] + dist[S][d])) continue;   // loop-free
+                var nodeProt = dist[N][d] < dist[N][E] + dist[E][d];
+                var rank = [nodeProt ? 0 : 1, dist[N][d]];
+                if (best === null || rank[0] < best.rank[0]
+                    || (rank[0] === best.rank[0] && rank[1] < best.rank[1])) {
+                    best = { port: q, rank: rank };
+                }
+            }
+            if (best !== null) this.lfaTable[d] = best.port;
+        }
+    };
+
+    // Full IGP reconvergence: BFS on the post-failure topology.
+    this.reconverge = function() {
+        this.computeRoutingTable();
+        this.pendingDetections = [];
+        self.log('IGP reconvergence complete');
     };
 
     // BFS from this.nodeId over live ports only.
@@ -104,6 +168,14 @@ function ManagerStateful(self) {
                 queue.push({ node: next, port: cur.port, hops: cur.hops + 1 });
             }
         }
+
+        // Static routes override the BFS tie-break (hop counts are unchanged,
+        // since every static route is itself a shortest path).
+        for (var dest in this.staticRoutes) {
+            if (this.portAlive[this.staticRoutes[dest]]) {
+                this.routingTable[dest] = this.staticRoutes[dest];
+            }
+        }
     };
 
     // -------------------------------------------------------------------------
@@ -124,6 +196,16 @@ function ManagerStateful(self) {
         this.ports[port]     = -1;
         this.portAlive[port] = false;
         this.topology[this.nodeId][port] = -1;
+
+        if (REALISTIC) {
+            // Routes are unchanged until BFD detects the failure; packets sent
+            // to the dead port in the meantime are lost.
+            this.pendingDetections = this.pendingDetections || [];
+            this.pendingDetections.push({ port: parseInt(port),
+                                          at: self.now() + LFA_DETECTION_DELAY * syrup });
+            self.log('port ' + port + ' failed; detection in ' + LFA_DETECTION_DELAY + ' ms');
+            return;
+        }
 
         // Black out every destination whose current primary path used this port.
         var cutover = Math.max(self.now(), 0) + LFA_DETECTION_DELAY * syrup;
@@ -157,6 +239,7 @@ function ManagerStateful(self) {
         }
         if (packet.src === self.id && packet.start === STD) {
             packet.data = self.now();
+            if (TRACE) self.log('sent to ' + packet.dest + ' (t0=' + packet.data + ')');
         }
         if (port < this.numports && this.ports[port] >= 0) {
             self.send(this.ports[port], 'packet', { name: 'packet', obj: packet });
@@ -197,6 +280,27 @@ function ManagerStateful(self) {
             self.log('LFA cutover complete, routes recomputed');
         }
 
+        // Realistic mode: on BFD detection, switch affected destinations to
+        // their RFC 5286 alternate, or drop them if none exists (or it is dead).
+        if (REALISTIC && this.pendingDetections && this.pendingDetections.length) {
+            var still = [];
+            for (var i = 0; i < this.pendingDetections.length; i++) {
+                var det = this.pendingDetections[i];
+                if (self.now() < det.at) { still.push(det); continue; }
+                for (var dst in this.routingTable) {
+                    if (this.routingTable[dst] !== det.port) continue;
+                    var alt = this.lfaTable[dst];
+                    if (alt !== undefined && this.portAlive[alt]) {
+                        this.routingTable[dst] = alt;
+                    } else {
+                        delete this.routingTable[dst];
+                    }
+                }
+                self.log('BFD detected port ' + det.port + ' down; LFA repair applied');
+            }
+            this.pendingDetections = still;
+        }
+
         if (self.now() < this.waitUntil) return;
 
         if (this.toSend.length > 0) {
@@ -224,6 +328,7 @@ function ManagerStateful(self) {
     this.handlePacket = function(packet) {
         this.waitUntil = Math.max(self.now(), this.waitUntil) + D_PKT;
         packet.hopcount++;
+        if (REALISTIC && packet.hopcount > TTL) return;
 
         if (packet.start === STD) {
             if (packet.dest === self.id) {
@@ -251,7 +356,8 @@ function ManagerStateful(self) {
             if (packet.dest === self.id) {
                 var hops = this.hopCountTable[packet.src] || 1;
                 self.log('got ACK from ' + packet.src + '. RTT = '
-                         + Math.round((self.now() - packet.data) / 2 / hops));
+                         + Math.round((self.now() - packet.data) / 2 / hops)
+                         + (TRACE ? ' (t0=' + packet.data + ')' : ''));
             } else {
                 if (this.destBlackoutUntil[packet.dest] !== undefined
                     && self.now() < this.destBlackoutUntil[packet.dest]) {
