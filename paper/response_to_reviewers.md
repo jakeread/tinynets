@@ -1,5 +1,7 @@
 # Response to Reviewers
 
+We thank the reviewers for their careful consideration and comments. Edits to the paper are implemented in red text.
+
 ## Reviewer 1
 
 ### Comment 1.1
@@ -86,14 +88,29 @@ TinyNet's contribution is therefore not that it is the first protocol with multi
 
 **Reviewer:** Key performance indicators lack hardware validation. The 39% reduction in jitter and 1.3-3.9 ms recovery time mentioned in the article are only from simulation, and Section 5.2 explicitly acknowledges that 'hardware validation is still a future work'. The empirical statements in the title and abstract do not match the evidence in the main text, and hardware testing must be supplemented or the relevant statements significantly weakened.
 
-**Response.** The reviewer is correct that the abstract's framing did not match the evidence. We cannot add further hardware experiments; we have instead corrected the abstract to label simulation results as simulation-derived, and we explain below what credibility the simulation carries.
+**Response.** The reviewer is correct that the abstract's framing did not match the evidence. We cannot add further hardware experiments. In preparing this response we also audited the simulation and found several problems; we corrected all of them and regenerated every result. We describe the corrections below, then explain what credibility the corrected simulation carries.
 
-**What the 39% jitter claim and the previous recovery times were.** Both have been withdrawn in this revision. The 39% jitter reduction was based on a baseline simulator defect and a non-steady-state measurement method; it has been replaced with the capacity comparison described in the Additional Changes section. The previous recovery times (1.3–3.9 ms) came from simulation logs that could not be regenerated; they have been replaced by the multiple-failure experiment in new Section 5.7.2.
+**Withdrawn claims.** The 39% jitter reduction claim and the previous recovery times (1.3–3.9 ms) have both been withdrawn. The 39% figure was based on a baseline simulator defect combined with a non-steady-state measurement method (see below); it has been replaced with the capacity comparison in Section 5.6. The previous recovery times came from simulation logs that could not be regenerated; they have been replaced by the multiple-failure experiment in new Section 5.7.2.
 
-**Validation chain for the simulation.** The simulation is not freestanding. Its three timing parameters are set from hardware measurements (D_process = 37 µs by logic-analyzer capture and confirmed analytically; D_byte = 1.5 µs analytically derived and confirmed by measurement; L_br = 20 MHz by logic-analyzer capture). Simulating the 12-router hardware testbed with these parameters reproduces the measured corner-to-corner RTT of 511 µs to within 1.2% (Section 5.2). The sensitivity analysis in Section 5.3 independently perturbs each parameter by ±15% and shows that the reported variance results are stable within that range. We therefore believe the simulation is a credible model of the hardware at the calibrated operating point, while acknowledging that hardware validation of variance and failure-recovery statistics remains future work, as Section 5.2 states.
+**Simulator corrections.** We found and fixed four problems; all simulation results in this revision were regenerated after these fixes.
+- *Processing delay.* The paper states the hardware-measured D_process = 37 µs, but most simulation scripts used 30 µs. All results now use 37 µs.
+- *Per-byte time.* The paper states D_byte = 1.5 µs (consistent with its analytical derivation from the MCU's interrupt service routine), but the simulator used 1.25 µs. All results now use 1.5 µs.
+- *Flooded acknowledgements.* The simulator never deduplicated flooded acknowledgements, which could circulate until buffers overflowed after multiple failures. Before the correction, TinyNet failed to recover in 11 of 213 flows in the multiple-failure experiment; after it, 1 of 213. The paper discloses this. (The router firmware was also updated during this revision to implement flood deduplication for standard packets; see Comment 2.)
+- *Loss accounting.* Packet loss is now determined per packet, by whether its acknowledgement returns.
+
+**Steady-state measurement method.** The grid determinism results and the sensitivity analysis were previously taken over the first 30–60 ms of simulation, which included the start-up transient. They are now taken in steady state ($t \geq 50$ ms of a 200 ms run). This changes the reported σ values: with 5 kHz cross-traffic, σ = 7 µs (previously 85 µs was the transient); with 10 kHz, σ = 25 µs. At 13 kHz the network exceeds its capacity and RTT grows without bound; a steady-state σ does not exist and the paper now says so.
+
+**Airplane-wing evaluation.** Re-running the airplane-wing scenario with the same steady-state method revealed that its nominal traffic exceeds the network's capacity: the three controllers carry every controller–motor and all master traffic, overflow their buffers, and at nominal rates fewer than 5% of controller–motor packets are delivered. The submitted σ values (7–45 µs) came from a 30 ms run that had delivered only about a third of its packets, and the submitted caption misstated the topology (24 motors and encoders instead of 8). The network is stable up to about 30% of nominal rates; we now evaluate it at 20%, where every packet is delivered, and state the capacity limit explicitly.
+
+**Cross-traffic comparison.** After the simulator corrections, the submitted σ comparison (TinyNet 85 µs vs. baseline 139 µs) is no longer valid on either side: the baseline's default routing sent both flows through the same nodes, overloaded them, and produced RTT that grew without bound; its σ depended only on simulation length. With routes planned for the traffic, single-path routing has *lower* jitter than TinyNet below saturation. We therefore replaced the σ comparison with a capacity comparison (Section 5.6, Fig. 7), which shows TinyNet is stable up to 1.15× the reference load — about 1.9× the capacity of the default single-path baseline — and matches the capacity of planned routes without any prior knowledge of the traffic.
+
+**Validation chain for the corrected simulation.** The simulation's three timing parameters are set from hardware measurements (D_process = 37 µs by logic-analyzer capture and analytical derivation; D_byte = 1.5 µs; L_br = 20 MHz). Simulating the 12-router hardware testbed with these parameters reproduces the measured corner-to-corner RTT of 511 µs to within 1.2% (Section 5.2). The sensitivity analysis in Section 5.3 independently perturbs each parameter by ±15% and shows that the reported variance results are stable within that range. We believe the simulation is a credible model of the hardware at the calibrated operating point, while acknowledging that hardware validation of variance and failure-recovery statistics remains future work, as Section 5.2 states.
 
 **Changes to the manuscript.**
-- **Abstract:** replaced "Performance evaluations on a 16-node mesh demonstrate" with "Simulation of a 16-node mesh, calibrated to a 1.2% match against hardware measurements, shows" to make the nature of the evidence clear at first reading.
+- **Abstract:** replaced "Performance evaluations on a 16-node mesh demonstrate" with "Simulation of a 16-node mesh, calibrated to a 1.2% match against hardware measurements, shows."
+- **Section 5.4.1 (Grid evaluation):** updated σ values and steady-state method; added note that 13 kHz cross-traffic exceeds capacity with no steady-state distribution.
+- **Section 5.4.2 (Airplane-wing evaluation):** re-run at 20% of nominal rates; corrected topology description; capacity limit stated explicitly.
+- **Section 5.6 (new, Traffic Capacity):** replaces the σ comparison with the capacity sweep against single-path baselines.
 
 ---
 
@@ -116,33 +133,63 @@ The simulation further illustrates this independence: L_br is a configurable par
 
 ---
 
-## Additional changes
+### Comment 1.5
 
-In re-running the comparisons for Comment 1, we found problems with several other results in the submitted manuscript. We describe them here so that the reviewers can see every substantive change.
+**Reviewer:** Scalability and flooding cost analysis are missing. The number and bandwidth usage of flood control packets when the LUT fails to be quantified, and the reason why convergence cannot be achieved when 4 nodes (25%) fail simultaneously is not explained. Lack of discussion on larger scale networks or sudden failure scenarios requires additional analysis to demonstrate the scalability of the solution.
 
-**1. The cross-traffic comparison and the "39% jitter reduction" claim were withdrawn and replaced.** The submitted text reported σ = 85 µs for TinyNet versus 139 µs for the single-path baseline. The 139 µs value came from an earlier version of the baseline simulator; the figure had been regenerated with a corrected version (σ = 260 µs) without updating the text. More importantly, neither value is meaningful. The baseline's default routing sent both flows through the same nodes and overloaded them, so its RTT grew without bound and its σ depended only on simulation length. With routes planned for the traffic, single-path routing has *lower* jitter than TinyNet. We therefore replaced the σ comparison with a capacity comparison (new Section 5.6, Fig. 7):
+**Response.** We address the three sub-concerns in turn.
 
-| Configuration | Stable up to (× 5 kHz + 10 kHz) |
-|---|---|
-| Single-path routing, default routes | 0.6× |
-| Single-path routing, planned routes | 1.0× |
-| TinyNet | 1.15× |
+**Flood cost.** TinyNet's firmware drops any packet whose hop count exceeds MAX_HOPCOUNT = 6. A single flooded packet therefore generates at most $\sum_{h=0}^{6}(\Delta-1)^h$ transmissions in the network, where $\Delta$ is the maximum node degree. For the 4×4 grid ($\Delta = 4$), this is $\sum_{h=0}^{6} 3^h = 1{,}093$ in the worst case. In practice the count is much lower: each branch of the flood terminates as soon as it reaches a node that has a known route to the destination, at which point it is converted to a unicast packet and stops replicating. Floods are also transient — they are triggered when a LUT entry is missing (at startup or immediately after a failure) and die out as nodes learn alternative routes from the first flood that reaches its destination. We have added a sentence to Section 3 (Theory) quantifying this bound.
 
-TinyNet sustains about 1.9 times the load of the default single-path baseline and matches the capacity of planned routes without any knowledge of the traffic, but planned routes deliver lower jitter below saturation. The paper now says so plainly, and the abstract no longer claims a jitter reduction.
+**The k = 4 non-recovery case.** The reviewer states that convergence cannot be achieved when four nodes fail. This is not what the paper reports. In the 4-failure experiment, TinyNet failed to recover in 1 of 42 eligible flows (flows whose endpoints were not disconnected by the failures); the other 41 recovered. The one non-recovery was a specific pathological scenario: the failures happened to isolate the destination of the *other* flow running simultaneously, whose source kept sending. Because TinyNet floods packets for which it has no route, those packets congested the surviving network and degraded the one flow that was still deliverable. The paper describes this in Section 5.7.2 and lists bounding such floods as a known limitation. It is not a general convergence failure; it is a known weakness of flooding when a destination is permanently unreachable, bounded in practice by the hop-count limit.
 
-**2. Simulator corrections.** We found and fixed four problems, and all simulation results in the revision were regenerated after these fixes:
-- *Processing delay.* The paper states the hardware-measured D_process = 37 µs, but most simulation scripts used 30 µs. All results now use 37 µs.
-- *Per-byte time.* The paper states D_byte = 1.5 µs, which matches its derivation from the MCU's interrupt service routine (450 cycles at 300 MHz), but the simulator used 1.25 µs. All results now use 1.5 µs.
-- *Flooded acknowledgements.* TinyNet's simulator never deduplicated flooded acknowledgements, which could circulate until buffers overflowed after multiple failures. Our router firmware bounds floods with a hop-count limit and is not affected. Before the correction, TinyNet failed to recover in 11 of 213 flows in the multiple-failure experiment; after it, 1 of 213. The paper discloses this.
-- *Loss accounting.* Packet loss is now determined per packet, by whether its acknowledgement returns.
+**Scalability.** We evaluated TinyNet on a 4×4 grid (16 nodes) and a 20-node airplane-wing topology; we do not have results for larger networks and acknowledge this as a limitation. We can offer three analytical observations. First, the per-node LUT is O(N × Δ) in memory, where N is the number of nodes and Δ is the maximum degree; for the small embedded NCS this paper targets this is a few hundred bytes. Second, the heartbeat mechanism is strictly link-local: each node sends one byte per link per heartbeat interval, so heartbeat overhead scales with degree, not with N. Third, flood horizon is bounded by MAX_HOPCOUNT = 6 regardless of N, so for networks whose diameter exceeds 6 hops, floods from a failed region do not propagate network-wide. Larger-scale simulation is future work; we have added a paragraph to Section 6 (Conclusion) acknowledging this.
 
-**3. Determinism results use a steady-state method.** The grid determinism results (Fig. 5) and the sensitivity analysis (Table 2) were previously taken over the first 30–60 ms of simulation, which included the start-up transient. They are now taken in steady state ($t \geq 50$ ms of a 200 ms run):
-- With 5 kHz cross-traffic, σ = 7 µs.
-- With 10 kHz cross-traffic, σ = 25 µs (previously reported as 85 µs).
-- With 13 kHz cross-traffic, the network exceeds its capacity and RTT grows without bound. Previously this was reported as σ = 140 µs.
+**Changes to the manuscript.**
+- **Section 3 (Theory):** added one sentence after the hop-count drop rule quantifying the worst-case flood copy count as $\sum_{h=0}^{\mathrm{MAX\_HOPCOUNT}}(\Delta-1)^h$ and noting that branches terminate on reaching a node with a known route.
+- **Section 6 (Conclusion):** added a sentence acknowledging that evaluation is limited to networks of up to 20 nodes and that scalability to larger topologies is future work.
 
-**4. Airplane-wing evaluation re-run at a sustainable traffic level (Section 5.4.2, Fig. 6).** Re-running the airplane-wing scenario with the same steady-state method showed that its nominal traffic exceeds the network's capacity. The three controllers carry every controller–motor loop and all master traffic, and they overflow; at the nominal rates, fewer than 5% of controller–motor packets are delivered. The submitted σ values (7–45 µs) came from a 30 ms run that had delivered only about a third of its packets, and the submitted caption misstated the topology (24 motors and encoders instead of 8). Scaling all rates together, the network is stable up to about 30% of the nominal rates. We now evaluate it at 20% (500 Hz motor–encoder, 200 Hz controller–motor, 100 Hz master–encoder), where every packet is delivered and σ is 29 µs (master–encoder), 66 µs (controller–motor), and under 1 µs (motor–encoder). The paper states the reduced rates and the capacity limit explicitly.
+---
 
-**5. Removed and revised claims.**
-- *Recovery times.* The previous recovery times (1.3–3.9 ms) and the statement that four failures did not converge came from simulation logs that we could not regenerate. They are replaced by the multiple-failure experiment above.
-- *Abstract, graphical abstract and Conclusion.* The abstract and graphical abstract are updated accordingly, and the Conclusion now states the two limitations identified above.
+## Reviewer 2
+
+### Comment 2.1
+
+**Reviewer:** The manuscript proposes TinyNet, a lightweight multipath routing protocol for robotic networked control systems. The topic is relevant, and the idea of using local buffer-depth information for adaptive routing is promising. However, the paper requires some revisions before publication. TinyNet should be compared with stronger alternatives, such as ECMP, fast reroute, backpressure routing, or redundant-path methods, to better demonstrate its advantages.
+
+**Response.** We thank the reviewer for a careful reading. Fast reroute (LFA) and redundant-path methods (TSN FRER) are addressed in Comments 1.1 and 1.2 respectively, where we added simulation comparisons and corrected the paper's positioning against each. For ECMP and backpressure routing:
+* ECMP: Equal-cost multipath distributes traffic evenly across minimum-hop paths without considering queue state. TinyNet's cost function with λ = 0 reduces to minimum-hop routing, and with λ > 0 it penalises busy ports. ECMP is therefore a special case of TinyNet's design (no congestion weighting); TinyNet's capacity advantage over default single-path routing (Section 5.6) arises precisely from the λ > 0 weighting that ECMP lacks. The Related Work discusses this in Section 2.3 (Congestion-Aware Multipath in Datacenters).
+* Backpressure routing: The max-weight scheduling formulation of Tassiulas and Ephremides (1992) achieves throughput-optimal routing using network-wide queue state. TinyNet's heartbeat mechanism is a local approximation: each node uses one-hop buffer depth rather than global queue state, trading throughput optimality for the stateless, distributed operation required in embedded NCS. The Related Work already discusses this in Section 2.4 (Backpressure Routing).
+
+### Comment 2.2
+
+**Reviewer:** The protocol description also needs further clarification, particularly regarding duplicate flood detection, LUT aging, hop-count overflow, packet reordering, and loop prevention. Overall, the work is interesting and has potential, but the authors should strengthen the evaluation and clarify key protocol details.
+
+**Response:**
+* Duplicate flood detection: The pseudocode in Section 3 states "If I have not yet seen this flood." The simulation implements this via a per-node seen-list keyed on (destination, source, payload). In the firmware, a 16-entry circular buffer keyed on (destination, source, XOR-checksum of payload) is checked and updated at the top of the P\_STANDARD\_FLOOD handler. ACK floods cannot be deduplicated without a payload identifier and remain bounded by the hop-count limit alone.
+* LUT aging: When a node does not receive a heartbeat from a port within the liveness-check window (e.g., 2 ms), it clears all LUT entries associated with that port. Subsequent packets to those destinations are then flooded. We have added a paragraph to Section 3 describing this aging rule explicitly.
+* Hop-count overflow: The hop-count field is a uint8\_t (0--255). Packets are dropped when the hop count exceeds MAX\_HOPCOUNT < 255 (e.g., 6), which happens long before any overflow. There is no overflow risk in practice.
+* Packet reordering: TinyNet routes each packet independently, so packets belonging to the same logical stream may arrive out of order if they traverse different-length paths. For the target NCS traffic (single-packet control messages at fixed intervals) packet-level reordering between distinct messages is benign. Multi-packet messages would require application-layer sequencing, which is outside TinyNet's scope and consistent with its stateless design. We have added a sentence to Section 3 noting this.
+* Loop prevention: TinyNet prevents persistent loops via two mechanisms. First, LUT aging (above) removes entries pointing toward failed nodes after heartbeat loss, eliminating the routing state that would cause a persistent loop. Second, the hop-count drop ensures that any residual loop is bounded: a packet circling a loop increments its hop count at each hop and is discarded after MAX\_HOPCOUNT forwarding steps regardless. We have added a sentence to Section 3 summarising these two mechanisms together.
+
+**Changes to the manuscript.**
+- **Section 3 (Theory):** (i) added a paragraph describing the LUT aging (heartbeat-timeout) mechanism; (ii) added a sentence on packet reordering; (iii) added a sentence summarising loop prevention via LUT aging and hop-count. The "not yet seen" pseudocode required no change — it now accurately describes both the simulation and the updated firmware.
+
+---
+
+## Reviewer 5
+
+### Comment 5.1
+
+**Reviewer:** The manuscript proposes TinyNet, a stateless multipath routing protocol for networked control systems. It combines backpressure-inspired congestion awareness (a busyness-based cost function) with reactive flooding for fast failure recovery. The problem is relevant, the idea is simple and attractive, and the related-work survey is broad. However, the evaluation can be strengthened. TinyNet should be compared against single-path shortest-path baseline to demonstrate its advantages.
+
+**Response.** This comparison is now in the paper as Section 5.6 (Traffic Capacity, Fig. 7). We compare TinyNet against two single-path shortest-path configurations on the 4×4 grid: a default BFS tie-break (which does not account for the traffic) and a planned configuration (routes selected to minimize peak node load for this specific traffic pattern). The comparison uses a capacity sweep rather than a jitter comparison, because the default single-path baseline saturates before reaching the evaluation load and its RTT grows without bound; a σ comparison would be meaningless. The results show TinyNet is stable up to 1.15x the reference load, about 1.9 times the capacity of the default single-path baseline, and comparable to the capacity of planned routes without any prior knowledge of the traffic. Below saturation, planned single-path routes deliver lower jitter than TinyNet, and the paper now says so explicitly.
+
+### Comment 5.2
+
+**Reviewer:** The paper does not explain why recovery fails to converge when 4 nodes (25%) fail simultaneously. This should be clarified.
+
+**Response.** TinyNet does not generally fail to converge with four simultaneous failures. We also note that the recovery times cited in the submitted manuscript (1.3–3.9 ms) and the statement that four failures did not converge came from simulation logs that could not be regenerated during this revision; both have been replaced by the multiple-failure experiment in Section 5.7.2, which was run from scratch with a fixed design and the corrected simulator described in Comment 1.3.
+
+In the new experiment, TinyNet recovered in 41 of 42 eligible flows under four failures (flows whose endpoints were not disconnected by the failures). The one non-recovery was a specific pathological case: the failures isolated the destination of the other flow running concurrently, whose source continued to send. Because TinyNet floods packets for which it has no route, those packets congested the surviving network and degraded the one flow that was still deliverable. This is a known weakness of flooding to unreachable destinations, not a general convergence failure. The paper describes this case in Section 5.7.2, and the hop-count limit in the firmware bounds the damage.
+

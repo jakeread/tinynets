@@ -59,6 +59,29 @@ void send_heartbeats(void){
 	#endif
 }
 
+static uint8_t flood_checksum(packet_t* p) {
+	uint8_t cs = 0;
+	for (int i = 5; i < p->raw[4]; i++) cs ^= p->raw[i];
+	return cs;
+}
+
+int has_seen_flood(packet_t* p) {
+	uint8_t cs = flood_checksum(p);
+	for (int i = 0; i < SEEN_FLOOD_SIZE; i++) {
+		if (seen_floods[i].dest     == p->raw[1] &&
+		    seen_floods[i].src      == p->raw[3] &&
+		    seen_floods[i].checksum == cs) return 1;
+	}
+	return 0;
+}
+
+void mark_flood_seen(packet_t* p) {
+	seen_floods[seen_floods_head].dest     = p->raw[1];
+	seen_floods[seen_floods_head].src      = p->raw[3];
+	seen_floods[seen_floods_head].checksum = flood_checksum(p);
+	seen_floods_head = (seen_floods_head + 1) % SEEN_FLOOD_SIZE;
+}
+
 void handle_packet(packet_t* p, uint8_t port) {
 
 	if (p->raw[2] > MAX_HOPCOUNT && p->raw[1] != myAddress) {
@@ -97,7 +120,9 @@ void handle_packet(packet_t* p, uint8_t port) {
 		break;
 		
 		case P_STANDARD_FLOOD:
-			//LUT[p->raw[1]][port] = MAX_HOPCOUNT; // likely no good path exists on this port
+			LUT[p->raw[1]][port] = MAX_HOPCOUNT;
+			if (has_seen_flood(p)) break;
+			mark_flood_seen(p);
 			if (p->raw[1] == myAddress) {
 				app_onpacket(*p);
 				acknowledge_packet(p);
@@ -111,7 +136,7 @@ void handle_packet(packet_t* p, uint8_t port) {
 		break;
 		
 		case P_ACK_FLOOD:
-			//LUT[p->raw[1]][port] = MAX_HOPCOUNT; // lngpeotp
+			LUT[p->raw[1]][port] = MAX_HOPCOUNT;
 			if (p->raw[1] == myAddress) {
 				app_onack(*p);
 			} else {

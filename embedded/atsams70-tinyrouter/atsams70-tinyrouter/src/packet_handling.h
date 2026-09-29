@@ -32,4 +32,7 @@ void acknowledge_packet(packet_t* p);
 
 int in_table(uint8_t dest);
 
+int has_seen_flood(packet_t* p);
+void mark_flood_seen(packet_t* p);
+
 #endif /* PACKET_HANDLING_H_ */
