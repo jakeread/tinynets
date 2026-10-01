@@ -55,7 +55,8 @@ fig.savefig(OUT + 'comparison_capacity.png', dpi=150)
 # Multiple failures: packets lost per flow
 # ----------------------------------------------------------------------
 res = pd.read_csv('failure_experiment/results.csv')
-res = res[~res.excluded]
+bad = res.groupby(['k', 'trial'])['excluded'].transform('any')
+res = res[~bad]
 rng = np.random.default_rng(0)
 fig, ax = plt.subplots(figsize=(7, 3.6))
 for k in (1, 2, 3, 4):

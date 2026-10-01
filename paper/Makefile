@@ -27,11 +27,15 @@ graphical_abstract.pdf: graphical_abstract.tex
 view: report
 	$(OPEN) $(DOCNAME).pdf
 
-submit:
+submit: graphical_abstract.pdf
 	lateflat .
 	cp elsarticle-num.bst submit/
 	cd submit && pdflatex $(DOCNAME).tex && bibtex $(DOCNAME).aux && pdflatex $(DOCNAME).tex && pdflatex $(DOCNAME).tex
+	cp declarationStatement.docx submit/
+	cp graphical_abstract.pdf submit/
+	rm submit/main.aux submit/main.bbl submit/main.blg submit/main.log submit/main.out submit/main.spl
 	$(OPEN) submit/$(DOCNAME).pdf
+# 	references.bib needs to be labeled "Author biography" (sic). Attach a random .tex file for the required "LaTeX source files". If you go back to edit you're uploads, it will delete some of them.
 
 clean:
 	rm -f *.blg *.bbl *.aux *.log *.spl

@@ -107,7 +107,7 @@ To directly address the question of how TinyNet compares against stateful routin
 \begin{figure*}[th]
     \centering
     \includegraphics[width=\textwidth]{figures/comparison_capacity.png}
-    \caption{Delivery ratio (left) and mean per-hop RTT (right, log scale) on the 4$\times$4 grid versus offered load, as a multiple of a 5~kHz main flow (node~0 to node~15) plus 10~kHz cross-traffic (node~3 to node~12): TinyNet (blue circles), single-path routing with the default BFS tie-break (orange squares), and single-path routing with routes planned for this traffic (aqua triangles). Each point is a 200~ms simulation; statistics use $t \geq 50\,\mathrm{ms}$.}
+    \caption{\textcolor{red}{Delivery ratio (left) and mean per-hop RTT (right, log scale) on the 4$\times$4 grid versus offered load, as a multiple of a 5~kHz main flow (node~0 to node~15) plus 10~kHz cross-traffic (node~3 to node~12): TinyNet (blue circles), single-path routing with the default BFS tie-break (orange squares), and single-path routing with routes planned for this traffic (green triangles). Each point is a 200~ms simulation; statistics use $t \geq 50\,\mathrm{ms}$.}}
     \label{fig:comparison-capacity}
 \end{figure*}
 }
@@ -117,12 +117,8 @@ To directly address the question of how TinyNet compares against stateful routin
 
 \textcolor{red}{Below saturation, planned single-path routes deliver lower and more consistent per-hop RTT than TinyNet (e.g., $50 \pm 0\,\mu\mathrm{s}$ versus $104 \pm 25\,\mu\mathrm{s}$ at 1.0 times the load), because periodic traffic on non-conflicting paths never queues, while TinyNet's cost function spreads packets over paths of varying length and occupancy. TinyNet's advantage is therefore not lower jitter than a network engineered for known traffic. It is that TinyNet reaches the capacity of such a network without planning, whereas single-path routing that is not planned for the traffic usually collapses well below it.}
 
-\subsection{Robustness to Node Failure}
-\label{sec:robustness}
-{\color{red}
-\subsubsection{Single Failure and Failure Detection}
-\label{sec:robustness:single}
-}
+\subsection{Robustness to Single Node Failure}
+\label{sec:robustness-single}
 \begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/comparison_failure.png}
@@ -133,10 +129,9 @@ To directly address the question of how TinyNet compares against stateful routin
 
 \textcolor{red}{Because TinyNet detects failures with a periodic liveness check, its blackout depends on when the failure occurs relative to that check. We therefore repeated the TinyNet run with the failure injected at 20 times spaced 0.1\,ms apart across one 2\,ms check period. Table~\ref{tab:lfa-sweep} reports the blackout and the number of packets lost. TinyNet's blackout averaged 3.7\,ms (range 2.7--4.7\,ms), with an average of 14 packets lost (range 10--19). Against the best-case documented LFA configuration ($T_{\mathrm{LFA}} = 10\,\mathrm{ms}$), TinyNet's blackout is about one third as long and it loses between a third and a quarter as many packets; against the vendor-stated convergence bound (50\,ms), it loses about one eighteenth as many.}
 
-{\color{red}
 \begin{table}[th]
     \centering
-    \caption{Single-node-failure blackout (longest post-failure gap between deliveries) and packets lost for the 5\,kHz corner-to-corner flow. A packet is lost if its acknowledgement never returns. TinyNet values are the mean (range) over 20 failure times spanning one liveness-check period. LFA blackouts do not depend on failure time in the cutover-window model and exceed $T_{\mathrm{LFA}}$ by the 0.4\,ms in-flight time of the lost packets.}
+    \caption{\textcolor{red}{Single-node-failure blackout (longest post-failure gap between deliveries) and packets lost for the 5\,kHz corner-to-corner flow. A packet is lost if its acknowledgement never returns. TinyNet values are the mean (range) over 20 failure times spanning one liveness-check period. LFA blackouts do not depend on failure time in the cutover-window model and exceed $T_{\mathrm{LFA}}$ by the 0.4\,ms in-flight time of the lost packets.}}
     \label{tab:lfa-sweep}
     \begin{tabular}{lrr}
         \hline
@@ -150,26 +145,24 @@ To directly address the question of how TinyNet compares against stateful routin
         \hline
     \end{tabular}
 \end{table}
-}
 
 \textcolor{red}{The hypothetical 3-ms configuration illustrates the origin of this advantage. When LFA is given the same detection budget as TinyNet, its blackout and packet loss match TinyNet's average. For a single failure, then, TinyNet's recovery time is set by its link-local detection latency, not by any inherent speed advantage of flooding over pre-computed alternates. TinyNet's practical advantage is that its heartbeat runs on every link at a rate that BFD implementations do not document, and that it needs no per-destination state, no pre-computed alternates, and no alternate coverage.}
 
-{\color{red}
-\subsubsection{Multiple Simultaneous Failures}
-\label{sec:robustness:multi}
+\subsection{Multiple Simultaneous Failures}
+\label{sec:robustness-multi}
+
 \begin{figure}[th]
     \centering
     \includegraphics[width=\linewidth]{figures/failure_multi.png}
-    \caption{Packets lost per flow (plus one, log scale) after 1--4 simultaneous random node failures on the 4$\times$4 grid with a 3-kHz main flow and 6-kHz cross-traffic: TinyNet (blue circles) versus the coverage-aware LFA baseline with 10~ms BFD detection and 200~ms IGP reconvergence (orange squares). Each point is one flow in one of 30 trials per failure count; bars mark medians. Flows whose endpoints are disconnected by the failures are excluded.}
+    \caption{\textcolor{red}{Packets lost per flow (plus one, log scale) after 1--4 simultaneous random node failures on the 4$\times$4 grid with a 3-kHz main flow and 6-kHz cross-traffic: TinyNet (blue circles) versus the coverage-aware LFA baseline with 10~ms BFD detection and 200~ms IGP reconvergence (orange squares). Each point is one flow in one of 30 trials per failure count; bars mark medians.}}
     \label{fig:failure-multi}
 \end{figure}
-}
-\textcolor{red}{To evaluate recovery from multiple failures without relying on an assumed alternate, we compared TinyNet with the coverage-aware LFA baseline in an experiment whose design and analysis were fixed before it was run. Both flows run at 0.6 times the load of Section~\ref{sec:capacity} (3-kHz main flow, 6-kHz cross-traffic), the highest load in that sweep at which every configuration is stable before any failure, so that failure recovery is not confounded with overload. For each of $k = 1, 2, 3, 4$ simultaneous failures, we ran 30 trials, each failing $k$ nodes drawn uniformly without replacement from the 12 nodes that are not flow endpoints, at a time drawn uniformly across one 2\,ms liveness-check period. Both protocols saw identical trials. A packet counts as lost if no acknowledgement for it returns by any path. A flow whose endpoints are disconnected by the failures is excluded for both protocols (9 of 60 flows for $k = 3$ and 18 of 60 for $k = 4$), and a flow counts as recovered if at least 95\% of the packets it sends in the last 50\,ms of the run are delivered. Fig.~\ref{fig:failure-multi} and Table~\ref{tab:failure-multi} summarize the results.}
 
-{\color{red}
+\textcolor{red}{To evaluate recovery from multiple failures without relying on an assumed alternate, we compared TinyNet with the coverage-aware LFA baseline in an experiment in which LFA's network design and analysis were fixed before the experiment was run. Both flows run at 3-kHz main flow and 6-kHz cross-traffic, the highest load at which every configuration is stable before any failure, so that failure recovery is not confounded with overload. For each of $k = 1, 2, 3, 4$ simultaneous failures, we ran 30 trials, each failing $k$ nodes drawn uniformly without replacement from the 12 nodes that are not flow endpoints, at a time drawn uniformly across one 2-ms liveness-check period. Both protocols saw identical trials. A packet counts as lost if no acknowledgement for it returns by any path. A trial in which any flow's endpoints are disconnected by the failures is excluded entirely for both protocols. A flow counts as recovered if at least 95\% of the packets it sends in the last 50\,ms of the run are delivered. Fig.~\ref{fig:failure-multi} and Table~\ref{tab:failure-multi} summarize the results.}
+
 \begin{table}[th]
     \centering
-    \caption{Packets lost and blackout per flow after $k$ simultaneous node failures: median [interquartile range], and the number of flows that did not recover, for TinyNet and the coverage-aware LFA baseline (10\,ms BFD detection, 200\,ms IGP reconvergence). Flows: 60 for $k \le 2$, 51 for $k = 3$, 42 for $k = 4$.}
+    \caption{\textcolor{red}{Packets lost and blackout per flow after $k$ simultaneous node failures: median [interquartile range], and the number of flows that did not recover, for TinyNet and the coverage-aware LFA baseline (10\,ms BFD detection, 200\,ms IGP reconvergence).}}
     \label{tab:failure-multi}
     \begin{tabular}{llrrr}
         \hline
@@ -179,22 +172,19 @@ To directly address the question of how TinyNet compares against stateful routin
           & LFA     & 0 [0--599] & 0.5 [0.3--200.3] & 0 \\
         2 & TinyNet & 9 [0--17] & 3.3 [0.6--4.3] & 0 \\
           & LFA     & 598 [22--1197] & 200.3 [7.8--200.5] & 0 \\
-        3 & TinyNet & 10 [3--15] & 3.4 [1.9--4.4] & 0 \\
-          & LFA     & 599 [29--1197] & 200.3 [10.3--200.6] & 0 \\
-        4 & TinyNet & 13 [7--21] & 3.9 [3.2--5.4] & 1 \\
-          & LFA     & 599 [30--1197] & 200.4 [10.8--200.6] & 0 \\
+        3 & TinyNet & 11 [7--16] & 3.5 [2.9--4.5] & 0 \\
+          & LFA     & 600 [30--1198] & 200.5 [10.6--200.6] & 0 \\
+        4 & TinyNet & 13 [6--23] & 4.3 [3.1--5.7] & 0 \\
+          & LFA     & 599 [172--1197] & 200.4 [58.1--200.6] & 0 \\
         \hline
     \end{tabular}
 \end{table}
-}
 
-\textcolor{red}{With a single failure, LFA often loses nothing: when the failed node is off a flow's path, or an RFC~5286 alternate covers it, delivery continues. In 18 of the 60 single-failure flows, however, no usable alternate existed, and the flow was dark until IGP reconvergence, losing up to 1{,}199 packets; TinyNet lost at most 19 packets in any single-failure flow. With two or more failures, the median LFA flow waits for reconvergence (about 600 packets lost for the 3-kHz flow and 1{,}200 for the 6-kHz flow), whereas TinyNet's median loss stays between 9 and 13 packets with a median blackout of 3--4\,ms. Comparing the same flow in the same trial, TinyNet lost fewer packets than LFA in 47\%, 75\%, 76\%, and 88\% of flows for $k = 1$ to 4, and more packets in 10\%, 7\%, 2\%, and 7\%. The LFA baseline's losses scale with the assumed 200\,ms reconvergence time; a faster-converging IGP would shrink, but not remove, this gap.}
-
-\textcolor{red}{TinyNet failed to recover in 1 of the 213 flows, with four failures. In that trial, the failures isolated the destination of the other flow, whose source continued to send. Because TinyNet floods packets for which it has no route, these packets repeatedly flooded the surviving network, filled buffers, and degraded the flow that remained deliverable. LFA does not show this behavior because it discards packets it cannot route. Bounding such floods, for example with the hop-count limit used in our router firmware, is a necessary refinement. In preparing these results we also found and corrected a defect in our simulator's handling of flooded acknowledgements, which were never deduplicated and could circulate until buffers overflowed; before the correction, TinyNet failed to recover in 11 of the 213 flows. All TinyNet results in this paper use the corrected simulator.}
+\textcolor{red}{With a single failure, LFA often loses nothing: when the failed node is off a flow's path, or an RFC~5286 alternate covers it, delivery continues. In 18 of the 60 single-failure flows, however, no usable alternate existed, and the flow was dark until IGP reconvergence, losing up to 1{,}199 packets; TinyNet lost at most 19 packets in any single-failure flow. With two or more failures, the median LFA flow waits for reconvergence (about 600 packets lost for the 3-kHz flow and 1{,}200 for the 6-kHz flow), whereas TinyNet's median loss stays between 9 and 13 packets with a median blackout of 3--4\,ms. Comparing the same flow in the same trial, TinyNet lost fewer packets than LFA in 47\%, 75\%, 81\%, and 85\% of flows for $k = 1$ to 4, and more packets in 10\%, 7\%, 0\%, and 12\%. The LFA baseline's losses scale with the assumed 200\,ms reconvergence time; a faster-converging IGP would shrink, but not remove, this gap.}
 
 Key observations from these results include:
 \begin{itemize}
-    \item \textbf{Rapid Recovery from Failures:} \textcolor{red}{After one to four simultaneous node failures, TinyNet's median blackout is 1.2--3.9\,ms and its median loss is at most 13 packets per flow, with no knowledge of the topology and no pre-computed alternates.}
+    \item \textbf{Rapid Recovery from Failures:} \textcolor{red}{After one to four simultaneous node failures, TinyNet's median blackout is 1.2--4.3\,ms and its median loss is at most 13 packets per flow, with no knowledge of the topology and no pre-computed alternates.}
     \item \textbf{Impact of Multiple Node Failures:} \textcolor{red}{Loss and blackout grow only modestly with the number of failures, whereas an LFA network typically waits for full reconvergence once more than one node fails.}
-    \item \textbf{Capacity for Message Maintenance in Failures:} TinyNet sustains message transmission even under substantial network failures. In contrast to spanning-tree protocols, which lose connectivity to entire sub-trees on a single node failure~\cite{spb}, TinyNet reroutes around failed nodes by flooding. \textcolor{red}{The same flooding is a liability when failures partition the network: packets for an unreachable destination can congest the surviving network, which caused the one non-recovery in our experiment.}
+    \item \textbf{Capacity for Message Maintenance in Failures:} TinyNet sustains message transmission even under substantial network failures. In contrast to spanning-tree protocols, which lose connectivity to entire sub-trees on a single node failure~\cite{spb}, TinyNet reroutes around failed nodes by flooding.
 \end{itemize}

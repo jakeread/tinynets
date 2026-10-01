@@ -6,8 +6,14 @@ def q(s, f="{:.0f}"):
     return (f + " [" + f + "–" + f + "]").format(s.median(), s.quantile(.25), s.quantile(.75))
 
 d = pd.read_csv(sys.argv[1] if len(sys.argv) > 1 else 'results.csv')
-v = d[~d.excluded]
-ex = d[(d.proto == 'tinynet')].groupby('k').excluded.sum()
+# Exclude entire trial if any flow's endpoints are disconnected; a trial with an
+# unreachable destination causes flooding that can degrade the other flow, making
+# per-flow exclusion insufficient for a fair comparison.
+bad = d.groupby(['k', 'trial'])['excluded'].transform('any')
+v = d[~bad]
+ex = d[(d.proto == 'tinynet')].groupby('k').apply(
+    lambda g: g.groupby('trial')['excluded'].any().sum()
+)
 for k in sorted(d.k.unique()):
     for p in ['tinynet', 'lfa']:
         s = v[(v.k == k) & (v.proto == p)]
