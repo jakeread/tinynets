@@ -11,6 +11,7 @@ import json
 import re
 
 import matplotlib
+import matplotlib.ticker
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
@@ -43,8 +44,14 @@ a1.set_xlabel('Offered load (× 5 kHz + 10 kHz)')
 a1.set_ylabel('Packets delivered (%)')
 a1.set_ylim(0, 105)
 a2.set_xlabel('Offered load (× 5 kHz + 10 kHz)')
-a2.set_ylabel(r'Mean per-hop RTT ($\mu$s, log scale)')
+a2.set_ylabel(r'Mean per-hop RTT ($\mu$s, log scale)', fontsize=11)
+a1.set_ylabel('Packets delivered (%)', fontsize=11)
 a2.set_yscale('log')
+a2.set_ylim(40, 5000)
+rtt_ticks = [50, 100, 200, 500, 1000, 2000, 5000]
+a2.yaxis.set_major_locator(matplotlib.ticker.FixedLocator(rtt_ticks))
+a2.yaxis.set_major_formatter(matplotlib.ticker.FixedFormatter([f'{t:,}' for t in rtt_ticks]))
+a2.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
 for ax in (a1, a2):
     style(ax)
 a1.legend(frameon=False, fontsize=8, loc='lower left')
